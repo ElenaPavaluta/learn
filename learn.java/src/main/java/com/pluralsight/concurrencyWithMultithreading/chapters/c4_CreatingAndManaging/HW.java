@@ -26,16 +26,25 @@ class HW {
 		 */
 		@Override
 		public void run() {
-			System.out.println("Hello: " + country);
+			long id = Thread.currentThread().getId();
+//			long id = getId();
+			System.out.println(id + " Hello: " + country);
 		}
 
 	}
 
 	public static void main(String[] args) {
 		String countries[] = { "France", "India", "China", "USA", "Germany" };
-
+		
+		System.out.println("main thread id: " + Thread.currentThread().getId() + "\n");
+		
 		for (String s : countries) {
 			new Greeter(s).start();
+			
+			/*
+			 * The main thread is run
+			 */
+//			new Greeter(s).run(); 
 		}
 	}
 }
