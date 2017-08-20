@@ -3,6 +3,8 @@
 logs
 testreport/
 
+.idea
+
 ### Eclipse template
 *.pydevproject
 .metadata
