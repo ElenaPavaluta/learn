@@ -1,4 +1,4 @@
-package designPatterns.creational.builder.constructor;
+package gtk.designPatterns.creational.builder.constructor;
 
 /**
  * Builder pattern is a good choice when designing classes whose constructors or

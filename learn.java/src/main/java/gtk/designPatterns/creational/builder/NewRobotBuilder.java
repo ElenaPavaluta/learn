@@ -1,4 +1,4 @@
-package designPatterns.creational.builder;
+package gtk.designPatterns.creational.builder;
 
 public class NewRobotBuilder implements RobotBuilder{
 

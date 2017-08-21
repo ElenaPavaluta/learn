@@ -1,4 +1,4 @@
-package designPatterns.behavioral.visitor;
+package gtk.designPatterns.behavioral.visitor;
 
 public class Necesity implements Visitable {
 

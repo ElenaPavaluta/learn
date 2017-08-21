@@ -1,4 +1,4 @@
-package designPatterns.behavioral.visitor;
+package gtk.designPatterns.behavioral.visitor;
 
 /**
  * Allows the Visitor to pass the object so
