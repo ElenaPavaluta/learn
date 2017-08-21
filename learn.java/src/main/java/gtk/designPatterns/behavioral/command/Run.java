@@ -1,4 +1,4 @@
-package designPatterns.behavioral.command;
+package gtk.designPatterns.behavioral.command;
 
 public class Run {
 

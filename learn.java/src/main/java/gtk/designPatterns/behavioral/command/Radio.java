@@ -1,4 +1,6 @@
-package designPatterns.behavioral.command;
+package gtk.designPatterns.behavioral.command;
+
+import gtk.designPatterns.behavioral.command.ElectronicDevice;
 
 public class Radio implements ElectronicDevice {
 

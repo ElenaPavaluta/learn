@@ -1,12 +1,12 @@
-package designPatterns.behavioral.command;
+package gtk.designPatterns.behavioral.command;
 
 public class Devices {
 
 	static Television getTv() {
-		return new Television();
+		return new Television ();
 	}
 
 	static Radio getRadio() {
-		return new Radio();
+		return new Radio ();
 	}
 }

@@ -1,4 +1,6 @@
-package designPatterns.behavioral.command;
+package gtk.designPatterns.behavioral.command;
+
+import gtk.designPatterns.behavioral.command.Command;
 
 /**
  * This is known as the invoker It has a method press() that when executed

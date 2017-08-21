@@ -1,6 +1,8 @@
-package designPatterns.behavioral.command;
+package gtk.designPatterns.behavioral.command;
 
-public class TurnOff implements Command{
+import gtk.designPatterns.behavioral.command.Command;
+
+public class TurnOff implements Command {
 
 	private ElectronicDevice ed;
 
