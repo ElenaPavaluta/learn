@@ -39,9 +39,9 @@ public class QuickSort<E extends Comparable<E>> {
 			}
 		}
 
-		Util.swap(lst, high, i + 1);
+		Util.swap(lst, high, ++i);
 
-		return i + 1;
+		return i;
 
 	}
 

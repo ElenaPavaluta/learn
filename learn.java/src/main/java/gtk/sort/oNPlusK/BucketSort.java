@@ -27,7 +27,7 @@ import gtk.sort.oNSquare.InsertionSort;
  * - Elements are expected to be fairly evenly distributed
  *
  * The most common implementation of bucket sort works by splitting the array of
- * size nn into kk buckets, each of which house a value range of n/kn/k. The
+ * size nn into kk buckets, each of which house a value range of n/k. The
  * buckets are then sorted using a simple sorting algorithm that works well on
  * the expected data, such as insertion sort. Buckets are typically implemented
  * using either linked lists or dynamic arrays. Time: O(n+k)

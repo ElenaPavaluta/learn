@@ -42,7 +42,6 @@ public class BubleSort<E extends Comparable<E>> {
 			}
 			unsortedBellow = lastSwap;
 		}
-		
 		return lst;
 	}
 }

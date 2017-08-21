@@ -59,11 +59,11 @@ public class Run {
 	}
 	
 	public static void main(String[] args) {
-		mergeSort();
-		quickSort();
-		insertionSort();
-		selectionSort();
-		bubleSort();
+//		mergeSort();
+//		quickSort();
+//		insertionSort();
+//		selectionSort();
+//		bubleSort();
 		bucketSort();
 		
 		
