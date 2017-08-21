@@ -1,14 +1,16 @@
-package sort;
+package gtk.sort;
+
+import gtk.sort.oNLogN.mergeSort.MergeSort;
+import gtk.sort.oNLogN.quickSort.QuickSort;
+import gtk.sort.oNPlusK.BucketSort;
+import gtk.sort.oNSquare.BubleSort;
+import gtk.sort.oNSquare.InsertionSort;
+import gtk.sort.oNSquare.SelectionSort;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import sort.oNLogN.mergeSort.MergeSort;
-import sort.oNLogN.quickSort.QuickSort;
-import sort.oNPlusK.BucketSort;
-import sort.oNSquare.BubleSort;
-import sort.oNSquare.InsertionSort;
-import sort.oNSquare.SelectionSort;
+
 
 public class Run {
 
@@ -57,11 +59,11 @@ public class Run {
 	}
 	
 	public static void main(String[] args) {
-//		mergeSort();
-//		quickSort();
-//		insertionSort();
-//		selectionSort();
-//		bubleSort();
+		mergeSort();
+		quickSort();
+		insertionSort();
+		selectionSort();
+		bubleSort();
 		bucketSort();
 		
 		

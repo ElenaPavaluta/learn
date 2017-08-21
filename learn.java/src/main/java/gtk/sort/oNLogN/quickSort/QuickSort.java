@@ -1,8 +1,8 @@
-package sort.oNLogN.quickSort;
+package gtk.sort.oNLogN.quickSort;
 
 import java.util.List;
 
-import sort.util.Util;
+import gtk.sort.util.Util;
 
 public class QuickSort<E extends Comparable<E>> {
 

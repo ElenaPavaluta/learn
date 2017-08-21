@@ -1,8 +1,8 @@
-package sort.oNSquare;
+package gtk.sort.oNSquare;
 
 import java.util.List;
 
-import sort.util.Util;
+import gtk.sort.util.Util;
 
 /**
  * Selection sort is an O(n^2) sorting algorithm that works by

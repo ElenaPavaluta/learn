@@ -1,10 +1,10 @@
-package sort.oNPlusK;
+package gtk.sort.oNPlusK;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import sort.oNSquare.InsertionSort;
+import gtk.sort.oNSquare.InsertionSort;
 
 /**
  * http://www.growingwiththeweb.com/2015/06/bucket-sort.html

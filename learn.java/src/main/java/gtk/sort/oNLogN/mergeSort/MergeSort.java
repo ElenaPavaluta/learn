@@ -1,4 +1,4 @@
-package sort.oNLogN.mergeSort;
+package gtk.sort.oNLogN.mergeSort;
 
 import java.util.ArrayList;
 import java.util.List;

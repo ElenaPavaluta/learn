@@ -1,12 +1,12 @@
-package sort.oNSquare;
+package gtk.sort.oNSquare;
 
 import java.util.List;
 
-import sort.util.Util;
+import gtk.sort.util.Util;
 
 /**
  * Bubble sort is an O(n^2)O sorting algorithm that gets its name because it
- * “bubbles up” elements to their correct positions. This is done by iterating
+ * ï¿½bubbles upï¿½ elements to their correct positions. This is done by iterating
  * through the list multiple times, swapping elements with their neighbours if
  * they are not in the correct order.
  *

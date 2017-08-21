@@ -1,11 +1,11 @@
-package uLink.tlv;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
+package interview.uLink.tlv;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.junit.Assert.assertTrue;
 
 public class TestTLV {
 

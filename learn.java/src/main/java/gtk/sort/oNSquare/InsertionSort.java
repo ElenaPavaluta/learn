@@ -1,4 +1,4 @@
-package sort.oNSquare;
+package gtk.sort.oNSquare;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package uLink.square;
+package interview.uLink.square;
 
 import static org.junit.Assert.assertEquals;
 

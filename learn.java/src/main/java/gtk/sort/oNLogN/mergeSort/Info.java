@@ -1,4 +1,4 @@
-package sort.oNLogN.mergeSort;
+package gtk.sort.oNLogN.mergeSort;
 
 /**
  * O(nLog n)

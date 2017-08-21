@@ -1,4 +1,4 @@
-package sort.util;
+package gtk.sort.util;
 
 import java.util.List;
 

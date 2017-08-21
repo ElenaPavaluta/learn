@@ -19,8 +19,15 @@
   			</plugin>
   		</plugins>
   		
-  </build>
-  
-  
-    <artifactId>learn.java</artifactId>
+  	</build>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+	</dependencies>
+
+
+	<artifactId>learn.java</artifactId>
 </project>
