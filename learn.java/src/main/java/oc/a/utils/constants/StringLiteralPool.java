@@ -1,4 +1,4 @@
-package certification.oca.utils.constants;
+package oc.a.utils.constants;
 
 public class StringLiteralPool {
 

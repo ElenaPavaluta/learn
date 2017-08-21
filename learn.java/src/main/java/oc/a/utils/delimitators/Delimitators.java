@@ -1,4 +1,4 @@
-package certification.oca.utils.delimitators;
+package oc.a.utils.delimitators;
 
 public class Delimitators {
 	
