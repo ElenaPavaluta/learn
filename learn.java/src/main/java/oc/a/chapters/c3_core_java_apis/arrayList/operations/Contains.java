@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.arrayList.operations;
+package oc.a.chapters.c3_core_java_apis.arrayList.operations;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

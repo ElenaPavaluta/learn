@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.interfaceVariables;
+package oc.a.chapters.c5_class_design.implementingInterfaces.interfaceVariables;
 
 import utils.delimitators.Delimitators;
 

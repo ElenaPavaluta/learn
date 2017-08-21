@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.unaryOperators;
+package oc.a.chapters.c2_operators_and_statements.unaryOperators;
 
 /**
  * The logical complement operator, !, flips the value of ONLY boolean expression.

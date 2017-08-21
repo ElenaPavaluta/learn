@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.compilerError;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.compilerError;
 
 public interface IA {
 

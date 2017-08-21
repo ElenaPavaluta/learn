@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.definingAnInterface;
+package oc.a.chapters.c5_class_design.implementingInterfaces.definingAnInterface;
 
 // public final interface CanCrowl { //compiler error
 

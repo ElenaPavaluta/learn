@@ -1,7 +1,7 @@
-package chapters.c5_class_design.implementingInterfaces.ownEx.p2;
+package oc.a.chapters.c5_class_design.implementingInterfaces.ownEx.p2;
 
-import chapters.c5_class_design.implementingInterfaces.ownEx.p.IA;
-import chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod.ownEx.ExceptionB;
+import oc.a.chapters.c5_class_design.implementingInterfaces.ownEx.p.IA;
+import oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod.ownEx.ExceptionB;
 
 public class A extends AA {
 

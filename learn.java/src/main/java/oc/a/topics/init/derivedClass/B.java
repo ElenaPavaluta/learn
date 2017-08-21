@@ -1,6 +1,6 @@
-package topics.init.derivedClass;
+package oc.a.topics.init.derivedClass;
 
-import topics.init.simpleClass.A;
+import oc.a.topics.init.simpleClass.A;
 
 public class B extends A{
 

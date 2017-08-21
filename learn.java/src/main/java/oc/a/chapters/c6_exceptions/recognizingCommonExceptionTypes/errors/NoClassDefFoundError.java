@@ -1,7 +1,7 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
 
 /**
- * NoClassDefFoundError occurs when Java can’t find the class at runtime
+ * NoClassDefFoundError occurs when Java canï¿½t find the class at runtime
  *
  */
 class NoClassDefFoundError {

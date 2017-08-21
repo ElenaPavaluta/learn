@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.overloadingMethods;
+package oc.a.chapters.c4_methods_and_encapsulation.overloadingMethods;
 
 public class OverloadingAndVarargs {
 
@@ -24,8 +24,8 @@ public class OverloadingAndVarargs {
 	}
 
 	public static void main(String[] args) {
-		OverloadingAndVarargs.A a = new OverloadingAndVarargs().new A();
-		OverloadingAndVarargs.B b = new OverloadingAndVarargs().new B();
+		A a = new OverloadingAndVarargs().new A();
+		B b = new OverloadingAndVarargs().new B();
 
 		int[] arr = { 1, 2, 3 };
 

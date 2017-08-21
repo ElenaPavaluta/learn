@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.definingConstructors.withoutNoArgsConstr;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.definingConstructors.withoutNoArgsConstr;
 
 /**
  * 

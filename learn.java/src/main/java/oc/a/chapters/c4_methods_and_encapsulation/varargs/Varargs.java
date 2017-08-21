@@ -1,7 +1,7 @@
-package chapters.c4_methods_and_encapsulation.varargs;
+package oc.a.chapters.c4_methods_and_encapsulation.varargs;
 
 /**
- * A vararg parameter must be the last element in a method’s parameter list.
+ * A vararg parameter must be the last element in a methodï¿½s parameter list.
  *
  */
 public class Varargs {

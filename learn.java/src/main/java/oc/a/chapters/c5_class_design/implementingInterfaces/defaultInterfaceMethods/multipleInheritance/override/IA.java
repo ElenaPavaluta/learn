@@ -1,6 +1,6 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.override;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.override;
 
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.A;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.A;
 
 public interface IA {
 

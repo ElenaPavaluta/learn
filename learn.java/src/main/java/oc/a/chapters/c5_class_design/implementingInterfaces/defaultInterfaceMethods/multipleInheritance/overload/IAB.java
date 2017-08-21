@@ -1,7 +1,7 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.overload;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.overload;
 
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.B;
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.B;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
 
 public interface IAB extends IA, IB{
 

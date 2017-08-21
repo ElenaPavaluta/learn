@@ -1,7 +1,7 @@
-package chapters.c5_class_design.understantingPolymorfism.castingObjects;
+package oc.a.chapters.c5_class_design.understantingPolymorfism.castingObjects;
 
 /**
- * 1. Casting an object from a subclass to a superclass doesn’t require an
+ * 1. Casting an object from a subclass to a superclass doesnï¿½t require an
  * explicit cast.
  * 
  * 2. Casting an object from a superclass to a subclass requires an explicit

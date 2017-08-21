@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.javaArrays.creatingAnArrayOReferenceVariables;
+package oc.a.chapters.c3_core_java_apis.javaArrays.creatingAnArrayOReferenceVariables;
 
 import java.util.Arrays;
 
@@ -33,7 +33,7 @@ public class Array {
 											// compiler, this is just fine. A
 											// StringBuilder object can clearly
 											// go in an Object[]. The problem is
-											// that we don’t actually have an
+											// that we donï¿½t actually have an
 											// Object[]. We have a String[]
 											// referred to from an Object[]
 											// variable. At runtime, the code

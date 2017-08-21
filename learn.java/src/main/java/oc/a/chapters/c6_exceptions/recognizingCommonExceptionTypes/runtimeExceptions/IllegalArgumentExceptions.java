@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.runtimeExceptions;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.runtimeExceptions;
 
 public class IllegalArgumentExceptions {
 

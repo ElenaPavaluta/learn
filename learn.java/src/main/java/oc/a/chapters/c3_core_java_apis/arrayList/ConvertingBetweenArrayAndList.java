@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.arrayList;
+package oc.a.chapters.c3_core_java_apis.arrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,8 +51,8 @@ public class ConvertingBetweenArrayAndList {
 	static void m2() {
 		String[] array = { "hawk", "robin" }; // [hawk, robin]
 		List<String> lst = Arrays.asList(array); // returns fixed size list.
-													// Note that it isn’t the
-													// java.util.ArrayList we’ve
+													// Note that it isnï¿½t the
+													// java.util.ArrayList weï¿½ve
 													// grown used to. It is a fi
 													// xed-size, backed version
 													// of a List.

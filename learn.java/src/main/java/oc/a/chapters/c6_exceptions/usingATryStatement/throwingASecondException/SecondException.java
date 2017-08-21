@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.usingATryStatement.throwingASecondException;
+package oc.a.chapters.c6_exceptions.usingATryStatement.throwingASecondException;
 
 import java.io.FileReader;
 import java.io.IOException;

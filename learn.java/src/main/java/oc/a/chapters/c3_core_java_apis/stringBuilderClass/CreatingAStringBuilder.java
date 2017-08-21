@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.stringBuilderClass;
+package oc.a.chapters.c3_core_java_apis.stringBuilderClass;
 
 public class CreatingAStringBuilder {
 

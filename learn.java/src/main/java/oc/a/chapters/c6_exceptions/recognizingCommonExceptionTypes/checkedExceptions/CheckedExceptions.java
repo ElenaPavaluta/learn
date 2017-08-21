@@ -1,10 +1,10 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.checkedExceptions;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.checkedExceptions;
 
 /**
  * FileNotFoundException Thrown programmatically when code tries to reference a
  * file that does not exist
  * 
- * IOException Thrown programmatically when there’s a problem reading or writing
+ * IOException Thrown programmatically when thereï¿½s a problem reading or writing
  * a file
  *
  *

@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.definingConstructors;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.definingConstructors;
 
 /**
  * In Java, the first statement of every constructor is either a call to another

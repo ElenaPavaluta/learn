@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.overloadingMethods;
+package oc.a.chapters.c4_methods_and_encapsulation.overloadingMethods;
 
 /**
  * Order Java uses to choose the right overloaded method
@@ -53,16 +53,16 @@ public class Overloading {
 	}
 
 	public static void main(String[] args) {
-		Overloading.A a = new Overloading.A();
+		A a = new A();
 		int i = 0b011;
 		a.fly(i); // long
 
-		Overloading.Glider g = new Overloading().new Glider();
+		Glider g = new Overloading().new Glider();
 		g.glide("a"); // 1
 		g.glide("a", "b"); // 4
 		g.glide("a", "b", "c"); // 2
 
-		Overloading.TooManyConversions c = new Overloading().new TooManyConversions();
+		TooManyConversions c = new Overloading().new TooManyConversions();
 		
 		/*
 		 * Java is happy to convert the int 4 to a long 4 or an Integer 4. It

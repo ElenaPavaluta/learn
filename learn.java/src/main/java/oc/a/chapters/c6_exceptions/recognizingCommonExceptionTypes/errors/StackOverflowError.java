@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
 
 /**
  * Since the method calls itself, it will never end. Eventually, Java runs out

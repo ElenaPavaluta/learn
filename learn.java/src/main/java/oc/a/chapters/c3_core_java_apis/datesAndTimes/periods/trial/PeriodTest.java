@@ -1,8 +1,7 @@
-package chapters.c3_core_java_apis.datesAndTimes.periods.trial;
+package oc.a.chapters.c3_core_java_apis.datesAndTimes.periods.trial;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.Period;
 
 import utils.delimitators.Delimitators;

@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods;
 
 /**
  * 1. A default method may only be declared within an interface and not within a

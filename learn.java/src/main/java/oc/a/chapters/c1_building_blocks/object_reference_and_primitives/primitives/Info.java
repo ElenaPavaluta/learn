@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.object_reference_and_primitives.primitives;
+package oc.a.chapters.c1_building_blocks.object_reference_and_primitives.primitives;
 
 public class Info {
 

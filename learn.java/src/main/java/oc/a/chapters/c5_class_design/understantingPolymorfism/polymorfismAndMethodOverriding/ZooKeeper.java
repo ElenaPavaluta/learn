@@ -1,4 +1,4 @@
-package chapters.c5_class_design.understantingPolymorfism.polymorfismAndMethodOverriding;
+package oc.a.chapters.c5_class_design.understantingPolymorfism.polymorfismAndMethodOverriding;
 
 class ZooKeeper {
 

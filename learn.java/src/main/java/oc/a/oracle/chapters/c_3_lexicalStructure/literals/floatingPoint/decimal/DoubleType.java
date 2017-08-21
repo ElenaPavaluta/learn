@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure.literals.floatingPoint.decimal;
+package oc.a.oracle.chapters.c_3_lexicalStructure.literals.floatingPoint.decimal;
 
 import static utils.print.Print.*;
 

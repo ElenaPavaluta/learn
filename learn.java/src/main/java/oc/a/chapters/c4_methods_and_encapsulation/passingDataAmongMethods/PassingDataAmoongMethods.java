@@ -1,7 +1,7 @@
-package chapters.c4_methods_and_encapsulation.passingDataAmongMethods;
+package oc.a.chapters.c4_methods_and_encapsulation.passingDataAmongMethods;
 
 /**
- * Java is a “pass-by-value” language. This means that a copy of the variable is
+ * Java is a ï¿½pass-by-valueï¿½ language. This means that a copy of the variable is
  * made and the method receives that copy.
  *
  */

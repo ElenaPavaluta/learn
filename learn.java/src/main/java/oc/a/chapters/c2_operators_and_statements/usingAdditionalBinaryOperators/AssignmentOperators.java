@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.usingAdditionalBinaryOperators;
+package oc.a.chapters.c2_operators_and_statements.usingAdditionalBinaryOperators;
 
 public class AssignmentOperators {
 

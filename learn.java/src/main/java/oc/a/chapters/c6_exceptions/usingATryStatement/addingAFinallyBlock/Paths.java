@@ -1,6 +1,6 @@
-package chapters.c6_exceptions.usingATryStatement.addingAFinallyBlock;
+package oc.a.chapters.c6_exceptions.usingATryStatement.addingAFinallyBlock;
 
-import chapters.c6_exceptions.understandingExceptions.checked.CheckedException;
+import oc.a.chapters.c6_exceptions.understandingExceptions.checked.CheckedException;
 import utils.delimitators.Delimitators;
 
 public class Paths {

@@ -1,9 +1,9 @@
-package chapters.c3_core_java_apis.javaArrays;
+package oc.a.chapters.c3_core_java_apis.javaArrays;
 
 import java.util.Arrays;
 
 /**
- * Java also provides a convenient way to search—but only if the array is
+ * Java also provides a convenient way to searchï¿½but only if the array is
  * already sorted.
  *
  */

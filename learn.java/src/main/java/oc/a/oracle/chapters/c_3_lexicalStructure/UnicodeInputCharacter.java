@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure;
+package oc.a.oracle.chapters.c_3_lexicalStructure;
 
 public class UnicodeInputCharacter {
 

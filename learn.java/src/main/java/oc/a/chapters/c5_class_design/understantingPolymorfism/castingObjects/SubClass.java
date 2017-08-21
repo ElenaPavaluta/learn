@@ -1,4 +1,4 @@
-package chapters.c5_class_design.understantingPolymorfism.castingObjects;
+package oc.a.chapters.c5_class_design.understantingPolymorfism.castingObjects;
 
 class SubClass extends SuperClass{
 

@@ -1,6 +1,4 @@
-package chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
-
-import static java.util.Arrays.asList;
+package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
 
 /*
  * compiler error: Arrays is a class. We can import all static fields in methods by using: import static java.util.Arrays.*, but not a whole class

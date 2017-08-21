@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.errors;
 
 /**
  * The ExceptionInInitializerError is an error because Java failed to load the

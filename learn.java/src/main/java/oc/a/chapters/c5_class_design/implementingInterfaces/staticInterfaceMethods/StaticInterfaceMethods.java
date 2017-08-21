@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.staticInterfaceMethods;
+package oc.a.chapters.c5_class_design.implementingInterfaces.staticInterfaceMethods;
 
 /**
  * 1. Like all methods in an interface, a static method is assumed to be public

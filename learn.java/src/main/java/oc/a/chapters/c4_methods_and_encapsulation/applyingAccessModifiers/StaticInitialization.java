@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
+package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
 
 /**
  * The static initializer runs when the class is first used.

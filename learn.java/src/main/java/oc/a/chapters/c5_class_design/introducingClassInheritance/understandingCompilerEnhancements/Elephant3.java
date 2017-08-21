@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
 
 /**
  * This code compiles because we have added a constructor with an explicit call

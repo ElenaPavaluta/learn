@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure.literals.floatingPoint.hex;
+package oc.a.oracle.chapters.c_3_lexicalStructure.literals.floatingPoint.hex;
 import static utils.print.Print.*;
 
 public class FlotingPoint {

@@ -1,4 +1,4 @@
-package chapters.c5_class_design.creatingAbstractClasses;
+package oc.a.chapters.c5_class_design.creatingAbstractClasses;
 
 /**
  * 1. Abstract classes cannot be instantiated directly.

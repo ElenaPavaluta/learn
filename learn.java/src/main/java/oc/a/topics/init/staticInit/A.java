@@ -1,4 +1,4 @@
-package topics.init.staticInit;
+package oc.a.topics.init.staticInit;
 
 class A {
 

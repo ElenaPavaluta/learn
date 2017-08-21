@@ -1,13 +1,13 @@
-package chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
+package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
 
 /**
  * You can use an instance of the object to call a static method. The compiler
  * checks for the type of the reference and uses that instead of the
- * object—which is sneaky of Java
+ * objectï¿½which is sneaky of Java
  * 
  * Remember to look at the reference type for a variable when you see a static
  * method or variable. The exam creators will try to trick you into thinking a
- * NullPointerException is thrown because the variable happens to be null. Don’t
+ * NullPointerException is thrown because the variable happens to be null. Donï¿½t
  * be fooled!
  *
  */

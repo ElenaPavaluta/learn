@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.applyingClassAccessModofiers;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.applyingClassAccessModofiers;
 
 /**
  * Only public and default package-level class access modifiers can be applied

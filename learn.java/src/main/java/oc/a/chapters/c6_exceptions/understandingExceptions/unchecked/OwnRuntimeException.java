@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.understandingExceptions.unchecked;
+package oc.a.chapters.c6_exceptions.understandingExceptions.unchecked;
 
 /**
  * A runtime exception: RuntimeException class and its subclasses (accessing an
@@ -10,7 +10,7 @@ package chapters.c6_exceptions.understandingExceptions.unchecked;
  * 
  * A runtime (unchecked) exception is a specific type of exception. All
  * exceptions occur at the time that the program is run. (The alternative is
- * compile time, which would be a compiler error.) People don’t refer to them as
+ * compile time, which would be a compiler error.) People donï¿½t refer to them as
  * run time exceptions because that would be too easy to confuse with runtime!
  * When you see runtime, it means unchecked.
  */

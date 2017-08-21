@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.hidden;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.hidden;
 
 public class Kangaroo extends Marsupial{
 

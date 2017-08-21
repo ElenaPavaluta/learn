@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.usingATryStatement.addingAFinallyBlock;
+package oc.a.chapters.c6_exceptions.usingATryStatement.addingAFinallyBlock;
 
 public class Syntax {
 

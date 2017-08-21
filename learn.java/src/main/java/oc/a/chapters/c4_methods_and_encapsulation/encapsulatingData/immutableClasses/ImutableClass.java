@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.encapsulatingData.immutableClasses;
+package oc.a.chapters.c4_methods_and_encapsulation.encapsulatingData.immutableClasses;
 
 /**
  * Remember, immutable is only measured after the object is constructed.

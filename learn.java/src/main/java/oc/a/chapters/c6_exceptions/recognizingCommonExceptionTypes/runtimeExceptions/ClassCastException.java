@@ -1,6 +1,4 @@
-package chapters.c6_exceptions.recognizingCommonExceptionTypes.runtimeExceptions;
-
-import chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod.ownEx.O;
+package oc.a.chapters.c6_exceptions.recognizingCommonExceptionTypes.runtimeExceptions;
 
 public class ClassCastException {
 

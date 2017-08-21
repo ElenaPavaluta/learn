@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation;
+package oc.a.chapters.c4_methods_and_encapsulation;
 
 public class ClassA {
 

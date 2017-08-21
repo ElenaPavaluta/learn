@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod;
 
 /**
  * 1. The method in the child class must have the same signature as the method

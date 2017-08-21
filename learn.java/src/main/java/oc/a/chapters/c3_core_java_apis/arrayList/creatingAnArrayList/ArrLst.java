@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.arrayList.creatingAnArrayList;
+package oc.a.chapters.c3_core_java_apis.arrayList.creatingAnArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

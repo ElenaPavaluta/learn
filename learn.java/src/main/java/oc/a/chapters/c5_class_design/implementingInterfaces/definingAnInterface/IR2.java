@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.definingAnInterface;
+package oc.a.chapters.c5_class_design.implementingInterfaces.definingAnInterface;
 
 public interface IR2 {  //abstract assumed
 	

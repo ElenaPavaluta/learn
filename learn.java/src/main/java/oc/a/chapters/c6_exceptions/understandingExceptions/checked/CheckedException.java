@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.understandingExceptions.checked;
+package oc.a.chapters.c6_exceptions.understandingExceptions.checked;
 
 /**
  * A checked exception: Exception and all subclasses that do not extend

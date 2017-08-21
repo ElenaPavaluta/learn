@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.variableScope;
+package oc.a.chapters.c1_building_blocks.variableScope;
 
 public class Scope {
 

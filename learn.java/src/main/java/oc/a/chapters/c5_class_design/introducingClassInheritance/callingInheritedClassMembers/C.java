@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.callingInheritedClassMembers;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.callingInheritedClassMembers;
 
 public class C extends B {
 

@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements;
+package oc.a.chapters.c2_operators_and_statements;
 
 public class Test {
 

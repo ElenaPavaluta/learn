@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.understandingAdvancedFlowControl;
+package oc.a.chapters.c2_operators_and_statements.understandingAdvancedFlowControl;
 
 public class NestedLoops {
 

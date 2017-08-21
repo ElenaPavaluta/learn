@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives;
+package oc.a.chapters.c3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives;
 
 public class Array {
 

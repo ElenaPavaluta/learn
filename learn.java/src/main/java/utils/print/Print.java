@@ -1,4 +1,4 @@
-package oc.a.utils.print;
+package utils.print;
 
 public class Print {
 

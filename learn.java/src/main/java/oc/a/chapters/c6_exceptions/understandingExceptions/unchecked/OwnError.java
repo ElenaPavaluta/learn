@@ -1,8 +1,8 @@
-package chapters.c6_exceptions.understandingExceptions.unchecked;
+package oc.a.chapters.c6_exceptions.understandingExceptions.unchecked;
 
 /**
  * Error means something went so horribly wrong that your program should not
- * attempt to recover from it. For example, the disk drive “disappeared.”
+ * attempt to recover from it. For example, the disk drive ï¿½disappeared.ï¿½
  * 
  * 
  * Okay for the program to catch: No

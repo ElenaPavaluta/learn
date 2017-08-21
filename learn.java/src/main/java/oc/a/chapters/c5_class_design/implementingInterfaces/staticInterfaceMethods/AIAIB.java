@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.staticInterfaceMethods;
+package oc.a.chapters.c5_class_design.implementingInterfaces.staticInterfaceMethods;
 
 class AIAIB implements IA, IB { // no compiler error: because the interface
 								// static methods are not inherited by the

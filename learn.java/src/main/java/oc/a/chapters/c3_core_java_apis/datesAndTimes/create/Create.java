@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.datesAndTimes.create;
+package oc.a.chapters.c3_core_java_apis.datesAndTimes.create;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,10 +8,10 @@ import java.time.ZonedDateTime;
 
 public class Create {
 
-	// Contains just a date—no time and no time zone
+	// Contains just a dateï¿½no time and no time zone
 	static LocalDate localDate = LocalDate.of(2017, Month.APRIL, 5);
 
-	// Contains just a time—no date and no time zone
+	// Contains just a timeï¿½no date and no time zone
 	static LocalTime localTime = LocalTime.of(14, 39, 00);
 
 	// Contains both a date and time but no time zone

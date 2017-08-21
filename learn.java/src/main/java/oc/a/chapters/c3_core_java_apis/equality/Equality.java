@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.equality;
+package oc.a.chapters.c3_core_java_apis.equality;
 
 public class Equality {
 

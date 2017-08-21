@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.class_structure.comments;
+package oc.a.chapters.c1_building_blocks.class_structure.comments;
 
 public class Comments {
 	// single lime comment

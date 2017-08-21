@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure.literals.string.otherPkg;
+package oc.a.oracle.chapters.c_3_lexicalStructure.literals.string.otherPkg;
 
 public class Other {
 

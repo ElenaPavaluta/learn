@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.creatingConstructors;
+package oc.a.chapters.c4_methods_and_encapsulation.creatingConstructors;
 
 public class Bunny {
 

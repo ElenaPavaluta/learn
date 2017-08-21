@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
 
 /**
  * Compiler error: due to the fact that the Mammal class doen't have a no arg

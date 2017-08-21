@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.main_method;
+package oc.a.chapters.c1_building_blocks.main_method;
 
 public class Zoo {
 

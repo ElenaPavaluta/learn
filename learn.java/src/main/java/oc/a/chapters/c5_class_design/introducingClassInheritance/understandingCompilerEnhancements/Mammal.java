@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
 
 public class Mammal {
 

@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure.literals.string;
+package oc.a.oracle.chapters.c_3_lexicalStructure.literals.string;
 
 /*
  * A string literal it's a reference to an instance of a class String
@@ -18,7 +18,7 @@ public class StringLiteral {
 
 		System.out.println(hello == "Hello");  //true
 		System.out.println(Other.hello == hello);  //true
-		System.out.println(oracle.chapters.c_3_lexicalStructure.literals.string.Other.hello == hello);  //true
+		System.out.println( Other.hello == hello);  //true
 
 		System.out.println(hello == ("Hel" + "lo")); // true, an expression
 														// evaluated at compile

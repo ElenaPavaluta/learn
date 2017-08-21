@@ -1,4 +1,4 @@
-package topics.init.simpleClass;
+package oc.a.topics.init.simpleClass;
 
 public class Aobj {
 

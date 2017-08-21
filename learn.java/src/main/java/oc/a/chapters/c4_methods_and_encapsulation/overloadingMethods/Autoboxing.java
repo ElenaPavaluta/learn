@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.overloadingMethods;
+package oc.a.chapters.c4_methods_and_encapsulation.overloadingMethods;
 
 /**
  * Java will convert a primitive int to an object Integer to add it to an
@@ -26,8 +26,8 @@ public class Autoboxing {
 	}
 
 	public static void main(String[] args) {
-		Autoboxing.A a = new Autoboxing.A();
-		Autoboxing.B b = new Autoboxing.B();
+		A a = new A();
+		B b = new B();
 		
 		int i = 007;
 		Integer wrapper = Integer.valueOf(i);

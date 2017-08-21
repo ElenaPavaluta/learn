@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.binaryArithmeticOperators;
+package oc.a.chapters.c2_operators_and_statements.binaryArithmeticOperators;
 
 /**
  * Numeric Promotion Rules
@@ -8,11 +8,11 @@ package chapters.c2_operators_and_statements.binaryArithmeticOperators;
  * one of the values to the larger of the two data types.
  * 
  * 2. If one of the values is integral and the other is floating-point, Java
- * will automatically promote the integral value to the floating-point value’s
+ * will automatically promote the integral value to the floating-point valueï¿½s
  * data type.
  * 
  * 3. Smaller data types, namely byte, short, and char, are first promoted to
- * int any time they’re used with a Java binary arithmetic operator, even if
+ * int any time theyï¿½re used with a Java binary arithmetic operator, even if
  * neither of the operands is int.
  * 
  * 

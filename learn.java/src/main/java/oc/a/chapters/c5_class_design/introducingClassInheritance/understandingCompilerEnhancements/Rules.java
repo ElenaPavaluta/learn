@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingCompilerEnhancements;
 
 /**
  * 1. The first statement of every constructor is a call to another constructor
@@ -15,12 +15,12 @@ package chapters.c5_class_design.introducingClassInheritance.understandingCompil
  * no-argument super() as the first statement of the constructor.
  * 
  * 
- * 4. If the parent doesn’t have a no-argument constructor and the child doesn’t
+ * 4. If the parent doesnï¿½t have a no-argument constructor and the child doesnï¿½t
  * define any constructors, the compiler will throw an error and try to insert a
  * default no-argument constructor into the child class.
  * 
  * 
- * 5. If the parent doesn’t have a no-argument constructor, the compiler
+ * 5. If the parent doesnï¿½t have a no-argument constructor, the compiler
  * requires an explicit call to a parent constructor in each child constructor.
  * 
  * 

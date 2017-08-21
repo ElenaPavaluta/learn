@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
+package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
 
 /**
  * Each class has a copy of the instance variables. There is only one copy of
@@ -11,7 +11,7 @@ package chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
  * Parameters and local variables go on the stack.
  * 
  * 
- * Just remember that only data gets its “own copy.” There is no need to
+ * Just remember that only data gets its ï¿½own copy.ï¿½ There is no need to
  * duplicate copies of the code itself.
  *
  */

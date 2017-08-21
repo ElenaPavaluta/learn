@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.inheritingAnInterface.case2;
+package oc.a.chapters.c5_class_design.implementingInterfaces.inheritingAnInterface.case2;
 
 public class C implements IO, IH {
 

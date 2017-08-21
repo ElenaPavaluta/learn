@@ -1,8 +1,6 @@
-package chapters.c1_building_blocks.pkg_declaration_and_imports.naming_conflicts;
+package oc.a.chapters.c1_building_blocks.pkg_declaration_and_imports.naming_conflicts;
 
-import java.util.*;
 import java.util.Date;
-import java.sql.*;
 
 /*
  * Explicily importing a class name takes precedence over any wildcards present
@@ -19,7 +17,7 @@ class Conflicts{
 }
 
 class Conflicts2{
-	java.util.Date d;
+	Date d;
 	java.sql.Date d2;
 }
 

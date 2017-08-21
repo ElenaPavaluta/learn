@@ -1,4 +1,4 @@
-package topics.init.derivedClass;
+package oc.a.topics.init.derivedClass;
 
 public class Bobj {
 

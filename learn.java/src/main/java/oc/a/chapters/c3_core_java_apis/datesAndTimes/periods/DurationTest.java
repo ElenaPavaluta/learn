@@ -1,7 +1,6 @@
-package chapters.c3_core_java_apis.datesAndTimes.periods;
+package oc.a.chapters.c3_core_java_apis.datesAndTimes.periods;
 
 import java.time.Duration;
-import java.time.LocalDate;
 
 public class DurationTest {
 

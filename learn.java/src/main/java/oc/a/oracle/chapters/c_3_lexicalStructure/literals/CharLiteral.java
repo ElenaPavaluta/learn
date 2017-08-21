@@ -1,4 +1,4 @@
-package oracle.chapters.c_3_lexicalStructure.literals;
+package oc.a.oracle.chapters.c_3_lexicalStructure.literals;
 import static utils.print.Print.*;
 public class CharLiteral {
 

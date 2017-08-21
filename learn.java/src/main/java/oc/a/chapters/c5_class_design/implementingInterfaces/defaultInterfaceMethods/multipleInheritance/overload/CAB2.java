@@ -1,8 +1,8 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.overload;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.overload;
 
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.B;
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.I;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.B;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.I;
 
 public class CAB2 extends AAB {
 

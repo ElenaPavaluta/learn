@@ -1,6 +1,6 @@
-package chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.override;
+package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.override;
 
-import chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
+import oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMethods.multipleInheritance.C;
 
 /**
  * Because the method default m() has the same signature both in IA and IB,

@@ -1,4 +1,4 @@
-package chapters.c5_class_design.implementingInterfaces.inheritingAnInterface.case1;
+package oc.a.chapters.c5_class_design.implementingInterfaces.inheritingAnInterface.case1;
 
 /**
  * Compile time error: both inherited interfaces have a similar method signature

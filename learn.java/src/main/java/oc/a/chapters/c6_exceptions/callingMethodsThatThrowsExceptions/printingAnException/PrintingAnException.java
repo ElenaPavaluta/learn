@@ -1,4 +1,4 @@
-package chapters.c6_exceptions.callingMethodsThatThrowsExceptions.printingAnException;
+package oc.a.chapters.c6_exceptions.callingMethodsThatThrowsExceptions.printingAnException;
 
 import utils.delimitators.Delimitators;
 

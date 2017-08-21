@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.creatingAndManipulatingStrings.immutability;
+package oc.a.chapters.c3_core_java_apis.creatingAndManipulatingStrings.immutability;
 
 public class ClassWithPrivateConstructorAndStaticMethodFactory {
 

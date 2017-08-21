@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.creatingAndManipulatingStrings.importantStringMethods;
+package oc.a.chapters.c3_core_java_apis.creatingAndManipulatingStrings.importantStringMethods;
 
 public class ToLowerCaseAndToUpperCase {
 	static String s = "Logitech";

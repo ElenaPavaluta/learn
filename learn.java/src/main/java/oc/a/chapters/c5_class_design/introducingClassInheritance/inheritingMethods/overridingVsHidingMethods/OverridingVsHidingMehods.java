@@ -1,6 +1,6 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods;
 
-import chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.hidden.Kangaroo;
+import oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.hidden.Kangaroo;
 
 /**
  * At runtime the child version of an overridden method is always executed for
@@ -23,7 +23,7 @@ public class OverridingVsHidingMehods {
 
 	// override
 	static void m2() {
-		chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden.Kangaroo k = new chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden.Kangaroo();
+		oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden.Kangaroo k = new oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden.Kangaroo();
 		k.getMarsupialDesc(); // marsupial: true
 		k.getKangarooDesc(); // Kangaroo: true
 	}

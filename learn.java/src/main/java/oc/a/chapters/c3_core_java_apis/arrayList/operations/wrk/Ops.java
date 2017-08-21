@@ -1,4 +1,4 @@
-package chapters.c3_core_java_apis.arrayList.operations.wrk;
+package oc.a.chapters.c3_core_java_apis.arrayList.operations.wrk;
 
 /**
  * boolean add(E)

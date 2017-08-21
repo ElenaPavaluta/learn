@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingVariables;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingVariables;
 
 import utils.delimitators.Delimitators;
 
@@ -7,9 +7,9 @@ import utils.delimitators.Delimitators;
  * child class
  * 
  * 
- * As when hiding a static method, if you’re referencing the variable from
+ * As when hiding a static method, if youï¿½re referencing the variable from
  * within the parent class, the variable defined in the parent class is used.
- * Alternatively, if you’re referencing the variable from within a child class,
+ * Alternatively, if youï¿½re referencing the variable from within a child class,
  * the variable defined in the child class is used.
  *
  */

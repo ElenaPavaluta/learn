@@ -1,4 +1,4 @@
-package oc.a.utils.constants;
+package utils.constants;
 
 public class StringLiteralPool {
 

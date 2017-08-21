@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.creating_objects.order_of_initialization;
+package oc.a.chapters.c1_building_blocks.creating_objects.order_of_initialization;
 
 /*
  * Fields and instance initializer blocks are run in the order in which they appear in

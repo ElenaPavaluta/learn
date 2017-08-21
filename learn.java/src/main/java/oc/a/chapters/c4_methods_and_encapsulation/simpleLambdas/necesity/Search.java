@@ -1,4 +1,4 @@
-package chapters.c4_methods_and_encapsulation.simpleLambdas.necesity;
+package oc.a.chapters.c4_methods_and_encapsulation.simpleLambdas.necesity;
 
 import java.util.ArrayList;
 import java.util.List;

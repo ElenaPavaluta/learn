@@ -1,10 +1,10 @@
-package chapters.c4_methods_and_encapsulation.simpleLambdas.predicates;
+package oc.a.chapters.c4_methods_and_encapsulation.simpleLambdas.predicates;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import chapters.c4_methods_and_encapsulation.simpleLambdas.necesity.Animal;
+import oc.a.chapters.c4_methods_and_encapsulation.simpleLambdas.necesity.Animal;
 
 /**
  * public interface Predicate<T> { boolean test(T t); }

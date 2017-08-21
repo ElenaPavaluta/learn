@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingVariables;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingVariables;
 
 public class Mouse extends Rodent{
 

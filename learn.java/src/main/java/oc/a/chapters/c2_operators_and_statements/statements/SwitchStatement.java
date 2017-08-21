@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.statements;
+package oc.a.chapters.c2_operators_and_statements.statements;
 
 /**
  * Data types supported by switch statements include the following:

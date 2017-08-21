@@ -1,4 +1,4 @@
-package chapters.c1_building_blocks.default_initialization_of_vars;
+package oc.a.chapters.c1_building_blocks.default_initialization_of_vars;
 
 import static utils.print.Print.print;
 

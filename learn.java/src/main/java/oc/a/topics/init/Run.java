@@ -1,8 +1,7 @@
-package topics.init;
+package oc.a.topics.init;
 
-import topics.init.derivedClass.B;
-import topics.init.simpleClass.A;
-import topics.init.simpleClass.Aobj;
+import oc.a.topics.init.simpleClass.A;
+import oc.a.topics.init.simpleClass.Aobj;
 
 public class Run {
 

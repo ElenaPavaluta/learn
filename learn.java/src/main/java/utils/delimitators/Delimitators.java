@@ -1,4 +1,4 @@
-package oc.a.utils.delimitators;
+package utils.delimitators;
 
 public class Delimitators {
 	

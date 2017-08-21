@@ -1,4 +1,4 @@
-package chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden;
+package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingMethods.overridingVsHidingMethods.overriden;
 
 public class Marsupial {
 

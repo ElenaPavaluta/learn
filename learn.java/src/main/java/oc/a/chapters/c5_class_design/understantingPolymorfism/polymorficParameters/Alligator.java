@@ -1,4 +1,4 @@
-package chapters.c5_class_design.understantingPolymorfism.polymorficParameters;
+package oc.a.chapters.c5_class_design.understantingPolymorfism.polymorficParameters;
 
 public class Alligator extends Reptile{
 

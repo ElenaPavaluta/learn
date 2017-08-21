@@ -1,4 +1,4 @@
-package chapters.c2_operators_and_statements.statements;
+package oc.a.chapters.c2_operators_and_statements.statements;
 
 import java.util.Date;
 import java.util.HashMap;
