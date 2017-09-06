@@ -3,7 +3,7 @@ package oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.genericInter
 import oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.Elephant;
 import oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.Robot;
 
-public class ShipableImpl2 implements Shipable<Robot>{
+class ShipableImpl2 implements Shipable<Robot>{
 
     @Override
     public void ship(Robot robot) {
