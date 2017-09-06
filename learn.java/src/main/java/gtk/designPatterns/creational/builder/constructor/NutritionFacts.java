@@ -2,7 +2,7 @@ package gtk.designPatterns.creational.builder.constructor;
 
 /**
  * Builder pattern is a good choice when designing classes whose constructors or
- * static factory methods would have more than a handful of parameters
+ * static factory interfaceMethods would have more than a handful of parameters
  */
 
 public class NutritionFacts {
@@ -17,7 +17,7 @@ public class NutritionFacts {
 		// Required parameters
 		private final int servingSize;
 		private final int servings;
-		// Optional parameters - initialized to default values
+		// Optional parameters - initialized to defaulT values
 		private int calories = 0;
 		private int fat = 0;
 		private int carbohydrate = 0;

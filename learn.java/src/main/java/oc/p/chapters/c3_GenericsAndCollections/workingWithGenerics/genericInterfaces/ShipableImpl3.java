@@ -7,12 +7,4 @@ class ShipableImpl3<U> implements  Shipable<U>{
 
     }
 
-    @Override
-    public <E> void ship2(E e) {
-
-    }
-
-    public static void main(String[] args) {
-
-    }
 }

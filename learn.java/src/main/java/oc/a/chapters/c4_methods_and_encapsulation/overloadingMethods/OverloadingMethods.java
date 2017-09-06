@@ -2,7 +2,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.overloadingMethods;
 
 
 /**
- * Everything other than the method signature can vary for overloaded methods.
+ * Everything other than the method signature can vary for overloaded interfaceMethods.
  * This means there can be different access modifiers, specifiers (like static),
  * return types, and exception lists.
  *

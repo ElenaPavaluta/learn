@@ -2,12 +2,12 @@ package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingC
 
 public class Equivalent {
 
-	//default no args constructor
+	//defaulT no args constructor
 	class Donkey {
 
 	}
 
-	//defined no args constr, default call to super
+	//defined no args constr, defaulT call to super
 	class Donkey2 {
 		public Donkey2() {
 		}

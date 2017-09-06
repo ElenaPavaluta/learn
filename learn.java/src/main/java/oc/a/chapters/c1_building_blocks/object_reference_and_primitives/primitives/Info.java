@@ -4,6 +4,6 @@ public class Info {
 
 	// https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html
 
-	// When a number is present in the code, it is called a literal. By default,
+	// When a number is present in the code, it is called a literal. By defaulT,
 	// Java assumes you are defining an int value with a literal.
 }

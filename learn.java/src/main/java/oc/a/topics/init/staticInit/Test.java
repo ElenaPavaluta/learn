@@ -28,12 +28,12 @@ class Test {
 		// static block in A
 		// temp in A
 
-		System.out.println("\nm2");
+		System.out.println("\nm3");
 		m2();
 		// static block in A --> it's already initialized in the method above
 		// temp in A
 
-		System.out.println("\nm3");
+		System.out.println("\nm4");
 		m3();
 		// static block in B
 		// temp in B

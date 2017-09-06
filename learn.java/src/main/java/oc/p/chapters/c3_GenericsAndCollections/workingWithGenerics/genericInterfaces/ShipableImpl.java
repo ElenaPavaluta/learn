@@ -10,21 +10,5 @@ class ShipableImpl implements Shipable{
 
     }
 
-    @Override
-    public void ship2(Object o) {
 
-    }
-
-    public static void main(String[] args) {
-        Shipable.staticShip ( "a" );
-        Shipable.staticShip2 ( LocalTime.now () );
-
-        ShipableImpl si = new ShipableImpl ();
-//        si.staticShip("a");  //compiler error: the static methods aren't available for an impl
-
-        si.ship ( null );
-        si.ship2 ( "a" );
-        si.defaultShip ( LocalTime.now () );
-        si.defaultShip2 ( new ArrayList<ShipableImpl> (  ) );
-    }
 }

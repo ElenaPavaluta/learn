@@ -17,7 +17,7 @@ public class C implements StaticInterfaceMethods {
 
 	static void m2() {
 		/*
-		 * A default interface method can be accessed only through an
+		 * A defaulT interface method can be accessed only through an
 		 * implementing class
 		 */
 		// StaticInterfaceMethods.defaultMethod();

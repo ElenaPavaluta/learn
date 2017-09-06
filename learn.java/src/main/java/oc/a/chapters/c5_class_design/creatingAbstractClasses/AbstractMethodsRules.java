@@ -1,11 +1,11 @@
 package oc.a.chapters.c5_class_design.creatingAbstractClasses;
 
 /**
- * 1. Abstract methods may only be defined in abstract classes.
+ * 1. Abstract interfaceMethods may only be defined in abstract classes.
  * 
- * 2. Abstract methods may not be declared private or final.
+ * 2. Abstract interfaceMethods may not be declared private or final.
  * 
- * 3. Abstract methods must not provide a method body/implementation in the
+ * 3. Abstract interfaceMethods must not provide a method body/implementation in the
  * abstract class for which is it declared.
  * 
  * 4. Implementing an abstract method in a subclass follows the same rules for

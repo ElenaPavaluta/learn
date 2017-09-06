@@ -16,7 +16,7 @@ public class AssignmentOperators {
 
 		/*
 		 * compiler error: the value it's too great to fit in an int (Remember:
-		 * the numeric literal in java are by default of type int)
+		 * the numeric literal in java are by defaulT of type int)
 		 */
 		// long t = 192301398193810323;
 		long t = 192301398193810323L;

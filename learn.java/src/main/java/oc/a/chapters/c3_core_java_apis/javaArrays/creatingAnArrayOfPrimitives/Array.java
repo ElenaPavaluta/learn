@@ -19,7 +19,7 @@ public class Array {
 	 */
 	{
 		numbers = new int[3]; // in this case all the elements will be
-								// initialized to the type default value
+								// initialized to the type defaulT value
 
 		numbers2 = new int[] { 1, 2, 3, };
 
@@ -67,7 +67,7 @@ public class Array {
 	
 	public static void main(String[] args) {
 //		m();
-//		m2();
+//		m3();
 		m3();
 		m4();
 	}

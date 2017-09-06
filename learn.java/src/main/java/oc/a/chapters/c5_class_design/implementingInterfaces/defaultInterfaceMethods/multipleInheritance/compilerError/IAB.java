@@ -7,7 +7,7 @@ package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMet
 //abstract interface IAB extends IA, IB{
 
 //	@Override
-//	default void m() {
+//	defaulT void m() {
 //		// TODO Auto-generated method stub
 //		IA.super.m();
 //	}

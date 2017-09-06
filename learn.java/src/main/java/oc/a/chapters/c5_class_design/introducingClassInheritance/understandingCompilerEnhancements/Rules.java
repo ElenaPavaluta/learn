@@ -17,7 +17,7 @@ package oc.a.chapters.c5_class_design.introducingClassInheritance.understandingC
  * 
  * 4. If the parent doesn�t have a no-argument constructor and the child doesn�t
  * define any constructors, the compiler will throw an error and try to insert a
- * default no-argument constructor into the child class.
+ * defaulT no-argument constructor into the child class.
  * 
  * 
  * 5. If the parent doesn�t have a no-argument constructor, the compiler

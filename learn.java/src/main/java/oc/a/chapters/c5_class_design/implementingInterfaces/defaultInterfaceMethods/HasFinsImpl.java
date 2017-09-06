@@ -2,7 +2,7 @@ package oc.a.chapters.c5_class_design.implementingInterfaces.defaultInterfaceMet
 
 /**
  * 
- * Because all the methods are default, the compiler doesn't complain if we
+ * Because all the interfaceMethods are defaulT, the compiler doesn't complain if we
  * don't override any method
  *
  */

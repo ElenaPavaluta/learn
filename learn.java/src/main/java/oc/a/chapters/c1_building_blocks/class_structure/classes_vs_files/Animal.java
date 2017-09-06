@@ -4,7 +4,7 @@ package oc.a.chapters.c1_building_blocks.class_structure.classes_vs_files;
  * Note:
  * 
  * only one class can be public;
- * the accepted access modifiers are public(used only once) and default(package)
+ * the accepted access modifiers are public(used only once) and defaulT(package)
  * 
  * When it is compiled this source code will create a .class file for each of the declared classes
  * 

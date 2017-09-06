@@ -21,7 +21,7 @@ class Child extends Base {
 	}
 
 	/*
-	 * Although the m3 in base class doesn't throw an exception the override
+	 * Although the m4 in base class doesn't throw an exception the override
 	 * method can throw as many unchecked exceptions (RuntimeException and it's
 	 * derived classes) as it wants, due to the fact that this are redundant
 	 * (this exception do not need neither to be declared or handled).

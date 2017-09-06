@@ -7,7 +7,7 @@ public class OverloadingAndVarargs {
 
 	/*
 	 * Compiler error: it's basically the same signature; the only difference
-	 * comes from how those methods are called
+	 * comes from how those interfaceMethods are called
 	 */
 	// public void fly(int... arr){};
 

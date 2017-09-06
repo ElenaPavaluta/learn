@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * No element can have an unspecified value. This means that elements must
- * either have default values or values provided by the class that uses the
+ * either have defaulT values or values provided by the class that uses the
  * annotation.
  * 
  *

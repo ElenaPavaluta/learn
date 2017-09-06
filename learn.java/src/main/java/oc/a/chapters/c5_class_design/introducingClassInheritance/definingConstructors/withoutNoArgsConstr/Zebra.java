@@ -2,7 +2,7 @@ package oc.a.chapters.c5_class_design.introducingClassInheritance.definingConstr
 
 /**
  * 
- * Compiler error: Implicit super constructor Animal() is undefined for default
+ * Compiler error: Implicit super constructor Animal() is undefined for defaulT
  * constructor. Must define an explicit constructor
  *
  */

@@ -54,7 +54,7 @@ public class SwitchStatement {
 		//
 		// break;
 		//
-		// default:
+		// defaulT:
 		// break;
 		// }
 	}
@@ -66,7 +66,7 @@ public class SwitchStatement {
 		//
 		// break;
 		//
-		// default:
+		// defaulT:
 		// break;
 		// }
 	}
@@ -91,7 +91,7 @@ public class SwitchStatement {
 
 		switch (key) {
 		default:
-			System.out.println("default");
+			System.out.println("defaulT");
 			break;
 		case 2:
 			System.out.println("2");
@@ -109,7 +109,7 @@ public class SwitchStatement {
 		case 2:
 			System.out.println(2);
 		default:
-			System.out.println("default");
+			System.out.println("defaulT");
 			break;
 		case 3:
 			System.out.println(3);
@@ -137,13 +137,13 @@ public class SwitchStatement {
 			System.out.println(i);
 			break;
 		default:
-			System.out.println("default");
+			System.out.println("defaulT");
 			break;
 		}
 	}
 
 	static void m8(int key) {
-		final Byte b = new Byte((byte) 1); // needs cast, because, by default in
+		final Byte b = new Byte((byte) 1); // needs cast, because, by defaulT in
 											// java the numeric literals are of
 											// type int
 		final Character c = new Character((char) 2);
@@ -185,10 +185,10 @@ public class SwitchStatement {
 		// m();
 		// m5(3);
 		// m5(0);
-		// m6(1); // 1, 2, default
-		// m6(2); //2, default
+		// m6(1); // 1, 2, defaulT
+		// m6(2); //2, defaulT
 		// m6(3); //3
-		// m6(5); //default
+		// m6(5); //defaulT
 		// m7(1);
 	}
 }

@@ -3,7 +3,7 @@ package oc.a.chapters.c3_core_java_apis.creatingAndManipulatingStrings.immutabil
 /**
  * Make all the fields private and final No set-ers, only get-ers Ensure
  * exclusive access to any mutable components Ensure that the class can't be
- * extended (final class or static factory methods)
+ * extended (final class or static factory interfaceMethods)
  */
 public class Immutability {
 

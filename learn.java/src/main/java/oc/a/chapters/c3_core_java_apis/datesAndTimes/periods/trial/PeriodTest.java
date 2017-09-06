@@ -34,7 +34,7 @@ class PeriodTest {
 	}
 	
 	static void m3(){
-		p = Period.ofYears(1).ofMonths(1).ofWeeks(1).ofDays(1);  //P1D due to the fact that the methods are static
+		p = Period.ofYears(1).ofMonths(1).ofWeeks(1).ofDays(1);  //P1D due to the fact that the interfaceMethods are static
 
 		System.out.println(p);
 		Delimitators.equal();

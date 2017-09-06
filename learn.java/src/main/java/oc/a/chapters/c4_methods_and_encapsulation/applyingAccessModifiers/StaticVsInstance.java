@@ -25,7 +25,7 @@ public class StaticVsInstance {
 
 class Counter{
 	
-	private static int counter;  // it's initialized to the data type default value
+	private static int counter;  // it's initialized to the data type defaulT value
 
 	private Counter() {
 		counter++;

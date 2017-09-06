@@ -1,7 +1,7 @@
 package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
 
 /*
- * compiler error: Arrays is a class. We can import all static fields in methods by using: import static java.util.Arrays.*, but not a whole class
+ * compiler error: Arrays is a class. We can import all static fields in interfaceMethods by using: import static java.util.Arrays.*, but not a whole class
  */
 //import static java.util.Arrays; 
 

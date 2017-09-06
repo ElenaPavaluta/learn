@@ -4,7 +4,7 @@ public class LocalVariables {
 
 	/*
 	 * Local variables must be initialized before use 
-	 * They do not have a default value and contain garbage data until initialized
+	 * They do not have a defaulT value and contain garbage data until initialized
 	 */
 
 	static void notValid(){

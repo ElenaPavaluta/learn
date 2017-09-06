@@ -21,9 +21,9 @@ abstract class Run {
 
 	}
 
-	// protected abstract static void m2(); //compiler error
+	// protected abstract static void m3(); //compiler error
 
-	// abstract static void m3(); //compiler error
+	// abstract static void m4(); //compiler error
 
 	// abstract final void m4(); //compiler error
 

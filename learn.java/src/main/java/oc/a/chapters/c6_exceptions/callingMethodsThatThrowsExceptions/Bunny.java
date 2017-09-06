@@ -25,7 +25,7 @@ class Bunny {
 //		try {
 //			eatCarrotsNoException();
 //		} catch (NoMoreCarrotException e) {
-//			System.out.println("sad bunny in m2");
+//			System.out.println("sad bunny in m3");
 //		}
 	}
 	

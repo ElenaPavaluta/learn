@@ -26,7 +26,7 @@ class OnlyTheLastExceptionGetsThrown {
 
 	String m2() throws FinallyException {
 		try {
-			return "after try in m2";
+			return "after try in m3";
 			/*
 			 * compiler error: unreachable code
 			 */
@@ -42,13 +42,13 @@ class OnlyTheLastExceptionGetsThrown {
 
 	String m3() throws FinallyException {
 		try {
-			return "after try in m3";
+			return "after try in m4";
 
 		} finally {
 			if (1 > 2) {
 				throw new FinallyException();
 			}
-			return "after finally in m3";
+			return "after finally in m4";
 		}
 
 	}
@@ -76,14 +76,14 @@ class OnlyTheLastExceptionGetsThrown {
 			String s = o.m2();
 			System.out.println(s); // it's not going to reach this point
 		} catch (FinallyException e) {
-			System.out.println("catched FinallyException in m2");
+			System.out.println("catched FinallyException in m3");
 		}
 
 		try {
 			String s = o.m3();
-			System.out.println(s); // after finally in m3
+			System.out.println(s); // after finally in m4
 		} catch (FinallyException e) {
-			System.out.println("catched FinallyException in m3");
+			System.out.println("catched FinallyException in m4");
 		}
 
 		Delimitators.equal();
