@@ -1,4 +1,4 @@
-package oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.genericInterfaces.interfaceMethods.instance;
+package oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.genericInterfaces.interfaceMethods.instance.pkg;
 
 import oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.Elephant;
 import oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.Robot;
