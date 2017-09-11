@@ -11,6 +11,7 @@ interface Ship<T>
 	//		static T m(T t){
 	//		return  null;
 	//	}
+
 	static <T> T m2(T t)
 	{
 		return null;
