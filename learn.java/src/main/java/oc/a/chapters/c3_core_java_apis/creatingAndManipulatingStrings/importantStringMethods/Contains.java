@@ -5,7 +5,7 @@ import java.nio.CharBuffer;
 import javax.swing.text.Segment;
 
 /**
- * boolean contentEquals(CharSequence cs):
+ * boolean contentEquals(CharSequence chapters):
  * 
  * Returns true if and only if this string contains the specified sequence of
  * char values.

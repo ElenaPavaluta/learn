@@ -70,7 +70,7 @@ public class Append {
 
 	static void m7() {
 		/*
-		 * StringBuilder append(CharSequence cs, int startIndex, int endIndex)
+		 * StringBuilder append(CharSequence chapters, int startIndex, int endIndex)
 		 * 
 		 * String substring(String source, int startIndex, int endIndex)
 		 */
