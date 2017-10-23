@@ -14,37 +14,50 @@ class LowerBound
 	List<Object> objects = new ArrayList<>(strings);
 
 	{
-		addSound5(strings);
-		addSound5(objects);
+		addSoundRaw(strings);
+		addSoundRaw(objects);
+	}
+
+	{
+//		addSoundListOfObj(strings);  //compiler error List<Type> = List<SubType>
+		addSoundListOfObj(objects);
+	}
+
+	{
+		addSoundLowerBoundWildcard(strings);
+		addSoundLowerBoundWildcard(objects);
 	}
 
 	/*
-		These methods can't be overloaded because they have the same erasure type
+		These methods can't be overloaded because they have the same erasure type (Object)
 	 */
-	void addSound(List l){  //ok
+	void addSoundRaw(List l){
 		l.add("sound");
 		System.out.println(l);
 	}
 
-	void addSound2(List<Object> l){
+	void addSoundListOfObj(List<Object> l){
 		l.add("sound");
 	}
 
-	void addSound3(List<?> l){
+	void addSoundUnboundedWildcard(List<?> l){
 //		l.add("sound");  //compiler error: l is logically imutable; remove works
 	}
 
-	void addSound4(List<? extends  Object> l){
+	void addSoundUpperBoundWildcard(List<? extends  Object> l){
 //		l.add("sound");  //compiler error: l is logically imutable; remove works
 	}
 
-	void addSound5(List<? super  String> l){
+	void addSoundLowerBoundWildcard(List<? super  String> l){
 		l.add("sound");
 		System.out.println(l);
 	}
 
 	public static void main(String[] args)
 	{
-		new LowerBound();
+//		new LowerBound();
+//		System.out.println("a" + null);
+		System.out.println(String.valueOf(null));
 	}
+
 }
