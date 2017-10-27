@@ -11,8 +11,8 @@ enum E
 
 	public static void main(String[] args)
 	{
-		E e  = E.ONLY_ONCE;
+		E e = E.ONLY_ONCE;
 		E e2 = ONLY_ONCE;
-//		E e3 = new E(false);  //compiler error
+		//		E e3 = new E(false);  //compiler error: an enum can not be instantiated. The enum values are like static final variables
 	}
 }
