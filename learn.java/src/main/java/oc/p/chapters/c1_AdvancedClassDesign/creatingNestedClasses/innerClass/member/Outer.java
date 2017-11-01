@@ -62,6 +62,7 @@ class Outer
 		@Override public void m()
 		{
 			System.out.println(s);
+			Outer.this.s ="new value";
 		}
 	}
 

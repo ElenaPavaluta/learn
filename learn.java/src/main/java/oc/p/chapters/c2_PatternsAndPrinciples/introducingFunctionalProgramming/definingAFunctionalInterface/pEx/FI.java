@@ -1,4 +1,4 @@
-package oc.p.chapters.c2_PatternsAndPrinciples.introducingFunctionalProgramming.definingAFunctionalInterface.pEx;
+package oc.p.chapters.c2_PatternsAndPrinciples.introducingFunctionalProgramming.definingAFunctionalInterface.pex;
 
 import java.time.LocalDate;
 
