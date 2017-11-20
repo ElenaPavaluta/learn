@@ -1,6 +1,6 @@
 package gtk.designPatterns.creational.builder;
 
-public class Run {
+class Run {
 
 	public static void main(String[] args) {
 		RobotEngineer engineer;

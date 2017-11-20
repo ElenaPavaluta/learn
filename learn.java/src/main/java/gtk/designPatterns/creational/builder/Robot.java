@@ -43,5 +43,4 @@ public class Robot implements RobotPlan {
 	public String getRobotLegs() {
 		return robotLegs;
 	}
-
 }
