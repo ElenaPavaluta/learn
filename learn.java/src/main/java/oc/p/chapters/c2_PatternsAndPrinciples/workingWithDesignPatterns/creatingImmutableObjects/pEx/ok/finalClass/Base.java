@@ -17,13 +17,13 @@ final class Base {
         }
     }
 
-    static void m() {
+    void m() {
 //        class C extends Base{  //compiler error; it's final, can't be extended
 //
 //        }
 
-        class Aa extends A {  //local inner class
-            //this can access only final variables or effective final ones (assigned a value only once)
+       class Aa extends A {  //local inner class
+            // can access only final variables or effective final ones (assigned a value only once)
         }
 
         I i = new I ( ) {  //anonymous  inner class

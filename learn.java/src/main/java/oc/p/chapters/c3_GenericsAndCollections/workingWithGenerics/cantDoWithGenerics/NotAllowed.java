@@ -36,6 +36,14 @@ class NotAllowed<T>
 	{
 		//	T[] ts = new T[2];  //compiler error; you'd be creating an array of objects
 		List<T> lst = new ArrayList<>();
+
+		T t1 = null;
+		T t2 = null;
+
+//		T[] ta = {t1, t2};
+
+		T[] ta = (T[])new Object[3];  //this is legal, though
+		ta = (T[])new StringBuilder[3];
 	}
 
 	{
