@@ -1,6 +1,5 @@
 package oc.p.chapters.c3_GenericsAndCollections.workingWithGenerics.pEx._2;
 
-import sun.misc.REException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
