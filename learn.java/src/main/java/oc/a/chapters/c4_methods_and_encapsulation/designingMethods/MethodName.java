@@ -5,7 +5,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.designingMethods;
  * character is not allowed to be a number, and reserved words are not allowed.
  *
  */
-public class MethodName {
+class MethodName {
 
 	void $m() {
 	};

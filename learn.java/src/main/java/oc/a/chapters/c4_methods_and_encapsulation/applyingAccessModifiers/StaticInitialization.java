@@ -4,7 +4,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
  * The static initializer runs when the class is first used.
  *
  */
-public class StaticInitialization {
+class StaticInitialization {
 
 	private static final int NUM_SECONDS_PER_HOUR;
 

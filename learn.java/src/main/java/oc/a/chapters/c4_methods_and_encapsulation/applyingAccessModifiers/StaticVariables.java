@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * different object.
  *
  */
-public class StaticVariables {
+class StaticVariables {
 
 	private static final int NUM_BUCKETS = 45;
 

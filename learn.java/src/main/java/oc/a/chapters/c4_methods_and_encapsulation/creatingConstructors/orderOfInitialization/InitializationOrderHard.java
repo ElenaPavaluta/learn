@@ -1,6 +1,6 @@
 package oc.a.chapters.c4_methods_and_encapsulation.creatingConstructors.orderOfInitialization;
 
-public class InitializationOrderHard {
+class InitializationOrderHard {
 
 	static {
 		add(2);

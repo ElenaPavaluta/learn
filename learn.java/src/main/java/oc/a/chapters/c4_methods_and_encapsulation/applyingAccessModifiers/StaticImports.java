@@ -18,7 +18,7 @@ import java.util.List;
  * we coded would be used.
  *
  */
-public class StaticImports {
+class StaticImports {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> asList(T... arr) {

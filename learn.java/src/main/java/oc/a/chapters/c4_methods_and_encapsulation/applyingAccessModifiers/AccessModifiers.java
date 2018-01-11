@@ -11,6 +11,6 @@ package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
  * public: protected and classes in the other packages
  *
  */
-public class AccessModifiers {
+class AccessModifiers {
 
 }

@@ -11,7 +11,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
  * be fooled!
  *
  */
-public class CallingAStaticVariableOrMethod {
+class CallingAStaticVariableOrMethod {
 
 	static int i = 007;
 	

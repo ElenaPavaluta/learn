@@ -6,6 +6,6 @@ package oc.a.chapters.c4_methods_and_encapsulation.designingMethods;
  * void. You cannot omit the return type.
  * 
  */
-public class ReturnType {
+class ReturnType {
 
 }

@@ -16,7 +16,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.applyingAccessModifiers;
  *
  */
 
-public class StaticMerhodsAndFields {
+class StaticMerhodsAndFields {
 
 	
 }
