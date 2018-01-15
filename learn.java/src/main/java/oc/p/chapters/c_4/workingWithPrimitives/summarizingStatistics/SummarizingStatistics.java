@@ -33,11 +33,21 @@ class SummarizingStatistics {
     static void m2(){
         init();
         LongSummaryStatistics longSummaryStatistics = longStream.summaryStatistics();
+        long min = longSummaryStatistics.getMin();
+        long max = longSummaryStatistics.getMax();
+        long count = longSummaryStatistics.getCount();
+        long sum = longSummaryStatistics.getSum();
+        double avg = longSummaryStatistics.getAverage();
     }
 
     static void m3(){
         init();
         DoubleSummaryStatistics doubleSummaryStatistics = doubleStream.summaryStatistics();
+        double min = doubleSummaryStatistics.getMin();
+        double max = doubleSummaryStatistics.getMax();
+        long count = doubleSummaryStatistics.getCount();
+        double sum = doubleSummaryStatistics.getSum();
+        double avg = doubleSummaryStatistics.getAverage();
     }
 
     static void m4(){

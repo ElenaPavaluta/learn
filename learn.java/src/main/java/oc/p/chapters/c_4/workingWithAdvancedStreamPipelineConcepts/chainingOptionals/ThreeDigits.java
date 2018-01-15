@@ -15,7 +15,8 @@ import java.util.Optional;
  *
  *
  * <U> Optional<U>	flatMap(Function<? super T,Optional<U>> mapper)
- * If a value is present, apply the provided Optional-bearing mapping function to it, return that result, otherwise return an empty Optional.
+ * If a value is present, apply the provided Optional-bearing mapping function to it,
+ * return that result, otherwise return an empty Optional.
  */
 class ThreeDigits {
 
@@ -64,7 +65,7 @@ class ThreeDigits {
         Optional<Double> tempDouble = opt.flatMap(o->o.map(s->7.0));
         tempDouble.ifPresent(System.out::println);
     }
-    
+
     public static void main(String[] args) {
 //        threeDigits_old(Optional.<Integer>of(123));
 //        threeDigits_new(Optional.of(123));
