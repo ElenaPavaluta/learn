@@ -3,7 +3,8 @@ package oc.p.chapters.c_4.workingWithPrimitives.learningTheFunctionalInterfacesF
 import java.util.function.BooleanSupplier;
 
 /**
- * @FunctionalInterface public interface BooleanSupplier {
+ * @FunctionalInterface
+ * public interface BooleanSupplier {
  *
  * boolean getAsBoolean();
  *

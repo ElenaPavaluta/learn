@@ -77,7 +77,10 @@ class PrimitiveOptionals {
             }
         });
 
+        init();
         optionalLong.orElseThrow(RuntimeException::new);
+
+        init();
     }
 
     static void m3() {
