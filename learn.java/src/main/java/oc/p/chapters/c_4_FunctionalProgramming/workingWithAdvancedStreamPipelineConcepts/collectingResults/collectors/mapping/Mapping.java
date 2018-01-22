@@ -20,12 +20,12 @@ class Mapping {
     }
 
     static void m() {
-        init();
-        Map<Integer, Optional<Character>> map = stream.collect(
-                Collectors.groupingBy(
-                        String::length,
-                        Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));
-        System.out.println(map);
+//        init();
+//        Map<Integer, Optional<Character>> map = stream.collect(
+//                Collectors.groupingBy(
+//                        String::length,
+//                        Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));
+//        System.out.println(map);
     }
 
     public static void main(String[] args) {
