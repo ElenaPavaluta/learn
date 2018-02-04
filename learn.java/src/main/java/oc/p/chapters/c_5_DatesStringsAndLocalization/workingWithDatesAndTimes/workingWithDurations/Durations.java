@@ -74,8 +74,8 @@ class Durations {
         LocalDateTime localDateTime = LocalDateTime.now();
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
 
-//        date = date.plus(duration).minus(duration);  //RE
-        time = time.plus(duration).minus(duration);
+        date = date.plus(duration).minus(duration);  //RE
+//        time = time.plus(duration).minus(duration);
         localDateTime = localDateTime.plus(duration).minus(duration);
         zonedDateTime = zonedDateTime.plus(duration).minus(duration);
     }

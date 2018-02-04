@@ -20,6 +20,8 @@ class Methods {
 
         System.out.println(localDate);
         System.out.println();
+
+//        localDate = localDate.plusHours(2);  //compilerError: the method does not exists for the LocalDate
     }
 
     static void m2() {
@@ -30,6 +32,8 @@ class Methods {
 
         System.out.println(localTime);
         System.out.println();
+
+//        localTime = localTime.plusDays(2)  //compilerError: the method does not exists for the LocalTime
     }
 
     static void m3() {

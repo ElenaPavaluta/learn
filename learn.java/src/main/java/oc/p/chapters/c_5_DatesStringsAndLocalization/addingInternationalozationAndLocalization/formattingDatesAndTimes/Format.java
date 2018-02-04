@@ -43,12 +43,12 @@ class Format {
         System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(date));
         space();
 
-        System.out.println(time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
-        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).format(time));
+        System.out.println(time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(time));
         space();
 
-        System.out.println(dateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
-        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(dateTime));
+        System.out.println(dateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)));
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(dateTime));
         space();
     }
 
@@ -56,12 +56,21 @@ class Format {
         space();
         System.out.println(date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
         System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(date));
+        space();
+
+        System.out.println(time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).format(time));
+        space();
+
+        System.out.println(dateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(dateTime));
     }
 
     public static void main(String[] args) {
         m();
         iso();
         shortM();
+        mediumM();
     }
 
 
