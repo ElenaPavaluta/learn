@@ -20,6 +20,8 @@ class Unbounded
 
 //		l.add(new Robot());  //compiler error
 //		String s  =l.get(0);  //compiler error
+
+//		l.add((Object) new Robot());  //compiler error
 	}
 
 	static void print(List<?> l){
