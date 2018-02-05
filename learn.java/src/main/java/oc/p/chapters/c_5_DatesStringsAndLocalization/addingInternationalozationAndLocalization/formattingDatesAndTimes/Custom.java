@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  * y represents the year.
  * yy outputs a two-digit year and
  * yyyy outputs a four-digit year.
- * YYYY - no difference
+ * YYYY - seems to be a difference for parsing: don't know yet, but for parsing use y instead of Y
  *
  * MMMM
  * M represents the month.
@@ -28,7 +28,7 @@ import java.time.format.DateTimeFormatter;
  * HH 24 hour format
  *
  * mm
- * m represents the minute omitting the leading zero if present.
+ * date represents the minute omitting the leading zero if present.
  * mm is more common and represents the minutes using two digits.
  *
  * ss
@@ -59,7 +59,7 @@ class Custom {
         pattern = pattern.replace("YYYY", "yyyy");
         System.out.println(DateTimeFormatter.ofPattern(pattern).format(dateTime));
 
-//        pattern = pattern.replace("MMMM", "mmmm");  //RE: IllegalArgumentException: to many ms: M is used for month and m is used for minutes
+//        pattern = pattern.replace("MMMM", "mmmm");  //RE: IllegalArgumentException: to many ms: M is used for month and date is used for minutes
 //        System.out.println(dateTime.format(DateTimeFormatter.ofPattern(pattern)));
 
         pattern = pattern.replace('D', 'd');
