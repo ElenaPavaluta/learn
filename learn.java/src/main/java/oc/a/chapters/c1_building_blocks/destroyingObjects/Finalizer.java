@@ -14,7 +14,7 @@ package oc.a.chapters.c1_building_blocks.destroyingObjects;
  * again later, the method doesn�t get called a second time.
  */
 
-public class Finalizer {
+class Finalizer {
 
 	public Finalizer() {
 		super(); // the super() call must be the first statement in the constructor

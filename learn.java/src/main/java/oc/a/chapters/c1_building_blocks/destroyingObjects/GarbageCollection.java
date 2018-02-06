@@ -2,7 +2,7 @@ package oc.a.chapters.c1_building_blocks.destroyingObjects;
 
 import java.util.Date;
 
-public class GarbageCollection {
+class GarbageCollection {
 
 	static void m() {
 		/*

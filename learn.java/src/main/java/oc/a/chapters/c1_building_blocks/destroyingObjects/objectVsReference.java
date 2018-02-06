@@ -1,6 +1,6 @@
 package oc.a.chapters.c1_building_blocks.destroyingObjects;
 
-public class objectVsReference {
+class objectVsReference {
 
 	/**
 	 * Reference:

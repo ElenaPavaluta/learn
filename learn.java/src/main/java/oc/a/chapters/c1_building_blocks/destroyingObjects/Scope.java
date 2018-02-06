@@ -4,7 +4,7 @@ package oc.a.chapters.c1_building_blocks.destroyingObjects;
  * Reminder: All references have the same size, no matter of the object type
  * being referred
  */
-public class Scope {
+class Scope {
 
 	public static void main(String[] args) {
 		String a, b;
