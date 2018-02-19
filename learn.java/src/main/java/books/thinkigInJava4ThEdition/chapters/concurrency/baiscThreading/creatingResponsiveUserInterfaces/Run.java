@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.baiscThreading.creatingRespobsiveUserInterfaces;
+package books.thinkigInJava4ThEdition.chapters.concurrency.baiscThreading.creatingResponsiveUserInterfaces;
 
 import java.io.IOException;
 
