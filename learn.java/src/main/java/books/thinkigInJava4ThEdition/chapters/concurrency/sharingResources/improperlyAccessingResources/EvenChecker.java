@@ -1,5 +1,7 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.sharingResources.improperlyAccessingResources;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -35,14 +37,31 @@ class EvenChecker implements Runnable {
     }
 
     static void m4(){
+        abort();
         test(new MutexEvenGenerator(), 10);
+    }
+
+    static void m5(){
+        abort();
+        test(new AtomicEvenGenerator(), 10);
+    }
+
+    private static void abort() {
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.err.println("Aborting");
+                System.exit(0);
+            }
+        }, 3000);
     }
 
     public static void main(String[] args) {
 //        m();
 //        m2();
 //        m3();
-        m4();
+//        m4();
+        m5();
     }
 
     @Override

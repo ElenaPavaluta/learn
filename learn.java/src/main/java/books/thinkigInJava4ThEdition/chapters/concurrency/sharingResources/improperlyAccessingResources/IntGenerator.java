@@ -1,5 +1,7 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.sharingResources.improperlyAccessingResources;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 abstract class IntGenerator {
 
     volatile boolean canceled = false;
@@ -47,5 +49,13 @@ class SynchronizedEvenGenerator extends IntGenerator{
         Thread.yield();  //Cause failure faster
         ++currentEvenValue;
         return currentEvenValue;
+    }
+}
+
+class AtomicEvenGenerator extends IntGenerator{
+    private AtomicInteger ai = new AtomicInteger(0);
+    @Override
+    int next() {
+        return ai.getAndAdd(2);
     }
 }
