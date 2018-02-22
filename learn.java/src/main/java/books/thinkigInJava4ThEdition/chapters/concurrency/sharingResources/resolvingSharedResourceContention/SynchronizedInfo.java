@@ -51,7 +51,7 @@ class SynchronizedInfo {
      * If the object is unlocked, it has a count of zero.
      * As a task acquires the lock for the first time,
      * the count goes to one.
-     * Each time the same task acquires another lock
+     * Each time  same task acquires another lock
      * on the same object, the count is incremented.
      * Naturally, multiple lock acquisition
      * is only allowed for the task that acquired
