@@ -1,0 +1,66 @@
+package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.theOrnamentalGarden;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+class Entrance implements Runnable {
+
+    private static Count count = new Count();
+    private static List<Entrance> entrances = new ArrayList<>();
+
+    private int number = 0;
+
+    //doesn't need synchronization to read
+    private final int id;
+    private static volatile boolean canceled = false;
+
+    //atomic operation on a volatile field
+    static void cancel(){
+        canceled= true;
+    }
+
+    Entrance(int id){
+        //Keep this task in a list. Also prevents gc of dead tasks
+        this.id = id;
+        //Keep this task in a list. Also prevents gc collection of dead tasks
+        entrances.add(this);
+    }
+
+    @Override
+    public void run() {
+        while(!canceled){
+            synchronized(this){
+                number++;
+            }
+        }
+        System.out.println(this + " Total: " + count.increment());
+        try {
+            TimeUnit.MILLISECONDS.sleep(100);
+        } catch(InterruptedException e) {
+            System.out.println("sleep() interrupted");
+        }
+        System.out.println("Stopping: " + this);
+    }
+
+    synchronized int getValue(){
+        return number;
+    }
+
+    @Override
+    public String toString() {
+        return "Entrance: " + id + ": " + getValue();
+    }
+
+    static int getTotalCount(){
+        return count.value();
+    }
+
+    static int sumEntrances(){
+        int sum = 0;
+        for(Entrance entrance: entrances){
+            sum +=entrance.getValue();
+        }
+        return sum;
+    }
+}
