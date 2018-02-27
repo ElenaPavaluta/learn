@@ -19,9 +19,9 @@ class T implements Runnable {
              * Due to the fact that the getI() method access is not synchronized
              * i can ne retrieved in an inconsistent state (odd nb)
              */
-//            int i = c.getI();
+            int i = c.getI();
             synchronized(this) {
-                int i = c.getI();
+//                int i = c.getI();
                 if(i % 2 != 0) {
                     System.out.println(i);
                     break;
