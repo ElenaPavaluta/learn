@@ -15,7 +15,7 @@ class Entrance implements Runnable {
     private final int id;
     private static volatile boolean canceled = false;
 
-    //atomic operation on a volatile field
+    //atomic operation on a volatile field-> doesn't need synchronisation
     static void cancel(){
         canceled= true;
     }

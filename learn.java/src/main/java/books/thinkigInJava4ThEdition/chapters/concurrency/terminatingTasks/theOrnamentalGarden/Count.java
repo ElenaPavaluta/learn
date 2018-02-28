@@ -13,7 +13,7 @@ class Count {
         if(rand.nextBoolean()){
             Thread.yield();
         }
-        return (count = ++temp);
+        return count = ++temp;
     }
 
     synchronized int value(){
