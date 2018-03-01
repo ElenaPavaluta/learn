@@ -1,7 +1,5 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption.tw.t;
+package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -10,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 class Interrupting {
 
     static ExecutorService exec = Executors.newCachedThreadPool();
-
 
     static void m(Runnable r) {
         Thread t = new Thread(r);
@@ -30,7 +27,9 @@ class Interrupting {
 
     static void ms(){
 //        m(new SleepBlocked());
-        m(new IOBlocked(System.in));
+//        m(new IOBlocked(System.in));
+        m(new SynchronizedBlock());
+
     }
 
     public static void main(String[] args) throws InterruptedException {

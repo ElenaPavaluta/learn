@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption.tw.t;
+package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption;
 
 import java.util.concurrent.TimeUnit;
 

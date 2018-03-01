@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption.tw.t;
+package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.interruption;
 
 class SynchronizedBlock implements Runnable {
 
