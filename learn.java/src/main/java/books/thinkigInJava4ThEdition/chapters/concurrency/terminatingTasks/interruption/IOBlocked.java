@@ -2,6 +2,7 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.inte
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 class IOBlocked implements Runnable {
@@ -15,7 +16,7 @@ class IOBlocked implements Runnable {
     public void run() {
         try {
             System.out.println("waiting for read(): ");
-            IntStream.range(0, 10).forEach(i->Thread.yield());
+            Thread.currentThread().yield();
             in.read();
         } catch (IOException e) {
             if(Thread.currentThread().isInterrupted()){
