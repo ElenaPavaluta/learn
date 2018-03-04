@@ -19,6 +19,9 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.terminatingTasks.beco
  * and that object’s lock is not available because it has already
  * been acquired by another task.
  *
+ *
+ *
+ * calling join()
  */
 class Info {
 }
