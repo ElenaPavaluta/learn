@@ -6,12 +6,14 @@ class Car {
 
     synchronized void waxOn(){
         waxOn = true;  //ready to buff
-        notifyAll();
+//        notifyAll();
+        notify();
     }
 
     synchronized void waxOff(){
         waxOn = false;
-        notifyAll();
+//        notifyAll();
+        notify();
     }
 
     synchronized void waitingForWaxOn() throws InterruptedException {
