@@ -14,8 +14,8 @@ class R {
 
     void m(){
         ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(r3);
         exec.execute(r2);
+        exec.execute(r3);
     }
 
     public static void main(String[] args) {
@@ -25,6 +25,6 @@ class R {
             public void run() {
                 System.exit(1);
             }
-        }, 2000);
+        }, 1_000);
     }
 }

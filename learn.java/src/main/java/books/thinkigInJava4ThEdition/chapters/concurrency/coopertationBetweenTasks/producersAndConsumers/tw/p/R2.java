@@ -12,7 +12,7 @@ class R2 implements Runnable {
     @Override
     public void run() {
         try {
-            TimeUnit.MILLISECONDS.sleep(300);
+            TimeUnit.MILLISECONDS.sleep(100);
             System.out.println("increment i");
             c.n++;
         } catch(InterruptedException e) {

@@ -18,7 +18,7 @@ class R implements Runnable {
                  * Once the lock on an abject is acquired, no other task can access that object
                  */
                 synchronized(c) {
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.MILLISECONDS.sleep(500);  //does not release the lock
                     System.out.println(c.n);
                     /**
                      * IllegalMonitorStateException: due to the fact that the acquired
@@ -29,7 +29,13 @@ class R implements Runnable {
 //                    wait();
 //                    notify();
 //                    notifyAll();
-                c.wait();
+                    /**
+                     * releases the lock;
+                     * can only be called on the synchronized object;
+                     * otherwise throws an IllegalMonitorStateException
+                     */
+                    c.wait();
+                    System.out.println("After c.wait()");
                 }
             }
         } catch(InterruptedException e) {

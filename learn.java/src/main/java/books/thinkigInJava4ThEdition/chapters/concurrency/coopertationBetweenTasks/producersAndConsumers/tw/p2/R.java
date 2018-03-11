@@ -11,10 +11,20 @@ class R implements Runnable {
 
         try {
             while(!Thread.interrupted()) {
+                /**
+                 * synchronize(this): the lock is acquired on the current obj.
+                 * this means that no other thread can access no other synchronized
+                 * method on the synchroized obj
+                 */
                 synchronized(this) {
+                    TimeUnit.MILLISECONDS.sleep(200);
                     System.out.println("Should apper no other message after this one");
                     System.out.println("i: " + i);
-                    wait();
+                    /*
+                    Commenting the wait() and one can see that the second task
+                    which runs the increment() is continuously running
+                     */
+//                    wait();
                 }
             }
         }catch(InterruptedException e){
@@ -26,7 +36,7 @@ class R implements Runnable {
         while(true){
             i++;
             try {
-                TimeUnit.MILLISECONDS.sleep(200);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch(InterruptedException e) {
                 System.out.println("increment interrupted");
             }

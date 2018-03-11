@@ -15,8 +15,8 @@ class Run {
                 r.increment();
             }
         };
-        t2.start();
         t.start();
+        t2.start();
     }
 
     public static void main(String[] args) {
@@ -27,6 +27,6 @@ class Run {
                 System.out.println("Drop the mike");
                 System.exit(1);
             }
-        }, 10000);
+        }, 3_000);
     }
 }

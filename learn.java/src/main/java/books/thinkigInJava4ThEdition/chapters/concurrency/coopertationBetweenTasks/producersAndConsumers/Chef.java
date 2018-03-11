@@ -20,7 +20,7 @@ class Chef implements Runnable {
                         wait();  //for the meal to be taken
                     }
                 }
-                if(++count == 10) {
+                if(++count == 5) {
                     System.out.println("out of food, closing");
                     restaurant.exec.shutdownNow();
                 }

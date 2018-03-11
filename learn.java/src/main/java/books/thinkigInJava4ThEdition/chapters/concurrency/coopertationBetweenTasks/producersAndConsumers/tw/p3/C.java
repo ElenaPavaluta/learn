@@ -12,12 +12,12 @@ class C {
          */
         synchronized(this) {
             i = 007;
-            System.out.println(i);
             while(!Thread.interrupted()) {
                 try {
-//                    wait();
-                    TimeUnit.DAYS.sleep(1);
-                    System.out.println("out of wait");
+                    System.out.println(i);
+                    wait();
+//                    TimeUnit.MILLISECONDS.sleep(50);
+                    System.out.println(i);
                 } catch(InterruptedException e) {
                     System.out.println("m007 interrupted");
                 }

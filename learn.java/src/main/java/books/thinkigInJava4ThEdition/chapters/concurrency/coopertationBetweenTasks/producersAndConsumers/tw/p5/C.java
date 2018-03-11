@@ -5,7 +5,6 @@ class C {
     private volatile String s;
 
     void m() {
-        s = "m";
         System.out.println(s);
     }
 

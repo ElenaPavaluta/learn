@@ -19,7 +19,7 @@ class Run {
                 System.out.println("Drop the mike");
                 System.exit(1);
             }
-        }, 10000);
+        }, 2_000);
     }
 
     public static void main(String[] args) {
