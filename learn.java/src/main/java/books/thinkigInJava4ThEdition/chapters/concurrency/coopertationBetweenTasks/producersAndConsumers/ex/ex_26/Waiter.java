@@ -1,9 +1,10 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers;
+package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers.ex.ex_26;
 
-class WaitPerson implements Runnable {
+class Waiter implements Runnable {
     private Restaurant restaurant;
+    private int count;
 
-    public WaitPerson(Restaurant restaurant) {
+    public Waiter(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
 
@@ -15,11 +16,18 @@ class WaitPerson implements Runnable {
                     while(restaurant.meal == null) {
                         wait();  //for the chief to produce a meal
                     }
+                    while(restaurant.table !=null){
+                        wait();
+                    }
                 }
                 System.out.println("WaitPerson got " + restaurant.meal);
                 synchronized(restaurant.chef) {
                     restaurant.meal = null;
-                    restaurant.chef.notifyAll();  //ready for another
+                    restaurant.chef.notify();  //ready for another
+                }
+                synchronized(restaurant.busBoy){
+                    restaurant.table = new Table(++count);
+                    restaurant.busBoy.notify();
                 }
             }
         } catch(InterruptedException e) {

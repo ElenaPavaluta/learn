@@ -1,36 +1,41 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers.ex.ex_24;
 
-import java.util.function.IntSupplier;
-
-class P implements Runnable, IntSupplier {
+class P implements Runnable {
     private int i;
-
     private Buffer b;
 
-    public P(Buffer buffer) {
-        this.b = buffer;
+    public P(Buffer b) {
+        this.b = b;
     }
 
     @Override
     public void run() {
-        try {
-            while(!Thread.interrupted()) {
-                int i = getAsInt();
-                synchronized(b.buffer) {
-                    while(b.index >= b.max) {
-                        b.buffer.wait();
+        while(!Thread.interrupted()) {
+            try {
+                int i;
+                synchronized(this) {
+                    while(b.full()) {
+                        wait();
+                        System.out.println("T " + Thread.currentThread().getId() + " waited");
                     }
-                    b.buffer[b.index++] = i;
-                    b.buffer.notifyAll();
                 }
+                i = increment();
+                System.out.println(i);
+                synchronized(b) {
+                    if(!b.full()) {
+                        b.add(i);
+                    } else {
+                        b.wait();
+                    }
+                    b.notifyAll();
+                }
+            } catch(InterruptedException e) {
+                System.out.println("P interrupted: " + Thread.currentThread().getId());
             }
-        } catch(InterruptedException e) {
-            System.out.println("P interrupted");
         }
     }
 
-    @Override
-    public synchronized int getAsInt() {
+    synchronized int increment() {
         return i++;
     }
 }

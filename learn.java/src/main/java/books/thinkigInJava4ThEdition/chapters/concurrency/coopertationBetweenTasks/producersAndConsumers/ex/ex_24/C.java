@@ -1,8 +1,10 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers.ex.ex_24;
 
-import java.util.function.IntConsumer;
 
-class C implements Runnable, IntConsumer {
+import java.util.concurrent.TimeUnit;
+
+class C implements Runnable {
+
     private Buffer b;
 
     public C(Buffer b) {
@@ -11,25 +13,27 @@ class C implements Runnable, IntConsumer {
 
     @Override
     public void run() {
-        try{
-            while(!Thread.interrupted()){
+        while(!Thread.interrupted()) {
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
                 int i;
-                synchronized(b.buffer){
-                    while(b.index<=0){
-                        b.buffer.wait();
+                synchronized(this) {
+                    while(b.empty()) {
+                        wait();
+                        System.out.println("T " + Thread.currentThread().getId() + " waited");
                     }
-                    i = b.buffer[b.index--];
-                    b.buffer.notifyAll();
                 }
-                accept(i);
+                synchronized(b) {
+                    if(!b.empty()) {
+                        i = b.remove();
+                    }else{
+                        b.wait();
+                    }
+                    b.notifyAll();
+                }
+            } catch(InterruptedException e) {
+                System.out.println("C interrupted: " + Thread.currentThread().getId());
             }
-        }catch(InterruptedException e){
-            System.out.println("C interrupted");
         }
-    }
-
-    @Override
-    public void accept(int value) {
-        System.out.println(Thread.currentThread().getId() + " -> " +value );
     }
 }

@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers;
+package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producersAndConsumers.ex.ex_26;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,11 +23,6 @@ class Chef implements Runnable {
                 if(++count == 5) {
                     System.out.println("out of food, closing");
                     restaurant.exec.shutdownNow();
-                    /**
-                     * Using return here terminates the current thread without the need
-                     * of being interrupted
-                     */
-                    return;
                 }
                 synchronized(restaurant.waiter) {
                     System.out.println("Order up");

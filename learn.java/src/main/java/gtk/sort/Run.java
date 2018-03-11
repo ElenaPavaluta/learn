@@ -12,7 +12,7 @@ import java.util.List;
 
 
 
-public class Run {
+class Run {
 
 	private static List<Integer> lst;
 	
