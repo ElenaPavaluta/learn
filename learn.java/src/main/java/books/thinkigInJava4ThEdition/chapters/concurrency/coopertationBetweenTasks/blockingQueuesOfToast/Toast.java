@@ -9,7 +9,7 @@ class Toast {
     enum Status{
         DRY,
         BUTTERED,
-        JAMED
+        JAMED,
     }
 
     private Status status = DRY;

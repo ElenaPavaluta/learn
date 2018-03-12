@@ -1,6 +1,7 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.coopertationBetweenTasks.producerConsumersAndQueues;
 
 import books.thinkigInJava4ThEdition.chapters.concurrency.baiscThreading.definingTasks.LiftOff;
+
 import java.util.concurrent.BlockingQueue;
 
 class LiftOffRunner implements Runnable {
@@ -11,14 +12,18 @@ class LiftOffRunner implements Runnable {
         this.rockets = rockets;
     }
 
-    void add(LiftOff lo) {
-        rockets.add(lo);
+    void put(LiftOff lo) {
+        try {
+            rockets.put(lo);
+        } catch (InterruptedException e) {
+            System.out.println("put interrupted");
+        }
     }
 
     @Override
     public void run() {
         try {
-            while(!Thread.interrupted()) {
+            while (!Thread.interrupted()) {
                 /*
                 When there are no  more object in the queue will block until some are produced.
                 Instead, when the producer produces more objects than the queue capacity
@@ -27,7 +32,7 @@ class LiftOffRunner implements Runnable {
                 LiftOff rocket = rockets.take();
                 rocket.run();
             }
-        } catch(InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println("LiftOffRunner interrupted");
         }
         System.out.println("Exiting LiftOffRunner");

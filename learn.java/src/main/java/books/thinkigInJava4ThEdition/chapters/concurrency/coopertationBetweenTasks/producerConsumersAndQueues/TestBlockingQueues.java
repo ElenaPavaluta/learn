@@ -30,16 +30,50 @@ class TestBlockingQueues {
         Thread t = new Thread(runner);
         t.start();
         for(int i = 0; i<5; i++){
-            runner.add(new LiftOff(5));
+            runner.put(new LiftOff(5));
         }
         getKey("Press 'Enter ' (" + msg + ")");
         t.interrupt();
         System.out.println("Finished " + msg + " test");
     }
 
+    static void ex_28(String msg, BlockingQueue<LiftOff> queue){
+        System.out.println(msg);
+        LiftOffRunner runner = new LiftOffRunner(queue);
+        Thread t = new Thread(){
+            @Override
+            public void run() {
+                for (int i = 0; i<5; i++){
+                    runner.put(new LiftOff(5));
+                }
+            }
+        };
+
+        Thread m = new Thread(runner);
+        m.start();
+        t.start();
+        getKey("Press 'Enter ' (" + msg + ")");
+        m.interrupt();
+        t.interrupt();
+        System.out.println("Finished " + msg + " test");
+    }
+
+
     public static void main(String[] args) {
-//        linkedBlockingQueue();
-//        arrayBlockingQueue();
+//        m();
+        m2();
+    }
+
+
+    private static void m2(){
+        linkedBlockingQueue();
+        arrayBlockingQueue();
+        synchronousQueue();
+    }
+
+    private static void m() {
+        linkedBlockingQueue();
+        arrayBlockingQueue();
         synchronousQueue();
     }
 
