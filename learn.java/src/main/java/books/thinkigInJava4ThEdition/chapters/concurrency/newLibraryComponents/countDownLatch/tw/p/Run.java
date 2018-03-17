@@ -1,10 +1,10 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw;
+package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw.p;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.zip.Adler32;
+
 
 class Run {
 

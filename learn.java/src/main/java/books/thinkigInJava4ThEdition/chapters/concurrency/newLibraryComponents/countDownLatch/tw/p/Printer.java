@@ -1,6 +1,5 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw;
+package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw.p;
 
-import oc.a.topics.init.Run;
 import java.util.concurrent.CountDownLatch;
 
 class Printer implements Runnable{
@@ -16,7 +15,7 @@ class Printer implements Runnable{
     public void run() {
         try{
             countDownLatch.await();
-            System.out.println(Thread.currentThread().getId());
+//            System.out.println(this.getClass().getSimpleName() + " " +Thread.currentThread().getId());
             square.print();
         }catch(InterruptedException e){
             System.out.println("Printer interrupted");

@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw;
+package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw.p;
 
 import java.util.List;
 import java.util.function.Predicate;

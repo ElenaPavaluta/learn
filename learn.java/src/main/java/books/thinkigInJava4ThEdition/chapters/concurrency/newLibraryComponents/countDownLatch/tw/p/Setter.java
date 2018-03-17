@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw;
+package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.countDownLatch.tw.p;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -16,7 +16,7 @@ class Setter implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getId());
+        System.out.println(this.getClass().getSimpleName()+ " " + Thread.currentThread().getId());
         square.set(x, y);
         countDownLatch.countDown();
     }
