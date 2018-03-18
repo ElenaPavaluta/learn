@@ -17,20 +17,18 @@ class DelayedTask implements Runnable, Delayed {
     DelayedTask(int delayInMilliseconds) {
         delta = delayInMilliseconds;
         trigger = System.nanoTime() + TimeUnit.NANOSECONDS.convert(delta, TimeUnit.MILLISECONDS);
+        sequence.add(this);
     }
-
 
     @Override
     public long getDelay(TimeUnit unit) {
-        return unit.convert(trigger - System.nanoTime(), TimeUnit.MILLISECONDS);
+        return unit.convert(trigger - System.nanoTime(), TimeUnit.NANOSECONDS);
     }
 
     @Override
     public int compareTo(Delayed o) {
         DelayedTask that = (DelayedTask) o;
-        if(trigger < that.trigger) return -1;
-        if(trigger > that.trigger) return 1;
-        return 0;
+        return Long.compare(trigger, that.trigger);
     }
 
     @Override
@@ -43,12 +41,13 @@ class DelayedTask implements Runnable, Delayed {
                 " Task " + id;
     }
 
-    String summary(){
+    String summary() {
         return "(" + id + ": " + delta + ")";
     }
 
-    static class EndSentinel extends DelayedTask{
+    static class EndSentinel extends DelayedTask {
         private ExecutorService exec;
+
         public EndSentinel(int delayInMilliseconds, ExecutorService exec) {
             super(delayInMilliseconds);
             this.exec = exec;
@@ -56,9 +55,7 @@ class DelayedTask implements Runnable, Delayed {
 
         @Override
         public void run() {
-            for(DelayedTask pt: sequence){
-                System.out.println(pt.summary() + " ");
-            }
+            sequence.forEach(dt -> System.out.println(dt.summary()));
             System.out.println();
             System.out.println(this + " calling shutdownNow()");
             exec.shutdownNow();
