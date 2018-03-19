@@ -21,22 +21,20 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
     @Override
     public void run() {
         try {
-            TimeUnit.MILLISECONDS.sleep(rand.nextInt(250));
+            TimeUnit.MILLISECONDS.sleep(rand.nextInt(50));
+            System.out.println(this);
         } catch(InterruptedException e) {
-            //acceptable way to exit
+            System.out.println("interrupted: " + this);
         }
-        System.out.println(this);
     }
 
     @Override
     public String toString() {
-        return "PrioritizedTask{" +
-                "id=" + id +
-                ", priority=" + priority +
-                '}';
+        return String.format("[%1$-3d]", priority) +
+                " Task " + id;
     }
 
-    String summary(){
+    String summary() {
         return "(" + id + ": " + priority + ")";
     }
 
@@ -45,8 +43,9 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
         return Integer.compare(priority, o.priority);
     }
 
-    static class EndSentinel extends PrioritizedTask{
+    static class EndSentinel extends PrioritizedTask {
         private ExecutorService exec;
+
         public EndSentinel(ExecutorService exec) {
             //lowest priority in this program
             super(-1);
@@ -55,13 +54,13 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
 
         @Override
         public void run() {
-           int count = 0;
-           for(PrioritizedTask pt: sequence){
-               System.out.println(pt.summary());
-               if(++count %5 ==0){
-                   System.out.println();
-               }
-           }
+            int count = 0;
+            for(PrioritizedTask pt : sequence) {
+                System.out.println(pt.summary());
+                if(++count % 5 == 0) {
+                    System.out.println();
+                }
+            }
             System.out.println();
             System.out.println(this + " Calling shutdownNow()");
             exec.shutdownNow();
