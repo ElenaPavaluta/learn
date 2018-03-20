@@ -2,16 +2,17 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.newLibraryComponents.
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
-import java.util.*;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.*;
 
 class GreenHouseScheduler {
 
+    static ExecutorService exec = Executors.newCachedThreadPool();
+    //        ScheduledExecutorService ses = Executors.newScheduledThreadPool(20);
     ScheduledExecutorService scheduler = new ScheduledThreadPoolExecutor(10);
-    //    ScheduledExecutorService ses = Executors.newScheduledThreadPool(20);
     List<DataPoint> data = Collections.synchronizedList(new ArrayList<>());
     private volatile boolean light = false;
     private volatile boolean water = false;
@@ -24,10 +25,13 @@ class GreenHouseScheduler {
     private Random rand = new Random(47);
 
 
+    public static void main(String[] args) throws InterruptedException {
+//        m();
+        mDelay();
+    }
 
-    public static void main(String[] args) {
+    private static void m(){
         GreenHouseScheduler gh = new GreenHouseScheduler();
-
         gh.schedule(gh.new Terminate(), 5000);
 
         gh.repeat(gh.new Bell(), 0, 1000);
@@ -38,6 +42,27 @@ class GreenHouseScheduler {
         gh.repeat(gh.new WaterOff(), 0, 800);
         gh.repeat(gh.new ThermostatDay(), 0, 1400);
         gh.repeat(gh.new CollectionData(), 500, 500);
+
+
+    }
+
+    private static void mDelay() throws InterruptedException {
+        DelayQueue<Repeat> queue = new DelayQueue<>();
+        GreenHouseScheduler gh = new GreenHouseScheduler();
+
+
+        exec.execute(new Repeat(gh.new Bell(), 0, 1000, queue));
+        exec.execute(new Repeat(gh.new ThermostatNight(), 0, 2000, queue));
+        exec.execute(new Repeat(gh.new LightOn(), 0, 200, queue));
+        exec.execute(new Repeat(gh.new LightOff(), 0, 400, queue));
+        exec.execute(new Repeat(gh.new WaterOn(), 0, 600, queue));
+        exec.execute(new Repeat(gh.new WaterOff(), 0, 800, queue));
+        exec.execute(new Repeat(gh.new ThermostatDay(), 0, 1400, queue));
+        exec.execute(new Repeat(gh.new CollectionData(), 500, 500, queue));
+
+        TimeUnit.MILLISECONDS.sleep(5000);
+        exec.execute(new Repeat(gh.new TerminateDelay(), 5000, 0, queue));
+
     }
 
     synchronized String getThermostat() {
@@ -54,6 +79,48 @@ class GreenHouseScheduler {
 
     void repeat(Runnable event, long initialDelay, long period) {
         scheduler.scheduleAtFixedRate(event, initialDelay, period, TimeUnit.MILLISECONDS);
+    }
+
+    static class Repeat implements Runnable, Delayed {
+        private int period;
+        private long trigger;
+        private Runnable runnable;
+        private DelayQueue<Repeat> queue;
+
+        public Repeat(Runnable runnable, int initialDelay, int period, DelayQueue<Repeat> queue) {
+            this.runnable = runnable;
+            this.period = period;
+            this.queue = queue;
+            trigger = System.nanoTime() + TimeUnit.NANOSECONDS.convert(initialDelay, TimeUnit.MILLISECONDS);
+            queue.put(this);
+        }
+
+        @Override
+        public void run() {
+            try {
+                while(!Thread.interrupted()) {
+                    _run();
+                }
+            } catch(InterruptedException e) {
+//                e.printStackTrace();
+            }
+        }
+
+        private synchronized void _run() throws InterruptedException {
+            queue.take().runnable.run();
+            trigger = System.nanoTime() + TimeUnit.NANOSECONDS.convert(period, TimeUnit.MILLISECONDS);
+            queue.put(this);
+        }
+
+        @Override
+        public long getDelay(TimeUnit unit) {
+            return unit.convert(trigger - System.nanoTime(), TimeUnit.NANOSECONDS);
+        }
+
+        @Override
+        public int compareTo(Delayed o) {
+            return Long.compare(trigger, ((Repeat) o).trigger);
+        }
     }
 
     //new feature: data collection
@@ -152,6 +219,26 @@ class GreenHouseScheduler {
         }
     }
 
+    class TerminateDelay implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("\n\n\n\n Terminating");
+            exec.shutdownNow();
+            /**
+             * Must start a separate task to do this job
+             * since the scheduler has been shut down
+             */
+            new Thread() {
+                @Override
+                public void run() {
+                    for(DataPoint d : data) {
+                        System.out.println(d);
+                    }
+                }
+            }.start();
+        }
+    }
+
     class CollectionData implements Runnable {
         @Override
         public void run() {
@@ -168,12 +255,8 @@ class GreenHouseScheduler {
                     humidityDirection = -humidityDirection;
                 }
                 lastHumidity = lastHumidity + humidityDirection * rand.nextFloat();
-                /**
-                 * Calendar must be clones, otherwise all
-                 * DataPoint-s hold references to the same larTime.
-                 * for a basic object like Calendar, clone() is ok
-                 */
-                data.add(new DataPoint( LocalDateTime.of(lastTime.toLocalDate(), lastTime.toLocalTime()), lastTemp, lastHumidity));
+
+                data.add(new DataPoint(LocalDateTime.of(lastTime.toLocalDate(), lastTime.toLocalTime()), lastTemp, lastHumidity));
             }
 
         }
