@@ -12,9 +12,9 @@ class Run {
 
     void m() throws InterruptedException {
         exec.execute(pool);
-        IntStream.range(0, 10).forEach(i->exec.execute(new Task(i, pool)));
+        IntStream.range(0, 50).forEach(i->exec.execute(new Task(i, pool)));
 
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(5);
         exec.shutdownNow();
     }
 

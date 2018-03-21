@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 class Task implements Runnable {
     int id;
     Pool pool;
+    private Random rand = new Random(47);
 
     public Task(int id, Pool pool) {
         this.id = id;
@@ -16,8 +17,8 @@ class Task implements Runnable {
     public void run() {
         try {
             pool.acquire(id);
-            TimeUnit.MILLISECONDS.sleep(100);
-            pool.release(id);
+            TimeUnit.MILLISECONDS.sleep(rand.nextInt(100));
+            pool.release();
         } catch(InterruptedException e) {
             System.out.println(id + " interrupted");
         }
