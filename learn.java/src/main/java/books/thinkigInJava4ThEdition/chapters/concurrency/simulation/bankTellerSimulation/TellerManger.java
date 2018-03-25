@@ -28,7 +28,7 @@ class TellerManger implements Runnable {
 
     void adjustTellerNumber() {
         /**
-         * This is actually a constrol system. Bu adjusting the numbers,
+         * This is actually a constrol system. By adjusting the numbers,
          * you can reveal stability issues in the control mechanism
          * If line is too long, add another teller
          */
