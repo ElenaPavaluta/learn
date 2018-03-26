@@ -47,7 +47,7 @@ class TableCreator {
 
 			if (anns[0] instanceof SqlInteger) {
 				SqlInteger sInt = (SqlInteger) anns[0];
-				// use the filed name if name not specified
+				// use the filed dishName if dishName not specified
 				if (sInt.name().length() < 1) {
 					columnName = field.getName().toUpperCase();
 				} else {

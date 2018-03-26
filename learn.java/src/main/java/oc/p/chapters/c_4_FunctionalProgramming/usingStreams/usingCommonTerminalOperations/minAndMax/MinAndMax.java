@@ -23,7 +23,7 @@ class MinAndMax {
 
     static {
         comparator = (g, g2) -> Integer.compare(g.name.length(), g2.name.length());
-//        comparator = Integer::compare;  //compiler error due to the fact, that I need to call name.length
+//        comparator = Integer::compare;  //compiler error due to the fact, that I need to call dishName.length
     }
 
     static void min() {

@@ -1,8 +1,8 @@
 package books.thinkigInJava4ThEdition.chapters.annotations.generatingExternalFiles;
 
 /**
- * If you define an element on an annotation with the name value, then as long
- * as it is the only element type specified you don’t need to use the name-value
+ * If you define an element on an annotation with the dishName value, then as long
+ * as it is the only element type specified you donï¿½t need to use the dishName-value
  * pair syntax; you can just specify the value in parentheses.
  * 
  * @SqlString(30)

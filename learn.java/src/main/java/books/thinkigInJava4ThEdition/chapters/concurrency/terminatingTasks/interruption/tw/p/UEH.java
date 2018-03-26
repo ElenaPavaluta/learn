@@ -4,6 +4,6 @@ class UEH implements Thread.UncaughtExceptionHandler {
 
     @Override
     public void uncaughtException(Thread t, Throwable e) {
-        System.out.println("Thread name: " + t.getName() + "; " + e.getMessage());
+        System.out.println("Thread dishName: " + t.getName() + "; " + e.getMessage());
     }
 }

@@ -10,7 +10,7 @@ public class C implements StaticInterfaceMethods {
 		c.defaultMethod();
 		/*
 		 * compiler error: A static interface method can be accessed only with
-		 * the interface name
+		 * the interface dishName
 		 */
 		// c.staticMethod();
 	}

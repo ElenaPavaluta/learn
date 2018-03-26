@@ -5,7 +5,7 @@ class objectVsReference {
 	/**
 	 * Reference:
 	 * 
-	 * - a variable that has a name
+	 * - a variable that has a dishName
 	 * 
 	 * -can be assigned to another reference, passed to a method, or returned
 	 * from a method
@@ -16,7 +16,7 @@ class objectVsReference {
 	/**
 	 * Object:
 	 * 
-	 * - sits on the heap and has no name
+	 * - sits on the heap and has no dishName
 	 * 
 	 * - the only way to access an object it's through a variable
 	 * 

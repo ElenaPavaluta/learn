@@ -3,7 +3,7 @@ package oc.a.chapters.c1_building_blocks.pkg_declaration_and_imports.naming_conf
 import java.util.Date;
 
 /*
- * Explicily importing a class name takes precedence over any wildcards present
+ * Explicily importing a class dishName takes precedence over any wildcards present
  */
 public class NamingConflicts {
 

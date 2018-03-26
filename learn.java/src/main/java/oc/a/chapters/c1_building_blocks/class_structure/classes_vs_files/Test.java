@@ -32,7 +32,7 @@ final class T5 {
 // protected class T6{}
 
 /*
- * Compiler error: The name of the file has to match the name of the public
+ * Compiler error: The dishName of the file has to match the dishName of the public
  * class
  */
 // public class T7{}

@@ -3,7 +3,7 @@ package oc.a.chapters.c5_class_design.introducingClassInheritance.inheritingVari
 import utils.delimitators.Delimitators;
 
 /**
- * Hide a variable: define a var with the same name both for the parent and
+ * Hide a variable: define a var with the same dishName both for the parent and
  * child class
  * 
  * 

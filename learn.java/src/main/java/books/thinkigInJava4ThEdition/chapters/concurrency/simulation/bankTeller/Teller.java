@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.bankTellerSimulation;
+package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.bankTeller;
 
 import java.util.concurrent.TimeUnit;
 

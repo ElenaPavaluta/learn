@@ -9,7 +9,7 @@ package oc.a.chapters.c5_class_design.creatingAbstractClasses;
  * abstract class for which is it declared.
  * 
  * 4. Implementing an abstract method in a subclass follows the same rules for
- * overriding a method. For example, the name and signature must be the same,
+ * overriding a method. For example, the dishName and signature must be the same,
  * and the visibility of the method in the subclass must be at least as
  * accessible as the method in the parent class.
  *

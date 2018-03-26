@@ -10,6 +10,6 @@ abstract class Base {
 
     @Override
     public String toString() {
-        return "name='" + name;
+        return "dishName='" + name;
     }
 }
