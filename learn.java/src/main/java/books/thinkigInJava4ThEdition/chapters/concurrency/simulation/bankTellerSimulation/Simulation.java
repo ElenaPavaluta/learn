@@ -17,9 +17,12 @@ class Simulation {
         exec.execute(new CustomerGenerator(customerLine));
         exec.execute(new TellerManger(exec, customerLine, ADJUST_PERIOD));
 
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(10);
 
-        System.out.println("Press enter to quit");
         exec.shutdownNow();
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        m();
     }
 }

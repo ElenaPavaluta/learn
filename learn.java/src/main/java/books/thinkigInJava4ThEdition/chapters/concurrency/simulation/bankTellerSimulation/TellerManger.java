@@ -1,6 +1,5 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.bankTellerSimulation;
 
-import javax.sound.midi.SoundbankResource;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -28,7 +27,7 @@ class TellerManger implements Runnable {
 
     void adjustTellerNumber() {
         /**
-         * This is actually a constrol system. By adjusting the numbers,
+         * This is actually a control system. By adjusting the numbers,
          * you can reveal stability issues in the control mechanism
          * If line is too long, add another teller
          */
@@ -49,12 +48,12 @@ class TellerManger implements Runnable {
             return;
         }
         //if a line is short enough, remove a teller
-        if(workingTellers.size() >1 && customerLine.size()/workingTellers.size()<2){
+        if(workingTellers.size() > 1 && customerLine.size() / workingTellers.size() < 2) {
             reassingOneTeller();
         }
         //if there is no line, we only need one teller
-        if(customerLine.size() == 0){
-            while(workingTellers.size()>1){
+        if(customerLine.size() == 0) {
+            while(workingTellers.size() > 1) {
                 reassingOneTeller();
             }
         }
@@ -68,13 +67,14 @@ class TellerManger implements Runnable {
 
     @Override
     public void run() {
-        try{
-            while(!Thread.interrupted()){
+        try {
+            while(!Thread.interrupted()) {
                 TimeUnit.MILLISECONDS.sleep(adjustPeriod);
                 adjustTellerNumber();
-                System.out.println(customerLine + "{ ");
-                workingTellers.forEach(t-> System.out.print(t.shortString() + " "));
-                System.out.println("}");
+                System.out.print(customerLine + "{ ");
+                workingTellers.forEach(t -> System.out.print(t + " "));
+                System.out.print("}");
+                System.out.println();
             }
         } catch(InterruptedException e) {
             System.out.println(this.getClass().getSimpleName() + " interrupted");

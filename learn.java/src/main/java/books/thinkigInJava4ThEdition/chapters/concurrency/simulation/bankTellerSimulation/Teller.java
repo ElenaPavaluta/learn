@@ -53,7 +53,4 @@ class Teller implements Runnable, Comparable<Teller> {
         return "Teller " + id + " ";
     }
 
-    String shortString() {
-        return "T " + id + " ";
-    }
 }
