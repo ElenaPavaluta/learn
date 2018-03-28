@@ -5,11 +5,16 @@ class Restaurant {
     }
 
     public Waiter waiter() {
+        return null;
     }
 
     public void menu() {
     }
 
     public BusBoy busBoy() {
+        return null;
+    }
+
+    public void receive(Customer customer) {
     }
 }
