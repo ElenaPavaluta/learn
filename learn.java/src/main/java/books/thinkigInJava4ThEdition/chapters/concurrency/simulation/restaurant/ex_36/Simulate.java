@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant;
+package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant.ex_36;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,7 +11,7 @@ class Simulate {
         Restaurant restaurant = new Restaurant(exec, 5, 2);
         exec.execute(restaurant);
 
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(10);
         exec.shutdownNow();
     }
 

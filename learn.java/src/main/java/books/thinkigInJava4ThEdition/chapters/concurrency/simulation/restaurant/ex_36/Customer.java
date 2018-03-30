@@ -1,10 +1,8 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant;
+package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant.ex_36;
 
 import java.util.concurrent.SynchronousQueue;
 
-class Customer implements Runnable {
-    private static int counter = 0;
-    private final int id = counter++;
+class Customer extends Person implements Runnable {
     private final Waiter waiter;
 
     //only one course at a time can be received
@@ -34,8 +32,4 @@ class Customer implements Runnable {
         System.out.println(this + " finished meal. Leaving");
     }
 
-    @Override
-    public String toString() {
-        return this.getClass().getSimpleName() + ": " + id;
-    }
 }

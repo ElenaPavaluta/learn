@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant;
+package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant.ex_36;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +7,22 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 class Restaurant implements Runnable {
-    private static Random rand = new Random(47);
-    BlockingQueue<Order> orders = new LinkedBlockingQueue<>();
+    static final int MAX_TABLE_SEATS = 12;
+    static Random rand = new Random(47);
+    private BlockingQueue<PersonGroup>
+    private List<Table> tables = Stream
+            .<Table>generate(() -> new Table(rand.nextInt(MAX_TABLE_SEATS)))
+            .collect(Collectors.toList());
+
+
+
+    BlockingQueue<OrderTicket> orderTickets = new LinkedBlockingQueue<>();
     private List<Waiter> waiters = new ArrayList<>();
     private List<Chef> chefs = new ArrayList<>();
     private ExecutorService exec;
