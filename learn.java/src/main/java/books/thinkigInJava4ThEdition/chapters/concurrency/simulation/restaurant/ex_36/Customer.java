@@ -3,17 +3,18 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant
 import java.util.concurrent.SynchronousQueue;
 
 class Customer extends Person implements Runnable {
-    private final Waiter waiter;
 
-    //only one course at a time can be received
+    private final Waiter waiter;
+    private final Table table;
     private SynchronousQueue<Plate> plateSynchronousQueue = new SynchronousQueue<>();
 
-    public Customer(Waiter waiter) {
+    public Customer(Person person, Waiter waiter, Table table) {
+        super(person.id);
         this.waiter = waiter;
+        this.table = table;
     }
 
     void deliver(Plate plate) throws InterruptedException {
-        //only blocks if the customer is still eating the previous course
         plateSynchronousQueue.put(plate);
     }
 
@@ -25,11 +26,24 @@ class Customer extends Person implements Runnable {
                 waiter.placeOrder(this, food);
                 System.out.println(this + " eating " + plateSynchronousQueue.take());
             } catch(InterruptedException e) {
-                System.out.println(this.getClass().getSimpleName() + " id: " + id + " interrupted");
+                System.out.println(this + " interrupted");
                 break;
             }
         }
+        waiter.leaving(this);
         System.out.println(this + " finished meal. Leaving");
     }
 
+    public Table getTable() {
+        return table;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Customer)) {
+            return false;
+        }
+        Customer c = (Customer) obj;
+        return this.id == c.id;
+    }
 }

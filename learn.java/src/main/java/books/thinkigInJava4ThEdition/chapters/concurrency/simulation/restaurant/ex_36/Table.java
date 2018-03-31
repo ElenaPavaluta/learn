@@ -1,8 +1,5 @@
 package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant.ex_36;
 
-import java.util.List;
-import java.util.function.Predicate;
-
 class Table {
 
     private static int counter = 0;
@@ -13,31 +10,25 @@ class Table {
         this.capacity = capacity;
     }
 
-    private Predicate<List<Customer>> emptyList = List::isEmpty;
-    private Predicate<Waiter> existsWaiter = waiter1 -> waiter1 != null;
-
-    private List<Customer> customerList;
-    private Waiter waiter;
-
-    void occupyTable(List<Customer> customers) {
-        this.customerList = customers;
+    public int nb() {
+        return tableNb;
     }
 
-    void releaseTable() {
-        this.customerList = null;
-        this.waiter = null;
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ", id: " + tableNb;
     }
 
-    void assignWaiter(Waiter waiter) {
-        this.waiter = waiter;
+    public int capacity() {
+        return capacity;
     }
 
-    boolean isEmpty() {
-        return emptyList.test(customerList) && !existsWaiter.test(waiter);
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Table)) {
+            return false;
+        }
+        Table t = (Table) obj;
+        return this.tableNb == t.tableNb;
     }
-
-    int size(){
-        return customerList.size();
-    }
-
 }

@@ -2,8 +2,11 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant
 
 class Person {
 
-    private static int counter = 0;
-    protected final int id = counter;
+    protected int id;
+
+    public Person(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {

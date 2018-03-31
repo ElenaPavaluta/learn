@@ -11,7 +11,7 @@ class Table {
     @Override
     public String toString() {
         return "Table{" +
-                "tableNb=" + tableNb +
+                "nb=" + tableNb +
                 '}';
     }
 }
