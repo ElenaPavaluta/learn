@@ -11,7 +11,7 @@ class Simulate {
         Restaurant restaurant = new Restaurant(exec, 5, 2);
         exec.execute(restaurant);
 
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(3);
         exec.shutdownNow();
     }
 

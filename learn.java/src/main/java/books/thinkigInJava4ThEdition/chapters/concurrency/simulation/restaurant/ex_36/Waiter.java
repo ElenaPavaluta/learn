@@ -13,11 +13,13 @@ class Waiter implements Runnable, Comparable<Waiter> {
     private final int id = counter++;
 
     private final Restaurant restaurant;
-    BlockingQueue<Plate> filledOrders = new LinkedBlockingQueue<>();
+    private BlockingQueue<SingleTableOrder> filledOrders = new LinkedBlockingQueue<>();
+
     private ToIntFunction<List<Table>> totalCustomers = l -> l.stream()
                                                               .mapToInt(Table::capacity)
                                                               .reduce(Integer::sum)
-                                                              .getAsInt();
+                                                              .orElse(0);
+
     private Map<Table, SingleTableOrder> tableOrders = new ConcurrentHashMap<>();
 
 
@@ -29,15 +31,12 @@ class Waiter implements Runnable, Comparable<Waiter> {
     public void run() {
         try {
             while(!Thread.interrupted()) {
-                //block until a course is ready
-                Plate plate = filledOrders.take();
-                System.out.println(this + " received: " + plate + " | delivering to : " + plate.getOrderTicket().getCustomer());
-                plate.getOrderTicket().getCustomer().deliver(plate);
+                SingleTableOrder order = filledOrders.take();
+                order.customers().forEach(customer -> customer.deliver(order.getFoodForCustomer(customer)));
             }
         } catch(InterruptedException e) {
             System.out.println(this + " interrupted");
         }
-        System.out.println("this " + " off duty");
     }
 
     @Override
@@ -59,13 +58,20 @@ class Waiter implements Runnable, Comparable<Waiter> {
     public void placeOrder(Customer customer, Food food) {
         SingleTableOrder tableOrder = tableOrders.get(customer.getTable());
         tableOrder.addCustomerOrder(customer, food);
-        if(tableOrder.complete()) {
+        System.out.println(this + " taken order from " + customer);
+        if(tableOrder.allTableCustomersOrdered()) {
             restaurant.placeOrder(tableOrder);
         }
     }
 
     public void seatCustomer(Table table, List<Person> group) {
-        tableOrders.put(table, new SingleTableOrder(table, this, customers(group, table)));
+        List<Customer> customers = customers(group, table);
+        tableOrders.put(table, new SingleTableOrder(table, this, customers));
+        receiveCustomerOrders(customers);
+    }
+
+    private void receiveCustomerOrders(List<Customer> customers) {
+        customers.forEach(c->restaurant.getExec().execute(c));
     }
 
     private List<Customer> customers(List<Person> group, Table table) {
@@ -77,9 +83,17 @@ class Waiter implements Runnable, Comparable<Waiter> {
     public void leaving(Customer customer) {
         SingleTableOrder tableOrder = tableOrders.get(customer.getTable());
         tableOrder.removeCustomer(customer);
-        if(tableOrder.emptyTable()){
+        if(tableOrder.emptyTable()) {
             tableOrders.remove(tableOrder.getTable());
             restaurant.cleanTable(tableOrder.getTable());
+        }
+    }
+
+    public void addCompleteOrder(SingleTableOrder tableOrder) {
+        try {
+            filledOrders.put(tableOrder);
+        } catch(InterruptedException e) {
+            System.out.println(this + " addCompleteOrder() interrupted");
         }
     }
 }

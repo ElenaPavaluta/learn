@@ -10,9 +10,10 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 class Entrance implements Runnable {
-
+    private static int counter = 0;
     ArrayBlockingQueue<List<Person>> queue = new ArrayBlockingQueue<List<Person>>(10);
     private ExecutorService exec;
+
     private Runnable bored = () -> {
         try {
             TimeUnit.MILLISECONDS.sleep(Restaurant.rand.nextInt(1000));
@@ -32,7 +33,7 @@ class Entrance implements Runnable {
         }
     };
     private Supplier<List<Person>> personsSupplier = () -> Stream
-            .<Person>generate(Person::new)
+            .<Person>generate(() -> new Person(++counter))
             .limit(Restaurant.rand.nextInt(Restaurant.MAX_TABLE_SEATS))
             .collect(Collectors.toList());
 

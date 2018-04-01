@@ -14,11 +14,17 @@ class Tables {
 
     private List<Table> tables = Stream
             .<Table>generate(() -> new Table(Restaurant.rand.nextInt(Restaurant.MAX_TABLE_SEATS)))
+            .limit(Restaurant.MAX_TABLE_SEATS)
             .collect(Collectors.toCollection(CopyOnWriteArrayList::new));
 
     synchronized Optional<Table> tableFor(int nbOfPerson) {
         Predicate<Table> predicate = t -> biPredicate.test(t, nbOfPerson);
-        return tables.stream().filter(predicate).findFirst();
+        Optional<Table> optTable = tables.stream().filter(predicate).findFirst();
+        optTable.ifPresent(tables::remove);
+        return optTable;
     }
 
+    synchronized void add(Table table) {
+        tables.add(table);
+    }
 }

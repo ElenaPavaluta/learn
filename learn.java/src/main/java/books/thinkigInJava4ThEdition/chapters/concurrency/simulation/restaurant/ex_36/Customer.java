@@ -6,7 +6,7 @@ class Customer extends Person implements Runnable {
 
     private final Waiter waiter;
     private final Table table;
-    private SynchronousQueue<Plate> plateSynchronousQueue = new SynchronousQueue<>();
+    private SynchronousQueue<Food> plateSynchronousQueue = new SynchronousQueue<>();
 
     public Customer(Person person, Waiter waiter, Table table) {
         super(person.id);
@@ -14,8 +14,12 @@ class Customer extends Person implements Runnable {
         this.table = table;
     }
 
-    void deliver(Plate plate) throws InterruptedException {
-        plateSynchronousQueue.put(plate);
+    void deliver(Food food) {
+        try {
+            plateSynchronousQueue.put(food);
+        } catch(InterruptedException e) {
+            System.out.println("deliver food interrupted");
+        }
     }
 
     @Override
@@ -24,7 +28,10 @@ class Customer extends Person implements Runnable {
             Food food = Menu.randomSelect();
             try {
                 waiter.placeOrder(this, food);
-                System.out.println(this + " eating " + plateSynchronousQueue.take());
+                System.out.println(this + " ordered: " + food);
+                Food cooked = plateSynchronousQueue.take();
+                cooked.eat();
+                System.out.println(this + " eaten " + cooked);
             } catch(InterruptedException e) {
                 System.out.println(this + " interrupted");
                 break;

@@ -2,7 +2,7 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.restaurant
 
 import java.util.Random;
 
-public enum Menu {
+enum Menu {
 
 
     A_food, B_food, C_food, D_food, E_food, F_food, G_food, H_food;
