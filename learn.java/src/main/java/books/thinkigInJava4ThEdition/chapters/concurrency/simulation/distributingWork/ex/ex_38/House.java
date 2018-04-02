@@ -57,25 +57,25 @@ class House {
     }
 
 
-    synchronized void leftRoof() {
+    private synchronized void leftRoof() {
         for(int i = 4, j = 2; i > 0; i--, j++) {
             matrix[i][j] = '/';
         }
     }
 
-    synchronized void rightRoof() {
+    private synchronized void rightRoof() {
         for(int i = 4, j = 26; i > 0; i--, j--) {
             matrix[i][j] = '\\';
         }
     }
 
-    synchronized void horizontal(int start, int end, int fixed) {
+    private synchronized void horizontal(int start, int end, int fixed) {
         for(int i = start; i < end; i++) {
             matrix[fixed][i] = '-';
         }
     }
 
-    synchronized void vertical(int start, int end, int fixed) {
+    private synchronized void vertical(int start, int end, int fixed) {
         for(int i = start; i < end; i++) {
             matrix[i][fixed] = '|';
         }
@@ -90,7 +90,7 @@ class House {
         nb();
     }
 
-    private void nb() {
+    synchronized void nb() {
        char[] cs = String.valueOf(id).toCharArray();
         for(int i= 20, j=10, k = 0; k<cs.length; j++, k++){
             matrix[i][j] = cs[k];

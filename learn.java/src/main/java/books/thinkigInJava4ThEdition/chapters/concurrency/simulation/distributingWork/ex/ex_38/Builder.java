@@ -9,12 +9,23 @@ class Builder implements Runnable {
     private WorkerPool pool;
     private CyclicBarrier cyclicBarrier = new CyclicBarrier(7);
 
+    public Builder(WorkerPool pool) {
+        this.pool = pool;
+    }
+
     @Override
     public void run() {
         try {
             while(!Thread.interrupted()) {
+                house = new House();
                 pool.hire(FoundationWorker.class, this);
+                pool.hire(FrameWorker.class, this);
+                pool.hire(RoofWorker.class, this);
+                pool.hire(WindowWorker.class, this);
+                pool.hire(DoorWorker.class, this);
+                pool.hire(NbWorker.class, this);
                 cyclicBarrier.await();
+                house.print();
             }
         } catch(InterruptedException e) {
             System.out.println(this + " interrupted");

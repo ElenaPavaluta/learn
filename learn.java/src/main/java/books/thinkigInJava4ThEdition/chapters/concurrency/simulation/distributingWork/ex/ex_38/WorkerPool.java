@@ -2,11 +2,16 @@ package books.thinkigInJava4ThEdition.chapters.concurrency.simulation.distributi
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
 
 class WorkerPool {
     private Set<Worker> pool = new HashSet<>();
 
-    private synchronized void add(Worker worker) {
+    void startAll(ExecutorService exec){
+        pool.forEach(exec::execute);
+    }
+
+    synchronized void add(Worker worker) {
         pool.add(worker);
         notifyAll();
     }
