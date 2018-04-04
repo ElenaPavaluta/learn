@@ -2,8 +2,7 @@ package oc.a.chapters.c4_methods_and_encapsulation.overloadingMethods;
 
 /**
  * Java will convert a primitive int to an object Integer to add it to an
- * ArrayList through the wonders of autoboxing. This works for code you write
- * too.
+ * ArrayList through the wonders of autoboxing.
  *
  */
 public class Autoboxing {

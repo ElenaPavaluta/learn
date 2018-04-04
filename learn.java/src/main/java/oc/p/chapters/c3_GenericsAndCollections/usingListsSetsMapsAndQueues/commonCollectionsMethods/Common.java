@@ -1,5 +1,8 @@
 package oc.p.chapters.c3_GenericsAndCollections.usingListsSetsMapsAndQueues.commonCollectionsMethods;
 
+/**
+ * All methods that internally use equals() method have Object as param
+ */
 class Common {
 
     /**
@@ -27,7 +30,7 @@ class Common {
     /**
      *void clear()
      *
-     * clear() provides an easy way to discard all elements of the Collection
+     * clear() discards all elements of the Collection
      */
 
     /**
