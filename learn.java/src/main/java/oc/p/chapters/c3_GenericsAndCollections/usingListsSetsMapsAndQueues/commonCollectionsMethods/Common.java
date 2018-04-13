@@ -1,7 +1,8 @@
 package oc.p.chapters.c3_GenericsAndCollections.usingListsSetsMapsAndQueues.commonCollectionsMethods;
 
 /**
- * All methods that internally use equals() method have Object as param
+ * All methods that internally use equals() method have Object as param,
+ * due to the fact that equals() method uses Object and parameter
  */
 class Common {
 

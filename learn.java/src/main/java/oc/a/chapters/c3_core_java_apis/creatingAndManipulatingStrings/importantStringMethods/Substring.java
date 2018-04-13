@@ -7,7 +7,7 @@ package oc.a.chapters.c3_core_java_apis.creatingAndManipulatingStrings.important
  * String substring(int beginIndex, int endIndex)
  *
  */
-public class Substring {
+class Substring {
 
 	static String s = "logitech";
 
