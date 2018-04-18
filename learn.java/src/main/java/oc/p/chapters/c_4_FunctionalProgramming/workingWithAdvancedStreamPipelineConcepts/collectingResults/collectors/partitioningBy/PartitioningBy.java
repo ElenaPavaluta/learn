@@ -28,12 +28,14 @@ class PartitioningBy {
         init();
         Map<Boolean, List<String>> map = stream.collect(Collectors.partitioningBy(predicate));
         map.forEach((k, v)->System.out.println(k + "->" + v));
+        System.out.println();
     }
 
     static void m2(){
         init();
         Map<Boolean, Set<String>> map = stream.collect(Collectors.partitioningBy(predicate, Collectors.toSet()));
         map.forEach((k, v)->System.out.println(k + "->" + v));
+        System.out.println();
     }
 
     //!!!
@@ -41,11 +43,12 @@ class PartitioningBy {
         init();
         Map<Boolean, Long> map = stream.collect(Collectors.partitioningBy(predicate, Collectors.counting()));
         map.forEach((k, v)->System.out.println(k + "->" + v));
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        m();
-        m2();
+//        m();
+//        m2();
         m3();
     }
 }
