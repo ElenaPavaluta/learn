@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.generics.genericMethods.aGenericMethodToUseWithGenerators;
+package books.thinkigInJava4ThEdition.chapters.generics.anonymousInnerClasses;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,8 +18,8 @@ class Generators {
         return (List<T>)fill((Collection<T>) coll, gen, n);
     }
 
-    static <T> Collection<T> fill(Queue<T> col, Generator<T> gen, int n){
-        return (Queue<T>)fill((Collection<T>)col, gen, n);
+    static <T> Collection<T> fill(Queue<T> coll, Generator<T> gen, int n){
+        return (Queue<T>)fill((Collection<T>) coll, gen, n);
     }
 
 

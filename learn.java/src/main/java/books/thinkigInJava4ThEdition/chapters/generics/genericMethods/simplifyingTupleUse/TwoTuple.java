@@ -1,6 +1,6 @@
 package books.thinkigInJava4ThEdition.chapters.generics.genericMethods.simplifyingTupleUse;
 
-class TwoTuple<A, B> {
+public class TwoTuple<A, B> {
 
     final  A first;
     final B second;

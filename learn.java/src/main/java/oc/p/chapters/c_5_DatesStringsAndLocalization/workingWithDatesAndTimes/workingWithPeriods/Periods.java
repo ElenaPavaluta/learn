@@ -67,11 +67,20 @@ class Periods {
        zonedDateTime = zonedDateTime.minus(period);
    }
 
+   static void m5(){
+       period = Period.ofDays(30);
+       System.out.println(period);
+
+       period = Period.of(0, 1, 30);
+       System.out.println(period);
+   }
+
     public static void main(String[] args) {
 //        m();
 //        m2();
-        m3();
-        m4();
+//        m3();
+//        m4();
+        m5();
     }
 
 }
