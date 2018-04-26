@@ -5,7 +5,14 @@ import java.util.List;
 
 class ListMaker<T> {
 
-    List<T> create(){
+    public static void main(String[] args) {
+        ListMaker<String> maker = new ListMaker<>();
+
+        List<String> stringList = maker.create();
+//        List<ObjectName> objectNames = maker.create();  //compiler error
+    }
+
+    List<T> create() {
         return new ArrayList<>();
     }
 }
