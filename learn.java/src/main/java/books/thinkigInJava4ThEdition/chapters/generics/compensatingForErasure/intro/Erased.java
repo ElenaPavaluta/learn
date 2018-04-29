@@ -1,4 +1,4 @@
-package books.thinkigInJava4ThEdition.chapters.generics.compensatingForErasure;
+package books.thinkigInJava4ThEdition.chapters.generics.compensatingForErasure.intro;
 
 import java.time.LocalDate;
 import java.util.Locale;
