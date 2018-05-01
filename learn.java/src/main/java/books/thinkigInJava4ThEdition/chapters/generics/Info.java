@@ -14,6 +14,9 @@ package books.thinkigInJava4ThEdition.chapters.generics;
  * RUN TIME WON’T WORK.
  *
  * Because of erasure, the runtime type of an array (of generic) can only be Object[]
+ *
+ * Arrays are completely defined in the language and can thus have both
+ * compile-time and run-time check built in.s
  */
 
 
