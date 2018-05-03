@@ -1,6 +1,9 @@
 package oc.p.chapters.c_5_DatesStringsAndLocalization.workingWithDatesAndTimes.workingWithPeriods;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.*;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 
 /**
  * static Period	of(int years, int months, int days)
@@ -75,12 +78,25 @@ class Periods {
        System.out.println(period);
    }
 
+   static void m6(){
+       Period p = Period.ofDays(2);
+//       p = p.plus(TemporalUni;
+       TemporalUnit t;
+       System.out.println(p.get(ChronoUnit.DAYS));
+   }
+
+   static void m7(){
+       LocalDate ld = LocalDate.now();
+       XMLGregorianCalendar xmlGregorianCalendar;
+   }
+
     public static void main(String[] args) {
 //        m();
 //        m2();
 //        m3();
 //        m4();
-        m5();
+//        m5();
+        m6();
     }
 
 }

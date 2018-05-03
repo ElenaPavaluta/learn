@@ -4,6 +4,9 @@ class Holder<T> {
 
     private T t;
 
+    public Holder() {
+    }
+
     public Holder(T t) {
         this.t = t;
     }

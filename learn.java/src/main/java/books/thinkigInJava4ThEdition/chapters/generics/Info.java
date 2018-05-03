@@ -17,6 +17,11 @@ package books.thinkigInJava4ThEdition.chapters.generics;
  *
  * Arrays are completely defined in the language and can thus have both
  * compile-time and run-time check built in.s
+ *
+ *
+ * List actually means "a raw List that holds any Object type,
+ * " whereas List<?> means "a non-raw List of some specific type,
+ * but we just don’t know what that type is."
  */
 
 
