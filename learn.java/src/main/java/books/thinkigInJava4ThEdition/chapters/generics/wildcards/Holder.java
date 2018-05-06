@@ -1,6 +1,6 @@
 package books.thinkigInJava4ThEdition.chapters.generics.wildcards;
 
-class Holder<T> {
+public class Holder<T> {
 
     private T t;
 

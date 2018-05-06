@@ -1,13 +1,12 @@
 package books.thinkigInJava4ThEdition.chapters.generics.wildcards;
 
 import oc.a.chapters.c1_building_blocks.pkg_declaration_and_imports.wildcard.Wildcard;
-import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 import java.util.ArrayList;
 import java.util.List;
 
 class Wildcards {
 
-    static void rawArgs(Holder holder, Object obj){
+    static void rawArgs(Holder holder, Object obj) {
         holder.setT(obj);  //warning
         holder.setT(new Wildcards()); //warning
 
@@ -15,7 +14,7 @@ class Wildcards {
         Object o = holder.getT();
     }
 
-    static void unboundedArgs(Holder<?> holder, Object obj){
+    static void unboundedArgs(Holder<?> holder, Object obj) {
         /**
          * Compiler error
          *
@@ -43,21 +42,21 @@ class Wildcards {
          * (only by assigning an Holder<T> object is which the T elem
          * has be set prior to assignent)
          */
-        Wildcard w  = (Wildcard) holder.getT();
+        Wildcard w = (Wildcard) holder.getT();
     }
 
-    static <T> T exact(Holder<T> holder){
+    static <T> T exact(Holder<T> holder) {
         T t = holder.getT();
         return t;
     }
 
-    static <T> T exact2(Holder<T> holder, T t){
+    static <T> T exact2(Holder<T> holder, T t) {
         holder.setT(t);
         t = holder.getT();
         return t;
     }
 
-    static <T> T wildSubtype(Holder<? extends T> holder, T arg ){
+    static <T> T wildSubtype(Holder<? extends T> holder, T arg) {
         /**
          * Same thing as List<? extends T>: cannot add any new elememt
          * but to the reference a List of subtype can be assigned
@@ -70,30 +69,17 @@ class Wildcards {
         return t;
     }
 
-    static <T> T wildSupertype(Holder<?  super T> holder, T arg){
+    static <T> T wildSupertype(Holder<? super T> holder, T arg) {
         /**
          * Once again: same as List<? super T>
          */
         holder.setT(arg);
-        T t = (T)holder.getT();
+        T t = (T) holder.getT();
 
 
         List<? super T> lst = new ArrayList<Object>();
-        T t2 = (T)lst.get(0);
+        T t2 = (T) lst.get(0);
 
         return t;
-    }
-
-    public static void main(String[] args) {
-        Holder raw = new Holder<Long>();
-        Holder<Long> qualified = new Holder<>();
-        Holder<?> unbounded = new Holder<>();
-        Holder<? extends Long> bounded = new Holder<>();
-        Long l = 1l;
-
-        rawArgs(raw, l);
-        rawArgs(qualified, l);
-        rawArgs(unbounded, l);
-        rawArgs(bounded, l);
     }
 }

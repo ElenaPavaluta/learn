@@ -1,6 +1,6 @@
 package books.thinkigInJava4ThEdition.chapters.generics.wildcards.tw.etendsVsSuper;
 
-import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
+import utils.generalUse.hierrarchy.noMethods.fruit.*;
 import java.time.LocalDateTime;
 import java.util.*;
 

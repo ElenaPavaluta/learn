@@ -22,6 +22,8 @@ package books.thinkigInJava4ThEdition.chapters.generics;
  * List actually means "a raw List that holds any Object type,
  * " whereas List<?> means "a non-raw List of some specific type,
  * but we just don’t know what that type is."
+ *
+ * A generic interface cannot be implemented twice in the same class hierarchy
  */
 
 
