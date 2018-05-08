@@ -24,6 +24,10 @@ package books.thinkigInJava4ThEdition.chapters.generics;
  * but we just don’t know what that type is."
  *
  * A generic interface cannot be implemented twice in the same class hierarchy
+ *
+ * Self-bounding takes the extra step of forcing the generic
+ * to be used as its own bound argument
+ * class SelfBounded<T extends SelfBounded<T>>{}
  */
 
 
