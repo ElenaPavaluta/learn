@@ -10,6 +10,14 @@ public class TwoTuple<A, B> {
         this.second = second;
     }
 
+    public A getFirst() {
+        return first;
+    }
+
+    public B getSecond() {
+        return second;
+    }
+
     @Override
     public String toString() {
         return "(" + first + ", " + second +")";
