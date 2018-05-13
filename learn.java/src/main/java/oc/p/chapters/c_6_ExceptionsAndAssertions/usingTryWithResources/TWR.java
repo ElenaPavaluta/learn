@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 class TWR {
 
-    static String path = "D:\\workspace\\cip\\learn\\learn.java\\src\\main\\resources\\files\\c6\\tryWithResources\\";
+    static String path = "D:\\workspace\\cip\\learn\\learn.java\\src\\main\\resources\\files\\oc\\p\\_c6\\tryWithResources\\";
     static String read = path + "read";
     static String write = path + "write";
 
