@@ -1,25 +1,34 @@
 package utils.resources.files.tw;
 
 import utils.resources.files.Resources;
-import java.io.File;
-
-import static utils.resources.files.Resources.SRC_MAIN_JAVA;
-import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
 
 class A {
 
-    void dir(){
-        File dir = Resources.Files.directory(this.getClass().getPackage().getName());
-    }
+    java.io.File file;
 
-    void del(){
-        Resources.Files.delAll();
-    }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         A a = new A();
 
-        a.dir();
-        a.del();
+//        a.dir();
+        a.file();
+
+        Resources.Files.recursiveDelete(a.file);
+
+    }
+
+    void dir() {
+        java.io.File dir = Resources.Files.directory(this.getClass().getPackage().getName());
+    }
+
+    void del() {
+    }
+
+    void file() throws InterruptedException {
+        file = Resources.Files.file(this.getClass().getPackage().getName() + "\\p\\p2\\p3\\p4", "a.txt");
+
+        /**
+         * Deletes the last file (either a file or a directory)
+         */
+//        file.delete();
     }
 }
