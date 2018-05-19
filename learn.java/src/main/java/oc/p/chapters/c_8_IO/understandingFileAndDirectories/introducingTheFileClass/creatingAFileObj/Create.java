@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 class Create {
 
     final String pkg = this.getClass().getPackage().getName();
-    final String path = Resources.Files.path(pkg);
+    final String path = Resources.path(pkg);
     ArrayDeque<java.io.File> files = new ArrayDeque<>();
 
     public static void main(String[] args) {

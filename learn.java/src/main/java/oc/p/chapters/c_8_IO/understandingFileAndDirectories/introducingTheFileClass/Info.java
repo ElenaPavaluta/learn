@@ -3,7 +3,7 @@ package oc.p.chapters.c_8_IO.understandingFileAndDirectories.introducingTheFileC
 /**
  * The File class is used to
  * read information about existing files and directories,
- * list the contents of a path,
+ * list the contents of a resourcesPath,
  * and create/delete files and directories.
  *
  * One common mistake new Java developers make is forgetting that the

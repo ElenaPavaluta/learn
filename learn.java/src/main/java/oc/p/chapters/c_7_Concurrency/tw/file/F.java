@@ -5,7 +5,7 @@ import java.io.File;
 
 class F {
     String pkg = this.getClass().getPackage().getName();
-    String path = Resources.Files.path(pkg);
+    String path = Resources.path(pkg);
 
     void dir(){
         File f = Resources.Files.directory(path +"\\p\\p2\\p3\\p4");
