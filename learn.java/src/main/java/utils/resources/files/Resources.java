@@ -2,6 +2,7 @@ package utils.resources.files;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.function.Predicate;
 
 public interface Resources {
@@ -58,12 +59,16 @@ public interface Resources {
 
         static void recursiveDelete(File file) {
             if(NOT_NULL.test(file)) {
-                java.io.File parent = file.getParentFile();
+                File parent = file.getParentFile();
                 file.delete();
                 if(NOT_NULL.and(HAS_NO_CHILDS).test(parent)) {
                     recursiveDelete(parent);
                 }
             }
+        }
+
+        static void recursiveDelete(File... files) {
+            Arrays.stream(files).forEach(Resources.Files::recursiveDelete);
         }
     }
 

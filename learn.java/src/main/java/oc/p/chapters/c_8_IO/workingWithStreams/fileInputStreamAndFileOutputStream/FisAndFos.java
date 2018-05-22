@@ -2,6 +2,8 @@ package oc.p.chapters.c_8_IO.workingWithStreams.fileInputStreamAndFileOutputStre
 
 import utils.resources.files.Resources;
 import java.io.*;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.stream.IntStream;
 
 /**
@@ -15,13 +17,25 @@ import java.util.stream.IntStream;
 class FisAndFos {
     File r = Resources.Files.file(this.getClass().getPackage(), "r.txt");
     File w = Resources.Files.file(this.getClass().getPackage(), "w.txt");
+    File copy;
 
     public static void main(String[] args) throws IOException {
         FisAndFos ff = new FisAndFos();
 
         ff.m();
-
         ff.m2();
+
+        clean(ff);
+    }
+
+    public static void clean(FisAndFos ff) {
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Resources.Files.recursiveDelete(ff.w, ff.copy);
+                System.exit(0);
+            }
+        }, 5);
     }
 
     void m() throws IOException {
@@ -36,7 +50,7 @@ class FisAndFos {
 
     void m2() throws IOException {
         File f = Resources.Files.file(this.getClass().getPackage(), "fos.jpg");
-        File copy = Resources.Files.file(this.getClass().getPackage(), "fosCopy.jpg");
+        copy = Resources.Files.file(this.getClass().getPackage(), "fosCopy.jpg");
 
         try(FileInputStream fis = new FileInputStream(f);
         FileOutputStream fos = new FileOutputStream(copy)){
