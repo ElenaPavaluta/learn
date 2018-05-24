@@ -15,7 +15,6 @@ public interface Resources {
     Predicate<File> NOT_NULL = file -> file != null;
     Predicate<File> HAS_NO_CHILDS = file -> file.listFiles().length == 0;
 
-
     static String path(String path) {
         return path.replace(".", File.separator);
     }
@@ -28,8 +27,14 @@ public interface Resources {
         return SRC_MAIN_RESOURCES + File.separator + path(pkg);
     }
 
-    interface Files {
+    static String absolutePath(Package pkg) {
+        File file = Files.directory(pkg);
+        String absolutePath = file.getAbsolutePath();
+        Files.recursiveDelete(file);
+        return absolutePath;
+    }
 
+    interface Files {
 
         static File directory(Package pkg) {
             return directory(pkg.getName());

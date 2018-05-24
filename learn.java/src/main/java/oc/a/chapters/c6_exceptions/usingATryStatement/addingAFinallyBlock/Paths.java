@@ -3,7 +3,7 @@ package oc.a.chapters.c6_exceptions.usingATryStatement.addingAFinallyBlock;
 import oc.a.chapters.c6_exceptions.understandingExceptions.checked.CheckedException;
 import utils.delimitators.Delimitators;
 
-public class Paths {
+class Paths {
 
 	static void path(boolean runCatch, boolean runSystemExist) {
 		try {
