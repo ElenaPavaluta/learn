@@ -1,6 +1,5 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.wildcards;
 
-import oc.a.chapters.c3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives.Array;
 import java.util.ArrayList;
 import java.util.List;
 

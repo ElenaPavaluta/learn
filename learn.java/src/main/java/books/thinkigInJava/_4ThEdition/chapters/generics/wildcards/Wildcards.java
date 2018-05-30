@@ -1,6 +1,6 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.wildcards;
 
-import oc.a.chapters.c1_building_blocks.pkg_declaration_and_imports.wildcard.Wildcard;
+import oc.a.chapters._1_building_blocks.pkg_declaration_and_imports.wildcard.Wildcard;
 import java.util.ArrayList;
 import java.util.List;
 
