@@ -19,10 +19,12 @@ class Legacy {
         File file2 = path2.toFile();
         System.out.println(path2);
         System.out.println(file2);
+        Resources.Files.recursiveDelete(file,file2);
     }
 
     public static void main(String[] args) {
         Legacy l = new Legacy();
         l.m();
+
     }
 }
