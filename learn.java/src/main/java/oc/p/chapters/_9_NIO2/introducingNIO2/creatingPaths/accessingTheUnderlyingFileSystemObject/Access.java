@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * The Paths.get(): java.nio.file.FileSystems.getPath()
+ * The Paths.get(): java.nio.directory.FileSystems.getPath()
  */
 class Access {
     Path p = Paths.get("a");

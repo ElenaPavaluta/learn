@@ -10,7 +10,7 @@ public class TestPath {
     public static Path Relative_Linux_Path = Paths.get("land/hippo/harry.happy");
     /**
      * When used like this \land\hippo\harry.happy
-     * is treated as linuz absolute path
+     * is treated as linuz absolute file
      */
     public static Path Relative_Windows_Path = Paths.get("land\\hippo\\harry.happy");
     public static Path Absolute_Windows_Path = Paths.get(Resources.absolutePath(new TestPath().getClass().getPackage

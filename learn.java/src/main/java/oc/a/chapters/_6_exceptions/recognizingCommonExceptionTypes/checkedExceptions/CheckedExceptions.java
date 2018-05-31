@@ -2,10 +2,10 @@ package oc.a.chapters._6_exceptions.recognizingCommonExceptionTypes.checkedExcep
 
 /**
  * FileNotFoundException Thrown programmatically when code tries to reference a
- * file that does not exist
+ * directory that does not exist
  * 
  * IOException Thrown programmatically when there�s a problem reading or writing
- * a file
+ * a directory
  *
  *
  * FileNotFoundException is a subclass of IOException

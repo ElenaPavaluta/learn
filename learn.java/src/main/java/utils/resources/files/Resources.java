@@ -1,11 +1,16 @@
 package utils.resources.files;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+
+import static utils.resources.files.Resources.path;
 
 public interface Resources {
     String RESOURCES = "resources";
@@ -44,7 +49,7 @@ public interface Resources {
             }
 
             static java.io.File directory(String destination) {
-                java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, Resources.path(destination));
+                java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, path(destination));
                 file.mkdirs();
                 return file;
             }
@@ -52,7 +57,7 @@ public interface Resources {
 
             static java.io.File file(String destination, String name) {
                 directory(destination);
-                java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, Resources.path(destination) + java.io.File
+                java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, path(destination) + java.io.File
                         .separator + name);
                 try {
                     file.createNewFile();
@@ -84,11 +89,11 @@ public interface Resources {
 
     interface NIO2 {
         interface Path {
-            static java.nio.file.Path path(Package pkg) {
+            static java.nio.file.Path directory(Package pkg) {
                 return IO.File.directory(pkg).toPath();
             }
 
-            static java.nio.file.Path path(Package pkg, String fileName) {
+            static java.nio.file.Path file(Package pkg, String fileName) {
                 return IO.File.file(pkg, fileName).toPath();
             }
 

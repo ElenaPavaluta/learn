@@ -4,11 +4,11 @@ package oc.a.chapters._4_methods_and_encapsulation.creatingConstructors.orderOfI
  * 1. super()
  *
  * 2. static variable declarations and static initializers in the order they
- * appear in the file.
+ * appear in the directory.
  *
  *
  * 3. instance variable declarations and instance initializers in the order they
- * appear in the file.
+ * appear in the directory.
  * 
  * 4. the constructor
  */

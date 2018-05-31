@@ -7,7 +7,7 @@ package oc.p.chapters._1_AdvancedClassDesign.creatingNestedClasses.innerClass.lo
  * ■ They do not have access to local variables of a method unless those variables are final or effectively final.
  *
  *
- * The compiler is generating a class file from your
+ * The compiler is generating a class directory from your
  * inner class. A separate class has no way to refer to local variables. If the local variable is final ,
  * Java can handle it by passing it to the constructor of the inner class or by storing it in the class
  * fi le. If it weren’t effectively fi nal, these tricks wouldn’t work because the value could change

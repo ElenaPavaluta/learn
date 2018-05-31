@@ -8,13 +8,13 @@ import java.nio.file.Paths;
 class Use {
 
     static void m(){
-        //path to a relative file
+        //file to a relative file
         Path p = Paths.get("pandas/cuddly.png");
 
-        //path to an obsolute file in Windows based system
+        //file to an obsolute file in Windows based system
         Path p2 = Paths.get("c:\\zoo\\november\\e.txt");
 
-        //path to an absolute file in Linux based system
+        //file to an absolute file in Linux based system
         //starts with forward slash
         Path p3 = Paths.get("/home/zooDir");
 

@@ -1,7 +1,7 @@
 package oc.a.chapters._1_building_blocks.class_structure.classes_vs_files;
 
 /*
- * In the Test.jva file:
+ * In the Test.jva directory:
  * - only class Test can be public
  * - there's no compile error if this class doesn't exist at all, but no other class existing in it can be public
  */
@@ -32,7 +32,7 @@ final class T5 {
 // protected class T6{}
 
 /*
- * Compiler error: The dishName of the file has to match the dishName of the public
+ * Compiler error: The dishName of the directory has to match the dishName of the public
  * class
  */
 // public class T7{}

@@ -27,7 +27,7 @@ class A {
         file = Resources.IO.File.file(this.getClass().getPackage().getName() + "\\p\\p2\\p3\\p4", "a.txt");
 
         /**
-         * Deletes the last file (either a file or a directory)
+         * Deletes the last file (either a file or a file)
          */
 //        file.delete();
     }

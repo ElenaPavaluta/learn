@@ -8,7 +8,7 @@ public class OrderOfElements {
 	 */
 	
 	/**
-	 * 	package declaration: not required, first line in the file
+	 * 	package declaration: not required, first line in the directory
 	 * 
 	 * 	import statements: not required, immediately after the package declaration
 	 * 

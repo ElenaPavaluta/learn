@@ -17,7 +17,7 @@ package oc.p.chapters._8_IO.introducingStreams.streamNomenclature.byteStreamsVsC
  *
  * The advantage of using Reader/Writer classes, since these are specialized,
  * in working with Strings and Characters, is that there's no reason to worry
- * about the underlying byte encoding of the file.
+ * about the underlying byte encoding of the directory.
  *
  * The java.io API is structured such that all of the
  * stream classes have the word InputStream or OutputStream in their name,

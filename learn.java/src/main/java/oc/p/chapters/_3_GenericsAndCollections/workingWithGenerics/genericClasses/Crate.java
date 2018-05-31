@@ -14,7 +14,7 @@ class Crate<T> {
 
 /*
     This how this class looks like after compiling
-    This means there is only one class file. There aren’t different copies for different
+    This means there is only one class directory. There aren’t different copies for different
 parameterized types.
 
 public class Crate{
