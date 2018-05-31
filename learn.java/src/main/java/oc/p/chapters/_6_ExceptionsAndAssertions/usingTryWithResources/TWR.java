@@ -3,7 +3,6 @@ package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources;
 import utils.resources.files.Resources;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,14 +17,14 @@ class TWR {
     static{
         TWR twr = new TWR();
         Package pkg = twr.getClass().getPackage();
-        File d = Resources.Files.directory(pkg);
+        java.io.File d = Resources.IO.File.directory(pkg);
         System.out.println(d.getPath());
         System.out.println(d.getAbsolutePath());
-        File r = Resources.Files.file(pkg, READ);
+        java.io.File r = Resources.IO.File.file(pkg, READ);
         System.out.println(r.getPath());
         System.out.println(r.getAbsolutePath());
         read  = r.getPath();
-        write = Resources.Files.file(pkg, WRITE).getPath();
+        write = Resources.IO.File.file(pkg, WRITE).getPath();
     }
 
     static Path pathRead = Paths.get(read);

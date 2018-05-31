@@ -8,7 +8,7 @@ import java.util.Locale;
  * Can be created using also an OutputStream
  */
 class PrintWriterClass {
-    File f = Resources.Files.file(this.getClass().getPackage(), "b");
+    File f = Resources.IO.File.file(this.getClass().getPackage(), "b");
 
     {
         try(PrintWriter pw = new PrintWriter(f.getPath());
@@ -32,7 +32,7 @@ class PrintWriterClass {
         pwc.write();
         pwc.print();
 
-        Resources.Files.recursiveDelete(pwc.f);
+        Resources.IO.File.recursiveDelete(pwc.f);
     }
 
     void write() throws FileNotFoundException {

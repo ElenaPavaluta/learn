@@ -1,4 +1,4 @@
-package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.creatingNewPathWithSubpath;
+package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.subpath;
 
 import utils.delimitators.Delimitators;
 import java.nio.file.Path;

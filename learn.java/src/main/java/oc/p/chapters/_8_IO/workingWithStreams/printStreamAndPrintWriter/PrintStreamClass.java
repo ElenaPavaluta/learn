@@ -19,7 +19,7 @@ class PrintStreamClass {
     PrintStream printStream;
 
     {
-        file = Resources.Files.file(this.getClass().getPackage(), "a.txt");
+        file = Resources.IO.File.file(this.getClass().getPackage(), "a.txt");
     }
 
     {
@@ -44,7 +44,7 @@ class PrintStreamClass {
         pw.printf();
         pw.format();
 
-        Resources.Files.recursiveDelete(pw.file);
+        Resources.IO.File.recursiveDelete(pw.file);
     }
 
     void write() throws FileNotFoundException {

@@ -5,13 +5,13 @@ import java.io.*;
 
 class StreamToChar {
 
-    File f = Resources.Files.file(this.getClass().getPackage(), "f");
+    File f = Resources.IO.File.file(this.getClass().getPackage(), "f");
 
     public static void main(String[] args) throws IOException {
         StreamToChar streamToChar = new StreamToChar();
         streamToChar.write();
         streamToChar.read();
-        Resources.Files.recursiveDelete(streamToChar.f);
+        Resources.IO.File.recursiveDelete(streamToChar.f);
     }
 
     void write() throws IOException {

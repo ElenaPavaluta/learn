@@ -1,14 +1,13 @@
 package oc.p.chapters._9_NIO2.introducingNIO2.creatingPaths.workingWithLegacyFileInstead;
 
 import utils.resources.files.Resources;
-import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 class Legacy {
 
     void m(){
-        File file = Resources.Files.file(this.getClass().getPackage(), "cuddly.png");
+        java.io.File file = Resources.IO.File.file(this.getClass().getPackage(), "cuddly.png");
         Path path = file.toPath();
 
         System.out.println(file);
@@ -16,10 +15,10 @@ class Legacy {
         System.out.println();
 
         Path path2 = Paths.get("cuddle_2.png");
-        File file2 = path2.toFile();
+        java.io.File file2 = path2.toFile();
         System.out.println(path2);
         System.out.println(file2);
-        Resources.Files.recursiveDelete(file,file2);
+        Resources.IO.File.recursiveDelete(file, file2);
     }
 
     public static void main(String[] args) {

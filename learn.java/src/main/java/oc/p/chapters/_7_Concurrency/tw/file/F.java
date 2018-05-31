@@ -1,17 +1,16 @@
 package oc.p.chapters._7_Concurrency.tw.file;
 
 import utils.resources.files.Resources;
-import java.io.File;
 
 class F {
     String pkg = this.getClass().getPackage().getName();
     String path = Resources.path(pkg);
 
     void dir(){
-        File f = Resources.Files.directory(path +"\\p\\p2\\p3\\p4");
+        java.io.File f = Resources.IO.File.directory(path +"\\p\\p2\\p3\\p4");
         System.out.println(f.isDirectory());  //true
         System.out.println(f.isFile());  //false
-        Resources.Files.recursiveDelete(f);
+        Resources.IO.File.recursiveDelete(f);
     }
 
     public static void main(String[] args) {

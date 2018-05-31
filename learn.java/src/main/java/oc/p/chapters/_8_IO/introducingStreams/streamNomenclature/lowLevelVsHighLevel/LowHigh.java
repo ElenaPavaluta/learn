@@ -7,7 +7,7 @@ class LowHigh {
     File file;
 
     {
-        file = Resources.Files.file(this.getClass().getPackage(), "file.txt");
+        file = Resources.IO.File.file(this.getClass().getPackage(), "file.txt");
         System.out.println(file.getPath());
     }
 

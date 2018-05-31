@@ -19,7 +19,7 @@ class Create {
     }
 
     void dir() {
-        java.io.File f = Resources.Files.directory(path + "p\\p2\\p3\\p4");
+        java.io.File f = Resources.IO.File.directory(path + "p\\p2\\p3\\p4");
         System.out.println(f.isDirectory());  //true
         System.out.println(f.isFile());  //false;
         files.push(f);
@@ -39,7 +39,7 @@ class Create {
 
     void del() {
         for(java.io.File f : files) {
-            Resources.Files.recursiveDelete(f);
+            Resources.IO.File.recursiveDelete(f);
         }
     }
 }

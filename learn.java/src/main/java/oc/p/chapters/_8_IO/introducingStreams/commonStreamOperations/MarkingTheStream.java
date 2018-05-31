@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
  */
 class MarkingTheStream {
 
-    File file = Resources.Files.file(this.getClass().getPackage(), "common.txt");
+    File file = Resources.IO.File.file(this.getClass().getPackage(), "common.txt");
 
     public static void main(String[] args) throws IOException {
         MarkingTheStream mts = new MarkingTheStream();

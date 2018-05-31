@@ -1,4 +1,4 @@
-package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.derivingAPathWithRelativize;
+package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.relativize;
 
 import utils.delimitators.Delimitators;
 import java.nio.file.Path;

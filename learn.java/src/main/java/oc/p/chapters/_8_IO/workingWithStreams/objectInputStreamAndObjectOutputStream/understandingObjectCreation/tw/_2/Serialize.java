@@ -7,7 +7,7 @@ import java.io.*;
 class Serialize {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         C c = new C();
-        File f = Resources.Files.file(c.getClass().getPackage(), "c");
+        File f = Resources.IO.File.file(c.getClass().getPackage(), "c");
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))){
             oos.writeObject(c);
@@ -18,6 +18,6 @@ class Serialize {
             c = (C)ois.readObject();
         }
 
-        Resources.Files.recursiveDelete(f);
+        Resources.IO.File.recursiveDelete(f);
     }
 }

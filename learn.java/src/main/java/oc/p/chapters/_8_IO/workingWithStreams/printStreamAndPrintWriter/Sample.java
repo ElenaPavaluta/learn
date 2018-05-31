@@ -6,7 +6,7 @@ import java.io.*;
 class Sample {
 
     public static void main(String[] args) throws IOException {
-        File f = Resources.Files.file(new Sample().getClass().getPackage(), "c");
+        File f = Resources.IO.File.file(new Sample().getClass().getPackage(), "c");
 
         try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f)))){
             pw.print("Today wether is: ");
@@ -19,6 +19,6 @@ class Sample {
             pw.printf("It may rain 21.2 more inches this year");
         }
 
-        Resources.Files.recursiveDelete(f);
+        Resources.IO.File.recursiveDelete(f);
     }
 }

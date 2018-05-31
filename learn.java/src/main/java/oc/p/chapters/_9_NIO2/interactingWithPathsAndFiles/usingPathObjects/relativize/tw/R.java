@@ -1,7 +1,5 @@
-package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.derivingAPathWithRelativize.tw;
+package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.usingPathObjects.relativize.tw;
 
-import utils.delimitators.Delimitators;
-import javax.sound.midi.SoundbankResource;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 

@@ -12,7 +12,7 @@ class BisAndBos {
     File file, copy;
 
     {
-        file = Resources.Files.file(this.getClass().getPackage(), "info.jpg");
+        file = Resources.IO.File.file(this.getClass().getPackage(), "info.jpg");
     }
 
     public static void main(String[] args) throws IOException {
@@ -20,11 +20,11 @@ class BisAndBos {
 
         bb.m();
 
-        Resources.Files.recursiveDelete(bb.copy);
+        Resources.IO.File.recursiveDelete(bb.copy);
     }
 
     void m() throws IOException {
-        copy = Resources.Files.file(this.getClass().getPackage(), "copy.jpg");
+        copy = Resources.IO.File.file(this.getClass().getPackage(), "copy.jpg");
         try(InputStream in = new BufferedInputStream(new FileInputStream(file));
             OutputStream out = new BufferedOutputStream(new FileOutputStream(copy))) {
             byte[] buff = new byte[16];

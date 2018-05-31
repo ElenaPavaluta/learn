@@ -12,19 +12,19 @@ class A {
 //        a.dir();
         a.file();
 
-        Resources.Files.recursiveDelete(a.file);
+        Resources.IO.File.recursiveDelete(a.file);
 
     }
 
     void dir() {
-        java.io.File dir = Resources.Files.directory(this.getClass().getPackage().getName());
+        java.io.File dir = Resources.IO.File.directory(this.getClass().getPackage().getName());
     }
 
     void del() {
     }
 
     void file() throws InterruptedException {
-        file = Resources.Files.file(this.getClass().getPackage().getName() + "\\p\\p2\\p3\\p4", "a.txt");
+        file = Resources.IO.File.file(this.getClass().getPackage().getName() + "\\p\\p2\\p3\\p4", "a.txt");
 
         /**
          * Deletes the last file (either a file or a directory)

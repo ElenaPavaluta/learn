@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 class RunComplexClass {
     File file;
     {
-        file = Resources.Files.file(this.getClass().getPackage(), "cc.csv");
+        file = Resources.IO.File.file(this.getClass().getPackage(), "cc.csv");
     }
 
     void write() throws IOException {
@@ -46,6 +46,6 @@ class RunComplexClass {
         run.write();
         run.read();
 
-        Resources.Files.recursiveDelete(run.file);
+        Resources.IO.File.recursiveDelete(run.file);
     }
 }
