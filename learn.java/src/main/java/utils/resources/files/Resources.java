@@ -2,12 +2,8 @@ package utils.resources.files;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.function.Predicate;
 
 import static utils.resources.files.Resources.path;
@@ -89,6 +85,18 @@ public interface Resources {
 
     interface NIO2 {
         interface Path {
+            java.nio.file.Path SRC_MAIN_RESOURCES_PATH = Paths.get(SRC_MAIN_RESOURCES);
+            Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
+                try {
+                    return Files.isSameFile(path, SRC_MAIN_RESOURCES_PATH);
+                } catch(IOException e) {
+                    return false;
+                }
+            };
+
+            Predicate<java.nio.file.Path> EXISTS = Files::exists;
+            Predicate<java.nio.file.Path> SYMBOLIC_LINK = Files::isSymbolicLink;
+
             static java.nio.file.Path directory(Package pkg) {
                 return IO.File.directory(pkg).toPath();
             }
@@ -98,16 +106,21 @@ public interface Resources {
             }
 
             static void recursiveDelete(java.nio.file.Path... paths) {
-                List<java.io.File> temp = new ArrayList<>();
-                Arrays.asList(paths).forEach(p -> {
-                    try {
-                        p.toRealPath(LinkOption.NOFOLLOW_LINKS);
-                        temp.add(p.toFile());
-                    } catch(IOException e) {
-                        //means that p is not a real file (file or directory)
+                Arrays.stream(paths).forEach(Resources.NIO2.Path::recursiveDelete);
+            }
+
+            static void recursiveDelete(java.nio.file.Path path) {
+                if(EXISTS.or(SYMBOLIC_LINK).test(path)) {
+                    while(IS_SRC_MAIN_RESOURCES_PATH.negate().test(path)) {
+                        java.nio.file.Path parent = path.getParent();
+                        try {
+                            Files.deleteIfExists(path);
+                            path = parent;
+                        } catch(IOException e) {
+                            break;
+                        }
                     }
-                });
-                IO.File.recursiveDelete(temp.toArray(new java.io.File[0]));
+                }
             }
         }
     }
