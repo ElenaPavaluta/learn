@@ -1,8 +1,6 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.wildcards.tw.assign;
 
-import utils.generalUse.hierrarchy.noMethods.fruit.Apple;
-import utils.generalUse.hierrarchy.noMethods.fruit.Fruit;
-import utils.generalUse.hierrarchy.noMethods.fruit.GoldApple;
+import utils.javaClass.hierrarchy.methods.none.fruit.Apple;
 import java.util.List;
 
 class C {

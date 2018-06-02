@@ -1,7 +1,7 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.wildcards.tw.tOfUOrType;
 
 import books.thinkigInJava._4ThEdition.chapters.generics.wildcards.Holder;
-import utils.generalUse.hierrarchy.noMethods.fruit.Apple;
+import utils.javaClass.hierrarchy.methods.none.fruit.Apple;
 import java.util.List;
 
 /**

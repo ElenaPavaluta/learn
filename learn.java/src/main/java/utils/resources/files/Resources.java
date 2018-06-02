@@ -1,9 +1,12 @@
 package utils.resources.files;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.function.Predicate;
 
 import static utils.resources.files.Resources.path;
@@ -14,9 +17,6 @@ public interface Resources {
     String SRC_MAIN = "src" + java.io.File.separator + "main";
     String SRC_MAIN_RESOURCES = SRC_MAIN + java.io.File.separator + RESOURCES;
     String SRC_MAIN_JAVA = SRC_MAIN + java.io.File.separator + JAVA;
-
-    Predicate<java.io.File> NOT_NULL = file -> file != null;
-    Predicate<java.io.File> HAS_NO_CHILDS = file -> file.listFiles().length == 0;
 
     static String path(String path) {
         return path.replace(".", java.io.File.separator);
@@ -30,6 +30,10 @@ public interface Resources {
         return SRC_MAIN_RESOURCES + java.io.File.separator + path(pkg);
     }
 
+    static String srcMainResourcesPath(Object obj) {
+        return srcMainResourcesPath(obj.getClass().getPackage());
+    }
+
     static String absolutePath(Package pkg) {
         java.io.File file = IO.File.directory(pkg);
         String absolutePath = file.getAbsolutePath();
@@ -37,8 +41,25 @@ public interface Resources {
         return absolutePath;
     }
 
+    static void recursiveDelete(Object... resources) {
+        Arrays.stream(resources).forEach(resource -> {
+            if(resource instanceof File) {
+                IO.File.recursiveDelete((File) resource);
+            } else if(resource instanceof Path) {
+                NIO.Path.recursiveDelete((Path) resource);
+            }
+        });
+    }
+
+    static void recursiveDelete(Collection<Object> collection) {
+        recursiveDelete(collection.toArray(new Object[0]));
+    }
+
     interface IO {
         interface File {
+
+            Predicate<java.io.File> NOT_NULL = file -> file != null;
+            Predicate<java.io.File> HAS_NO_CHILDS = file -> file.listFiles().length == 0;
 
             static java.io.File directory(Package pkg) {
                 return directory(pkg.getName());
@@ -77,13 +98,17 @@ public interface Resources {
                 }
             }
 
+            static void recursiveDelete(Collection<java.io.File> collection) {
+                collection.forEach(IO.File::recursiveDelete);
+            }
+
             static void recursiveDelete(java.io.File... files) {
                 Arrays.stream(files).forEach(File::recursiveDelete);
             }
         }
     }
 
-    interface NIO2 {
+    interface NIO {
         interface Path {
             java.nio.file.Path SRC_MAIN_RESOURCES_PATH = Paths.get(SRC_MAIN_RESOURCES);
             Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
@@ -105,8 +130,12 @@ public interface Resources {
                 return IO.File.file(pkg, fileName).toPath();
             }
 
+            static void recursiveDelete(Collection<java.nio.file.Path> collection) {
+                collection.forEach(NIO.Path::recursiveDelete);
+            }
+
             static void recursiveDelete(java.nio.file.Path... paths) {
-                Arrays.stream(paths).forEach(Resources.NIO2.Path::recursiveDelete);
+                Arrays.stream(paths).forEach(NIO.Path::recursiveDelete);
             }
 
             static void recursiveDelete(java.nio.file.Path path) {

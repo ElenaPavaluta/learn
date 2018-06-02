@@ -3,9 +3,12 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.copy;
 import utils.resources.files.Resources;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Copy {
     static String loc = Resources.srcMainResourcesPath(new Copy().getClass().getPackage());
+    static List<Path> delLst = new ArrayList<>();
 
     static String SOURCE = "source";
     static String DEST = "dest";
@@ -21,10 +24,13 @@ class Copy {
         destination = Files.createDirectories(destination);
 
 
-        Path source = p.subpath(0, p.getNameCount()-1);  //b
-        System.out.println("p3: " + source);
+        Path source = Paths.get(loc, SOURCE, A);
 
-        Files.copy(source, destination,  StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING,StandardCopyOption.COPY_ATTRIBUTES);
+
+        delLst.add(p);
+        delLst.add(destination);
+        delLst.add(source);
     }
 
     static void m2() throws IOException {
@@ -33,7 +39,7 @@ class Copy {
     }
 
     public static void main(String[] args) throws IOException {
-//        m();
-        m2();
+        m();
+//        m2();
     }
 }

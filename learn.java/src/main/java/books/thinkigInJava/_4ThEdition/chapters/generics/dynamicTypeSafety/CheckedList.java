@@ -1,8 +1,8 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.dynamicTypeSafety;
 
-import utils.generalUse.hierrarchy.noMethods.animal.Cat;
-import utils.generalUse.hierrarchy.noMethods.animal.Dog;
-import utils.generalUse.hierrarchy.noMethods.animal.Pet;
+import utils.javaClass.hierrarchy.methods.none.animal.Cat;
+import utils.javaClass.hierrarchy.methods.none.animal.Dog;
+import utils.javaClass.hierrarchy.methods.none.animal.Pet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,6 +1,6 @@
 package books.thinkigInJava._4ThEdition.chapters.generics.wildcards.tw.etendsVsSuper;
 
-import utils.generalUse.hierrarchy.noMethods.fruit.*;
+import utils.javaClass.hierrarchy.methods.none.fruit.*;
 import java.time.LocalDateTime;
 import java.util.*;
 

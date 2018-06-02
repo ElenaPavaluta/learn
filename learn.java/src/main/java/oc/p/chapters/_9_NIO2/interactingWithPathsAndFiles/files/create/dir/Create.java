@@ -33,13 +33,13 @@ class Create {
         p = Paths.get(location, "a");
         p = Files.createDirectory(p);
 
-        Resources.NIO2.Path.recursiveDelete(p);
+        Resources.NIO.Path.recursiveDelete(p);
     }
 
     static void m2() throws IOException {
         Path p = Paths.get(location, "a", "a");
         p = Files.createDirectories(p);
-        Resources.NIO2.Path.recursiveDelete(p);
+        Resources.NIO.Path.recursiveDelete(p);
     }
 
     static void m3() throws IOException {
