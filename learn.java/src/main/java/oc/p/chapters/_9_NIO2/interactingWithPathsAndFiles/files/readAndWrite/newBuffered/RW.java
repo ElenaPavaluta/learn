@@ -33,12 +33,7 @@ class RW {
     /**
      * <R> R collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R, R> combiner);
      */
-    static File file = CreatePopulate.IO.file(pkg,
-                                              IntStream.rangeClosed(1, 5)
-                                                       .mapToObj(i -> "Line nr " + i + "\n")
-                                                       .collect(StringBuilder::new,
-                                                                StringBuilder::append,
-                                                                StringBuilder::append).toString());
+    static File file = CreatePopulate.IO.file(pkg);
 
     static Path read = file.toPath();
     static Path writeDir = Paths.get(loc, "\\a\\b\\c");

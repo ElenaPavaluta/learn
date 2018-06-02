@@ -1,27 +1,48 @@
 package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAttributes.readingCommonAttributes;
 
+import oc.a.topics.init.derivedClass.B;
 import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
+import utils.resources.files.create.populate.CreatePopulate;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.IntStream;
 
+/**
+ * static boolean	isDirectory(Path path, LinkOption... options)
+ * Tests whether a file is a directory.
+ *
+ * static boolean	isRegularFile(Path path, LinkOption... options)
+ * Tests whether a file is a regular file with opaque content.
+ *
+ * static boolean	isSymbolicLink(Path path)
+ * Tests whether a file is a symbolic link.
+ *
+ * These methods throw only RE
+ *
+ * Seems that I can have symbolic link either to a file or dir,
+ * but a link can be only to a file
+ */
 class RCA {
 
-    static String loc = Resources.srcMainResourcesPath(new RCA());
+    static final Package PACKAGE = new RCA().getClass().getPackage();
+    static String loc = Resources.srcMainResourcesPath(PACKAGE);
     static Path dir = Paths.get(loc);
     static Path file = Paths.get(loc, "rca");
     static String A_B_C = "a\\b\\c";
     static Path dirLink = Paths.get(loc, A_B_C);
     static Path link;
 
+
     static {
         try {
             dir = Files.createDirectories(dir);
-            file = Files.createFile(file);
-
+            Files.deleteIfExists(file);
+            file = CreatePopulate.NIO.file(PACKAGE);
             dirLink = Files.createDirectories(dirLink);
         } catch(IOException e) {
             e.printStackTrace();
@@ -48,15 +69,29 @@ class RCA {
     }
 
     static void m3() throws IOException {
-        if(link !=null) Files.deleteIfExists(link);
         link = Paths.get(loc, A_B_C, "link");
-        link = Files.createLink(link, dir);  //CE
+        Files.deleteIfExists(link);
+        link = Files.createLink(link, dir);  //RE
         test(link);
     }
     static void m4() throws IOException {
-        if(link !=null) Files.deleteIfExists(link);
         link = Paths.get(loc, A_B_C, "link");
+        Files.deleteIfExists(link);
         link = Files.createLink(link, file);
+        test(link);
+    }
+
+    static void m5() throws IOException {
+        link = Paths.get(loc, A_B_C, "link");
+        Files.deleteIfExists(link);
+        link = Files.createSymbolicLink(link, dir);
+        test(link);
+    }
+
+    static void m6() throws IOException {
+        link = Paths.get(loc, A_B_C, "link");
+        Files.deleteIfExists(link);
+        link = Files.createSymbolicLink(link, file);
         test(link);
     }
 
@@ -64,7 +99,9 @@ class RCA {
 //        m();
 //        m2();
 //        m3();
-        m4();
-//        Resources.recursiveDelete(dir, file, dirLink, link);
+//        m4();
+        m5();
+//        m6();
+        Resources.recursiveDelete(dir, file, dirLink, link);
     }
 }
