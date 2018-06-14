@@ -12,6 +12,8 @@ import java.util.function.Predicate;
 import static utils.resources.files.Resources.path;
 
 public interface Resources {
+    String IBM_CTANASE = "CiprianTanase";
+    String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
     String SRC_MAIN = "src" + java.io.File.separator + "main";
