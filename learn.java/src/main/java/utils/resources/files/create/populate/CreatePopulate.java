@@ -43,6 +43,10 @@ public interface CreatePopulate {
 
         String NIO_FILE = "nio.file";
 
+        static Path file(Object obj, String... dest){
+            return file(obj.getClass().getPackage(), dest);
+        }
+
         static Path file(Package pkg, String... dest) {
             String mainResourcesPath = Resources.srcMainResourcesPath(pkg);
             Path path = Paths.get(mainResourcesPath, dest);
