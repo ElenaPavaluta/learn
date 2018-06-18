@@ -93,9 +93,11 @@ public interface Resources {
             static void recursiveDelete(java.io.File file) {
                 if(NOT_NULL.test(file)) {
                     java.io.File parent = file.getParentFile();
-                    file.delete();
-                    if(NOT_NULL.and(HAS_NO_CHILDS).test(parent)) {
-                        recursiveDelete(parent);
+                    if(file.exists()) {
+                        file.delete();
+                        if(NOT_NULL.and(HAS_NO_CHILDS).test(parent)) {
+                            recursiveDelete(parent);
+                        }
                     }
                 }
             }

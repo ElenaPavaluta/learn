@@ -27,6 +27,10 @@ public interface CreatePopulate {
 
         String IO_FILE = "io.file";
 
+        static File file(Object object){
+            return file(object.getClass().getPackage());
+        }
+
         static File file(Package destination) {
             File file = Resources.IO.File.file(destination, IO_FILE);
             try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {

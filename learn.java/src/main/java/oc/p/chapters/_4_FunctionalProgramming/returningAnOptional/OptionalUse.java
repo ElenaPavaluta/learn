@@ -80,14 +80,14 @@ class OptionalUse {
      }
 
     public static void main(String[] args) {
-//        m();
+        m();
 //        get();
 //        isPresent();
 //        ofNullable();
 //        ifPresent();
 //        orElse();
 //        orElseGet();
-        orElseThrow();
+//        orElseThrow();
     }
 
 

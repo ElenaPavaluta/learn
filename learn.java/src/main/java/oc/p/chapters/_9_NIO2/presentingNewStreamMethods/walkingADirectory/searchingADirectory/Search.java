@@ -56,7 +56,8 @@ class Search {
                         try {
                             return LocalDateTime.ofInstant(Files.readAttributes(p, BasicFileAttributes.class)
                                                                 .creationTime()
-                                                                .toInstant(), ZoneId.systemDefault()).getMonth();
+                                                                .toInstant(),
+                                                           ZoneId.systemDefault()).getMonth();
                         } catch(IOException e) {
                             e.printStackTrace();
                         }
