@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * <R> R	collect(Supplier<R> supplier, BiConsumer<R, r T> accumulator, BiConsumer<R,R> combiner)
+ * <R> R	collect(Supplier<R> supplier, BiConsumer<R, T> accumulator, BiConsumer<R,R> combiner)
  * Performs a mutable reduction operation on the elements of this stream.
  *
  * <R,A> R	collect(Collector<? super T,A,R> collector)
