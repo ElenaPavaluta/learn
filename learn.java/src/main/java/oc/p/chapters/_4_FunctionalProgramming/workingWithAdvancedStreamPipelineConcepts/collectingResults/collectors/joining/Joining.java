@@ -1,6 +1,10 @@
 package oc.p.chapters._4_FunctionalProgramming.workingWithAdvancedStreamPipelineConcepts.collectingResults.collectors.joining;
 
+import oc.a.chapters._3_core_java_apis.stringBuilderClass.importantStringBuilderMethods.Test;
+import oc.p.chapters._9_NIO2.util.TestPath;
+import utils.delimitators.Delimitators;
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
@@ -40,8 +44,34 @@ class Joining {
         System.out.println(s);
     }
 
+    static void m3(){
+        String s = TestPath.pathsThisMonth().limit(5)
+                .map(p->p.getFileName().toString())
+                .collect(Collectors.joining());
+        System.out.println(s);
+    }
+
+    static void m4(){
+        String s = TestPath.pathsThisMonth().limit(5)
+                .map(p->p.getFileName().toString())
+                .collect(Collectors.joining("\n"));
+        System.out.println(s);
+    }
+
+    static void m5(){
+        String s = TestPath.pathsThisMonth().limit(5)
+                .map(p->p.getFileName().toString())
+                .collect(Collectors.joining("\n", "Start \n", "\nEnd")).trim();
+        System.out.println(s);
+    }
+
     public static void main(String[] args) {
 //        m();
-        m2();
+//        m2();
+        m3();
+        Delimitators.equal();
+        m4();
+        Delimitators.equal();
+        m5();
     }
 }
