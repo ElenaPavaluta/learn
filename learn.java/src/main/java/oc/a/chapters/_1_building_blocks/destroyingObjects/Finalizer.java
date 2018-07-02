@@ -18,7 +18,6 @@ class Finalizer {
 
 	public Finalizer() {
 		super(); // the super() call must be the first statement in the constructor
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

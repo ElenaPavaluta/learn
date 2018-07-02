@@ -8,7 +8,6 @@ package oc.a.chapters._5_class_design.implementingInterfaces.defaultInterfaceMet
 
 //	@Override
 //	defaulT void m() {
-//		// TODO Auto-generated method stub
 //		IA.super.m();
 //	}
 

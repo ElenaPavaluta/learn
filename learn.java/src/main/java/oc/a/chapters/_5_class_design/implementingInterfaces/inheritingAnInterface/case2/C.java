@@ -4,14 +4,11 @@ public class C implements IO, IH {
 
 	@Override
 	public int eatPlants(int a) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void eatPlants() {
-		// TODO Auto-generated method stub
-
 	}
 
 	/*
@@ -22,7 +19,5 @@ public class C implements IO, IH {
 	 */
 	@Override
 	public void m() {
-		// TODO Auto-generated method stub
-
 	}
 }

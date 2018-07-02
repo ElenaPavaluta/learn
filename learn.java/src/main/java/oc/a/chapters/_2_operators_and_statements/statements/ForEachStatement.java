@@ -64,7 +64,6 @@ class I implements Iterable<I>{
 
 	@Override
 	public Iterator<I> iterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
@@ -74,13 +73,11 @@ class MyIterator implements Iterator<MyIterator>{
 
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public MyIterator next() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

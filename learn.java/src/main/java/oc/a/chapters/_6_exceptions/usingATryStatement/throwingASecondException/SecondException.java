@@ -22,7 +22,6 @@ public class SecondException {
 					reader.close();
 				}
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
