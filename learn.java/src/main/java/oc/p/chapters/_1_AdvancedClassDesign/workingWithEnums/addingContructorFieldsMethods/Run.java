@@ -1,6 +1,6 @@
 package oc.p.chapters._1_AdvancedClassDesign.workingWithEnums.addingContructorFieldsMethods;
 
-//import static oc.p.chapters.c1_AdvancedClassDesign.workingWithEnums.addingContructorFieldsMethods.Outer.E;  //redundant
+//import static oc.test.chapters.c1_AdvancedClassDesign.workingWithEnums.addingContructorFieldsMethods.Outer.E;  //redundant
 // import due to the fact that already an E exists, and we need to solve this conflict
 
 import static oc.p.chapters._1_AdvancedClassDesign.workingWithEnums.addingContructorFieldsMethods.Outer.E2;

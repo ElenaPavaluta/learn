@@ -9,9 +9,9 @@ import java.util.function.Supplier;
 /**
  * Static methods
  *
- * Instance methods on a particular instance
+ * Instance methods on a particular dbInstance
  *
- * Instance methods on an instance to be determined at runtime
+ * Instance methods on an dbInstance to be determined at runtime
  *
  * Constructors
  */

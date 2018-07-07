@@ -25,7 +25,7 @@ class StaticVsInstance {
 
 class Counter{
 	
-	private static int counter;  // it's initialized to the data type defaulT value
+	private static int counter;  // it's initialized to the data dbType defaulT value
 
 	private Counter() {
 		counter++;

@@ -4,7 +4,7 @@ import oc.a.chapters._5_class_design.introducingClassInheritance.inheritingMetho
 
 /**
  * At runtime the child version of an overridden method is always executed for
- * an instance regardless of whether the method call is defined in a parent or
+ * an dbInstance regardless of whether the method call is defined in a parent or
  * child class method. In this manner, the parent method is never used unless an
  * explicit call to the parent method is referenced, using the syntax
  * ParentClassName.method(). Alternatively, at runtime the parent version of a

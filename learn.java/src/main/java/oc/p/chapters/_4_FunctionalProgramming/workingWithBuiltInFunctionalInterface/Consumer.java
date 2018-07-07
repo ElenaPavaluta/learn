@@ -21,7 +21,7 @@ class A2{
             System.out.println(c);
         };
 
-        consumer = System.out::println;  //method reference on instance to be determined at runtime
+        consumer = System.out::println;  //method reference on dbInstance to be determined at runtime
     }
 
     static void m2(){
@@ -35,7 +35,7 @@ class A2{
 
         list.forEach(a22 -> m());
 
-        list.forEach(A22::m);  //method reference on instance to be determined at runtime
+        list.forEach(A22::m);  //method reference on dbInstance to be determined at runtime
     }
 
     static void m3(){
@@ -49,7 +49,7 @@ class A2{
 
         consumer = a -> a.m();
 
-        consumer = A23::m;  //method reference on an instance to be determined at runtime
+        consumer = A23::m;  //method reference on an dbInstance to be determined at runtime
         consumer.accept(new A23());
     }
 }

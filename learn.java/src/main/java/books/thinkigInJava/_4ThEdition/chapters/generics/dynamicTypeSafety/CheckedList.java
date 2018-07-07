@@ -26,7 +26,7 @@ class CheckedList {
             System.out.println(e);
         }
 
-        //Derived type work fine: the method accepts a raw type list
+        //Derived dbType work fine: the method accepts a raw dbType list
         List<Pet> pets = Collections.checkedList(new ArrayList<Pet>(), Pet.class);
         pets.add(new Dog());
         pets.add(new Cat());

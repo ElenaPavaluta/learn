@@ -2,8 +2,8 @@ package books.effectiveJava._2ndEdition.chapters.c3_MethodsCommonToAllObjects.eq
 
 /**
  * The Liskov substitution principle says that any important property
- * of a type should also hold for its subtypes,
- * so that any method written for the type should
+ * of a dbType should also hold for its subtypes,
+ * so that any method written for the dbType should
  * work equally well on its subtypes
  */
 class Point {

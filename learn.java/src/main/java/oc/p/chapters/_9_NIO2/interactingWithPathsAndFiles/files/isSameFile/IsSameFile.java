@@ -49,7 +49,7 @@ class IsSameFile {
 
         System.out.println(Files.exists(p));
         System.out.println(Files.exists(p2));
-//        System.out.println(Files.isSameFile(p, p2));  //true
+//        System.out.println(Files.isSameFile(test, p2));  //true
     }
 
     public static void main(String[] args) throws IOException {

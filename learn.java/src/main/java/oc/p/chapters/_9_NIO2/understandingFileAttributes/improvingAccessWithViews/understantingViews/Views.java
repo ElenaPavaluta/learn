@@ -11,7 +11,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 
 /**
- * static <A extends BasicFileAttributes> A	readAttributes(Path path, Class<A> type, LinkOption... options)
+ * static <A extends BasicFileAttributes> A	readAttributes(Path path, Class<A> dbType, LinkOption... options)
  */
 class Views {
 

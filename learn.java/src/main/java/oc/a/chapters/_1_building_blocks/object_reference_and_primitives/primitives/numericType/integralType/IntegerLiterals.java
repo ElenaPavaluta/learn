@@ -1,7 +1,7 @@
 package oc.a.chapters._1_building_blocks.object_reference_and_primitives.primitives.numericType.integralType;
 
 /**
- * The integer literal can be used for any type of numeric data type
+ * The integer literal can be used for any dbType of numeric data dbType
  */
 public class IntegerLiterals {
 

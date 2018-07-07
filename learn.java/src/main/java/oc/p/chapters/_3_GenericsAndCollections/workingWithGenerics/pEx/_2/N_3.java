@@ -20,7 +20,7 @@ class N_3 {
     }
 
     {
-//        lu.add ( new StringBuilder (  ) );  //both lu and lub become immutable for the add operation:the compiler can't know the actual type
+//        lu.add ( new StringBuilder (  ) );  //both lu and lub become immutable for the add operation:the compiler can't know the actual dbType
         lu = new ArrayList<> ( );
         lu = new ArrayList<Object> ( );
         lu = new ArrayList<Throwable> ( );
@@ -32,7 +32,7 @@ class N_3 {
 //        lub = new ArrayList<Throwable> (  );  //compiler error: the Exception is the upper bound.
         lub = new ArrayList<RuntimeException> ( );
         lub = new ArrayList<IOException> ( );
-//        lub.add ( new IOException (  ) );  //not allowed: the actual type isn't known
+//        lub.add ( new IOException (  ) );  //not allowed: the actual dbType isn't known
     }
 
     {

@@ -31,10 +31,10 @@ public class C implements StaticInterfaceMethods {
 		m.defaultMethod();
 
 		/*
-		 * compiler error: m reference type: StaticInterfaceMethods and it
+		 * compiler error: createAndPopulate reference dbType: StaticInterfaceMethods and it
 		 * points to implementing class: the compiler still throws an error
 		 */
-		// m.staticMethod();
+		// createAndPopulate.staticMethod();
 	}
 
 	public static void main(String[] args) {

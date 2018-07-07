@@ -56,7 +56,7 @@ class CreateLocale {
 
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
         m2();
     }
 

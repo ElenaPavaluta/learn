@@ -34,9 +34,9 @@ class Interrupting {
     }
 
     static void ms() throws InterruptedException {
-//        m(new SleepBlocked());
-//        m(new IOBlocked(System.in));
-//        m(new SynchronizedBlock());
+//        createAndPopulate(new SleepBlocked());
+//        createAndPopulate(new IOBlocked(System.in));
+//        createAndPopulate(new SynchronizedBlock());
     }
 
     static void mTest() throws InterruptedException {

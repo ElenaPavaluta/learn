@@ -5,9 +5,9 @@ import oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.Robot;
 
 /**
  * Type Erasure
- * <p>
- * Specifying a generic type allows the compiler to enforce proper use of the generic type.
- * For example, specifying the generic type of Crate as Robot is like replacing the T in the
+ * <test>
+ * Specifying a generic dbType allows the compiler to enforce proper use of the generic dbType.
+ * For example, specifying the generic dbType of Crate as Robot is like replacing the T in the
  * Crate class with Robot. However, this is just for compile time.
  * Behind the scenes, the compiler replaces all references to T in Crate with Object. In other
  * words, after the code compiles, your generics are actually just Object types.

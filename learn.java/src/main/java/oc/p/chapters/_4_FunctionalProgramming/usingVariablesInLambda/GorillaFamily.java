@@ -5,7 +5,7 @@ package oc.p.chapters._4_FunctionalProgramming.usingVariablesInLambda;
  *
  * static variables
  *
- * instance variables
+ * dbInstance variables
  *
  * effectively final method parameters
  *
@@ -15,7 +15,7 @@ class GorillaFamily {
 
     //static variableW
     static String walk2 = "walk2";
-    //instance variable
+    //dbInstance variable
     String walk = "walk";
 
     public static void main(String[] args) {

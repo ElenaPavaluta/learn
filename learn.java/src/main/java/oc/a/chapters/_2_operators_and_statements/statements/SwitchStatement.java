@@ -18,8 +18,8 @@ package oc.a.chapters._2_operators_and_statements.statements;
  * enum values
  * 
  * The values in each case statement must be compile-time constant values of the
- * same data type as the switch value. This means you can use only literals,
- * enum constants, or final constant variables of the same data type.
+ * same data dbType as the switch value. This means you can use only literals,
+ * enum constants, or final constant variables of the same data dbType.
  */
 public class SwitchStatement {
 
@@ -49,7 +49,7 @@ public class SwitchStatement {
 	static void m2() {
 		final double d = 5;
 
-		// switch (d) { //not allowed data type
+		// switch (d) { //not allowed data dbType
 		// case value:
 		//
 		// break;
@@ -60,7 +60,7 @@ public class SwitchStatement {
 	}
 
 	static void m3() {
-		// final float f = 5; //not allowed data type
+		// final float f = 5; //not allowed data dbType
 		// switch (f) {
 		// case value:
 		//
@@ -145,7 +145,7 @@ public class SwitchStatement {
 	static void m8(int key) {
 		final Byte b = new Byte((byte) 1); // needs cast, because, by defaulT in
 											// java the numeric literals are of
-											// type int
+											// dbType int
 		final Character c = new Character((char) 2);
 		final Short s = new Short((short) 3);
 		final Integer i = new Integer(4);

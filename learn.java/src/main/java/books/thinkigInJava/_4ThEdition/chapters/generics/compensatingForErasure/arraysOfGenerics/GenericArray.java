@@ -28,18 +28,18 @@ class GenericArray<T> {
 
         /**
          * ClassCastException
-         *Due to erasure, the runtime type of arr is Object[]
+         *Due to erasure, the runtime dbType of arr is Object[]
          * - and only this can be
          *
          * So, although the compiler is happy the arr knows that it contains
-         * Object type and when trying to convert to Integer it throws
+         * Object dbType and when trying to convert to Integer it throws
          * a ClassCastException
          */
 //        Integer[] ia = gai.rep();
 
         /**
-         * This is ok, because the actual type contained inside arr is Object
-         * - once again: due to type erasure
+         * This is ok, because the actual dbType contained inside arr is Object
+         * - once again: due to dbType erasure
          */
         Object[] oa = gai.rep();
 

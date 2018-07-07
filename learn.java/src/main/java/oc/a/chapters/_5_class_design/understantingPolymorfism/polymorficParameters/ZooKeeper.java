@@ -1,6 +1,6 @@
 package oc.a.chapters._5_class_design.understantingPolymorfism.polymorficParameters;
 
-public class ZooKeeper {
+class ZooKeeper {
 
 	static void feed(Reptile r){
 		System.out.println("feeding: "+ r.getName());

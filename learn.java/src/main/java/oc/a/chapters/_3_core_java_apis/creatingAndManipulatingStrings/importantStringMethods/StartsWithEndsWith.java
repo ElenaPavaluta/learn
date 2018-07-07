@@ -14,7 +14,7 @@ public class StartsWithEndsWith {
 
 	static void startsWith() {
 		System.out.println(s.startsWith("lo")); // true
-		System.out.println(s.startsWith("m")); // false
+		System.out.println(s.startsWith("createAndPopulate")); // false
 	}
 
 	static void startsWith2() {

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 
- * for(datatype instance: collection){
+ * for(datatype dbInstance: collection){
  * 	//curly braces required for multiple statements
  * 
  * }
@@ -54,7 +54,7 @@ public class ForEachStatement {
 	
 	
 	public static void main(String[] args) {
-//		m();
+//		createAndPopulate();
 		m2();
 	}
 

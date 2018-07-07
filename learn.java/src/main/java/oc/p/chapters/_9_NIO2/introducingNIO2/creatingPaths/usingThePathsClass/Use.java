@@ -25,7 +25,7 @@ class Use {
 
     static void m2(){
         Path p = Paths.get("a", "b", "c");
-        Path p2 = Paths.get("c:", "zoo","november", "e.txt" );
+        Path p2 = Paths.get("c:", "zoo", "november", "e.txt");
         Path p3 = Paths.get("/", "home", "dir");
 
         System.out.println(p);
@@ -37,7 +37,7 @@ class Use {
         /**
          * URI must reference absolute paths at runtime
          */
-//        Path p = Paths.get(new URI("file://pandas.cudly.png"));  //RE
+//        Path test = Paths.get(new URI("file://pandas.cudly.png"));  //RE
 
         Path p2 = Paths.get(new URI("file:///c:/zoo-info/November/employees.txt"));
         Path p3 = Paths.get(new URI("file:///home/zoodirectory"));

@@ -20,7 +20,7 @@ class OuterVar
 	{
 		private String inner = "inner";
 		//		private static String staticInner = "staticInner";  //inner classes can not have static variables or methods
-		//		private static void m(){}
+		//		private static void createAndPopulate(){}
 
 		void innerM(){
 			m2();

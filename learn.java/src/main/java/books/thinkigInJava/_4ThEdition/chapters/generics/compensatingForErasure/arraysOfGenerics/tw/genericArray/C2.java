@@ -17,20 +17,20 @@ class C2 {
 
     static void m2() {
         /**
-         * Arrays keep track of their actual type
+         * Arrays keep track of their actual dbType
          * which is established at runtime
          */
         sa = (String[]) new Object[5];  //ClassCastException
     }
 
     static void m3() {
-        sa = new String[5]; //the actual type is String
+        sa = new String[5]; //the actual dbType is String
         Object[] oa = sa;  //A String is also an object
-        sa = (String[]) oa;  //since the actual type is String, this cast is safe
+        sa = (String[]) oa;  //since the actual dbType is String, this cast is safe
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
         m2();
 //        m3();
     }

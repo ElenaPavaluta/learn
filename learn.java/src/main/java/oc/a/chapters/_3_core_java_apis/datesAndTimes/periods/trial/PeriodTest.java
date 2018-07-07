@@ -45,7 +45,7 @@ class PeriodTest {
 		
 		System.out.println(p);
 		System.out.println(ld.plus(p));
-//		System.out.println(LocalTime.now().plus(p));  //java.time.temporal.UnsupportedTemporalTypeException
+//		System.out.println(LocalTime.now().plus(test));  //java.time.temporal.UnsupportedTemporalTypeException
 		System.out.println(LocalDateTime.now().plus(p));
 	}
 	

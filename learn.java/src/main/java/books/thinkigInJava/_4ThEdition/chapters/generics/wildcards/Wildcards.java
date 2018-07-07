@@ -18,7 +18,7 @@ class Wildcards {
         /**
          * Compiler error
          *
-         * ? means that we don't know the type
+         * ? means that we don't know the dbType
          * putting Objec doen't solve the issue
          */
 //        holder.setT(obj);
@@ -27,7 +27,7 @@ class Wildcards {
         holder = new Holder<Wildcard>(new Wildcard());
 
         /**
-         * The refence type is Holder<?> which means
+         * The refence dbType is Holder<?> which means
          * that is a Holder of some unspecified object
          *
          * Holder is a holder of object

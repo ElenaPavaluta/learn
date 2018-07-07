@@ -12,7 +12,7 @@ class ArrayOfGeneric<T> {
          * Object cannot be cast to Generic;
          *
          *
-         * Arrays keep track of their actual type, and that type is
+         * Arrays keep track of their actual dbType, and that dbType is
          * established at the point of creation of the array.
          *
          * So even though gia has been cast to a Generic < Integer >[],

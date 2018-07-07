@@ -19,7 +19,7 @@ class Create {
     }
 
     void dir() {
-        java.io.File f = Resources.IO.File.directory(path + "p\\p2\\p3\\p4");
+        java.io.File f = Resources.IO.File.directory(path + "test\\p2\\p3\\p4");
         System.out.println(f.isDirectory());  //true
         System.out.println(f.isFile());  //false;
         files.push(f);

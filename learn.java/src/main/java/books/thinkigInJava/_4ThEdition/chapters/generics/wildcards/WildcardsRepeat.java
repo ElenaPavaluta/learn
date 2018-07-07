@@ -12,8 +12,8 @@ class WildcardsRepeat {
 
     static void unboundedArg(Holder<?> hoder, Object obj){
         /**
-         * Holder<?> means that is Holder of some type object,
-         * although unknown this type of object at this point
+         * Holder<?> means that is Holder of some dbType object,
+         * although unknown this dbType of object at this point
          * Similar to List<?>. Of course this ? is an object at
          * runtime, but we're at compile time, now
          *
@@ -42,7 +42,7 @@ class WildcardsRepeat {
         /**
          * Compiler error:
          * Same as List<? extends T>
-         * Can't really know what type of object is ? extend T.
+         * Can't really know what dbType of object is ? extend T.
          * It could be T or a subtype of T, as the definition tells.
          */
 //        holder.setT(t);
@@ -50,7 +50,7 @@ class WildcardsRepeat {
         /**
          * This is legal
          *
-         * Doesn't really matter the type of object reprezented by
+         * Doesn't really matter the dbType of object reprezented by
          * ? extends T, since it will always be at least T
          */
         T t2 = holder.getT();
@@ -62,7 +62,7 @@ class WildcardsRepeat {
          * This is legal
          * Same as List<? super T>
          *
-         * The holder can contain any type of object as long as it is
+         * The holder can contain any dbType of object as long as it is
          * either T or any class/ interface T extends/implements
          */
         holder.setT(t);
@@ -71,7 +71,7 @@ class WildcardsRepeat {
          * Compiler error
          *
          * Imagine U as being a class that T extends and
-         * U is in fact the  type contained by Holder.
+         * U is in fact the  dbType contained by Holder.
          *
          * What would happen when the JVM will try to cast U to T?
          *

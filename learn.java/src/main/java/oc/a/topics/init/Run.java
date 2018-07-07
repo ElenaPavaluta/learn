@@ -11,9 +11,9 @@ public class Run {
 		A a = new A("a");
 
 //		B b = new B("b");
-//		b.m();
+//		b.createAndPopulate();
 
 //		A aa = new B("aa");
-//		aa.m();
+//		aa.createAndPopulate();
 	}
 }

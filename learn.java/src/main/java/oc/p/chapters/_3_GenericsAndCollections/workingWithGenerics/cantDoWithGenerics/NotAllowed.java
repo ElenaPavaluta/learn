@@ -8,20 +8,20 @@ import java.util.List;
  * Call the constructor. new T() is not allowed because at runtime it would be new Object().
  *
  *
- * Create an array of that static type. This one is the most annoying, but it makes sense
+ * Create an array of that static dbType. This one is the most annoying, but it makes sense
  * because you’d be creating an array of Objects.
  *
  *
  * Call instanceof. This is not allowed because at runtime List<Integer> and
- * List<String> look the same to Java thanks to type erasure.
+ * List<String> look the same to Java thanks to dbType erasure.
  *
  *
- * Create a static variable as a generic type parameter. This is not allowed because the
- * type is linked to the instance of the class.
+ * Create a static variable as a generic dbType parameter. This is not allowed because the
+ * dbType is linked to the dbInstance of the class.
  *
  *
- * Use a primitive type as a generic type parameter. This isn’t a big deal because you
- * can use the wrapper class instead. If you want a type of int, just use Integer.
+ * Use a primitive dbType as a generic dbType parameter. This isn’t a big deal because you
+ * can use the wrapper class instead. If you want a dbType of int, just use Integer.
  *
  */
 
@@ -47,11 +47,11 @@ class NotAllowed<T>
 	}
 
 	{
-//		t instanceof T;  //compiler error;  List<Integer> and List<String> look the same , due to type erasure
+//		t instanceof T;  //compiler error;  List<Integer> and List<String> look the same , due to dbType erasure
 	}
 
 
-//	static T st;  //compiler error; the type is linked to the instance of the class
+//	static T st;  //compiler error; the dbType is linked to the dbInstance of the class
 
 
 }

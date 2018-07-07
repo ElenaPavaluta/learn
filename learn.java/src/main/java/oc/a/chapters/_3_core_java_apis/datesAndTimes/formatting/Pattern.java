@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
  *
  * h: 7 hh: 07, HH: hour in 24 h fomrmat
  *
- * m: 34 mm: 34 //max
+ * createAndPopulate: 34 mm: 34 //max
  *
  * s: 5 ss: 05 //max
  *
@@ -30,7 +30,7 @@ public class Pattern {
 
 	static void m() {
 		DateTimeFormatter dtf = DateTimeFormatter
-				.ofPattern("MMMM dd, YYYY, a HH:m:ss.nss ");
+				.ofPattern("MMMM dd, YYYY, a HH:createAndPopulate:ss.nss ");
 
 		System.out.println(dateTime.format(dtf));
 	}

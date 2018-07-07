@@ -40,7 +40,7 @@ class Animal implements Serializable{
         return "Animal{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", type=" + type +
+                ", dbType=" + type +
                 ", c=" + c +
                 ", localDate=" + localDate +
                 '}';

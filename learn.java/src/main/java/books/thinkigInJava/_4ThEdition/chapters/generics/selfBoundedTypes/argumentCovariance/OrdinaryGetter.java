@@ -8,7 +8,7 @@ interface OrdinaryGetter {
 interface DerivedOrdinaryGetter extends OrdinaryGetter{
 
     /**
-     * Return type of overridden method is allow to vary
+     * Return dbType of overridden method is allow to vary
      * (as long as it is a subclass)
      */
 

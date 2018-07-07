@@ -17,7 +17,7 @@ import java.util.stream.Stream;
  * infinite stream: does not terminate
  * reduce: yes
  *
- * The collect() method is a special type of reduction called a mutable reduction. It is
+ * The collect() method is a special dbType of reduction called a mutable reduction. It is
  * more efficient than a regular reduction because we use the same mutable object while
  * accumulating. Common mutable objects include StringBuilder and ArrayList.
  */

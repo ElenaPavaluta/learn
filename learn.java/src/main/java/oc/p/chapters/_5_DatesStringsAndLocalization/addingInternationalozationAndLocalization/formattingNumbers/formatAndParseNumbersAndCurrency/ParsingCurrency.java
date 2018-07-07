@@ -39,7 +39,7 @@ class ParsingCurrency {
     }
 
     public static void main(String[] args) throws ParseException {
-//        m();
+//        createAndPopulate();
         m2();
     }
 

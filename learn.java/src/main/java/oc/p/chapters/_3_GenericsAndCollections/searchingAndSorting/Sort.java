@@ -20,7 +20,7 @@ class Sort {
     void m() {
         /**
          * TreeSet implements SortedSet (which requires the elements used by this set
-         * to be of type Comparable)
+         * to be of dbType Comparable)
          */
         Set<Rabbit> set = new TreeSet<>();
         set.add(new Rabbit());  //RE
@@ -44,7 +44,7 @@ class Sort {
     /**
      * public static <T extends Comparable<? super T>> void sort(List<T> list)
      *
-     * checks the type at compiler time, and if the type is Comparable: compiler error
+     * checks the dbType at compiler time, and if the dbType is Comparable: compiler error
      */
     void m5(){
         List<Rabbit> lst = new ArrayList<>();

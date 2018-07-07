@@ -26,7 +26,7 @@ class A3 {
         consumer = (s, d) -> map.put(s, d);
         consumer.accept("tomorrow", LocalDate.now().plusDays(1));
 
-        consumer = map::put;  //instance method reference on a particular instance
+        consumer = map::put;  //dbInstance method reference on a particular dbInstance
 
     }
 
@@ -42,7 +42,7 @@ class A3 {
 
         consumer = (s, i) -> a4.m(s, i);
 
-        consumer = a4::m;  //method reference on particular instance
+        consumer = a4::m;  //method reference on particular dbInstance
         consumer.accept("", 1);
     }
 
@@ -73,7 +73,7 @@ class A3 {
         biConsumer = (a, a2) -> a.m();
         biConsumer.accept(new A33(), null);
 
-//        biConsumer = A33::m;  //compiler error
+//        biConsumer = A33::createAndPopulate;  //compiler error
     }
 }
 

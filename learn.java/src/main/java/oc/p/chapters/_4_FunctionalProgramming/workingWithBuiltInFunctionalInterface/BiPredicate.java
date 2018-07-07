@@ -10,6 +10,6 @@ class BP{
         BiPredicate<String, String> biPredicate = (s, prefix) -> s.startsWith(prefix);
         biPredicate.test("base", "b");
 
-        biPredicate = String::startsWith;  //reference method on instance to be determined at runtime
+        biPredicate = String::startsWith;  //reference method on dbInstance to be determined at runtime
     }
 }

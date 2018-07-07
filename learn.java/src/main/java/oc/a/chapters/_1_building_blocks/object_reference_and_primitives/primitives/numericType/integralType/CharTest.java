@@ -4,9 +4,9 @@ public class CharTest {
 
 	public static void mChar() {
 		char c;
-		c = 123; // the literal type is int, but it's being narrowed to an char
-					// type. Being a literal the compiler can check it's value
-					// and can see that this value can fit into an char type
+		c = 123; // the literal dbType is int, but it's being narrowed to an char
+					// dbType. Being a literal the compiler can check it's value
+					// and can see that this value can fit into an char dbType
 					// variable
 		c = 1234;
 		c = 12345;
@@ -51,7 +51,7 @@ public class CharTest {
 												// numeric promotion)
 												// so then in order to save the
 												// resulting
-												// value in a char type
+												// value in a char dbType
 												// value we need to cast it
 		System.out.println("c10:" + c10);
 		System.out.println("c10:" + Integer.valueOf(c10));

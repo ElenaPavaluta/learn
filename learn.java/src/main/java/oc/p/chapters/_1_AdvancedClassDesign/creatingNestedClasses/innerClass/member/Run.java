@@ -48,9 +48,9 @@ class Run
 		}
 	}
 
-	//	protected class B extends Outer.MIC{}  //compiler error: there's no instance of the outer class in order for the MIC to exists
+	//	protected class B extends Outer.MIC{}  //compiler error: there's no dbInstance of the outer class in order for the MIC to exists
 
-	//	class C extends Outer.Abstr{  //compiler error: there's no instance of the outer class in order for the Abstr to exists
+	//	class C extends Outer.Abstr{  //compiler error: there's no dbInstance of the outer class in order for the Abstr to exists
 	//		public C(String s)
 	//		{
 	//			super(s);

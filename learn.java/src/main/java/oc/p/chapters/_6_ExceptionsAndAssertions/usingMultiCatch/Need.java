@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 
 class Need {
 
-    static String file = "D:\\workspace\\cip\\learn\\learn.java\\src\\main\\java\\oc\\p\\chapters\\c_6_ExceptionsAndAssertions\\usingMultiCatch\\born";
+    static String file = "D:\\workspace\\cip\\learn\\learn.java\\src\\main\\java\\oc\\test\\chapters\\c_6_ExceptionsAndAssertions\\usingMultiCatch\\born";
 
     static void m() {
         try {
@@ -48,7 +48,7 @@ class Need {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
         m2();
     }
 }

@@ -33,7 +33,7 @@ class P{
 
         predicate = p -> p.m2();
 
-        predicate = P2::m2;  //instance method reference on instance to be determined at runtime
+        predicate = P2::m2;  //dbInstance method reference on dbInstance to be determined at runtime
     }
 
     static void m3(){

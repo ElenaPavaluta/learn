@@ -15,7 +15,7 @@ class UseList<W, T> {
      *
      * Since instanceof list<W> == instanceof List<T>,
      * the compiler plays safe and raise an error.
-     * By the way who could stop you to use the same type
+     * By the way who could stop you to use the same dbType
      * for both W an T, like Use<String, String>
      */
 //    void f(List<T> ts){};
@@ -23,14 +23,14 @@ class UseList<W, T> {
     <W extends A, T extends B> void m(List<W> ws) {
     }
 
-//    <W extends A, T extends B> void m(List<T> ts){}  //compiler error
+//    <W extends A, T extends B> void createAndPopulate(List<T> ts){}  //compiler error
 }
 
 class UseList2<W extends A, T extends B> {
     void m(List<W> ws) {
     }
 
-//    void m(List<T> ts){} //compiler error, once again
+//    void createAndPopulate(List<T> ts){} //compiler error, once again
 }
 
 class A {

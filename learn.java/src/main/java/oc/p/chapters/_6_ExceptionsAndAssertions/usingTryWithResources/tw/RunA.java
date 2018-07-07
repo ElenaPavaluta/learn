@@ -8,7 +8,7 @@ class RunA {
     static void m() {
         try(ACCheckedException acCheckedException = new ACCheckedException();
             ACUncheckedException acUncheckedException = new ACUncheckedException()) {
-            System.out.println("m");
+            System.out.println("createAndPopulate");
             throw new IllegalArgumentException("IAE");
         } catch(IllegalArgumentException e) {
             print(e);
@@ -109,7 +109,7 @@ class RunA {
         class C{
             void m() throws EOFException{
                 try(B b = new B()){
-                    System.out.println("c m()");
+                    System.out.println("c createAndPopulate()");
                 }
             }
         }
@@ -135,7 +135,7 @@ class RunA {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
 //        m3();
 //        m4();  //throws IAE; suppressed: SQL E, ISE

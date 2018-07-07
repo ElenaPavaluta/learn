@@ -16,8 +16,9 @@ public interface Resources {
     String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
-    String SRC_MAIN = "src" + java.io.File.separator + "main";
-    String SRC_MAIN_RESOURCES = SRC_MAIN + java.io.File.separator + RESOURCES;
+    String SRC_MAIN = "src" + File.separator + "main";
+    String SRC_MAIN_RESOURCES = SRC_MAIN + File.separator + RESOURCES;
+    String SRC_MAIN_RESOURCES_DB = SRC_MAIN_RESOURCES + File.separator + "db";
     String SRC_MAIN_JAVA = SRC_MAIN + java.io.File.separator + JAVA;
 
     static String path(String path) {

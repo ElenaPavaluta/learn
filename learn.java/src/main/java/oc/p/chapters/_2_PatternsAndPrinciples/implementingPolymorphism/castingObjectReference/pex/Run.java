@@ -2,7 +2,7 @@ package oc.p.chapters._2_PatternsAndPrinciples.implementingPolymorphism.castingO
 
 /**
  * The object exists on the heap memory and it is accessible only through a reference.
- * The reference type to an object "decides" what fields and methods of the object are accessible throughout that reference
+ * The reference dbType to an object "decides" what fields and methods of the object are accessible throughout that reference
  */
 class Run
 {

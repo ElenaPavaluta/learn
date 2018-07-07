@@ -9,9 +9,9 @@ public class CompoundAssignmentOperators {
 
 		// y = y*x;
 		/*
-		 * does not compile: y it's promoted to a long data type, and then you
+		 * does not compile: y it's promoted to a long data dbType, and then you
 		 * have a long expression retrieving a long result, which without an
-		 * explicit cats can't fit in an int data type
+		 * explicit cats can't fit in an int data dbType
 		 */
 		y = (int) (y * x);
 

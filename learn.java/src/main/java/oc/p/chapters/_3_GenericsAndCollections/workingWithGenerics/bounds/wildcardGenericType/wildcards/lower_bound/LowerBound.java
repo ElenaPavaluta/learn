@@ -29,7 +29,7 @@ class LowerBound
 	}
 
 	/*
-		These methods can't be overloaded because they have the same erasure type (Object)
+		These methods can't be overloaded because they have the same erasure dbType (Object)
 	 */
 	void addSoundRaw(List l){
 		l.add("sound");

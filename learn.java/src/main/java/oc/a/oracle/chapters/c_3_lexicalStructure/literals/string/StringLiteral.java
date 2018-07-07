@@ -1,7 +1,7 @@
 package oc.a.oracle.chapters.c_3_lexicalStructure.literals.string;
 
 /*
- * A string literal it's a reference to an instance of a class String
+ * A string literal it's a reference to an dbInstance of a class String
  * 
  * Literal strings within different classes in different packages represent references to the same String object
  * 

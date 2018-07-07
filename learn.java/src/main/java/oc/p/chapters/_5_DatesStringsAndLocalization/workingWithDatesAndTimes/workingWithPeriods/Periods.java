@@ -80,7 +80,7 @@ class Periods {
 
    static void m6(){
        Period p = Period.ofDays(2);
-//       p = p.plus(TemporalUni;
+//       test = test.plus(TemporalUni;
        TemporalUnit t;
        System.out.println(p.get(ChronoUnit.DAYS));
    }

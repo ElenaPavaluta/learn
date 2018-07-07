@@ -17,9 +17,9 @@ import java.time.temporal.ChronoUnit;
 
 /**
  * static <V extends FileAttributeView> V
- * getFileAttributeView(Path path, Class<V> type, LinkOption... options)
+ * getFileAttributeView(Path path, Class<V> dbType, LinkOption... options)
  *
- * Returns a file attribute view of a given type
+ * Returns a file attribute view of a given dbType
  *
  * void setTimes(FileTime lastModifiedTime,
  * FileTime lastAccessTime,

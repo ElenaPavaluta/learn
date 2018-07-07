@@ -4,7 +4,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 class PropertiesClass {
-    private static final String BASE_NAME = "oc.p.chapters.c_5_DatesStringsAndLocalization.addingInternationalozationAndLocalization.usingAResourceBundle.creatingAJavaClassResourceBundle.Tax";
+    private static final String BASE_NAME = "oc.test.chapters.c_5_DatesStringsAndLocalization.addingInternationalozationAndLocalization.usingAResourceBundle.creatingAJavaClassResourceBundle.Tax";
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle(BASE_NAME);
 
     static void m(){
@@ -35,12 +35,12 @@ class PropertiesClass {
         TaxCode tc = (TaxCode)props.get("tax");
         tc.m();
 
-        String s = props.getProperty("tax");  //returns null, since the value object isn't instance of String
+        String s = props.getProperty("tax");  //returns null, since the value object isn't dbInstance of String
         System.out.println(s);
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
 //        m3();
         m4();

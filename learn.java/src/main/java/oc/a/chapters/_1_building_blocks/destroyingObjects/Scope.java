@@ -1,7 +1,7 @@
 package oc.a.chapters._1_building_blocks.destroyingObjects;
 
 /**
- * Reminder: All references have the same size, no matter of the object type
+ * Reminder: All references have the same size, no matter of the object dbType
  * being referred
  */
 class Scope {

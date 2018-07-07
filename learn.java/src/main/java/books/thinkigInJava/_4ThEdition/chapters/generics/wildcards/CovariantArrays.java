@@ -9,7 +9,7 @@ class CovariantArrays {
 
         /**
          * RE: ArrayStoreException
-         *The runtime type (the actual type)
+         *The runtime dbType (the actual dbType)
          * of the array is Apple[]
          * Although the compiler is happy a RE
          * gets thrown
@@ -27,7 +27,7 @@ class CovariantArrays {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
         m2();
     }
 }

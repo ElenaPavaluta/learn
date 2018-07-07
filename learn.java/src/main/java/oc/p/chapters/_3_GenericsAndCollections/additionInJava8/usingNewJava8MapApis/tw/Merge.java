@@ -46,7 +46,7 @@ class Merge {
 
     /**
      * TreeMap doesn't allow null key: it implemets SortedMap which requires it's elements
-     * to be of type Comparable and  null isn't Comparable
+     * to be of dbType Comparable and  null isn't Comparable
      */
     static void treeMap() {
         treeMap.putIfAbsent(3, null);

@@ -13,7 +13,7 @@ class F2{
         F f = new F();
         function = i->f.m2(i);
 
-        function= f::m2;  //instance method reference on particular instance
+        function= f::m2;  //dbInstance method reference on particular dbInstance
         function.apply(2);
     }
 }

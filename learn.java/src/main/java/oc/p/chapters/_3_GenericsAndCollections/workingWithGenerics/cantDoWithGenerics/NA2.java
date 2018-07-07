@@ -16,7 +16,7 @@ class NA2<T> {
 
     }
 
-//    static T t;  //compiler error: the type T is linked to the instance of the class
+//    static T t;  //compiler error: the dbType T is linked to the dbInstance of the class
 
     void m(T t){
 //        boolean b = t instanceof List<T>;  //compiler error

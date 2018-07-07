@@ -24,7 +24,7 @@ public class Test {
 		Period p = Period.ofDays(1);
 
 		date = date.plus(p);
-		// time = time.plus(p); // UnsupportedTemporalTypeException:
+		// time = time.plus(test); // UnsupportedTemporalTypeException:
 		dateTime = dateTime.plus(p);
 
 		print();

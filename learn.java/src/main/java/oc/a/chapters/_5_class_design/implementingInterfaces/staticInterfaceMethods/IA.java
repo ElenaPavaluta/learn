@@ -3,6 +3,6 @@ package oc.a.chapters._5_class_design.implementingInterfaces.staticInterfaceMeth
 abstract interface IA {
 
 	static void m(){  //assumed public
-		System.out.println("static method m in IA");
+		System.out.println("static method createAndPopulate in IA");
 	}
 }

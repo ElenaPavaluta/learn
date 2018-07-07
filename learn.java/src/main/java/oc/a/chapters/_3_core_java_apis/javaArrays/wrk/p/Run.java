@@ -15,7 +15,7 @@ abstract class Run {
 		// as[0] = new Sub2(); //compiler error: Sub and Sub2 are sibiling
 
 		aS[0] = new Sub2(); // perfect legal (for the compiler), because Sub2
-							// extends Super, but the array elements type is
+							// extends Super, but the array elements dbType is
 							// actually Sub not Super, nor Sub2 which only means
 							// a runtime exception (ArrayStoreException)
 

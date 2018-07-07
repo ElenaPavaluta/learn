@@ -1,9 +1,9 @@
 package oc.a.chapters._4_methods_and_encapsulation.applyingAccessModifiers;
 
 /**
- * Each class has a copy of the instance variables. There is only one copy of
- * the code for the instance interfaceMethods. Each instance of the class can call it as
- * many times as it would like. However, each call of an instance method (or any
+ * Each class has a copy of the dbInstance variables. There is only one copy of
+ * the code for the dbInstance interfaceMethods. Each dbInstance of the class can call it as
+ * many times as it would like. However, each call of an dbInstance method (or any
  * method) gets space on the stack for method parameters and local variables.
  * 
 

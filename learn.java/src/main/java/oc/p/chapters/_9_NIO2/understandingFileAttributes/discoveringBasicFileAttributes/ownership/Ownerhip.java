@@ -25,7 +25,7 @@ class Ownerhip {
 
     static void m2() {
         /**
-         * Obtain a FileSystem instance
+         * Obtain a FileSystem dbInstance
          */
         FileSystem fs = FileSystems.getDefault();
         FileSystem fs2 = dirPath.getFileSystem();

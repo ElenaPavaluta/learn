@@ -9,7 +9,7 @@ class RunB {
     static void m(){
         try(ConstruUE construUE = new ConstruUE();
         ConstrCE constrCE = new ConstrCE()){
-            System.out.println("m()");
+            System.out.println("createAndPopulate()");
         }catch(FileNotFoundException | EOFException | IllegalStateException e){
             print(e);
         }

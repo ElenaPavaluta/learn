@@ -46,8 +46,8 @@ class Join {
         Path p = Paths.get("a\\b\\c");
         Path p2 = Paths.get("");
 
-        System.out.println(p.resolve(p2));  //p
-        System.out.println(p2.resolve(p));  //p
+        System.out.println(p.resolve(p2));  //test
+        System.out.println(p2.resolve(p));  //test
     }
 
     static void c3(){

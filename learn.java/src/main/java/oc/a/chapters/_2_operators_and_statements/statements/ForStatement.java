@@ -72,7 +72,7 @@ public class ForStatement {
 
 		// compile time error: The variables in the initialization block must
 		// all be of the
-		// same type
+		// same dbType
 	}
 
 	static void m7() {

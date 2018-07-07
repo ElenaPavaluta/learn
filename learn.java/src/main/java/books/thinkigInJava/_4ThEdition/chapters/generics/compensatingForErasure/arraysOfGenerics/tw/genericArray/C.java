@@ -35,10 +35,10 @@ class C<T> {
         /**
          * The only way to create a generic array
          *
-         * Arrays keep track of their actual type
+         * Arrays keep track of their actual dbType
          * which is established at runtime
          *
-         * So, at runtime due to type erasure tArr  = new Object[10]
+         * So, at runtime due to dbType erasure tArr  = new Object[10]
          * but at this point the compiler isn't happy.
          * In order to make the compiler happy the (T[]) cast
          * is required
@@ -47,7 +47,7 @@ class C<T> {
 
         System.out.println(tArr instanceof Object);  //true
         System.out.println(tArr instanceof Object[]);  //true
-//        System.out.println(tArr instanceof T[]);  //compiler error: can't instanceof generic type
+//        System.out.println(tArr instanceof T[]);  //compiler error: can't instanceof generic dbType
     }
 
     void m(){

@@ -195,7 +195,7 @@ class Compare {
         System.out.println(b);  //true
         System.out.println(f.exists());  //true
 
-        Path p = Paths.get(path.getParent().toString(),"p", "p2", "p3");
+        Path p = Paths.get(path.getParent().toString(),"test", "p2", "p3");
         try {
             p = Files.createDirectories(p);
             System.out.println(p);

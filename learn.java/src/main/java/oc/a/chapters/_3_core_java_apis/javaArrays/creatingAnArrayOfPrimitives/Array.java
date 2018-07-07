@@ -19,7 +19,7 @@ public class Array {
 	 */
 	{
 		numbers = new int[3]; // in this case all the elements will be
-								// initialized to the type defaulT value
+								// initialized to the dbType defaulT value
 
 		numbers2 = new int[] { 1, 2, 3, };
 
@@ -28,7 +28,7 @@ public class Array {
 		// numbers4 = new int[3]{1,2,3,}; compiler error
 
 		int[] numbers5 = { 1, 2, 3, }; // anonymous array: don't specify the
-										// type and size
+										// dbType and size
 	}
 
 	
@@ -66,7 +66,7 @@ public class Array {
 	
 	
 	public static void main(String[] args) {
-//		m();
+//		createAndPopulate();
 //		m3();
 		m3();
 		m4();

@@ -2,7 +2,7 @@ package oc.p.chapters._1_AdvancedClassDesign.creatingNestedClasses.innerClass.me
 
 /**
  * A member inner class is defined at the member level of a class (the same level as the methods,
- * instance variables, and constructors). Member inner classes have the following properties:
+ * dbInstance variables, and constructors). Member inner classes have the following properties:
  * ■■ Can be declared public, private, or protected or use default access
  * ■■ Can extend any class and implement interfaces
  * ■■ Can be abstract or final
@@ -31,7 +31,7 @@ class Outer
 	protected class MIC extends Abstr
 	{
 		//		static String micS2;  //compiler error
-		//		static void m(){}  //compiler error
+		//		static void createAndPopulate(){}  //compiler error
 
 		protected MIC(){
 			super("MIC");

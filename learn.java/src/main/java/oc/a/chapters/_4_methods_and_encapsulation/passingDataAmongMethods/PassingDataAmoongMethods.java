@@ -30,9 +30,9 @@ public class PassingDataAmoongMethods {
 		c.m(i);
 		System.out.println(i); // 10, the value in i is not changed
 
-		String s = "ha ha, I'm immutable";
+		String s = "ha ha, I'createAndPopulate immutable";
 		c.m2(s); // the actual parameter is a copy of the s reference
-		System.out.println(s); // ha ha, I'm immutable;
+		System.out.println(s); // ha ha, I'createAndPopulate immutable;
 
 		StringBuilder sb = new StringBuilder();
 		c.m3(sb);

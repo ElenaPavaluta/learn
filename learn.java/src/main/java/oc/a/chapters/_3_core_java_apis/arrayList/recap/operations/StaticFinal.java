@@ -30,7 +30,7 @@ class StaticFinal {
 		// lst = new ArrayList<>();
 
 		/*
-		 * Legal because lst2 variable belongs to an instance of this class, not
+		 * Legal because lst2 variable belongs to an dbInstance of this class, not
 		 * to the class as a static variable
 		 */
 //		lst2 = new ArrayList<>();
@@ -49,7 +49,7 @@ class StaticFinal {
 
 		/*
 		 * compiler error: the variable is static and final and the constructor
-		 * runs for every instance of the class
+		 * runs for every dbInstance of the class
 		 */
 //		lst = new ArrayList<>();
 		

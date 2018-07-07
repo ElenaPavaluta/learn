@@ -25,7 +25,7 @@ class C {
 
         /**
          * Compiler error:
-         * The compiler can't know the actual type of
+         * The compiler can't know the actual dbType of
          * object in the collection so, in order
          * to avoid a ClassCastException forbids the adding
          * functionality
@@ -46,7 +46,7 @@ class C {
     }
 
     static void m4() {
-        lstExtendsApple = new ArrayList<Apple>();  //default type
+        lstExtendsApple = new ArrayList<Apple>();  //default dbType
         lstExtendsApple = new LinkedList<GoldApple>();
         lstExtendsApple = new Vector<SilverApple>();
 //        lstExtendsApple = new Stack<Fruit>();
@@ -55,7 +55,7 @@ class C {
         /**
          * Compiler error
          * can't add new element because the compiler
-         * can't possible know the actual type contained
+         * can't possible know the actual dbType contained
          * in the collection
          */
 //        lstExtendsApple.add(new Apple());

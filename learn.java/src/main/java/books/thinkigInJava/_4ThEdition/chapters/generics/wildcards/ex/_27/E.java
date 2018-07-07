@@ -31,7 +31,7 @@ class E {
         lst2 = new ArrayList<Integer>();
         /**
          * Compiler error:
-         * how can the compiler know the exact type of objects
+         * how can the compiler know the exact dbType of objects
          * contained by the ArraysList,
          * so in order to avoid a RE, just doesn't permit adding
          * any new element, except null (probably just for the

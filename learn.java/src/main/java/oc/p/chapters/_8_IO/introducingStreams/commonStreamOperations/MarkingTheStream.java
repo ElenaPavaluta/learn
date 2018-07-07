@@ -19,7 +19,7 @@ class MarkingTheStream {
     public static void main(String[] args) throws IOException {
         MarkingTheStream mts = new MarkingTheStream();
 
-//        mts.m();  //seems that FileInputStream does not support marking
+//        mts.createAndPopulate();  //seems that FileInputStream does not support marking
 //        mts.m2();
 //        mts.m3();
 //        mts.m4();

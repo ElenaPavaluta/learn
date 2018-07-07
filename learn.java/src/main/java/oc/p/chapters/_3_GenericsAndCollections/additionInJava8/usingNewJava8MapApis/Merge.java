@@ -24,9 +24,9 @@ class Merge {
 
     public static void main(String[] args) {
         Merge m = new Merge();
-//        m.m();
-//        m.m2();
-//        m.m3();
+//        createAndPopulate.createAndPopulate();
+//        createAndPopulate.m2();
+//        createAndPopulate.m3();
         m.m4();
     }
 

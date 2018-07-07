@@ -50,7 +50,7 @@ class Anim implements Serializable {
         return "Anim{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", type=" + type +
+                ", dbType=" + type +
                 '}';
     }
 }

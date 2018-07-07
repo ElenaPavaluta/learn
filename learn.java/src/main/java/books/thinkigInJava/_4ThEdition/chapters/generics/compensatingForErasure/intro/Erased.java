@@ -5,7 +5,7 @@ import java.util.Locale;
 
 /**
  * Erasure loses the ability to perform certain operations in generic code.
- * Anything that requires the knowledge of the exact type at run time won’t work
+ * Anything that requires the knowledge of the exact dbType at run time won’t work
  */
 class Erased<T> {
 
@@ -20,7 +20,7 @@ class Erased<T> {
 
         /**
          *T may not contain a non param constructor
-         *  - a good example of a need to know the exact type
+         *  - a good example of a need to know the exact dbType
          */
 //        T var = new T();  //compiler error
 
@@ -38,11 +38,11 @@ class Erased<T> {
 
 //        arr[0] = (Locale) LocalDate.now();  //compiler error
 
-        Object[] objects = arr;  //the exact contained type is know at runtime
+        Object[] objects = arr;  //the exact contained dbType is know at runtime
 
         /**
          * This cast doesn't raise a compiler error,
-         * but at runtime the jvm knows the exact type
+         * but at runtime the jvm knows the exact dbType
          * of the array and throws a ClassCastException
          */
         LocalDate[] localDates = (LocalDate[])objects;

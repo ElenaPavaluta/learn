@@ -2,5 +2,5 @@ package oc.a.chapters._1_building_blocks.object_reference_and_primitives.primiti
 
 public class BooleanTest {
 
-	// There's no cast between the numeric type and the boolean type
+	// There's no cast between the numeric dbType and the boolean dbType
 }

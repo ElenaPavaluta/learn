@@ -3,7 +3,7 @@ package oc.a.chapters._2_operators_and_statements.usingAdditionalBinaryOperators
 /**
  * a instanceof b
  * 
- * True if the reference that a points to is an instance of a class, subclass,
+ * True if the reference that a points to is an dbInstance of a class, subclass,
  * or class that implements a particular interface, as named in b
  * 
  *
@@ -56,8 +56,8 @@ public class RelationalOperators {
 		double d = 7;
 
 		// l =l + double; //compiler error: l it's promoted to a double in order
-		// to execute the operation, but then the result it;s of type double and
-		// can't fit in a long type variable without cast
+		// to execute the operation, but then the result it;s of dbType double and
+		// can't fit in a long dbType variable without cast
 		l+=d; //compound operator
 		
 		d = d+l;

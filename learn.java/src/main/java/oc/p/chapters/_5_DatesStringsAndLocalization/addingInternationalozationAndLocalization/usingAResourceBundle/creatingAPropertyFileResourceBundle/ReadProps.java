@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 class ReadProps {
 
     static void readProps(Locale locale){
-        ResourceBundle rb = ResourceBundle.getBundle("Zoo", locale);
+        ResourceBundle rb = ResourceBundle.getBundle("ZOO", locale);
         System.out.println(rb.getString("hello"));
         System.out.println(rb.getString("open"));
     }

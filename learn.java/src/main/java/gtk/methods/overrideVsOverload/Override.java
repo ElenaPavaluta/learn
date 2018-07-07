@@ -14,7 +14,7 @@ package gtk.methods.overrideVsOverload;
  * 4. If the method returns a value, it must be the same or a subclass of the
  * method in the parent class, known as covariant return types.
  *
- * 
+ *
  */
 public class Override {
 

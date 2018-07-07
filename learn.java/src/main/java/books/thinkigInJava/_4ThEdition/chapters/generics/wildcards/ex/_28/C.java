@@ -11,7 +11,7 @@ class C<T> {
         c.m(g, new YellowCat());
 
         /**
-         * The reference type is Generic.Impl<Cat>
+         * The reference dbType is Generic.Impl<Cat>
          *     Same as
          *   List<Cat> = List<YellowCat>
          */

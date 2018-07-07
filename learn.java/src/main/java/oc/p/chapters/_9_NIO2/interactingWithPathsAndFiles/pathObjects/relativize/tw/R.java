@@ -6,13 +6,13 @@ import java.nio.file.Paths;
 class R {
 
     static void m(){
-        Path p = Paths.get("root/m/n/o.txt");
+        Path p = Paths.get("root/createAndPopulate/n/o.txt");
         Path p2 = Paths.get("root/m2");
         System.out.println(p);
         System.out.println(p2);
 
         System.out.println(p.relativize(p2));  // ..\..\..\m2
-        System.out.println(p2.relativize(p));  // ..\m\n\o.txt
+        System.out.println(p2.relativize(p));  // ..\createAndPopulate\n\o.txt
     }
 
     static void m2(){
@@ -70,7 +70,7 @@ class R {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
 //        m3();
 //        m4();

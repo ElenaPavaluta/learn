@@ -10,7 +10,7 @@ package oc.a.chapters._5_class_design.understantingPolymorfism.castingObjects;
  * 3. The compiler will not allow casts to unrelated types.
  * 
  * 4. Even when the code compiles without issue, an exception may be thrown at
- * runtime if the object being cast is not actually an instance of that class.
+ * runtime if the object being cast is not actually an dbInstance of that class.
  *
  */
 public class CastingObjects {

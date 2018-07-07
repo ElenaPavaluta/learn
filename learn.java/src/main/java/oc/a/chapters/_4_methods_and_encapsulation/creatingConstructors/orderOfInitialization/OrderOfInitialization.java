@@ -7,7 +7,7 @@ package oc.a.chapters._4_methods_and_encapsulation.creatingConstructors.orderOfI
  * appear in the directory.
  *
  *
- * 3. instance variable declarations and instance initializers in the order they
+ * 3. dbInstance variable declarations and dbInstance initializers in the order they
  * appear in the directory.
  * 
  * 4. the constructor

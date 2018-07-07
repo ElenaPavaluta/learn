@@ -56,10 +56,10 @@ class Run{
 
         X x = new X();
 
-//        i.m(x);  //compiler error
+//        i.createAndPopulate(x);  //compiler error
         i.m2(x);  //ok
 
-//        i2.m(x);  //compiler error
+//        i2.createAndPopulate(x);  //compiler error
         i2.m2(x);
 
         x.m2(i);

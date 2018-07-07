@@ -20,9 +20,9 @@ class E {
 
     static void m2() {
         /**
-         * Although the reference is of type Number[}
-         * the actual type is Integer[]
-         * which means that any type of Number can be added,
+         * Although the reference is of dbType Number[}
+         * the actual dbType is Integer[]
+         * which means that any dbType of Number can be added,
          * but anything added besides Integers will generate a RE
          */
         array = new Integer[5];

@@ -1,7 +1,7 @@
 package oc.a.chapters._1_building_blocks.creating_objects.instance_initializer_blocks;
 
 /*
- * There are 3 code blocks here and 1 instance initializer
+ * There are 3 code blocks here and 1 dbInstance initializer
  */
 public class Blocks {
 

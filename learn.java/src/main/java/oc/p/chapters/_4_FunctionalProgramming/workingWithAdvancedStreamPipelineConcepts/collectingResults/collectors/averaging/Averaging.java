@@ -35,7 +35,7 @@ class Averaging {
     }
 
     static void m2() {
-//        int i = stream.collect(Collectors.averagingInt(LocalDateTime::getDayOfMonth));  //compiler error: the return type is double
+//        int i = stream.collect(Collectors.averagingInt(LocalDateTime::getDayOfMonth));  //compiler error: the return dbType is double
 
         double d = stream.collect(Collectors.averagingInt(LocalDateTime::getMinute));
         System.out.println(d);
@@ -61,7 +61,7 @@ class Averaging {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
 //        m3();
         m4();  //does not terminate

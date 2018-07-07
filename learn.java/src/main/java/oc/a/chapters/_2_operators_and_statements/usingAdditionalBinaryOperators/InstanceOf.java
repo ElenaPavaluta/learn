@@ -3,7 +3,7 @@ package oc.a.chapters._2_operators_and_statements.usingAdditionalBinaryOperators
 /**
  * a instanceof b
  * 
- * True if the reference that a points to is an instance of a class, subclass,
+ * True if the reference that a points to is an dbInstance of a class, subclass,
  * or class that implements a particular interface, as named in b
  * 
  *

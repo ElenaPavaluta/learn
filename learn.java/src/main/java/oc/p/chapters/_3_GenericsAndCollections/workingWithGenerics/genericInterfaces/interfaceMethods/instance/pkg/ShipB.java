@@ -21,13 +21,13 @@ class ShipB implements Ship<Robot, Elephant>
 		inst = new ShipB();
 	}
 
-	//T m(U u);
+	//T createAndPopulate(U u);
 	static void m()
 	{
 		r = inst.m(e);
 		r = inst.<Robot>m(e);
 		/**
-		 * It seems that the compiler just doesn't care about the type in <> if in the method declaration isn't specified
+		 * It seems that the compiler just doesn't care about the dbType in <> if in the method declaration isn't specified
 		 */
 		r = inst.<DateTimeException>m(e);
 		r = inst.<Elephant>m(e);
@@ -35,7 +35,7 @@ class ShipB implements Ship<Robot, Elephant>
 
 	static void m_2()
 	{
-		//		String s = inst.m(e); //compiler error: A robot is expected as a return type
+		//		String s = inst.createAndPopulate(e); //compiler error: A robot is expected as a return dbType
 	}
 
 	//<T> T m2(U u);
@@ -47,7 +47,7 @@ class ShipB implements Ship<Robot, Elephant>
 		//        r = inst.<Object> m2 (e);  //compiler error
 		//        r = inst.<DateTimeException>m2 ( e );  //compiler error
 		  /*
-		  When the generic type is specified one ca either supply the right type(including subtypes), or none at all
+		  When the generic dbType is specified one ca either supply the right dbType(including subtypes), or none at all
          */
 	}
 
@@ -55,7 +55,7 @@ class ShipB implements Ship<Robot, Elephant>
 	{
 		String s = inst.m2(e);
 		s = inst.<String>m2(e);
-		//        s = inst.<Robot> m2(e);  //compiler error: the specified generic type must be the same as the returned type, as the method's definition
+		//        s = inst.<Robot> m2(e);  //compiler error: the specified generic dbType must be the same as the returned dbType, as the method's definition
 
 		LocalDate ld = inst.m2(e);
 		ld = inst.<LocalDate>m2(e);
@@ -75,7 +75,7 @@ class ShipB implements Ship<Robot, Elephant>
 		String s = inst.m3(r, e);
 		s = inst.<String>m3(r, e);
 
-		//        s= inst.<Date> m3 ( r, e );  //compiler error: Return type and generic type must be the same
+		//        s= inst.<Date> m3 ( r, e );  //compiler error: Return dbType and generic dbType must be the same
 	}
 
 

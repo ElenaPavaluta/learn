@@ -8,7 +8,7 @@ package oc.a.chapters._6_exceptions.understandingExceptions.unchecked;
  *
  * Is program required to handle or declare: No
  * 
- * A runtime (unchecked) exception is a specific type of exception. All
+ * A runtime (unchecked) exception is a specific dbType of exception. All
  * exceptions occur at the time that the program is run. (The alternative is
  * compile time, which would be a compiler error.) People don�t refer to them as
  * run time exceptions because that would be too easy to confuse with runtime!

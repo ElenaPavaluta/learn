@@ -24,7 +24,7 @@ class A {
     }
 
     void file() throws InterruptedException {
-        file = Resources.IO.File.file(this.getClass().getPackage().getName() + "\\p\\p2\\p3\\p4", "a.txt");
+        file = Resources.IO.File.file(this.getClass().getPackage().getName() + "\\test\\p2\\p3\\p4", "a.txt");
 
         /**
          * Deletes the last file (either a file or a file)

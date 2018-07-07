@@ -60,13 +60,13 @@ class C3 {
         System.out.println(aArr instanceof B[]); //true
 
         /**
-         * Probably because the actual type is B
+         * Probably because the actual dbType is B
          */
 //        System.out.println(aArr instanceof I2);
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
 //        m3();
         m4();

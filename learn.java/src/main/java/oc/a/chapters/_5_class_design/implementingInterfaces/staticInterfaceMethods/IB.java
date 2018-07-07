@@ -3,6 +3,6 @@ package oc.a.chapters._5_class_design.implementingInterfaces.staticInterfaceMeth
 interface IB {  //assumed abstract. reminder a top level interface or class can only be public or package
 
 	static void m(){  //assumed public
-		System.out.println("static method m in IB");
+		System.out.println("static method createAndPopulate in IB");
 	}
 }

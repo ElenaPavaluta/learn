@@ -42,12 +42,12 @@ public class FloatType {
 		f = .009e-9f;
 		print("f2", f);
 
-		f = 9e2f; // it's absolutely necessary to add the floating type suffix
+		f = 9e2f; // it's absolutely necessary to add the floating dbType suffix
 					// due to the fact that the integers can't use the exponent
 					// part
 		f = 27f;
-		double d = 9e2; // it doesn't need the floating type suffix because for
-						// double type it's implicit
+		double d = 9e2; // it doesn't need the floating dbType suffix because for
+						// double dbType it's implicit
 	}
 
 	public static void main(String[] args) {

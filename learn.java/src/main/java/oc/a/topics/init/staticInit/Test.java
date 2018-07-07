@@ -23,7 +23,7 @@ class Test {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("m");
+		System.out.println("createAndPopulate");
 		m();
 		// static block in A
 		// temp in A

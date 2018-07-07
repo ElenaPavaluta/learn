@@ -7,11 +7,11 @@ class C {
     synchronized void m(){
         try {
             while(!Thread.interrupted()){
-                System.out.println("entered m");
+                System.out.println("entered createAndPopulate");
                 wait();
             }
         }catch(InterruptedException e){
-            System.out.println("m interrupted");
+            System.out.println("createAndPopulate interrupted");
         }
     }
 

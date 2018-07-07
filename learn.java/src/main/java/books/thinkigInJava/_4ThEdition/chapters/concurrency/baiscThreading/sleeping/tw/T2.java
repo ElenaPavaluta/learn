@@ -23,7 +23,7 @@ class T2 {
         new Thread(new A()).start();
         int i = 0;
         while(b){
-            System.out.println("m: " + i++);
+            System.out.println("createAndPopulate: " + i++);
             try {
 //                Thread.sleep(1000);
                 Thread.currentThread().sleep(1000);

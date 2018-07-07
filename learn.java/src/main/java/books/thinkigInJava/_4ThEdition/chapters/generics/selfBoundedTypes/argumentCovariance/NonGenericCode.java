@@ -15,7 +15,7 @@ class DerivedSetter extends OrdinarySetter {
 
     /**
      * Compiler error:
-     * The type of the argument can't differ from the one in the base class
+     * The dbType of the argument can't differ from the one in the base class
      * when a method is overridden
      */
     //    @Override

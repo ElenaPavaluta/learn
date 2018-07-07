@@ -2,7 +2,7 @@ package oc.a.chapters._5_class_design.implementingInterfaces.inheritingAnInterfa
 
 /**
  * Compile time error: both inherited interfaces have a similar method signature
- * (eatPlants()). As we know even if the return type is different it's not an
+ * (eatPlants()). As we know even if the return dbType is different it's not an
  * overloading
  */
 // public interface I extends Omnivore, Herbivore{}

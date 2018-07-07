@@ -14,7 +14,7 @@ class ClassTypeCapture<T> {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
     }
 
     private static void m() {

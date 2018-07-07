@@ -6,6 +6,6 @@ import oc.a.chapters._5_class_design.implementingInterfaces.defaultInterfaceMeth
 public interface IAB extends IA, IB{
 
 	public default void  m(B b, C c){
-		System.out.println("IAB m");
+		System.out.println("IAB createAndPopulate");
 	}
 }

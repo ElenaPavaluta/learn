@@ -37,16 +37,16 @@ class Necesity {
     }
 
     void addStringUnboundedWildcard(List<?> l) {
-//        l.add ( s );  //compiler error: one can add an object of another type
+//        l.add ( s );  //compiler error: one can add an object of another dbType
         /**
-         * the list of <?> (unbounded wildcard) and <? extend type>
+         * the list of <?> (unbounded wildcard) and <? extend dbType>
          *     (upper bound wildcard) become immutable for the adding operations; remove still works
          */
         l.remove ( 0 );
     }
 
     void addStringUpperBoundWildcard(List<? extends String> l) {  //? is a class which extends String (or String) )
-//        l.add ( s );  //compiler error: one can add an object of another type
+//        l.add ( s );  //compiler error: one can add an object of another dbType
     }
 
     void addStringLowerBoudWildcard(List<? super String> l) {  //? is a super class for String(or String)

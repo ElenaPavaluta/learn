@@ -27,14 +27,14 @@ class Yield {
 
     static void m(){
         Yield y = new Yield();
-        System.out.println("m: " + Thread.currentThread().getId());
+        System.out.println("createAndPopulate: " + Thread.currentThread().getId());
         y. new A().start();
         y.new B().start();
     }
 
     static void m2(){
         Yield y = new Yield();
-        System.out.println("m: " + Thread.currentThread().getId());
+        System.out.println("createAndPopulate: " + Thread.currentThread().getId());
         y.new A().run();
         y.new B().run();
     }

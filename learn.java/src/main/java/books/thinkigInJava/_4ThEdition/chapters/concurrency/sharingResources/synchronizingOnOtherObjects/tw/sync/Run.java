@@ -29,8 +29,8 @@ class Run {
     public static void main(String[] args) {
         abort();
         m(new T());
-//        m(new T2());
-//        m(new T3());
-//        m(new T4());
+//        createAndPopulate(new T2());
+//        createAndPopulate(new T3());
+//        createAndPopulate(new T4());
     }
 }

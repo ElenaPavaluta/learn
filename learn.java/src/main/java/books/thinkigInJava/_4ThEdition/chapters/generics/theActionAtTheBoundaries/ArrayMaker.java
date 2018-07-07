@@ -42,7 +42,7 @@ class ArrayMaker<T> {
      * erasure means that it is actually just being stored as a Class,
      * with no parameter. So, when you do something with it,
      * as in creating an array, Array.newInstance( ) doesn’t actually
-     * have the type information that’s implied in kind;
+     * have the dbType information that’s implied in kind;
      */
     T[] create(int size){
         return (T[])Array.newInstance(kind, size);

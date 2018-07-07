@@ -15,7 +15,7 @@ class SafeWay<T> {
         SafeWay<Integer> swi = new SafeWay<>(Integer.class, 10);
 
         Integer[] ia = swi.rep();
-        System.out.println("this is the safe way to retrieve an array of a generic type");
+        System.out.println("this is the safe way to retrieve an array of a generic dbType");
     }
 
     void put(int index, T item) {

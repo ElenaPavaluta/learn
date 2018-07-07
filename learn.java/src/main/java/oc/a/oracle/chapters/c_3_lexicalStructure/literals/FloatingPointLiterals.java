@@ -42,7 +42,7 @@ public class FloatingPointLiterals {
 	
 	/*
 	 * BinaryExponent:
-	 * BinaryExponentIndicator (p/P) SignedInteger
+	 * BinaryExponentIndicator (test/P) SignedInteger
 	 * 
 	 */
 	

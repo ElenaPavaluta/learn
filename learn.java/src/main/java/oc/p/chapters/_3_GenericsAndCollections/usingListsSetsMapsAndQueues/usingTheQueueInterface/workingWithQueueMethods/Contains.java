@@ -31,7 +31,7 @@ class Contains {
     static void linkedList(){
         LinkedList<String> l = new LinkedList<>();
         System.out.println(l.add("1"));  //true
-       l.push(null);  //the return type is void
+       l.push(null);  //the return dbType is void
         System.out.println(l.contains(null));  //true
         System.out.println(l.contains("1"));  //true
         System.out.println(l);  //[null, 1]

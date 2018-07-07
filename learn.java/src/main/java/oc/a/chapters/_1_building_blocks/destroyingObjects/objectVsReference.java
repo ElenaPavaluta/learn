@@ -10,7 +10,7 @@ class objectVsReference {
 	 * -can be assigned to another reference, passed to a method, or returned
 	 * from a method
 	 * 
-	 * - have the same size, no matter the type of the object referred
+	 * - have the same size, no matter the dbType of the object referred
 	 */
 
 	/**

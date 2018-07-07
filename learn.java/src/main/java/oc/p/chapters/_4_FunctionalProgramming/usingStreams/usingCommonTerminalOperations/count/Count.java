@@ -23,7 +23,7 @@ class Count {
 
     void infinite(){
         Stream<Double> stream = Stream.generate(Math::random);  //static method reference
-        stream.forEach(System.out::println);  //method reference on instance to be determined at runtime
+        stream.forEach(System.out::println);  //method reference on dbInstance to be determined at runtime
     }
 
     public static void main(String[] args) {

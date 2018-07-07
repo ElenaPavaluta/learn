@@ -14,7 +14,7 @@ class GenericsAndCovariance {
         lst = new ArrayList<Fruit>();
 
         /**
-         * Compiler error: can't add any type of object
+         * Compiler error: can't add any dbType of object
          *
          * Reason:
          * All the bottom method declarations are legal

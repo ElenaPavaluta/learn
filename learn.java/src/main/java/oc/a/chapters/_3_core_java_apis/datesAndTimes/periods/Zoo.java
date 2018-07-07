@@ -3,7 +3,7 @@ package oc.a.chapters._3_core_java_apis.datesAndTimes.periods;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Zoo {
+class Zoo {
 
 	public static void main(String[] args) {
 		LocalDate sd = LocalDate.now();

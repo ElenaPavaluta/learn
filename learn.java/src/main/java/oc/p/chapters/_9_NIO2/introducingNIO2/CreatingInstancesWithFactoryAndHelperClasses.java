@@ -8,7 +8,7 @@ package oc.p.chapters._9_NIO2.introducingNIO2;
  * java.io.File transparently handles system-specific details
  * for the current platform
  *
- * If you didn’t use the factory pattern to create an instance,
+ * If you didn’t use the factory pattern to create an dbInstance,
  * you would have to know what the underlying directory system was and use
  * this in every create method
  */

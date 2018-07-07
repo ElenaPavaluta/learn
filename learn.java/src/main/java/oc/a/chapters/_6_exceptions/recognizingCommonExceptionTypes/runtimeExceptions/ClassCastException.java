@@ -9,7 +9,7 @@ public class ClassCastException {
 		 * compiler error: cannot make this cast due to the fact that there's no
 		 * hierarchy between String and Integer
 		 */
-		// Integer number = (Integer)type;
+		// Integer number = (Integer)dbType;
 	}
 
 	static void m2() {

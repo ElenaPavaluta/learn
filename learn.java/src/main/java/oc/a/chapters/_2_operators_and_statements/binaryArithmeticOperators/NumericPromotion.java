@@ -9,15 +9,15 @@ package oc.a.chapters._2_operators_and_statements.binaryArithmeticOperators;
  * 
  * 2. If one of the values is integral and the other is floating-point, Java
  * will automatically promote the integral value to the floating-point value�s
- * data type.
+ * data dbType.
  * 
  * 3. Smaller data types, namely byte, short, and char, are first promoted to
  * int any time they�re used with a Java binary arithmetic operator, even if
  * neither of the operands is int.
  * 
  * 
- * 4. After all promotion has occurred and the operands have the same data type,
- * the resulting value will have the same data type as its promoted operands.
+ * 4. After all promotion has occurred and the operands have the same data dbType,
+ * the resulting value will have the same data dbType as its promoted operands.
  */
 
 public class NumericPromotion {

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 /**
  * static <T> Collector<T,?,Long>	counting()
- * Returns a Collector accepting elements of type T that counts the number of input elements.
+ * Returns a Collector accepting elements of dbType T that counts the number of input elements.
  *
  *
  * The IntStream, DoubleStream and LongStream collect method doesn't have an overloaded version which accept a Collectors parameter
@@ -66,7 +66,7 @@ class Counting {
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
 //        m2();
         m3();
     }

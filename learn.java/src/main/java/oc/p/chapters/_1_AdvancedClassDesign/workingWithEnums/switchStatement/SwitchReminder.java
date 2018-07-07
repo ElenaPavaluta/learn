@@ -10,8 +10,8 @@ package oc.p.chapters._1_AdvancedClassDesign.workingWithEnums.switchStatement;
  * String
  * enum values
  * The values in each case statement must be compile-time constant values of the
- * same data type as the switch value. This means you can use only literals,
- * enum constants, or final constant variables of the same data type.
+ * same data dbType as the switch value. This means you can use only literals,
+ * enum constants, or final constant variables of the same data dbType.
  */
 class SwitchReminder
 {

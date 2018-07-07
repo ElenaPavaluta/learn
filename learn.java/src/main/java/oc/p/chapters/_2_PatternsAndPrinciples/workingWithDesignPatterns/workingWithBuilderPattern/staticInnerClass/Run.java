@@ -3,7 +3,7 @@ package oc.p.chapters._2_PatternsAndPrinciples.workingWithDesignPatterns.working
 class Run {
 
     public static void main(String[] args) {
-//        Pizza p = new Pizza ();  //compiler error: the constructor is private
-        Pizza p = new Pizza.PizzaBuilder ( "type", 2 ).sauce ( "sauce" ).extracheese ( true ).extraMeet ( true ).build ( );
+//        Pizza test = new Pizza ();  //compiler error: the constructor is private
+        Pizza p = new Pizza.PizzaBuilder ( "dbType", 2 ).sauce ( "sauce" ).extracheese ( true ).extraMeet ( true ).build ( );
     }
 }

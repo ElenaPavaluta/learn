@@ -16,7 +16,7 @@ class MissingResourceException {
 
 
     public static void main(String[] args) {
-//        m("Equal");
+//        createAndPopulate("Equal");
         m("bla"); //java.util.MissingResourceException
     }
 }

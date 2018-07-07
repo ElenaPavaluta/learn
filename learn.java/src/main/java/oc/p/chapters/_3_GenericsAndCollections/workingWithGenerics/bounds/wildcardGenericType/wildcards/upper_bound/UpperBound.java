@@ -39,8 +39,8 @@ class UpperBound
 		 * The list becomes logically immutable.
 		 * One can remove elements from the list
 		 *
-		 * The problem stems from the fact that Java doesn’t know what type List<? extends Robot>
-		 *    really is. It could be List<Robot> or List<Robot2> or some other generic type that
+		 * The problem stems from the fact that Java doesn’t know what dbType List<? extends Robot>
+		 *    really is. It could be List<Robot> or List<Robot2> or some other generic dbType that
 		 *    hasn’t even been written yet.
 		 */
 	}

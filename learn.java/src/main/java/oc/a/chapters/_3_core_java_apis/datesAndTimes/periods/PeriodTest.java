@@ -8,7 +8,7 @@ public class PeriodTest {
 	static Period p;
 
 	static void m() {
-		p = Period.ofYears(1).ofMonths(1); // same as: p = Period.ofYears(1); p
+		p = Period.ofYears(1).ofMonths(1); // same as: test = Period.ofYears(1); test
 											// = Period.ofMonths(1);
 
 		System.out.println(p.getYears());
@@ -42,7 +42,7 @@ public class PeriodTest {
 	}
 
 	public static void main(String[] args) {
-		// m();
+		// createAndPopulate();
 		// m3();
 		m3();
 	}

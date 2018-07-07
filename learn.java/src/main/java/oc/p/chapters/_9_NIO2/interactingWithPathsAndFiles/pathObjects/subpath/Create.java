@@ -55,15 +55,15 @@ class Create {
         Path p = Paths.get("ana", "are", "mere");
         System.out.println(p);
 
-//        Path sp = p.subpath(1, 5);
+//        Path sp = test.subpath(1, 5);
 
-//        Path sp2 = p.subpath(1,1);
+//        Path sp2 = test.subpath(1,1);
 
         Path sp3 = p.subpath(-2, 1);
     }
 
     public static void main(String[] args) {
-//        m();
+//        createAndPopulate();
         throwExcep();
     }
 }

@@ -1,7 +1,7 @@
 package oc.a.chapters._4_methods_and_encapsulation.creatingConstructors;
 
 /**
- * By the time the constructor completes, all final instance variables must have
+ * By the time the constructor completes, all final dbInstance variables must have
  * been set.
  *
  */
