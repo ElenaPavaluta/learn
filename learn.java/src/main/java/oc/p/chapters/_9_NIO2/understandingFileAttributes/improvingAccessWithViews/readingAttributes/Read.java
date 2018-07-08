@@ -28,7 +28,7 @@ class Read {
        /**
         * used to check for paths that are not
         * files, directories, or symbolic links,
-        * such as paths that refer to resources or devices in some file systems
+        * such as paths that refer to utils.resources or devices in some file systems
         */
        boolean b4 = bfa.isOther();
 

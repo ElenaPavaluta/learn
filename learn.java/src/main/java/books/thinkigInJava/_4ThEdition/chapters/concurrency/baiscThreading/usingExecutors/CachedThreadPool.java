@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  * overhead for every single task.
  * Also, in an event-driven system, event handlers that require threads can be
  * serviced as quickly as you want by simply fetching threads from the pool.
- * You don’t overrun the available resources because the FixedThreadPool uses a
+ * You don’t overrun the available utils.resources because the FixedThreadPool uses a
  * bounded number of Thread objects
  *
  *

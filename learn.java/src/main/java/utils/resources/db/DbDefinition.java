@@ -22,11 +22,11 @@ public enum DbDefinition {
     }
 
     public String url() {
-        return driver.driver() + ":" + Resources.SRC_MAIN_RESOURCES_DB + suffix() + name;
+        return driver.driver() + ":"  + pathToDb() + name;
     }
 
-    private String suffix() {
-        return File.separator + type.name().toLowerCase() +
+    private String pathToDb() {
+        return Resources.SRC_MAIN_RESOURCES_DB + File.separator + type.name().toLowerCase() +
                 File.separator + driver.dbType() + File.separator;
     }
 

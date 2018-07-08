@@ -3,7 +3,7 @@ package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources.tryWithRe
 import java.io.IOException;
 
 /**
- * The resources created in the try with resources clause are
+ * The utils.resources created in the try with utils.resources clause are
  * only in scope within the try block.
  *
  * The implicit finally runs before any catch/finally blocks

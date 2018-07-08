@@ -1,16 +1,12 @@
 package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAttributes.readingCommonAttributes;
 
-import oc.a.topics.init.derivedClass.B;
 import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.IntStream;
 
 /**
  * static boolean	isDirectory(Path path, LinkOption... options)

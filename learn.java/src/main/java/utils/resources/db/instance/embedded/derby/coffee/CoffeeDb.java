@@ -3,7 +3,6 @@ package utils.resources.db.instance.embedded.derby.coffee;
 import utils.resources.db.DbDefinition;
 import utils.resources.db.DbInstance;
 import utils.resources.files.Resources;
-import javax.print.attribute.HashAttributeSet;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,7 +12,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CoffeeDb extends DbInstance {

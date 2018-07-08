@@ -11,7 +11,7 @@ package books.thinkigInJava._4ThEdition.chapters.concurrency.deadlock;
  * Chopstick and waiting for another one.
  *
  * 3. A resource cannot be preemptively taken away from a task.
- * Tasks only release resources as a normal event. Our Philosophers are polite and they don’t grab
+ * Tasks only release utils.resources as a normal event. Our Philosophers are polite and they don’t grab
  * Chopsticks from other Philosophers.
  *
  * 4. A circular wait can happen, whereby a task waits on a resource held by another task,
