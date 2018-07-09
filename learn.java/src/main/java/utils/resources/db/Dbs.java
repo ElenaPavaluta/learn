@@ -2,6 +2,7 @@ package utils.resources.db;
 
 import utils.resources.db.instance.embedded.derby.ZooDb;
 import utils.resources.db.instance.embedded.derby.coffee.CoffeeDb;
+import java.util.List;
 
 public enum Dbs {
 
@@ -27,4 +28,7 @@ public enum Dbs {
     }
 
 
+    public List<String> tables() {
+        return dbInstance.tables();
+    }
 }

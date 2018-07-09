@@ -23,7 +23,7 @@ public abstract class DbInstance {
     protected final void rollback() {
         try(Connection connection = DriverManager.getConnection(dbDefinition.url());
             Statement stmt = connection.createStatement()) {
-            List<String> lst = getTables(stmt);
+            List<String> lst = tables(stmt);
             dropTables(stmt, lst);
             createAndPopulateTables(stmt);
         } catch(SQLException e) {
@@ -61,7 +61,18 @@ public abstract class DbInstance {
                 });
     }
 
-    private List<String> getTables(Statement stmt) {
+
+    protected List<String> tables(){
+        try(Connection conn = DriverManager.getConnection(dbDefinition.url());
+        Statement stmt = conn.createStatement()) {
+            return tables(stmt);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private List<String> tables(Statement stmt) {
         List<String> lst = new ArrayList<>();
         try {
             ResultSet rs = stmt.executeQuery("SELECT TABLENAME FROM SYS.SYSTABLES WHERE TABLETYPE='T'");
