@@ -17,4 +17,14 @@ public enum Dbs {
     public DbInstance getDbInstance() {
         return dbInstance;
     }
+
+    public String url() {
+        return dbInstance.getDbDefinition().url();
+    }
+
+    public void rollback(){
+        dbInstance.rollback();
+    }
+
+
 }

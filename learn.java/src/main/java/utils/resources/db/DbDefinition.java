@@ -22,12 +22,12 @@ public enum DbDefinition {
     }
 
     public String url() {
-        return driver.driver() + ":"  + pathToDb() + name;
+        return driver.driver() + ":"  + path();
     }
 
-    private String pathToDb() {
+    public String path() {
         return Resources.SRC_MAIN_RESOURCES_DB + File.separator + type.name().toLowerCase() +
-                File.separator + driver.dbType() + File.separator;
+                File.separator + driver.dbType() + File.separator + name;
     }
 
     public String createUrl() {

@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 public class CoffeeDb extends DbInstance {
@@ -34,15 +34,11 @@ public class CoffeeDb extends DbInstance {
     }
 
     @Override
-    protected void createAndPopulate() {
-        try(Connection conn = DriverManager.getConnection(dbDefinition.createUrl());
-            Statement stmt = conn.createStatement()) {
+    protected void createAndPopulateTables(Statement stmt) throws SQLException {
+        try {
             Package pkg = this.getClass().getPackage();
             execStmt(stmt, pkg, CREATE);
             execStmt(stmt, pkg, POPULATE);
-
-        } catch(SQLException e) {
-            e.printStackTrace();
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -52,12 +48,11 @@ public class CoffeeDb extends DbInstance {
         Path path = Paths.get(Resources.SRC_MAIN_JAVA, Resources.path(pkg), create);
         String content = Files.lines(path)
                               .collect(Collectors.joining());
-        List<String> tryAgain = new ArrayList<>();
         Queue<String> queue = Arrays.stream(content.split(";"))
-                .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
-        while(queue.size()>0){
+                                    .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+        while(queue.size() > 0) {
             String s = queue.poll();
-            if(s!=null){
+            if(s != null) {
                 try {
                     stmt.executeUpdate(s);
                 } catch(SQLException e) {
@@ -65,7 +60,6 @@ public class CoffeeDb extends DbInstance {
                 }
             }
         }
-
 
 
     }
