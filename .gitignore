@@ -180,3 +180,5 @@ Temporary Items
 .metadata
 .recommenders
 RemoteSystemsTempFiles
+
+**/src/main/resources/db/
