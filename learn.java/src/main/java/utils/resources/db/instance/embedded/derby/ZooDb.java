@@ -7,6 +7,13 @@ import java.sql.Statement;
 
 public class ZooDb extends DbInstance {
 
+    public interface Species{
+        String SELECT = "SELECT * from SPECIES";
+        String INSERT = "insert into species values(10, 'Deer', 3)";
+        String UPDATE = "update species set name = 'DERR' where name = 'Deer'";
+        String DELETE = "delete from species where id = 10";
+    }
+
     private static volatile ZooDb instance;
 
     private ZooDb(DbDefinition def) {
