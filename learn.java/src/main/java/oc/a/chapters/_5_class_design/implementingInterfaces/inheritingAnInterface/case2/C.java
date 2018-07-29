@@ -12,7 +12,7 @@ public class C implements IO, IH {
 	}
 
 	/*
-	 * Although this method is defined both in IO and IH interfaces, it's
+	 * Although this method is defined both in File and IH interfaces, it's
 	 * implemented only once because an abstract method (one defined either in
 	 * an interface or an abstract class) defines the behavior that the
 	 * implementing class must have

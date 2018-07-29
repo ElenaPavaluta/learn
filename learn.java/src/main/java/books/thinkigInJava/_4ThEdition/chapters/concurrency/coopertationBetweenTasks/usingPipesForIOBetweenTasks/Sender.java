@@ -21,7 +21,7 @@ class Sender implements Runnable {
         } catch(InterruptedException e) {
             System.out.println("Sender interrupted");
         } catch(IOException e) {
-            System.out.println("Sender IO exception");
+            System.out.println("Sender File exception");
         }
     }
 

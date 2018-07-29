@@ -6,7 +6,6 @@ import utils.resources.files.create.populate.CreatePopulate;
 import utils.resources.files.print.Print;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileAttributeView;
@@ -27,7 +26,7 @@ import java.time.temporal.ChronoUnit;
  */
 class Update {
 
-    Path path = CreatePopulate.NIO.file(this);
+    java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
 
     public static void main(String[] args) throws IOException {
         Update u = new Update();

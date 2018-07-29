@@ -49,7 +49,7 @@ public interface Resources {
             if(resource instanceof File) {
                 IO.File.recursiveDelete((File) resource);
             } else if(resource instanceof Path) {
-                NIO.Path.recursiveDelete((Path) resource);
+                NIO.File.Path.recursiveDelete((Path) resource);
             }
         });
     }
@@ -114,44 +114,60 @@ public interface Resources {
     }
 
     interface NIO {
-        interface Path {
-            java.nio.file.Path SRC_MAIN_RESOURCES_PATH = Paths.get(SRC_MAIN_RESOURCES);
-            Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
-                try {
-                    return Files.isSameFile(path, SRC_MAIN_RESOURCES_PATH);
-                } catch(IOException e) {
-                    return false;
+
+        interface File{
+
+            interface Path {
+                java.nio.file.Path SRC_MAIN_RESOURCES_PATH = Paths.get(SRC_MAIN_RESOURCES);
+                Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
+                    try {
+                        return Files.isSameFile(path, SRC_MAIN_RESOURCES_PATH);
+                    } catch(IOException e) {
+                        return false;
+                    }
+                };
+
+                Predicate<java.nio.file.Path> EXISTS = Files::exists;
+                Predicate<java.nio.file.Path> SYMBOLIC_LINK = Files::isSymbolicLink;
+
+                static java.nio.file.Path directory(Package pkg) {
+                    java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, path(pkg));
+                    try {
+                        path = Files.createDirectories(path);
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
+                    return path;
                 }
-            };
 
-            Predicate<java.nio.file.Path> EXISTS = Files::exists;
-            Predicate<java.nio.file.Path> SYMBOLIC_LINK = Files::isSymbolicLink;
+                static java.nio.file.Path file(Package pkg, String fileName) {
+                    java.nio.file.Path path = Paths.get(directory(pkg).toString(), fileName);
+                    try {
+                        path = Files.createFile(path);
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
+                    return path;
+                }
 
-            static java.nio.file.Path directory(Package pkg) {
-                return IO.File.directory(pkg).toPath();
-            }
+                static void recursiveDelete(Collection<java.nio.file.Path> collection) {
+                    collection.forEach(File.Path::recursiveDelete);
+                }
 
-            static java.nio.file.Path file(Package pkg, String fileName) {
-                return IO.File.file(pkg, fileName).toPath();
-            }
+                static void recursiveDelete(java.nio.file.Path... paths) {
+                    Arrays.stream(paths).forEach(File.Path::recursiveDelete);
+                }
 
-            static void recursiveDelete(Collection<java.nio.file.Path> collection) {
-                collection.forEach(NIO.Path::recursiveDelete);
-            }
-
-            static void recursiveDelete(java.nio.file.Path... paths) {
-                Arrays.stream(paths).forEach(NIO.Path::recursiveDelete);
-            }
-
-            static void recursiveDelete(java.nio.file.Path path) {
-                if(EXISTS.or(SYMBOLIC_LINK).test(path)) {
-                    while(IS_SRC_MAIN_RESOURCES_PATH.negate().test(path)) {
-                        java.nio.file.Path parent = path.getParent();
-                        try {
-                            Files.deleteIfExists(path);
-                            path = parent;
-                        } catch(IOException e) {
-                            break;
+                static void recursiveDelete(java.nio.file.Path path) {
+                    if(EXISTS.or(SYMBOLIC_LINK).test(path)) {
+                        while(IS_SRC_MAIN_RESOURCES_PATH.negate().test(path)) {
+                            java.nio.file.Path parent = path.getParent();
+                            try {
+                                Files.deleteIfExists(path);
+                                path = parent;
+                            } catch(IOException e) {
+                                break;
+                            }
                         }
                     }
                 }

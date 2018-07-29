@@ -4,14 +4,13 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 class MultiCatch {
 
 
-    static Path path = CreatePopulate.NIO.file(new MultiCatch().getClass().getPackage());
+    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(new MultiCatch().getClass().getPackage());
 
     static void oldWay() {
         try {

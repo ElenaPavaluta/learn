@@ -67,7 +67,7 @@ class Move {
         read();
 
         Resources.IO.File.recursiveDelete(f);
-        Resources.NIO.Path.recursiveDelete(path, path2);
+        Resources.NIO.File.Path.recursiveDelete(path, path2);
     }
 }
 

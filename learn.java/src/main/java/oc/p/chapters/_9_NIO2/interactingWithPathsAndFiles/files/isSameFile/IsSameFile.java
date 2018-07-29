@@ -27,7 +27,7 @@ class IsSameFile {
     static {
         Package pkg = new IsSameFile().getClass().getPackage();
 
-        p = Resources.NIO.Path.file(pkg, TXT);
+        p = Resources.NIO.File.Path.file(pkg, TXT);
         resourcesPath= Resources.srcMainResourcesPath(pkg);
         symbolicP  = Paths.get(resourcesPath, SYMBOLIC);
         try {
@@ -57,6 +57,6 @@ class IsSameFile {
         m();
 
 
-        Resources.NIO.Path.recursiveDelete(symbolicP, p);
+        Resources.NIO.File.Path.recursiveDelete(symbolicP, p);
     }
 }

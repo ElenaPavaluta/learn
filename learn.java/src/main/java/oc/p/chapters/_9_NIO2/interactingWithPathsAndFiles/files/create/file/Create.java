@@ -108,6 +108,6 @@ class Create {
 //        m();
         m2();
 
-        Resources.NIO.Path.recursiveDelete(toDel.toArray(new Path[0]));
+        Resources.NIO.File.Path.recursiveDelete(toDel.toArray(new Path[0]));
     }
 }

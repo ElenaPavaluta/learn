@@ -5,7 +5,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -23,7 +22,7 @@ import java.nio.file.Paths;
  */
 class Size {
     static final Package PACKAGE = new Size().getClass().getPackage();
-    static Path path = CreatePopulate.NIO.file(PACKAGE);
+    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(PACKAGE);
 
 
     static void m() throws IOException {

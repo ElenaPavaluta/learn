@@ -4,7 +4,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,7 +31,7 @@ class RW {
     /**
      * <R> R collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R, R> combiner);
      */
-    static File file = CreatePopulate.IO.file(pkg);
+    static java.io.File file = CreatePopulate.IO.File.file(pkg);
 
     static Path read = file.toPath();
     static Path writeDir = Paths.get(loc, "\\a\\b\\c");

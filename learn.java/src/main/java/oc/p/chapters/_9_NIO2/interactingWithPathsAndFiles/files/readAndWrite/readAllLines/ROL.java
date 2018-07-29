@@ -2,7 +2,6 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.readAndWrite.re
 
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +15,7 @@ import java.util.List;
  * Read all lines from a file.
  */
 class ROL {
-    static File f = CreatePopulate.IO.file(new ROL().getClass().getPackage());
+    static java.io.File f = CreatePopulate.IO.File.file(new ROL().getClass().getPackage());
     static Path path = f.toPath();
 
     static void m(){

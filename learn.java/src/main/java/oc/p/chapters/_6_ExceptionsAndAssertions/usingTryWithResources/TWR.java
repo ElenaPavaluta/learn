@@ -1,41 +1,30 @@
 package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources;
 
 import utils.resources.files.Resources;
+import utils.resources.files.create.populate.CreatePopulate;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 class TWR {
 
-    static final String READ = "read.txt";
-    static final String WRITE = "write.txt";
-    static String read, write;
+    static Path read;
+    static Path write;
 
-    static{
-        TWR twr = new TWR();
-        Package pkg = twr.getClass().getPackage();
-        java.io.File d = Resources.IO.File.directory(pkg);
-        System.out.println(d.getPath());
-        System.out.println(d.getAbsolutePath());
-        java.io.File r = Resources.IO.File.file(pkg, READ);
-        System.out.println(r.getPath());
-        System.out.println(r.getAbsolutePath());
-        read  = r.getPath();
-        write = Resources.IO.File.file(pkg, WRITE).getPath();
+    static {
+        Package pkg = new TWR().getClass().getPackage();
+        read = CreatePopulate.NIO.File.Path.file(pkg, "read");
+        write = Resources.NIO.File.Path.file(pkg, "write");
     }
-
-    static Path pathRead = Paths.get(read);
-    static Path pathWrite = Paths.get(write);
 
     static void oldApproach() throws IOException {
         BufferedReader in = null;
         BufferedWriter out = null;
         try {
-            in = Files.newBufferedReader(pathRead);
-            out = Files.newBufferedWriter(pathWrite);
+            in = Files.newBufferedReader(read);
+            out = Files.newBufferedWriter(write);
             out.write(in.readLine());
         } finally {
             try {
@@ -50,15 +39,15 @@ class TWR {
     }
 
     static void newApproach() throws IOException {
-        try(BufferedReader in = Files.newBufferedReader(pathRead);
-            BufferedWriter out = Files.newBufferedWriter(pathWrite)) {
+        try(BufferedReader in = Files.newBufferedReader(read);
+            BufferedWriter out = Files.newBufferedWriter(write)) {
             out.write(in.readLine());
         }
     }
 
     static void newAp2() {
-        try(BufferedReader in = Files.newBufferedReader(pathRead);
-            BufferedWriter out = Files.newBufferedWriter(pathWrite)) {
+        try(BufferedReader in = Files.newBufferedReader(read);
+            BufferedWriter out = Files.newBufferedWriter(write)) {
             out.write(in.readLine());
         } catch(IOException e) {
             e.printStackTrace();
@@ -66,8 +55,9 @@ class TWR {
     }
 
     public static void main(String[] args) throws IOException {
-//        oldApproach();
-        newApproach();
+        oldApproach();
+//        newApproach();
 //        newAp2();
+        Resources.recursiveDelete(read, write);
     }
 }

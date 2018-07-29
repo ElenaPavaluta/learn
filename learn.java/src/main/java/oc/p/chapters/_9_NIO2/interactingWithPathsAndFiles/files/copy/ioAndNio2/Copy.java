@@ -70,6 +70,6 @@ class Copy {
         outStream();
 
         Resources.IO.File.recursiveDelete(in, out);
-        Resources.NIO.Path.recursiveDelete(path);
+        Resources.NIO.File.Path.recursiveDelete(path);
     }
 }

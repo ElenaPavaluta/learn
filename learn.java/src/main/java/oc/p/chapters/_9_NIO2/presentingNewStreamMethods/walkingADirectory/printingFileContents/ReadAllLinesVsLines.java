@@ -5,13 +5,12 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
 class ReadAllLinesVsLines {
 
-    Path path = CreatePopulate.NIO.file(this);
+    java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
 
     void readAllLines() throws IOException {
         List<String> lst = Files.readAllLines(path);

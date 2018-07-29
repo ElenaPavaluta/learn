@@ -61,7 +61,7 @@ class Tw {
     void m5() {
         try {
             throw new E2();
-//        }catch(E2 | E e){}  //redundant, since the E, which is superclass for E2 is caught. So, one can either catch E2 or E
+//        }catch(E2 | E e){}  //compiler error: redundant, since the E, which is superclass for E2 is caught. So, one can either catch E2 or E
         } catch(E2 e) {
         }
 

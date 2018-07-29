@@ -2,8 +2,8 @@ package oc.p.chapters._9_NIO2.introducingNIO2;
 
 /**
  * Path is an interface and not a class is because a file or a file
- * is considered a directory system–dependent task in NIO.2.
- * When you obtain a Path object from the default directory system in NIO.2,
+ * is considered a directory system–dependent task in Path.2.
+ * When you obtain a Path object from the default directory system in Path.2,
  * the JVM gives you back an object that unlike
  * java.io.File transparently handles system-specific details
  * for the current platform

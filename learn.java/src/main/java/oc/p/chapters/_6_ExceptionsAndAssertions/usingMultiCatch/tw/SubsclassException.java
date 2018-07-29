@@ -4,6 +4,7 @@ import javax.activation.UnsupportedDataTypeException;
 import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
 
 class SubsclassException {
 
@@ -21,8 +22,10 @@ class SubsclassException {
         } catch(EOFException e) {
         } catch(UnsupportedDataTypeException e) {
         } catch(FileNotFoundException e) {
-        } catch(IOException e) {
-        }
+        } catch(IOException e) {}
+//        } catch(SQLException e){   //the invocked method does not throw SQLException (checked exception)
+//        }
+
     }
 
     void m2() {

@@ -14,10 +14,10 @@ class Exists {
         System.out.println(p);
         System.out.println(Files.exists(p));  //false
 
-        java.nio.file.Path p2 = Resources.NIO.Path.directory(new Exists().getClass().getPackage());
+        java.nio.file.Path p2 = Resources.NIO.File.Path.directory(new Exists().getClass().getPackage());
         System.out.println(p2);
         System.out.println(Files.exists(p2));  //true
-        Resources.NIO.Path.recursiveDelete(p2, p);
+        Resources.NIO.File.Path.recursiveDelete(p2, p);
     }
 
     public static void main(String[] args) {

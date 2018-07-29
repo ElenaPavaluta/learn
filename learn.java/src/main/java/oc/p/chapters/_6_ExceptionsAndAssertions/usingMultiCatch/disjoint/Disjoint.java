@@ -4,6 +4,10 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Java intends multi-catch to be used for exceptions that aren’t related,
+ * and it prevents you from specifying redundant types in a multi-catch.
+ */
 class Disjoint {
 
     public static void main(String[] args) {

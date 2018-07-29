@@ -4,7 +4,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.stream.Stream;
 
 /**
@@ -16,7 +15,7 @@ import java.util.stream.Stream;
  */
 class PrintingFileContents {
 
-    Path path = CreatePopulate.NIO.file(this);
+    java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
 
     void m(){
         try {

@@ -5,7 +5,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 
@@ -16,7 +15,7 @@ import java.nio.file.attribute.FileTime;
 class Read {
 
    Package p  = this.getClass().getPackage();
-   Path path = CreatePopulate.NIO.file(p);
+   java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(p);
 
    void m() throws IOException {
        BasicFileAttributes bfa = Files.readAttributes(path, BasicFileAttributes.class);

@@ -5,7 +5,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -27,25 +26,25 @@ class RCA {
 
     static final Package PACKAGE = new RCA().getClass().getPackage();
     static String loc = Resources.srcMainResourcesPath(PACKAGE);
-    static Path dir = Paths.get(loc);
-    static Path file = Paths.get(loc, "rca");
+    static java.nio.file.Path dir = Paths.get(loc);
+    static java.nio.file.Path file = Paths.get(loc, "rca");
     static String A_B_C = "a\\b\\c";
-    static Path dirLink = Paths.get(loc, A_B_C);
-    static Path link;
+    static java.nio.file.Path dirLink = Paths.get(loc, A_B_C);
+    static java.nio.file.Path link;
 
 
     static {
         try {
             dir = Files.createDirectories(dir);
             Files.deleteIfExists(file);
-            file = CreatePopulate.NIO.file(PACKAGE);
+            file = CreatePopulate.NIO.File.Path.file(PACKAGE);
             dirLink = Files.createDirectories(dirLink);
         } catch(IOException e) {
             e.printStackTrace();
         }
     }
 
-    static void test(Path p){
+    static void test(java.nio.file.Path p){
         System.out.println(p.getFileName());
         System.out.println(Files.isDirectory(p));
         System.out.println(Files.isRegularFile(p));

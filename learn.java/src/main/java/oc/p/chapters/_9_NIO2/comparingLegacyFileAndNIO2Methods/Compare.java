@@ -2,10 +2,8 @@ package oc.p.chapters._9_NIO2.comparingLegacyFileAndNIO2Methods;
 
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
@@ -15,8 +13,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
 class Compare {
-    File file = CreatePopulate.IO.file(this);
-    Path path = CreatePopulate.NIO.file(this);
+    java.io.File file = CreatePopulate.IO.File.file(this);
+    java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
 
     public static void main(String[] args) {
         Compare comp = new Compare();
@@ -51,7 +49,7 @@ class Compare {
         String name = file.getName();
         System.out.println(name);
 
-        Path name2 = path.getFileName();
+        java.nio.file.Path name2 = path.getFileName();
         System.out.println(path);
         System.out.println(name2);
     }
@@ -60,7 +58,7 @@ class Compare {
         String ap = file.getAbsolutePath();
         System.out.println(ap);
 
-        Path path2 = path.toAbsolutePath();
+        java.nio.file.Path path2 = path.toAbsolutePath();
         System.out.println(path2);
     }
 
@@ -152,11 +150,11 @@ class Compare {
     }
 
     void move(){
-        File f =new File(file.getParent(), "newFile");
+        java.io.File f =new java.io.File(file.getParent(), "newFile");
         boolean b = file.renameTo(f);
         System.out.println(b);
 
-        Path p = Paths.get(path.getParent().toString(), "newPathFile");
+        java.nio.file.Path p = Paths.get(path.getParent().toString(), "newPathFile");
         try {
             p = Files.move(path, p);
             System.out.println(p);
@@ -168,7 +166,7 @@ class Compare {
     }
 
     void createDir(){
-        File f = new File(file.getParent(), "newFDir");
+        java.io.File f = new java.io.File(file.getParent(), "newFDir");
         boolean b = f.mkdir();  //true
         System.out.println(b);
         if(f.exists()){
@@ -176,7 +174,7 @@ class Compare {
             System.out.println(f.delete());  //true
         }
 
-        Path p = Paths.get(path.getParent().toString(), "newPathDir");
+        java.nio.file.Path p = Paths.get(path.getParent().toString(), "newPathDir");
         try {
             p = Files.createDirectory(p);
             System.out.println(p.getFileName());
@@ -189,13 +187,13 @@ class Compare {
     }
 
     void createDirs(){
-        File f = new File(file.getParent(), "\\f\\f2\\f3");
+        java.io.File f = new java.io.File(file.getParent(), "\\f\\f2\\f3");
         boolean b = f.mkdirs();
         System.out.println(f);
         System.out.println(b);  //true
         System.out.println(f.exists());  //true
 
-        Path p = Paths.get(path.getParent().toString(),"test", "p2", "p3");
+        java.nio.file.Path p = Paths.get(path.getParent().toString(), "test", "p2", "p3");
         try {
             p = Files.createDirectories(p);
             System.out.println(p);
@@ -206,10 +204,10 @@ class Compare {
     }
 
     void list(){
-        File f = new File(Resources.SRC_MAIN_JAVA);
+        java.io.File f = new java.io.File(Resources.SRC_MAIN_JAVA);
         System.out.println(Arrays.toString(f.listFiles()));
 
-        Path p = Paths.get(Resources.SRC_MAIN_JAVA);
+        java.nio.file.Path p = Paths.get(Resources.SRC_MAIN_JAVA);
         try {
             Files.list(p).forEach(System.out::println);
         } catch(IOException e) {

@@ -4,7 +4,6 @@ import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -21,9 +20,9 @@ import java.nio.file.Paths;
  * if the file does not exist but instead return false.
  */
 class IsReadableIsExecutable {
-    static Path path = CreatePopulate.NIO.file(new IsReadableIsExecutable().getClass().getPackage());
+    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(new IsReadableIsExecutable().getClass().getPackage());
 
-    static void test(Path p){
+    static void test(java.nio.file.Path p){
         System.out.println(Files.isReadable(p));  //true
         /**
          * Returns true if the file is marked as executable within the

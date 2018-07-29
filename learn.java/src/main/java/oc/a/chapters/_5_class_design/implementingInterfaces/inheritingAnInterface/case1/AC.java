@@ -3,4 +3,4 @@ package oc.a.chapters._5_class_design.implementingInterfaces.inheritingAnInterfa
 /**
  * Compiler error: the eatPlants method is not overloaded properly
  */
-//public abstract class AC implements IH, IO{}
+//public abstract class AC implements IH, File{}

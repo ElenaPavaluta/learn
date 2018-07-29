@@ -6,7 +6,6 @@ import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
 import java.time.ZonedDateTime;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 class Modifications {
 
     static Package pkg = new Modifications().getClass().getPackage();
-    static Path path = CreatePopulate.NIO.file(pkg);
+    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(pkg);
 
     static void m() throws IOException {
         test(path);
@@ -36,7 +35,7 @@ class Modifications {
         test(path);
             }
 
-    private static void test(Path path) throws IOException {
+    private static void test(java.nio.file.Path path) throws IOException {
         FileTime fileTime = Files.getLastModifiedTime(path);
         System.out.println(fileTime.toMillis());
         Delimitators.newLine();
@@ -47,7 +46,7 @@ class Modifications {
     }
 
     static void m2(){
-        Path p = TestPath.Absolute_Windows_Path;  //file does not exists
+        java.nio.file.Path p = TestPath.Absolute_Windows_Path;  //file does not exists
         try {
             test(p);
         } catch(IOException e) {

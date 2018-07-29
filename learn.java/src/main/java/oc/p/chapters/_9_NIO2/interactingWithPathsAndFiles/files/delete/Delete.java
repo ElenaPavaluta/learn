@@ -80,6 +80,6 @@ class Delete {
     public static void main(String[] args) {
 //        createAndPopulate();
         m2();
-        Resources.NIO.Path.recursiveDelete(toDel);
+        Resources.NIO.File.Path.recursiveDelete(toDel);
     }
 }
