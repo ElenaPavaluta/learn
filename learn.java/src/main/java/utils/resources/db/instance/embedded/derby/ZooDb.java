@@ -14,6 +14,10 @@ public class ZooDb extends DbInstance {
         String DELETE = "delete from species where id = 10";
     }
 
+    public interface Animal{
+        String SELECT = "SELECT * from ANIMAL";
+    }
+
     private static volatile ZooDb instance;
 
     private ZooDb(DbDefinition def) {
@@ -51,12 +55,12 @@ public class ZooDb extends DbInstance {
         stmt.executeUpdate("INSERT INTO animal VALUES (" +
                                    "1, 2, 'Elsa', TIMESTAMP('2001-05-06 02:15:00'))");
         stmt.executeUpdate("INSERT INTO animal VALUES (" +
-                                   "2, 2, 'Zelda', TIMESTAMP('2002-05-06 02:15:00'))");
+                                   "2, 2, 'Zelda', TIMESTAMP('2002-05-07 02:16:00'))");
         stmt.executeUpdate("INSERT INTO animal VALUES (" +
-                                   "3, 1, 'Ester', TIMESTAMP('2003-05-06 02:15:00'))");
+                                   "3, 1, 'Ester', TIMESTAMP('2003-05-08 02:17:00'))");
         stmt.executeUpdate("INSERT INTO animal VALUES (" +
-                                   "4, 1, 'Eddie', TIMESTAMP('2004-05-06 02:15:00'))");
+                                   "4, 1, 'Eddie', TIMESTAMP('2004-05-09 02:18:00'))");
         stmt.executeUpdate("INSERT INTO animal VALUES (" +
-                                   "5, 2, 'Zoe', TIMESTAMP('2005-05-06 02:15:00'))");
+                                   "5, 2, 'Zoe', TIMESTAMP('2005-05-10 02:19:00'))");
     }
 }

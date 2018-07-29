@@ -54,6 +54,10 @@ class Disjoint {
             re();
             ioe();
         } catch(RuntimeException | IOException e) {
+            /**
+             * Cannot assign a value to final variable e
+             */
+//            e = new RuntimeException(e);
             throw new RuntimeException(e);
         }
     }
