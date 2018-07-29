@@ -28,8 +28,7 @@ class SuppresedExceptions {
             throw new IllegalStateException("turkeys run off");
         }catch(IllegalStateException e){
             System.out.println("caught: " + e.getMessage());
-            Arrays.asList(e.getSuppressed())
-                    .stream()
+            Arrays.stream(e.getSuppressed())
                     .forEach(t-> System.out.println(t.getMessage()));
 //
 //              for(Throwable t: e.getSuppressed()){

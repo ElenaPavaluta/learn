@@ -1,4 +1,4 @@
-package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources.tw;
+package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources.tw._1;
 
 import java.io.EOFException;
 import java.io.FileNotFoundException;

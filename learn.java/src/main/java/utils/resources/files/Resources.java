@@ -1,5 +1,6 @@
 package utils.resources.files;
 
+import oc.a.chapters._3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives.Array;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;
 
+import static java.util.stream.Collectors.joining;
 import static utils.resources.files.Resources.path;
 
 public interface Resources {
@@ -115,9 +117,11 @@ public interface Resources {
 
     interface NIO {
 
-        interface File{
+        interface File {
 
             interface Path {
+                String NIO_FILE = "nio.file";
+
                 java.nio.file.Path SRC_MAIN_RESOURCES_PATH = Paths.get(SRC_MAIN_RESOURCES);
                 Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
                     try {
@@ -140,6 +144,17 @@ public interface Resources {
                     return path;
                 }
 
+                static java.nio.file.Path directory(Package pkg, String... dest) {
+                    java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, path(pkg), Arrays.stream(dest).collect
+                            (joining(java.io.File.separator)));
+                    try {
+                        path = Files.createDirectories(path);
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
+                    return path;
+                }
+
                 static java.nio.file.Path file(Package pkg, String fileName) {
                     java.nio.file.Path path = Paths.get(directory(pkg).toString(), fileName);
                     try {
@@ -148,6 +163,24 @@ public interface Resources {
                         e.printStackTrace();
                     }
                     return path;
+                }
+
+                static java.nio.file.Path file(Package pkg, String... dest){
+                    switch(dest.length){
+                        case 0:
+                            return file(pkg, NIO_FILE);
+                        case 1:
+                            return file(pkg, dest[0]);
+                        default:
+                            java.nio.file.Path path = null;
+                            try {
+                                path = directory(pkg, Arrays.copyOf(dest, dest.length-1));
+                                path = Files.createFile(Paths.get(path.toString(), dest[dest.length-1]));
+                            } catch(IOException e) {
+                                e.printStackTrace();
+                            }
+                            return path;
+                    }
                 }
 
                 static void recursiveDelete(Collection<java.nio.file.Path> collection) {

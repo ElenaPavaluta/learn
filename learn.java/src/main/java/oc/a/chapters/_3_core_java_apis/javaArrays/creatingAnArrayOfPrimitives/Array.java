@@ -1,6 +1,6 @@
 package oc.a.chapters._3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives;
 
-public class Array {
+class Array {
 
 	/*
 	 * Valid declarations

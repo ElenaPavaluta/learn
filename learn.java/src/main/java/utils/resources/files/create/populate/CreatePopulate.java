@@ -6,9 +6,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.stream.IntStream;
+
+import static utils.resources.files.Resources.NIO.File.Path.NIO_FILE;
 
 public interface CreatePopulate {
 
@@ -52,24 +55,15 @@ public interface CreatePopulate {
         interface File {
             interface Path {
 
-                String NIO_FILE = "nio.file";
-
                 static java.nio.file.Path file(Object obj, String... dest) {
                     return file(obj.getClass().getPackage(), dest);
                 }
 
                 static java.nio.file.Path file(Package pkg, String... dest) {
-                    String mainResourcesPath = Resources.srcMainResourcesPath(pkg);
-                    java.nio.file.Path path = Paths.get(mainResourcesPath, dest);
-                    try {
-                        path = Files.createDirectories(path);
-                        String[] newDest = Arrays.copyOf(dest, dest.length + 1);
-                        newDest[newDest.length - 1] = NIO_FILE;
-                        path = Paths.get(mainResourcesPath, newDest);
-                        path = Files.createFile(path);
-                        try(BufferedWriter bw = Files.newBufferedWriter(path)) {
-                            bw.write(content());
-                        }
+                    java.nio.file.Path path = Resources.NIO.File.Path.file(pkg, dest);
+                    try (BufferedWriter bw = Files.newBufferedWriter(path)){
+                        bw.write(content());
+
                     } catch(IOException e) {
                         e.printStackTrace();
                     }

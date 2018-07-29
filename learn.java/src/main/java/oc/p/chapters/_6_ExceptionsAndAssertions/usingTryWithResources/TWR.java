@@ -1,5 +1,6 @@
 package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources;
 
+import utils.print.Print;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import java.io.BufferedReader;
@@ -25,14 +26,22 @@ class TWR {
         try {
             in = Files.newBufferedReader(read);
             out = Files.newBufferedWriter(write);
-            out.write(in.readLine());
+            String s = null;
+            while((s = in.readLine()) != null) {
+                out.write(s);
+                out.newLine();
+            }
         } finally {
             try {
-                in.close();
+                if(out != null) {
+                    out.close();
+                }
             } catch(IOException e) {
             }
             try {
-                out.close();
+                if(in != null) {
+                    in.close();
+                }
             } catch(IOException e) {
             }
         }
@@ -41,23 +50,28 @@ class TWR {
     static void newApproach() throws IOException {
         try(BufferedReader in = Files.newBufferedReader(read);
             BufferedWriter out = Files.newBufferedWriter(write)) {
-            out.write(in.readLine());
+            String s;
+            while((s = in.readLine()) != null) {
+                out.write(s);
+                out.newLine();
+            }
         }
     }
 
-    static void newAp2() {
-        try(BufferedReader in = Files.newBufferedReader(read);
-            BufferedWriter out = Files.newBufferedWriter(write)) {
-            out.write(in.readLine());
+    static void peek() {
+        try {
+            Files.lines(write).forEach(System.out::println);
         } catch(IOException e) {
             e.printStackTrace();
         }
+        Print.Delimitators.newLine();
     }
 
     public static void main(String[] args) throws IOException {
         oldApproach();
-//        newApproach();
-//        newAp2();
+        peek();
+        newApproach();
+        peek();
         Resources.recursiveDelete(read, write);
     }
 }

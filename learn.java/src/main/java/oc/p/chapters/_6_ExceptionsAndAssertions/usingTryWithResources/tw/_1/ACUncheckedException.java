@@ -1,4 +1,4 @@
-package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources.tw;
+package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources.tw._1;
 
 class ACUncheckedException implements AutoCloseable {
     @Override
