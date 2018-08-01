@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.lower_bound;
+package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.bound.lower;
 
 import java.util.ArrayList;
 import java.util.List;

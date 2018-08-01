@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.pEx._1;
+package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.tw._1;
 
 class Arrays {
 

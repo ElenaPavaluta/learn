@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.pEx._2;
+package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.tw._2;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
