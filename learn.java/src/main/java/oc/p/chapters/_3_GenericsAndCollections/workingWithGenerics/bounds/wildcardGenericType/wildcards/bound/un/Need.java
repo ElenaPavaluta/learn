@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.unbounded;
+package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.bound.un;
 
 import oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.Robot;
 import oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.Robot2;

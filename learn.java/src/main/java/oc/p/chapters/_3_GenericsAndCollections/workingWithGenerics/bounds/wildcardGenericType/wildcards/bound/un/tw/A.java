@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.unbounded.tw;
+package oc.p.chapters._3_GenericsAndCollections.workingWithGenerics.bounds.wildcardGenericType.wildcards.bound.un.tw;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
