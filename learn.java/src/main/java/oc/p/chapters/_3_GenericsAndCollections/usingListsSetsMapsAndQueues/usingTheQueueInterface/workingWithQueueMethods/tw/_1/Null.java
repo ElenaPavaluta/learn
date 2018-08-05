@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.usingListsSetsMapsAndQueues.usingTheQueueInterface.workingWithQueueMethods.tw;
+package oc.p.chapters._3_GenericsAndCollections.usingListsSetsMapsAndQueues.usingTheQueueInterface.workingWithQueueMethods.tw._1;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
