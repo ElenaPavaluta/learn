@@ -1,4 +1,4 @@
-package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.tw;
+package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.merge.tw;
 
 import java.util.HashMap;
 import java.util.Hashtable;

@@ -26,7 +26,7 @@ class RemovingConditionally {
          * RE: ClassCastException:  due to the fact that
          * the Object doesn't implement the Comparable interface
          */
-//        map.remove(new Object());
+        map.remove(new Object());
         map.remove(1, 1);
 //        map.removeIf();  //Map doesn't have the removeIf method
     }

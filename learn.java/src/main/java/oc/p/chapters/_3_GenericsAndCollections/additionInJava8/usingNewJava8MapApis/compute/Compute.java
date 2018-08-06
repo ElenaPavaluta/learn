@@ -1,46 +1,17 @@
 package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.compute;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
 /**
- * computeIfPresent() calls the BiFunction if the requested key is found
  *
- * computeIfAbsent(), calls the BiFunction  only when the key isn’t present or is null
+ * default V	compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+ * Attempts to compute a mapping for the specified key and its current mapped value (or null
+ * if there is no current mapping).
+ *
+ * default V	computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)
+ * If the specified key is not already associated with a value (or is mapped to null),
+ * attempts to compute its value using the given mapping function and enters it into this map unless null.
+ *
+ * default V	computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+ * If the value for the specified key is present and non-null,
+ * attempts to compute a new mapping given the key and its current mapped value.
  */
-class Compute {
-    Map<String, Integer> map = new HashMap<>();
-    BiFunction<String, Integer, Integer> computeIfPresent = (k, v) -> k.length() + v;
-    Function<String, Integer> computeIfAbsent= s->s.length()+10;
 
-    {
-        map.putIfAbsent("j", 1);
-    }
-
-    void m(){
-        Integer j = map.computeIfPresent("j", computeIfPresent);
-        System.out.println(j);  //2
-
-//        int s = map.computeIfPresent("s", computeIfPresent);  //RE: NPE
-        Integer s = map.computeIfPresent("s", computeIfPresent);  //null
-        System.out.println(s);
-    }
-
-    void m2(){
-        map.putIfAbsent(null, 2);
-        System.out.println(map);
-        System.out.println(map.computeIfAbsent(null, computeIfAbsent));
-        System.out.println(map);
-
-        System.out.println(map.computeIfAbsent("a", computeIfAbsent));
-        System.out.println(map);
-    }
-
-    public static void main(String[] args) {
-        Compute c = new Compute();
-//        c.m();
-        c.m2();
-    }
-}

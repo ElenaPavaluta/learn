@@ -1,8 +1,8 @@
-package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.tw;
+package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.merge.tw;
 
 import java.util.function.BiFunction;
 
-import static oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.tw.Data.*;
+import static oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.merge.tw.Data.*;
 
 class Merge {
 
