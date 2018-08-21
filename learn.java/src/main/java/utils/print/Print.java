@@ -3,6 +3,7 @@ package utils.print;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
@@ -46,6 +47,10 @@ public class Print {
 
     public static void print(String name, Object obj) {
         System.out.println(name + ": " + obj);
+    }
+
+    public static <K, V> void print(Map<K, V> map){
+        map.forEach((k, v)-> System.out.println(k + " -> "+ v));
     }
 
     public static void print(ResultSet resultSet) throws SQLException {
