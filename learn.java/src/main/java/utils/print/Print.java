@@ -51,6 +51,7 @@ public class Print {
 
     public static <K, V> void print(Map<K, V> map){
         map.forEach((k, v)-> System.out.println(k + " -> "+ v));
+        Delimitators.newLine();
     }
 
     public static void print(ResultSet resultSet) throws SQLException {
