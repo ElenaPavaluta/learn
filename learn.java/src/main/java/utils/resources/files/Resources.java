@@ -1,6 +1,5 @@
 package utils.resources.files;
 
-import oc.a.chapters._3_core_java_apis.javaArrays.creatingAnArrayOfPrimitives.Array;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
