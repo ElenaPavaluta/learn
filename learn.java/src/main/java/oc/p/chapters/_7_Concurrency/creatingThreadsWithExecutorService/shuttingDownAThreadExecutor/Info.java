@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 /**
  * Once you have finished using a thread executor,
  * it is important that you call the shutdown() method.
- * <p>
+ *
  * A thread executor creates a non-daemon thread on the first task that is executed,
  * so failing to call shutdown() will result in your application never terminating.
  *

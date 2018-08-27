@@ -18,7 +18,7 @@ class SingletonWithDoubleCheckingLocking
 	{
 	}
 
-	public static final /**no effect */ synchronized SingletonWithDoubleCheckingLocking getInstance()
+	public static final SingletonWithDoubleCheckingLocking getInstance()
 	{
 		if (instance == null)
 		{
