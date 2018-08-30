@@ -1,4 +1,4 @@
-package books.thinkigInJava._4ThEdition.chapters.concurrency.coopertationBetweenTasks.waitAndNotifyAll;
+package oc.p.chapters._7_Concurrency.synchronizeDataAccess.rmb;
 
 /**
  *
