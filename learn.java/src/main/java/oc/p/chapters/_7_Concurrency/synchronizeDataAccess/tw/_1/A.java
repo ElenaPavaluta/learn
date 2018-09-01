@@ -1,6 +1,4 @@
-package oc.p.chapters._7_Concurrency.synchronizeDataAccess.tw.synchronize._1;
-
-import oc.a.chapters._5_class_design.introducingClassInheritance.inheritingMethods.overridingAMethod.ownEx.Run;
+package oc.p.chapters._7_Concurrency.synchronizeDataAccess.tw._1;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
