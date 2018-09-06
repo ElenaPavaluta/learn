@@ -29,8 +29,8 @@ class R {
 
 //        r.createAndPopulate();
 //        r.m2();
-//        r.m3();
-        r.m4();
+        r.m3();
+//        r.m4();
     }
 
     Stream<Path> init() throws IOException {
