@@ -1,4 +1,4 @@
-package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.collect.tw;
+package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.collect.tw._1;
 
 import utils.resources.files.Resources;
 import java.io.IOException;

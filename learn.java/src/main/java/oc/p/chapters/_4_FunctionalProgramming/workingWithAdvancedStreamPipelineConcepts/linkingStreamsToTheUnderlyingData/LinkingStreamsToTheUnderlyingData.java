@@ -15,7 +15,7 @@ class LinkingStreamsToTheUnderlyingData {
 
         cats.add("Kc");
 
-        System.out.println(stream.count());  //3: die to the fact that the streams are lazy evaluated
+        System.out.println(stream.count());  //3: due to the fact that the streams are lazy evaluated
     }
 
     public static void main(String[] args) {

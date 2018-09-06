@@ -16,12 +16,12 @@ import java.util.stream.Stream;
 
 /**
  * <U> U reduce(U identity,
- *      BiFunction<U, ? super T, U> accumulator,
- *      BinaryOperator<U> combiner);
+ * BiFunction<U, ? super T, U> accumulator,
+ * BinaryOperator<U> combiner);
  *
  * <R> R collect(Supplier<R> supplier,
- *      BiConsumer<R, ? super T> accumulator,
- *      BiConsumer<R, R> combiner);
+ * BiConsumer<R, ? super T> accumulator,
+ * BiConsumer<R, R> combiner);
  */
 class ReduceVsCollect {
 
@@ -73,6 +73,7 @@ class ReduceVsCollect {
 
     static void m5() throws IOException {
         final Long reduce = thisYear()
+                .filter(getPathPredicate())
                 .map(getPathLongFunction())
                 .reduce(0l, Long::sum, Long::sum);
         System.out.println(reduce);
@@ -92,9 +93,14 @@ class ReduceVsCollect {
 
     static void m6() throws IOException {
         final Nb collect = thisYear()
+                .filter(getPathPredicate())
                 .map(getPathLongFunction())
                 .collect(Nb::new, (n, l) -> n.add(l.intValue()), Nb::add);
         System.out.println(collect.getNb());
+    }
+
+    private static Predicate<Path> getPathPredicate() {
+        return p -> p.getName(p.getNameCount() - 1).toString().contains(".java");
     }
 
     public static void main(String[] args) throws IOException {
@@ -105,7 +111,7 @@ class ReduceVsCollect {
 //        m4();
 
         m5();
-//        m6();
+        m6();
     }
 }
 
