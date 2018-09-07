@@ -18,7 +18,8 @@ import static java.util.stream.Collectors.*;
  *
  * static <T,K,U> Collector<T,?,Map<K,U>>
  *     toMap(Function<? super T,? extends K> keyMapper,
- *     Function<? super T,? extends U> valueMapper, BinaryOperator<U> mergeFunction
+ *     Function<? super T,? extends U> valueMapper,
+ *     BinaryOperator<U> mergeFunction
  *
  * Returns a Collector that accumulates elements into a Map whose keys and values are the result of applying the
  * provided mapping functions to the input elements.

@@ -1,4 +1,4 @@
-package oc.p.chapters._4_FunctionalProgramming.workingWithAdvancedStreamPipelineConcepts.collectingResults.collectors.groupingBy.tw;
+package oc.p.chapters._4_FunctionalProgramming.workingWithAdvancedStreamPipelineConcepts.collectingResults.collectors.groupingBy.tw._1;
 
 import oc.p.chapters._9_NIO2.util.TestPath;
 import utils.delimitators.Delimitators;
