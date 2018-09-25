@@ -21,6 +21,11 @@ public interface Resources {
     String SRC_MAIN_RESOURCES = SRC_MAIN + File.separator + RESOURCES;
     String SRC_MAIN_RESOURCES_DB = SRC_MAIN_RESOURCES + File.separator + "db";
     String SRC_MAIN_JAVA = SRC_MAIN + java.io.File.separator + JAVA;
+    String DOT_PROPERTIES = ".properties";
+
+    static Path propertiesFilesPath(String name) {
+        return Paths.get(SRC_MAIN_RESOURCES, name + DOT_PROPERTIES);
+    }
 
     static String path(String path) {
         return path.replace(".", java.io.File.separator);
