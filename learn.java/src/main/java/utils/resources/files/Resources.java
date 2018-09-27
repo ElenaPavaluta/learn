@@ -39,6 +39,11 @@ public interface Resources {
         return SRC_MAIN_RESOURCES + java.io.File.separator + path(pkg);
     }
 
+    static String srcMainJavaPath(Package pkg) {
+        return SRC_MAIN_JAVA + java.io.File.separator + path(pkg);
+    }
+
+
     static String srcMainResourcesPath(Object obj) {
         return srcMainResourcesPath(obj.getClass().getPackage());
     }
@@ -52,9 +57,9 @@ public interface Resources {
 
     static void recursiveDelete(Object... resources) {
         Arrays.stream(resources).forEach(resource -> {
-            if(resource instanceof File) {
+            if (resource instanceof File) {
                 IO.File.recursiveDelete((File) resource);
-            } else if(resource instanceof Path) {
+            } else if (resource instanceof Path) {
                 NIO.File.Path.recursiveDelete((Path) resource);
             }
         });
@@ -87,7 +92,7 @@ public interface Resources {
                         .separator + name);
                 try {
                     file.createNewFile();
-                } catch(IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return file;
@@ -98,11 +103,11 @@ public interface Resources {
             }
 
             static void recursiveDelete(java.io.File file) {
-                if(NOT_NULL.test(file)) {
+                if (NOT_NULL.test(file)) {
                     java.io.File parent = file.getParentFile();
-                    if(file.exists()) {
+                    if (file.exists()) {
                         file.delete();
-                        if(NOT_NULL.and(HAS_NO_CHILDS).test(parent)) {
+                        if (NOT_NULL.and(HAS_NO_CHILDS).test(parent)) {
                             recursiveDelete(parent);
                         }
                     }
@@ -130,7 +135,7 @@ public interface Resources {
                 Predicate<java.nio.file.Path> IS_SRC_MAIN_RESOURCES_PATH = path -> {
                     try {
                         return Files.isSameFile(path, SRC_MAIN_RESOURCES_PATH);
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         return false;
                     }
                 };
@@ -142,7 +147,7 @@ public interface Resources {
                     java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, path(pkg));
                     try {
                         path = Files.createDirectories(path);
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                     return path;
@@ -153,7 +158,7 @@ public interface Resources {
                             (joining(java.io.File.separator)));
                     try {
                         path = Files.createDirectories(path);
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                     return path;
@@ -163,14 +168,14 @@ public interface Resources {
                     java.nio.file.Path path = Paths.get(directory(pkg).toString(), fileName);
                     try {
                         path = Files.createFile(path);
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                     return path;
                 }
 
-                static java.nio.file.Path file(Package pkg, String... dest){
-                    switch(dest.length){
+                static java.nio.file.Path file(Package pkg, String... dest) {
+                    switch (dest.length) {
                         case 0:
                             return file(pkg, NIO_FILE);
                         case 1:
@@ -178,9 +183,9 @@ public interface Resources {
                         default:
                             java.nio.file.Path path = null;
                             try {
-                                path = directory(pkg, Arrays.copyOf(dest, dest.length-1));
-                                path = Files.createFile(Paths.get(path.toString(), dest[dest.length-1]));
-                            } catch(IOException e) {
+                                path = directory(pkg, Arrays.copyOf(dest, dest.length - 1));
+                                path = Files.createFile(Paths.get(path.toString(), dest[dest.length - 1]));
+                            } catch (IOException e) {
                                 e.printStackTrace();
                             }
                             return path;
@@ -196,13 +201,13 @@ public interface Resources {
                 }
 
                 static void recursiveDelete(java.nio.file.Path path) {
-                    if(EXISTS.or(SYMBOLIC_LINK).test(path)) {
-                        while(IS_SRC_MAIN_RESOURCES_PATH.negate().test(path)) {
+                    if (EXISTS.or(SYMBOLIC_LINK).test(path)) {
+                        while (IS_SRC_MAIN_RESOURCES_PATH.negate().test(path)) {
                             java.nio.file.Path parent = path.getParent();
                             try {
                                 Files.deleteIfExists(path);
                                 path = parent;
-                            } catch(IOException e) {
+                            } catch (IOException e) {
                                 break;
                             }
                         }

@@ -64,10 +64,10 @@ class Move {
     public static void main(String[] args) {
         copy();
         move();
-        read();
+//        read();
 
-        Resources.IO.File.recursiveDelete(f);
-        Resources.NIO.File.Path.recursiveDelete(path, path2);
+//        Resources.IO.File.recursiveDelete(f);
+//        Resources.NIO.File.Path.recursiveDelete(path, path2);
     }
 }
 

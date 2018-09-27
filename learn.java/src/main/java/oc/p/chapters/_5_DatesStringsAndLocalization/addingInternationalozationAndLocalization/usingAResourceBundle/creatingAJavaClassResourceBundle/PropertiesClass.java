@@ -35,7 +35,7 @@ class PropertiesClass {
         TaxCode tc = (TaxCode)props.get("tax");
         tc.m();
 
-        String s = props.getProperty("tax");  //returns null, since the value object isn't dbInstance of String
+        String s = props.getProperty("tax");  //returns null, since the value object isn't instance of String
         System.out.println(s);
     }
 
