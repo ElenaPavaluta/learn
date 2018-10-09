@@ -8,11 +8,11 @@ import java.time.temporal.ChronoUnit;
  *
  * static Duration	ofDays(long days)
  *
+ * static Duration	ofHours(long hours)
+ *
  * static Duration	ofMinutes(long minutes)
  *
  * static Duration	ofSeconds(long seconds)
- *
- * static Duration	ofHours(long hours)
  *
  * static Duration	ofMillis(long millis)
  *
@@ -80,16 +80,21 @@ class Durations {
         zonedDateTime = zonedDateTime.plus(duration).minus(duration);
     }
 
+    static void m4(){
+        duration = Duration.of(2, ChronoUnit.YEARS);  //RE
+    }
+
     private static void print() {
         System.out.println(duration);
     }
 
 
     public static void main(String[] args) {
-//        m();
+        System.out.println(LocalTime.now());
+        m();
 //        m2();
-        m3();
-
+//        m3();
+//        m4();
     }
 
 

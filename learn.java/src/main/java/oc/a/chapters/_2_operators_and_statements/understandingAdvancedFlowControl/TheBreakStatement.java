@@ -23,8 +23,8 @@ public class TheBreakStatement {
 				if (list[i][j] == searchedValue) {
 					pozX = i;
 					poxY = j;
-//					break PARENT_LOOP;  //searches for the first appearance of the searched value
-					break;   //searches for the last appearance of the searched value
+					break PARENT_LOOP;  //searches for the first appearance of the searched value
+//					break;   //searches for the last appearance of the searched value
 				}
 			}
 		}

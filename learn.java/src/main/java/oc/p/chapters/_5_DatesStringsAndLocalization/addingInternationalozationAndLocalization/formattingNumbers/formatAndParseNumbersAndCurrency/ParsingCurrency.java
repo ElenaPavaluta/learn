@@ -19,12 +19,12 @@ class ParsingCurrency {
     static void m() throws ParseException {
         nf = NumberFormat.getCurrencyInstance();
 
-        nf.parse(s);
-        nf.parse(s2);
+        System.out.println(nf.parse(s));
+        System.out.println(nf.parse(s2));
 //        nf.parse(s3); //ParseException
 //        nf.parse(s4); //ParseException
 //        nf.parse(s5);  //ParseException
-        nf.parse(s6);
+        System.out.println(nf.parse(s6));
     }
 
     static void m2() throws ParseException{
@@ -39,8 +39,8 @@ class ParsingCurrency {
     }
 
     public static void main(String[] args) throws ParseException {
-//        createAndPopulate();
-        m2();
+        m();
+//        m2();
     }
 
 }

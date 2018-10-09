@@ -7,9 +7,9 @@ import utils.delimitators.Delimitators;
  * child class
  * 
  * 
- * As when hiding a static method, if you�re referencing the variable from
+ * As when hiding a static method, if you're referencing the variable from
  * within the parent class, the variable defined in the parent class is used.
- * Alternatively, if you�re referencing the variable from within a child class,
+ * Alternatively, if you're referencing the variable from within a child class,
  * the variable defined in the child class is used.
  *
  */

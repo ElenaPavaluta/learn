@@ -19,12 +19,12 @@ class ParsingPercent {
         nf = NumberFormat.getPercentInstance();
 
 //        nf.parse(s); //PE
-        nf.parse(s2);
+        System.out.println(nf.parse(s2));
 //        nf.parse(s3);  //PE
 //        nf.parse(s4);  //PE
     }
 
-    static void m2() throws ParseException{
+    static void m2() throws ParseException {
         nf = NumberFormat.getPercentInstance(locale);
 
         nf.parse(s);
@@ -34,8 +34,8 @@ class ParsingPercent {
     }
 
     public static void main(String[] args) throws ParseException {
-//        createAndPopulate();
-        m2();
+        m();
+//        m2();
 
     }
 }

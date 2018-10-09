@@ -67,9 +67,9 @@ class Format {
     }
 
     public static void main(String[] args) {
-        m();
-        iso();
-        shortM();
+//        m();
+//        iso();
+//        shortM();
         mediumM();
     }
 

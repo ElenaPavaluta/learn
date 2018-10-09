@@ -10,20 +10,17 @@ import java.util.Locale;
  * static NumberFormat	getInstance(Locale inLocale)
  *      Returns a general-purpose number format for the specified locale.
  *
- *
  * static NumberFormat	getNumberInstance()
  *      Returns a general-purpose number format for the current default FORMAT locale.
  *
  * static NumberFormat	getNumberInstance(Locale inLocale)
  *      Returns a general-purpose number format for the specified locale.
  *
- *
  * static NumberFormat	getCurrencyInstance()
  *      Returns a currency format for the current default FORMAT locale.
  *
  * static NumberFormat	getCurrencyInstance(Locale inLocale)
  *      Returns a currency format for the specified locale.
- *
  *
  * static NumberFormat	getPercentInstance()
  *      Returns a percentage format for the current default FORMAT locale.

@@ -51,11 +51,25 @@ class Instants {
         System.out.println(instant);
     }
 
+    static void m5(){
+        instant = Instant.now();
+        ZonedDateTime zdt = instant.atZone(ZoneId.systemDefault());
+        LocalDateTime ldt = zdt.toLocalDateTime();
+        LocalDate ld = ldt.toLocalDate();
+        LocalTime lt = ldt.toLocalTime();
+    }
+
+    static void m6(){
+        instant = Instant.now();
+        instant = instant.plus(Period.ofYears(10));  //RE: Instant allows only day or smaller
+    }
+
     public static void main(String[] args) {
 //        m();
 //        m2();
 //        m3();
-        m4();
+//        m4();
+        m6();
     }
 
 
