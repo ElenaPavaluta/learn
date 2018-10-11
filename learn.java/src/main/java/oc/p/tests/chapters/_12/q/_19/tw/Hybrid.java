@@ -21,5 +21,11 @@ class RunH {
         Hybrid h = new Hybrid();
 
         Hybrid.SNC snc = new Hybrid.SNC();
+
+        Hybrid.SNC.INC hSncInc = new Hybrid.SNC(). new INC();
+
+        Hybrid.SNC.INC.INC2 hSncIncInc2 = new Hybrid.SNC().new INC().new INC2();
+
+        Hybrid.SNC.INC.INC2.INC3 hSncIncInc2Inc3 = new Hybrid.SNC().new INC(). new INC2(). new INC3();
     }
 }

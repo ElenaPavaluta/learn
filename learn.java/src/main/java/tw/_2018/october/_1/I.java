@@ -1,4 +1,4 @@
-package gtk.tw.date._2018.october._1;
+package tw._2018.october._1;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
