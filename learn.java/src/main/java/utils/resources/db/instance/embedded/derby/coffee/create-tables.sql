@@ -1,5 +1,5 @@
 create table SUPPLIERS
-(SUP_ID integer NOT NULL,
+(SUP_ID val NOT NULL,
  SUP_NAME varchar(40) NOT NULL,
  STREET varchar(40) NOT NULL,
  CITY varchar(20) NOT NULL,
@@ -11,8 +11,8 @@ create table COFFEES
 (COF_NAME varchar(32) NOT NULL,
  SUP_ID int NOT NULL,
  PRICE numeric(10,2) NOT NULL,
- SALES integer NOT NULL,
- TOTAL integer NOT NULL,
+ SALES val NOT NULL,
+ TOTAL val NOT NULL,
   PRIMARY KEY (COF_NAME),
   FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID));
 
@@ -28,7 +28,7 @@ create table RSS_FEEDS
   PRIMARY KEY (RSS_NAME));
 
 create table COF_INVENTORY
-(WAREHOUSE_ID integer NOT NULL,
+(WAREHOUSE_ID val NOT NULL,
  COF_NAME varchar(32) NOT NULL,
  SUP_ID int NOT NULL,
  QUAN int NOT NULL,
@@ -37,7 +37,7 @@ create table COF_INVENTORY
   FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID));
 
 create table MERCH_INVENTORY
-(ITEM_ID integer NOT NULL,
+(ITEM_ID val NOT NULL,
  ITEM_NAME varchar(20),
  SUP_ID int,
  QUAN int,
@@ -46,7 +46,7 @@ create table MERCH_INVENTORY
   FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID));
 
 create table COFFEE_HOUSES
-(STORE_ID integer NOT NULL,
+(STORE_ID val NOT NULL,
  CITY varchar(32),
  COFFEE int NOT NULL,
  MERCH int NOT NULL,
