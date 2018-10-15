@@ -1,4 +1,4 @@
-package oc.p.tests.chapters._14._10;
+package oc.p.tests.chapters._14.q._10;
 
 import java.util.Arrays;
 import java.util.List;

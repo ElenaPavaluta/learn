@@ -17,10 +17,10 @@ class SuppresedExceptions {
 
     void m(){
         try (JamedTurkeyCage t = new JamedTurkeyCage()){
-            System.out.println("put turkey in");
-        }catch(IllegalStateException e){
+//            System.out.println("put turkey in");
+        }/*catch(IllegalStateException e){
             System.out.println("caught: " + e.getMessage());
-        }
+        }*/
     }
 
     void m2(){

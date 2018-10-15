@@ -39,6 +39,9 @@ class SubsclassException {
         try {
             ioe();
         } /*catch(SQLException e){}*/  //compiler error: isn't thrown by any other class
+        catch (RuntimeException e){
+
+        }
         catch(FileNotFoundException e) {
         } catch(IOException e) {
         }

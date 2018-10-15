@@ -13,12 +13,14 @@ package oc.p.chapters._6_ExceptionsAndAssertions.workingWithAssertions.enablingA
  * without any arguments enables assertions in all classes except system classes (Java runtime classes)
  *
  *
- * java -ea:com.wiley.demos... my.programs.Main : enables assertions only for classes in the com.wiley.demos package and any subpackages
+ * java -ea:com.wiley.demos... my.programs.Main : enables assertions only for classes in the com.wiley.demos package
+ * and any subpackages
  * the three dots means any class in the specified package or subpackages
  *
  * java -ea:com.wiley.demos.TestColors my.programs.Main : enable assertions for a specific class
  *
- * java -ea:com.wiley.demos... -da:com.wiley.demos.TestColors my.programs.Main : enables assertions for the com.wiley.demos package but disables assertions for the TestColors class
+ * java -ea:com.wiley.demos... -da:com.wiley.demos.TestColors my.programs.Main : enables assertions
+ * for the com.wiley.demos package but disables assertions for the TestColors class
  *
  * Disableing assertiion:
  * java  -disableassertions

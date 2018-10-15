@@ -1,4 +1,4 @@
-package oc.p.chapters._4_FunctionalProgramming.workingWithPrimitives.tw;
+package oc.p.chapters._4_FunctionalProgramming.workingWithPrimitives.tw._1;
 
 import java.util.function.*;
 import java.util.stream.IntStream;
