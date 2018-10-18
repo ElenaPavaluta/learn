@@ -1,6 +1,6 @@
 package oc.a.chapters._6_exceptions.recognizingCommonExceptionTypes.runtimeExceptions;
 
-public class ArrayIndexOutOfBoundsException {
+class ArrayIndexOutOfBoundsException {
 
 	static void m() {
 		int[] arr = new int[3];
