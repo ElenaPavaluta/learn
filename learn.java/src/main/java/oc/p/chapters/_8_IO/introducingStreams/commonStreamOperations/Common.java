@@ -21,7 +21,7 @@ class Common {
      * no guarantee that the data will make it to the directory immediately,
      * so in order to prevent any loses (in case the application terminates
      * unexpectedly), or to minimize the amount this method comes in handy.
-     *
+     * <p>
      * There's no need to call flush explicitly after finishing
      * writing to a directory, since close() will do this automatically
      */
@@ -29,7 +29,4 @@ class Common {
         outputStream.flush();
         writer.flush();
     }
-
-
-
 }

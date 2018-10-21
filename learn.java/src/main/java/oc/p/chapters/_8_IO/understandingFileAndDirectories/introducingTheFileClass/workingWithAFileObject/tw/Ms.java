@@ -65,6 +65,6 @@ class Ms {
         m();
 
 
-        Resources.recursiveDelete(dir, file);
+        Resources.recursiveDelete(file, dir);
     }
 }

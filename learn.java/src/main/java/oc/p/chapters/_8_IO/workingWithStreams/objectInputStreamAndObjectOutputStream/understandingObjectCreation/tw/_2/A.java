@@ -3,18 +3,20 @@ package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputS
 
 class A {
 
+    static String varA = "A var";
+
     /**
      * The static initializer block isn't called, when the object is deserialize
      */
     static {
-        System.out.println("s " + 1);
+        System.out.println("static initializer A ");
     }
 
     {
-        System.out.println(1);
+        System.out.println("initializer A");
     }
 
     A() {
-        System.out.println(2);
+        System.out.println("constructor A");
     }
 }

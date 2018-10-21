@@ -3,16 +3,18 @@ package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputS
 
 import java.io.Serializable;
 
-class B extends A implements Serializable{
+class B extends A implements Serializable {
+    static String varB = "B var";
+
     static {
-        System.out.println("s " + 2);
+        System.out.println("static initializer B");
     }
 
     {
-        System.out.println(3);
+        System.out.println("initializer B");
     }
 
     public B() {
-        System.out.println(4);
+        System.out.println("constructor B");
     }
 }

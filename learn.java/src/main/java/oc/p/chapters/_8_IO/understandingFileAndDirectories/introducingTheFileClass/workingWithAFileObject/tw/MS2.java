@@ -31,10 +31,11 @@ class MS2 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        lst = Arrays.asList(dir, file, ne);
+        lst = Arrays.asList(file, ne, dir, dest);
     }
 
     static void m() {
+        m(File::getPath);
         m(File::exists);
         m(File::getName);
         m(File::getAbsolutePath);

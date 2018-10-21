@@ -1,23 +1,45 @@
 package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputStream.understandingObjectCreation.tw._2;
 
 
+import utils.print.Print;
 import utils.resources.files.Resources;
+
 import java.io.*;
 
 class Serialize {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        C c = new C();
-        File f = Resources.IO.File.file(c.getClass().getPackage(), "c");
+    static Package pkg = new Serialize().getClass().getPackage();
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))){
-            oos.writeObject(c);
+    static File b = Resources.IO.File.file(pkg, "b");
+    static File c = Resources.IO.File.file(pkg, "c");
+
+
+    static void write() throws IOException {
+        try (ObjectOutputStream oosB = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(b)));
+             ObjectOutputStream oosC = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(c)))) {
+
+            oosB.writeObject(new B());
+            Print.Delimitators.newLine();
+            oosC.writeObject(new C());
+            Print.Delimitators.equal();
         }
-        System.out.println();
-
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))){
-            c = (C)ois.readObject();
-        }
-
-        Resources.IO.File.recursiveDelete(f);
     }
+
+    static void read() throws IOException, ClassNotFoundException {
+        try (ObjectInputStream oisB = new ObjectInputStream(new BufferedInputStream(new FileInputStream(b)));
+             ObjectInputStream oisC = new ObjectInputStream(new BufferedInputStream(new FileInputStream(c)))) {
+
+            Object o = oisB.readObject();
+            Print.Delimitators.newLine();
+
+            o = oisC.readObject();
+
+        }
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        write();
+        System.out.println();
+        read();
+    }
+
 }
