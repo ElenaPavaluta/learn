@@ -38,8 +38,10 @@ class Serialize {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         write();
-        System.out.println();
+        System.out.println("===== read =====");
         read();
+
+        Resources.recursiveDelete(b, c);
     }
 
 }

@@ -75,6 +75,10 @@ public interface Resources {
             Predicate<java.io.File> NOT_NULL = file -> file != null;
             Predicate<java.io.File> HAS_NO_CHILDS = file -> file.listFiles().length == 0;
 
+            static java.io.File directory(Object o){
+                return directory(o.getClass().getPackage());
+            }
+
             static java.io.File directory(Package pkg) {
                 return directory(pkg.getName());
             }
@@ -96,6 +100,10 @@ public interface Resources {
                     e.printStackTrace();
                 }
                 return file;
+            }
+
+            static java.io.File file(Object o, String fileName){
+                return file(o.getClass().getPackage(), fileName);
             }
 
             static java.io.File file(Package pkg, String fileName) {
