@@ -14,16 +14,21 @@ class Access {
     Path p = Paths.get("a");
 
     static void m() throws URISyntaxException {
-        Path p = FileSystems.getDefault().getPath("a/b/c");
-        System.out.println(p);
+        FileSystem fileSystem = FileSystems.getDefault();
 
-        Path p2 = FileSystems.getDefault().getPath("c:", "a", "b/c", "d");
-        System.out.println(p2);
+        Path path = fileSystem.getPath("c:", "a");
+        System.out.println(path);
+        System.out.println(path.isAbsolute());  //true
 
-        Path p3 = FileSystems.getDefault().getPath("\\a\\b\\c");
-        System.out.println(p3);
+        path = fileSystem.getPath("/a/b");
+        System.out.println(path);
+        System.out.println(path.isAbsolute());  //false (true on Linux)
 
-        FileSystem  fs = FileSystems.getFileSystem(new URI("www.selikoff.net"));
+        path = fileSystem.getPath("\\a", "\\b", "\\c");
+        System.out.println(path);
+        System.out.println(path.isAbsolute());  //false
+
+        fileSystem = FileSystems.getFileSystem(new URI("www.google.com"));
     }
 
     public static void main(String[] args) throws URISyntaxException {

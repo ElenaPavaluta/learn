@@ -10,7 +10,7 @@ import java.nio.file.attribute.FileTime;
 
 /**
  * static <A extends BasicFileAttributes> A
- * readAttributes(Path path, Class<A> dbType, LinkOption... options)
+ * readAttributes(Path path, Class<A> type, LinkOption... options)
  */
 class Read {
 

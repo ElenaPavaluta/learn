@@ -6,6 +6,7 @@ import utils.resources.files.create.populate.CreatePopulate;
 import utils.resources.files.print.Print;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileAttributeView;
@@ -16,17 +17,16 @@ import java.time.temporal.ChronoUnit;
 
 /**
  * static <V extends FileAttributeView> V
- * getFileAttributeView(Path path, Class<V> dbType, LinkOption... options)
+ * getFileAttributeView(Path path, Class<V> type, LinkOption... options)
  *
- * Returns a file attribute view of a given dbType
+ * Returns a file attribute view of a given type
  *
  * void setTimes(FileTime lastModifiedTime,
  * FileTime lastAccessTime,
  * FileTime createTime) throws IOException;
  */
 class Update {
-
-    java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
+    Path path = CreatePopulate.NIO.File.Path.file(this);
 
     public static void main(String[] args) throws IOException {
         Update u = new Update();

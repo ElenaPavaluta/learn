@@ -2,17 +2,19 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.resolve;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import static oc.p.chapters._9_NIO2.util.TestPath.*;
+
+import static oc.p.chapters._9_NIO2.util.TestPath.Absolute_Linux_Path;
+import static oc.p.chapters._9_NIO2.util.TestPath.Absolute_Windows_Path;
 
 /**
  * Path	resolve(Path other)
  * Resolve the given file against this file.
- *
+ * <p>
  * Path	resolve(String other)
  * Converts a given file string to a Path and resolves it against this Path
  * in exactly the manner specified by the resolve method.
- *
- *
+ * <p>
+ * <p>
  * If the other parameter is an absolute file then
  * this method returns other.
  * If other is an empty file then this method returns this file.
@@ -34,7 +36,7 @@ class Join {
         System.out.println(p2.resolve(p));
     }
 
-    static void c(){
+    static void c() {
         Path p = Paths.get("relative");
         Path p2 = Paths.get("E:\\absolute");
 
@@ -42,7 +44,7 @@ class Join {
         System.out.println(p2.resolve(p));  // E:\absolute\relative
     }
 
-    static void c2(){
+    static void c2() {
         Path p = Paths.get("a\\b\\c");
         Path p2 = Paths.get("");
 
@@ -50,7 +52,7 @@ class Join {
         System.out.println(p2.resolve(p));  //test
     }
 
-    static void c3(){
+    static void c3() {
         Path p = Paths.get("a\\b\\c");
         Path p2 = Paths.get("d\\e\\f");
 
@@ -58,7 +60,7 @@ class Join {
         System.out.println(p2.resolve(p));  //d\e\f\a\b\c
     }
 
-    static void c4(){
+    static void c4() {
         System.out.println(Absolute_Windows_Path.resolve(Absolute_Linux_Path));  // absolute linux file
         System.out.println(Absolute_Linux_Path.resolve(Absolute_Windows_Path));  //w file
     }

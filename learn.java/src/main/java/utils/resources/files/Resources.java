@@ -49,10 +49,8 @@ public interface Resources {
     }
 
     static String absolutePath(Package pkg) {
-        java.io.File file = IO.File.directory(pkg);
-        String absolutePath = file.getAbsolutePath();
-        IO.File.recursiveDelete(file);
-        return absolutePath;
+        java.io.File file = new java.io.File(srcMainResourcesPath(pkg));
+        return file.getAbsolutePath();
     }
 
     static void recursiveDelete(Object... resources) {

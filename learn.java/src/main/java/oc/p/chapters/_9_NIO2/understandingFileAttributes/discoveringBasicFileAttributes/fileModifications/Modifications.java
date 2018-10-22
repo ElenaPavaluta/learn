@@ -1,19 +1,21 @@
 package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAttributes.fileModifications;
 
-import oc.p.chapters._9_NIO2.util.TestPath;
 import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileTime;
 import java.time.ZonedDateTime;
 import java.util.concurrent.TimeUnit;
 
+import static oc.p.chapters._9_NIO2.util.TestPath.Absolute_Windows_Path;
+
 /**
  * static FileTime	getLastModifiedTime(Path path, LinkOption... options)
  * Returns a file's last modified time.
- *
+ * <p>
  * static Path	setLastModifiedTime(Path path, FileTime time)
  * Updates a file's last modified time attribute.
  */
@@ -33,7 +35,7 @@ class Modifications {
         fileTime = FileTime.fromMillis(ZonedDateTime.now().toInstant().toEpochMilli());
         path = Files.setLastModifiedTime(path, fileTime);
         test(path);
-            }
+    }
 
     private static void test(java.nio.file.Path path) throws IOException {
         FileTime fileTime = Files.getLastModifiedTime(path);
@@ -45,11 +47,11 @@ class Modifications {
         Delimitators.equal();
     }
 
-    static void m2(){
-        java.nio.file.Path p = TestPath.Absolute_Windows_Path;  //file does not exists
+    static void m2() {
+        java.nio.file.Path p = Absolute_Windows_Path;  //file does not exists
         try {
             test(p);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

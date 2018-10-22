@@ -1,11 +1,14 @@
 package oc.p.chapters._8_IO.workingWithStreams.fileInputStreamAndFileOutputStream;
 
 import utils.resources.files.Resources;
+
 import java.io.*;
 
 /**
  * It is recommended that the buffer size is a power
  * of 2
+ * <p>
+ * Only BufferedInputStream and BufferedReader return true for markSupported
  */
 class BisAndBos {
 
@@ -25,8 +28,8 @@ class BisAndBos {
 
     void m() throws IOException {
         copy = Resources.IO.File.file(this.getClass().getPackage(), "copy.jpg");
-        try(InputStream in = new BufferedInputStream(new FileInputStream(file));
-            OutputStream out = new BufferedOutputStream(new FileOutputStream(copy))) {
+        try (InputStream in = new BufferedInputStream(new FileInputStream(file));
+             OutputStream out = new BufferedOutputStream(new FileOutputStream(copy))) {
             byte[] buff = new byte[16];
             int lengthRead;
             /**
@@ -36,7 +39,7 @@ class BisAndBos {
              * The number of bytes actually read is
              * returned as an integer
              */
-            while((lengthRead = in.read(buff)) > 0) {
+            while ((lengthRead = in.read(buff)) > 0) {
                 /**
                  *  Writes len bytes from the specified
                  *  byte array

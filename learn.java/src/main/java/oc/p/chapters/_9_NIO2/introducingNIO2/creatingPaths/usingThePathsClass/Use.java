@@ -7,30 +7,34 @@ import java.nio.file.Paths;
 
 class Use {
 
-    static void m(){
-        //file to a relative file
-        Path p = Paths.get("pandas/cuddly.png");
+    static void m() {
+        //absolute path in Windows based system
+        Path p = Paths.get("c:\\zoo\\november\\e.txt");
+        print(p);
 
-        //file to an obsolute file in Windows based system
-        Path p2 = Paths.get("c:\\zoo\\november\\e.txt");
+        //absolute path in Linux based system: starts with slash
+        p = Paths.get("/home/zooDir");
+        print(p);
 
-        //file to an absolute file in Linux based system
-        //starts with forward slash
-        Path p3 = Paths.get("/home/zooDir");
-
-        System.out.println(p);
-        System.out.println(p2);
-        System.out.println(p3);
+        //relative path
+        p = Paths.get("pandas/cuddly.png");
+        print(p);
     }
 
-    static void m2(){
-        Path p = Paths.get("a", "b", "c");
-        Path p2 = Paths.get("c:", "zoo", "november", "e.txt");
-        Path p3 = Paths.get("/", "home", "dir");
-
+    private static void print(Path p) {
         System.out.println(p);
-        System.out.println(p2);
-        System.out.println(p3);
+        System.out.println(p.isAbsolute());
+    }
+
+    static void m2() {
+        Path p = Paths.get("a", "b", "c");
+        print(p);  //false
+
+        p = Paths.get("c:", "zoo", "november", "e.txt");
+        print(p);  //true
+
+        p = Paths.get("/", "home", "dir");
+        print(p);  //true: \\home\dir\
     }
 
     static void m3() throws URISyntaxException {
@@ -39,15 +43,15 @@ class Use {
          */
 //        Path test = Paths.get(new URI("file://pandas.cudly.png"));  //RE
 
-        Path p2 = Paths.get(new URI("file:///c:/zoo-info/November/employees.txt"));
-        Path p3 = Paths.get(new URI("file:///home/zoodirectory"));
+        Path p = Paths.get(new URI("file:///c:/zoo-info/November/employees.txt"));
+        System.out.println(p);
 
-        System.out.println(p2);
-        System.out.println(p3);
+        p = Paths.get(new URI("file:///home/zoodirectory"));
+        System.out.println(p);
     }
 
     static void m4() throws URISyntaxException {
-        Path p = Paths.get(new URI("http://www.wiley.com"));
+        Path p = Paths.get(new URI("https://www.wiley.com"));
         System.out.println(p);
         URI u = p.toUri();
         System.out.println(u);
@@ -59,7 +63,6 @@ class Use {
         System.out.println(u2);
 
     }
-
 
     public static void main(String[] args) throws URISyntaxException {
 //        m();

@@ -27,8 +27,8 @@ class ViewThePath {
         viewThePath.m(TestPath.Relative_Linux_Path);
         viewThePath.m2(TestPath.Relative_Linux_Path);
         System.out.println();
-        viewThePath.m(TestPath.Absolute_Windows_Path);
-        viewThePath.m2(TestPath.Absolute_Windows_Path);
+//        viewThePath.m(TestPath.Absolute_Windows_Path);
+//        viewThePath.m2(TestPath.Absolute_Windows_Path);
 
     }
 
