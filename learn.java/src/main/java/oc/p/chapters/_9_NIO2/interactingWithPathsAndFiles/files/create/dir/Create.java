@@ -2,6 +2,8 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.create.dir;
 
 import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,46 +17,60 @@ import java.nio.file.Paths;
  * Creates a directory by creating all nonexistent parent directories first.
  */
 class Create {
-   static String location = Resources.srcMainResourcesPath(new Create().getClass().getPackage());
+    static String location = Resources.srcMainResourcesPath(new Create());
+
+    static Path p = Paths.get(location, "p", "p2");
+    static File f = new File(location + File.separator + "f/f2");
 
     static {
-        System.out.println(location);
+        System.out.println(p);
+        System.out.println(f);
+        Delimitators.newLine();
     }
 
-    static void m() throws IOException {
-        Path p = Paths.get(location);
-        p = Files.createDirectories(p);
+    static void createDirectory() {
+        System.out.println(f.mkdir());  //false
+        try {
+            p = Files.createDirectory(p);
+        } catch (IOException e) {
+            System.out.println("err");
+        }
+
+        System.out.println(f.exists());  //false
+        System.out.println(Files.exists(p));  //false
+    }
+
+    static void createDirectories() {
+        System.out.println(f.mkdirs());  //true
+        try {
+            p = Files.createDirectories(p);
+        } catch (IOException e) {
+            System.out.println("err");
+        }
+
+        System.out.println(f.exists());  //true
         System.out.println(Files.exists(p));  //true
-        System.out.println(Files.isDirectory(p));  //true
-        System.out.println(Files.isRegularFile(p));  //false
-        System.out.println(Files.isSymbolicLink(p));  //false
+    }
+
+    static void alredyExists() {
+        System.out.println(f.mkdirs());  //false
+        try {
+            p = Files.createDirectories(p);
+        } catch (IOException e) {
+            System.out.println("err");
+        }
+        System.out.println(f.exists());  //true
+        System.out.println(Files.exists(p));  //true
+    }
+
+    public static void main(String[] args) {
+        createDirectory();
         Delimitators.equal();
+        createDirectories();
+        Delimitators.equal();
+        alredyExists();
 
-        p = Paths.get(location, "a");
-        p = Files.createDirectory(p);
-
-        Resources.NIO.File.Path.recursiveDelete(p);
-    }
-
-    static void m2() throws IOException {
-        Path p = Paths.get(location, "a", "a");
-        p = Files.createDirectories(p);
-        Resources.NIO.File.Path.recursiveDelete(p);
-    }
-
-    static void m3() throws IOException {
-        Path p = Paths.get(location, "a", "b");
-
-        /**
-         * CE
-         */
-        p = Files.createDirectory(p);
-    }
-
-    public static void main(String[] args) throws IOException {
-//        m();
-//        m2();
-        m3();
+        Resources.recursiveDelete(f, p);
     }
 }
 

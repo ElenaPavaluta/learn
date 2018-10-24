@@ -55,8 +55,7 @@ class IsSameFile {
     public static void main(String[] args) throws IOException {
        new IsSameFile();
         m();
-
-
+        
         Resources.NIO.File.Path.recursiveDelete(symbolicP, p);
     }
 }
