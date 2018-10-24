@@ -1,69 +1,29 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.subpath;
 
-import utils.delimitators.Delimitators;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import utils.print.Print;
 
-import static oc.p.chapters._9_NIO2.util.TestPath.*;
+import java.util.stream.IntStream;
+
+import static oc.p.chapters._9_NIO2.util.TestPath.pathList;
 
 /**
- * Path subpath(int beginIndex, int endIndex)
+ * Path subpath(int beginIndex, int endIndex)  // endIndex: not included
  *
- * Returns a relative Path that is a subsequence
- * of the name elements of this file
+ * Returns a relative Path that is a subsequence of the name elements of this file
  */
 class Create {
-
-    static List<Path> paths = Arrays.asList(Absolute_Linux_Path,
-                                            Relative_Linux_Path,
-                                            Absolute_Windows_Path,
-                                            Relative_Windows_Path,
-                                            Empty_Path);
-
     static void m() {
-        paths.forEach(
-                p ->
-                {
-                    System.out.println(p);
-                    class A {
-                        Path p;
-
-                        public A(Path p) {
-                            this.p = p;
-                        }
-
-                        void sub() {
-                            int n = p.getNameCount();
-                            Path pt = p;
-                            while(n > 1) {
-                                Path temp = pt.subpath(0, n - 1);
-                                System.out.println(temp);
-                                pt = temp;
-                                n = pt.getNameCount();
-                            }
-                        }
-                    }
-                    new A(p).sub();
-                    Delimitators.equal();
-                    Delimitators.newLine();
-                });
-    }
-
-    static void throwExcep(){
-        Path p = Paths.get("ana", "are", "mere");
-        System.out.println(p);
-
-//        Path sp = test.subpath(1, 5);
-
-//        Path sp2 = test.subpath(1,1);
-
-        Path sp3 = p.subpath(-2, 1);
+        pathList.forEach(p->{
+            int n = p.getNameCount();
+            System.out.println(p);
+            IntStream.rangeClosed(1, n)
+                    .forEach(i-> System.out.println(p.subpath(0, i)));
+            Print.Delimitators.equal();
+        });
     }
 
     public static void main(String[] args) {
-//        createAndPopulate();
-        throwExcep();
+        m();
     }
+
 }

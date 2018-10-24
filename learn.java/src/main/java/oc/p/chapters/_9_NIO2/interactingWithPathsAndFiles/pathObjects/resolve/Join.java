@@ -3,73 +3,86 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.resolve;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static oc.p.chapters._9_NIO2.util.TestPath.Absolute_Linux_Path;
-import static oc.p.chapters._9_NIO2.util.TestPath.Absolute_Windows_Path;
-
 /**
  * Path	resolve(Path other)
- * Resolve the given file against this file.
- * <p>
- * Path	resolve(String other)
- * Converts a given file string to a Path and resolves it against this Path
- * in exactly the manner specified by the resolve method.
- * <p>
- * <p>
- * If the other parameter is an absolute file then
- * this method returns other.
- * If other is an empty file then this method returns this file.
- * Otherwise this method considers this file to be a file
- * and resolves the given file against this file.
- * In the simplest case, the given file does not have a root component,
- * in which case this method joins the given file to this file and
- * returns a resulting file that ends with the given file.
- * Where the given file has a root component then resolution
- * is highly implementation dependent and therefore unspecified.
+ *
+ * Path resolve(String other)
+ *
+ * If the other parameter is an isAbsolute() absolute path then  returns other.
+ *
+ * If other is an empty path then returns this path.
+ *
+ * Otherwise this method considers this path to be a directory and resolves
+ * the given path against this path.
+ *
+ * In the simplest case, the given path does not have a getRoot component, in which case this method
+ * joins the given path to this path and returns a resulting path
+ *
+ * Where the given path has a root component then resolution is highly implementation dependent
+ * and therefore unspecified.
  */
 class Join {
 
     static void m() {
-        Path p = Paths.get("/cats/../panther");  // \cats\..\panther\food
-        Path p2 = Paths.get("food");  // \cats\..\panther
+        Path p = Paths.get("/cats/../panther");
+        Path p2 = Paths.get("food");
 
-        System.out.println(p.resolve(p2));
-        System.out.println(p2.resolve(p));
+        System.out.println(p.isAbsolute());  //false
+        System.out.println(p2.isAbsolute());  //false
+
+        System.out.println(p.getRoot());  // /
+        System.out.println(p2.getRoot());  // null
+
+        System.out.println(p.resolve(p2));  // \cats\..\panther\food
+        System.out.println(p2.resolve(p));  // \cats\..\panther
     }
 
-    static void c() {
+    static void m2() {
         Path p = Paths.get("relative");
         Path p2 = Paths.get("E:\\absolute");
 
-        System.out.println(p.resolve(p2));  // p2
-        System.out.println(p2.resolve(p));  // E:\absolute\relative
+        System.out.println(p.isAbsolute());  //false
+        System.out.println(p2.isAbsolute());  //true
+
+        System.out.println(p.getRoot());  //null
+        System.out.println(p2.getRoot());  //E:\
+
+        System.out.println(p.resolve(p2));  //p2
+        System.out.println(p2.resolve(p));  //E:\absolute\relative
     }
 
-    static void c2() {
+    static void m3() {
         Path p = Paths.get("a\\b\\c");
         Path p2 = Paths.get("");
 
-        System.out.println(p.resolve(p2));  //test
-        System.out.println(p2.resolve(p));  //test
+        System.out.println(p.isAbsolute());  //false;
+        System.out.println(p2.isAbsolute());  //false
+
+        System.out.println(p.getRoot());  //null
+        System.out.println(p2.getRoot());  //null
+
+        System.out.println(p.resolve(p2));  //p
+        System.out.println(p2.resolve(p));  //p
     }
 
-    static void c3() {
+    static void m4() {
         Path p = Paths.get("a\\b\\c");
         Path p2 = Paths.get("d\\e\\f");
+
+        System.out.println(p.isAbsolute());  //false
+        System.out.println(p2.isAbsolute());  //false
+
+        System.out.println(p.getRoot());  //null
+        System.out.println(p2.getRoot());  //null
 
         System.out.println(p.resolve(p2));  //a\b\c\d\e\f
         System.out.println(p2.resolve(p));  //d\e\f\a\b\c
     }
 
-    static void c4() {
-        System.out.println(Absolute_Windows_Path.resolve(Absolute_Linux_Path));  // absolute linux file
-        System.out.println(Absolute_Linux_Path.resolve(Absolute_Windows_Path));  //w file
-    }
-
     public static void main(String[] args) {
 //        m();
-//        c();
-//        c2();
-//        c3();
-        c4();
+//        m2();
+//        m3();
+        m4();
     }
 }

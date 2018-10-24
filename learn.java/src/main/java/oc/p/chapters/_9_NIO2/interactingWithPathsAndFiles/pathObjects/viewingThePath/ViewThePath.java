@@ -1,43 +1,42 @@
-package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects
-        .viewingThePath;
+package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.viewingThePath;
 
 
-import oc.p.chapters._9_NIO2.util.TestPath;
-import java.nio.file.Path;
+import utils.print.Print;
+
 import java.util.stream.IntStream;
 
+import static oc.p.chapters._9_NIO2.util.TestPath.pathList;
+
 /**
- * String	toString()
- *
+ * String toString()
+ * <p>
  * int getNameCount()
  *
  * Path	getName(int index)
  *
  * Be aware that the
- * getName(int) method is zero-indexed,
- * with the directory system root excluded from the Absolute_Linux_Path components.
+ * getName(int) method is zero-indexed
+ * and drive letter not being taken into account
+ *
+ * getName(0) != getRoot()
+ * getName(getNameCount() - 1) == getFileName();
  */
 class ViewThePath {
 
+    static void m() {
+        pathList.forEach(p -> {
+            System.out.println(p);
+            System.out.println(p.getRoot());
+            System.out.println(p.getNameCount());
+            IntStream.range(0, p.getNameCount())
+                    .forEach(i -> System.out.println(p.getName(i)));
+            Print.Delimitators.newLine();
+            System.out.println(p.getFileName());
+            Print.Delimitators.equal();
+        });
+    }
+
     public static void main(String[] args) {
-        ViewThePath viewThePath = new ViewThePath();
-        viewThePath.m(TestPath.Absolute_Linux_Path);
-        viewThePath.m2(TestPath.Absolute_Linux_Path);
-        System.out.println();
-        viewThePath.m(TestPath.Relative_Linux_Path);
-        viewThePath.m2(TestPath.Relative_Linux_Path);
-        System.out.println();
-//        viewThePath.m(TestPath.Absolute_Windows_Path);
-//        viewThePath.m2(TestPath.Absolute_Windows_Path);
-
-    }
-
-    void m(Path path) {
-        System.out.println("The Absolute_Linux_Path name is: " + path);
-    }
-
-    void m2(Path path) {
-        IntStream.range(0, path.getNameCount())
-                 .forEach(i -> System.out.println("Element: " + i + " is: " + path.getName(i)));
+        m();
     }
 }

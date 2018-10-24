@@ -1,8 +1,12 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.checkingPathType;
 
+import utils.print.Print;
+
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 import static oc.p.chapters._9_NIO2.util.TestPath.*;
 
@@ -12,17 +16,20 @@ import static oc.p.chapters._9_NIO2.util.TestPath.*;
  * Path	toAbsolutePath()
  */
 class Check {
-    static List<Path> paths = Arrays.asList(Absolute_Linux_Path,
-                                            Relative_Linux_Path,
-                                            Absolute_Windows_Path,
-                                            Relative_Windows_Path,
-                                            Empty_Path);
 
-    static void m() {
-        paths.forEach(p -> System.out.println(p + ": " + p.isAbsolute() + " \n" + p.toAbsolutePath() + "\n"));
+    static Predicate<Path> isAbsolute = Path::isAbsolute;
+    static UnaryOperator<Path> toAbsolutePath = Path::toAbsolutePath;
+
+    static void m(){
+        pathList.forEach(p->{
+            System.out.println(p);
+            System.out.println("isAbsolute: " + isAbsolute.test(p));
+            System.out.println("toAbsolutePath: " + toAbsolutePath.apply(p));
+            Print.Delimitators.newLine();
+        });
     }
 
     public static void main(String[] args) {
-        m();
+       m();
     }
 }
