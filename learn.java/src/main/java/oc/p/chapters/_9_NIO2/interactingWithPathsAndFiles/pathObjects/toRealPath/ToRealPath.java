@@ -13,9 +13,9 @@ import static oc.p.chapters._9_NIO2.util.TestPath.pathList;
 
 /**
  * Path	toRealPath(LinkOption... options)
- * <p>
+ *
  * Returns the real path of an existing file.
- * <p>
+ *
  * Remember:
  * Paths.get("") and Paths.get(".") point to the working dir
  */

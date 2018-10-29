@@ -18,44 +18,5 @@ import java.nio.file.Paths;
  */
 class IsSameFile {
 
-    static Path p, symbolicP;
-    static final String resourcesPath;
 
-    static final String TXT = "a.txt";
-    static final String SYMBOLIC = "symbolicP";
-
-    static {
-        Package pkg = new IsSameFile().getClass().getPackage();
-
-        p = Resources.NIO.File.Path.file(pkg, TXT);
-        resourcesPath= Resources.srcMainResourcesPath(pkg);
-        symbolicP  = Paths.get(resourcesPath, SYMBOLIC);
-        try {
-            Files.createSymbolicLink(symbolicP, p);
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(p);
-        System.out.println(symbolicP);
-        Delimitators.equal();
-    }
-
-    static void m() throws IOException {
-        Path p = Paths.get(resourcesPath, TXT);
-        Path p2 = Paths.get(resourcesPath,SYMBOLIC);
-
-        System.out.println(p);
-        System.out.println(p2);
-
-        System.out.println(Files.exists(p));
-        System.out.println(Files.exists(p2));
-//        System.out.println(Files.isSameFile(test, p2));  //true
-    }
-
-    public static void main(String[] args) throws IOException {
-       new IsSameFile();
-        m();
-        
-        Resources.NIO.File.Path.recursiveDelete(symbolicP, p);
-    }
 }

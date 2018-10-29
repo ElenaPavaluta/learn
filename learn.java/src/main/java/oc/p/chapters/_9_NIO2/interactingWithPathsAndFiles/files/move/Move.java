@@ -16,7 +16,7 @@ class Move {
 
 
     static Package pkg = new Move().getClass().getPackage();
-    static File f = Resources.IO.File.file(pkg, "f");
+    static File f = Resources.File.file(pkg, "f");
     static Path path = Paths.get(Resources.srcMainResourcesPath(pkg), "path");
     static Path path2 = Paths.get(Resources.srcMainResourcesPath(pkg),  "path2");
 

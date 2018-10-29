@@ -71,9 +71,6 @@ class F {
 
     }
 
-    void del(){
-        files.forEach(Resources.IO.File::recursiveDelete);
-    }
 
     public static void main(String[] args) throws IOException {
         F f = new F();
@@ -82,7 +79,6 @@ class F {
         f.m2();
 //        f.f3();
 
-
-        f.del();
+        Resources.clean();
     }
 }

@@ -6,7 +6,7 @@ import java.io.*;
 
 class PrimeReader {
 
-    static File f = Resources.IO.File.file(new PrimeReader(), "f");
+    static File f = Resources.File.file(new PrimeReader(), "f");
 
     static void write() {
         byte[] arr = new byte[]{2, 3, 5, 7, 11, 13};

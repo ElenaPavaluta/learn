@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 class Run {
     File file;
     {
-        file = Resources.IO.File.file(this.getClass().getPackage(), "s.txt");
+        file = Resources.File.file(this.getClass().getPackage(), "s.txt");
     }
 
     void write() throws IOException {
@@ -37,6 +37,6 @@ class Run {
         Run r = new Run();
         r.write();
         r.read();
-        Resources.IO.File.recursiveDelete(r.file);
+        Resources.clean();
     }
 }

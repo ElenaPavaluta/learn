@@ -10,8 +10,8 @@ class BrAndBw {
 
     {
         Package p = this.getClass().getPackage();
-        f = Resources.IO.File.file(p, "f.txt");
-        f2 = Resources.IO.File.file(p, "f2.txt");
+        f = Resources.File.file(p, "f.txt");
+        f2 = Resources.File.file(p, "f2.txt");
 
         fill(f);
     }
@@ -21,7 +21,7 @@ class BrAndBw {
 
         bb.m2(bb.m());
 
-        Resources.IO.File.recursiveDelete(bb.f, bb.f2);
+        Resources.clean();
     }
 
     private void fill(File f) {

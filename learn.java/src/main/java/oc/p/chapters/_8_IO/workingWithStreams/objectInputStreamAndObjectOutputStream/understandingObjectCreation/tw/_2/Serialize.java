@@ -9,8 +9,8 @@ import java.io.*;
 class Serialize {
     static Package pkg = new Serialize().getClass().getPackage();
 
-    static File b = Resources.IO.File.file(pkg, "b");
-    static File c = Resources.IO.File.file(pkg, "c");
+    static File b = Resources.File.file(pkg, "b");
+    static File c = Resources.File.file(pkg, "c");
 
 
     static void write() throws IOException {
