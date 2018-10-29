@@ -12,7 +12,7 @@ class OS {
 
     static Package pkg = new OS().getClass().getPackage();
     static List<TeaPot> lst = Arrays.stream(Tea.values()).map(TeaPot::new).collect(Collectors.toList());
-    static File f = Resources.IO.File.file(pkg, "f2");
+    static File f = Resources.File.file(pkg, "f2");
     static {
         try(ObjectOutputStream ous = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(f)))){
             lst.forEach(o -> {

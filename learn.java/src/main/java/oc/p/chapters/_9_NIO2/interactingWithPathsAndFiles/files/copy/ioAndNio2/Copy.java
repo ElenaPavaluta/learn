@@ -17,8 +17,8 @@ import java.util.stream.IntStream;
  */
 class Copy {
     static Package pkg = new Copy().getClass().getPackage();
-    static File in = Resources.IO.File.file(pkg, "in.txt");
-    static File out = Resources.IO.File.file(pkg, "out.txt");
+    static File in = Resources.File.file(pkg, "in.txt");
+    static File out = Resources.File.file(pkg, "out.txt");
     static Path path = Paths.get(Resources.srcMainResourcesPath(pkg), "path");
 
     static {
@@ -69,7 +69,6 @@ class Copy {
         paste();
         outStream();
 
-        Resources.IO.File.recursiveDelete(in, out);
-        Resources.NIO.File.Path.recursiveDelete(path);
+        Resources.clean();
     }
 }

@@ -6,7 +6,7 @@ import java.io.*;
 
 class StudentManager {
 
-    static File f = Resources.IO.File.file(new StudentManager(), "f");
+    static File f = Resources.File.file(new StudentManager(), "f");
 
     static void write() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {

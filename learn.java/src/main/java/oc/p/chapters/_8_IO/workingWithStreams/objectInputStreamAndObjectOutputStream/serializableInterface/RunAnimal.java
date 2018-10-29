@@ -9,7 +9,7 @@ class RunAnimal {
     File file;
 
     {
-        file = Resources.IO.File.file(this.getClass().getPackage(), "cat.txt");
+        file = Resources.File.file(this.getClass().getPackage(), "cat.txt");
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -17,8 +17,8 @@ class RunAnimal {
         r.write();
         r.read();
 
-        Resources.IO.File.recursiveDelete(r.file);
-    }
+        Resources.clean();
+}
 
     void write() throws IOException {
         try(ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {

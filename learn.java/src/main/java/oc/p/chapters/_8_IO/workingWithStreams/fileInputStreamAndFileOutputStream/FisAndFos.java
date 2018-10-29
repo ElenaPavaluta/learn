@@ -14,8 +14,8 @@ import java.util.TimerTask;
  *
  */
 class FisAndFos {
-    File r = Resources.IO.File.file(this.getClass().getPackage(), "r.txt");
-    File w = Resources.IO.File.file(this.getClass().getPackage(), "w.txt");
+    File r = Resources.File.file(this.getClass().getPackage(), "r.txt");
+    File w = Resources.File.file(this.getClass().getPackage(), "w.txt");
     File copy;
 
     public static void main(String[] args) throws IOException {
@@ -31,7 +31,7 @@ class FisAndFos {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                Resources.IO.File.recursiveDelete(ff.w, ff.copy);
+                Resources.clean();
                 System.exit(0);
             }
         }, 5);
@@ -48,8 +48,8 @@ class FisAndFos {
     }
 
     void m2() throws IOException {
-        File f = Resources.IO.File.file(this.getClass().getPackage(), "fos.jpg");
-        copy = Resources.IO.File.file(this.getClass().getPackage(), "fosCopy.jpg");
+        File f = Resources.File.file(this.getClass().getPackage(), "fos.jpg");
+        copy = Resources.File.file(this.getClass().getPackage(), "fosCopy.jpg");
 
         try(FileInputStream fis = new FileInputStream(f);
         FileOutputStream fos = new FileOutputStream(copy)){

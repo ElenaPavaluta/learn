@@ -6,7 +6,7 @@ import java.io.*;
 
 class Serialize {
 
-    static File f = Resources.IO.File.file(new Serialize(), "f");
+    static File f = Resources.File.file(new Serialize(), "f");
 
     static void write() throws IOException {
         Cereal c = new Cereal();

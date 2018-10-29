@@ -2,16 +2,10 @@ package utils.resources.files.create.populate;
 
 import utils.resources.files.Resources;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.stream.IntStream;
-
-import static utils.resources.files.Resources.NIO.File.Path.NIO_FILE;
 
 public interface CreatePopulate {
 
@@ -35,7 +29,7 @@ public interface CreatePopulate {
             }
 
             static java.io.File file(Package destination, String fileName) {
-                java.io.File file = Resources.IO.File.file(destination, fileName);
+                java.io.File file = Resources.File.file(destination, fileName);
                 try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
                     bw.write(content());
                 } catch(IOException e) {
@@ -60,7 +54,7 @@ public interface CreatePopulate {
                 }
 
                 static java.nio.file.Path file(Package pkg, String... dest) {
-                    java.nio.file.Path path = Resources.NIO.File.Path.file(pkg, dest);
+                    java.nio.file.Path path = Resources.Path.file(pkg, dest);
                     try (BufferedWriter bw = Files.newBufferedWriter(path)){
                         bw.write(content());
 

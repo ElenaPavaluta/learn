@@ -6,7 +6,7 @@ import java.io.*;
 
 class Furniture {
 
-    static File f = Resources.IO.File.file(new Furniture(), "f");
+    static File f = Resources.File.file(new Furniture(), "f");
 
     static void m() throws IOException {
         Writer w = new FileWriter(f);

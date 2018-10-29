@@ -21,7 +21,7 @@ class SameFile {
 
 
     static void m() throws IOException {
-        File file = Resources.IO.File.file(new SameFile().getClass().getPackage(), "s.txt");
+        File file = Resources.File.file(new SameFile().getClass().getPackage(), "s.txt");
         System.out.println(file.getPath());
         System.out.println(file.getAbsolutePath());
         Delimitators.equal();
@@ -31,7 +31,7 @@ class SameFile {
 
         System.out.println(Files.isSameFile(p, p2));
 
-        Resources.IO.File.recursiveDelete(file);
+        Resources.clean();
     }
 
     static void m2() throws IOException {

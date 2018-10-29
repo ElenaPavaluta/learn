@@ -9,7 +9,7 @@ import static oc.p.chapters._9_NIO2.util.TestPath.pathList;
 
 /**
  * String toString()
- * <p>
+ *
  * int getNameCount()
  *
  * Path	getName(int index)

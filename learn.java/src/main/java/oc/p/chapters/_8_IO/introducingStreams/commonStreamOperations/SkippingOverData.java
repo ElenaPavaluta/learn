@@ -4,7 +4,7 @@ import utils.resources.files.Resources;
 import java.io.*;
 
 class SkippingOverData {
-    File f = Resources.IO.File.file(this.getClass().getPackage(), "common.txt");
+    File f = Resources.File.file(this.getClass().getPackage(), "common.txt");
 
     void m() throws IOException {
         try(FileInputStream fis = new FileInputStream(f)){

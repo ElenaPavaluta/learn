@@ -17,7 +17,7 @@ class TWR {
     static {
         Package pkg = new TWR().getClass().getPackage();
         read = CreatePopulate.NIO.File.Path.file(pkg, "read");
-        write = Resources.NIO.File.Path.file(pkg, "write");
+        write = Resources.Path.file(pkg, "write");
     }
 
     static void oldApproach() throws IOException {
