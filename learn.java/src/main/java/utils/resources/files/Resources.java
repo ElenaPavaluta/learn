@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.joining;
 import static utils.resources.files.Resources.path;
 
 public interface Resources {
-    String IBM_CTANASE = "CiprianTanase";
+    String IBM_CTANASE = "AzureAD\\CiprianDorinTanase";
     String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
@@ -148,6 +148,10 @@ public interface Resources {
                 e.printStackTrace();
             }
             return path;
+        }
+
+        static java.nio.file.Path file(Object obj, String... dest){
+            return file(obj.getClass().getPackage(), dest);
         }
 
         static java.nio.file.Path file(Package pkg, String... dest) {

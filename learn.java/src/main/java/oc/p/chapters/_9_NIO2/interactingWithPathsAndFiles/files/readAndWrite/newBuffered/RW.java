@@ -2,6 +2,7 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.readAndWrite.ne
 
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -10,18 +11,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * static BufferedReader	newBufferedReader(Path path)
  * Opens a file for reading, returning a BufferedReader to read text
  * from the file in an efficient manner.
  *
- * static BufferedReader	newBufferedReader(Path path, Charset cs)
- * Opens a file for reading, returning a BufferedReader that may be used to read text from the file in an efficient manner.
+ * public static BufferedReader newBufferedReader(Path path) throws IOException
+ * public static BufferedReader newBufferedReader(Path path, Charset cs) throws IOException
  *
- * static BufferedWriter	newBufferedWriter(Path path, OpenOption... options)
  * Opens or creates a file for writing, returning a BufferedWriter to write text to the file in an efficient manner.
  *
- * static BufferedWriter	newBufferedWriter(Path path, Charset cs, OpenOption... options)
- * Opens or creates a file for writing, returning a BufferedWriter that may be used to write text to the file in an efficient manner.
+ * public static BufferedWriter newBufferedWriter(Path path, OpenOption... options) throws IOException
+ * public static BufferedWriter newBufferedWriter(Path path, Charset cs, OpenOption... options) throws IOException
  *
  */
 class RW {
@@ -37,13 +36,13 @@ class RW {
     static Path writeDir = Paths.get(loc, "\\a\\b\\c");
     static Path write = Paths.get(loc, "\\a\\b\\c", "write");
 
-    static void read(){
-        try (BufferedReader br = Files.newBufferedReader(read)){
+    static void read() {
+        try (BufferedReader br = Files.newBufferedReader(read)) {
             String s;
-            while((s = br.readLine())!=null){
+            while ((s = br.readLine()) != null) {
                 System.out.println(s);
             }
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -51,14 +50,14 @@ class RW {
     static void write() throws IOException {
         writeDir = Files.createDirectories(writeDir);
         write = Files.createFile(write);
-        try(BufferedReader br = Files.newBufferedReader(read);
-            BufferedWriter bw = Files.newBufferedWriter(write)){
+        try (BufferedReader br = Files.newBufferedReader(read);
+             BufferedWriter bw = Files.newBufferedWriter(write)) {
             String s;
-            while((s=br.readLine()) !=null){
+            while ((s = br.readLine()) != null) {
                 bw.write(s);
                 bw.newLine();
             }
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

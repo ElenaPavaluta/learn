@@ -21,7 +21,6 @@ class Delete {
     static Path pa1 = Paths.get(loc, "a", "1");
     static Path pa2 = Paths.get(loc, "a", "2");
     static Path pa3 = Paths.get(loc, "a", "3");
-    static Path[] toDel = new Path[]{p, pa, pa1, pa2, pa3,};
 
     static void init() {
         try {
@@ -78,8 +77,8 @@ class Delete {
     }
 
     public static void main(String[] args) {
-//        createAndPopulate();
+//        m();
         m2();
-        Resources.recursiveDelete(toDel);
+        Resources.clean();
     }
 }

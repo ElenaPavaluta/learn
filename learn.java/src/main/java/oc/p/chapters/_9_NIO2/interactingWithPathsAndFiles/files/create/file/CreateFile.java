@@ -2,6 +2,7 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.create.file;
 
 import utils.resources.files.Resources;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,6 +22,7 @@ class CreateFile {
 
     static Path base = Resources.Path.directory(new CreateFile());
     static Path path;
+    static File file;
 
     static void m() {
         path = Paths.get(base.toString(), "cf");
@@ -41,10 +43,38 @@ class CreateFile {
         }
     }
 
-    public static void main(String[] args) {
+    static void path(){
         m();
         m2();
+    }
 
-        Resources.recursiveDelete(path, base);
+    static void m3(){
+        File f = new File(base.toFile(), "file");
+        try {
+            System.out.println(f.createNewFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void m4(){
+        File f = new File(base.toFile(), "file");
+        try {
+            System.out.println(f.createNewFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void file(){
+        m3();
+        m4();
+    }
+
+    public static void main(String[] args) {
+//        path();
+        file();
+
+        Resources.recursiveDelete(base);
     }
 }

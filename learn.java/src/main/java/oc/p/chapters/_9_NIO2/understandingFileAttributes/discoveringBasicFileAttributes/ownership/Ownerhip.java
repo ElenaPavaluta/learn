@@ -1,94 +1,71 @@
 package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAttributes.ownership;
 
-import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
+
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.attribute.UserPrincipal;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+/**
+ * public static UserPrincipal getOwner(Path path, LinkOption... options) throws IOException
+ *
+ * public static Path setOwner(Path path, UserPrincipal owner) throws IOException
+ */
 
 class Ownerhip {
 
-    static Package pkg = new Ownerhip().getClass().getPackage();
-    static Path dirPath = Paths.get(Resources.srcMainResourcesPath(pkg));
-
-    static {
+    static Path path = Resources.Path.directory(new Ownerhip());
+    static Path ne = Paths.get("nonExistentPath");
+    static List <Path> lst = Arrays.asList(path, ne);
+    static Function <Path, UserPrincipal> GET_OWNER = p -> {
         try {
-            dirPath = Files.createDirectories(dirPath);
-        } catch(IOException e) {
-            e.printStackTrace();
+            return Files.getOwner(p);
+        } catch (IOException e) {
+            System.out.println(p + " doesn't have an owner");
+            return null;
         }
+    };
+
+    static BiConsumer <Path, UserPrincipal> SET_OWNER = (p, u) -> {
+        try {
+            Files.setOwner(p, u);
+        } catch (IOException e) {
+            System.out.println(p + " can't have an owner");
+        }
+    };
+
+    static void m() {
+        lst.forEach(p ->
+                System.out.println(GET_OWNER.apply(p) != null ? p : ""));
     }
 
-    static void m() throws IOException {
-        System.out.println(Files.getOwner(dirPath));
-    }
 
     static void m2() {
-        /**
-         * Obtain a FileSystem dbInstance
-         */
-        FileSystem fs = FileSystems.getDefault();
-        FileSystem fs2 = dirPath.getFileSystem();
-    }
-
-    static void m3(String user) {
+        UserPrincipal userPrincipal = null;
         try {
-            UserPrincipal userPrincipal = FileSystems.getDefault().getUserPrincipalLookupService()
-                                                     .lookupPrincipalByName(user);
-            System.out.println(userPrincipal);
-        } catch(IOException e) {
+            userPrincipal = FileSystems.getDefault().getUserPrincipalLookupService().lookupPrincipalByName(Resources.USER);
+            m22(userPrincipal);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    static void m33(){
-        m3(Resources.USER);
-        m3("jane");
+    private static void m22(final UserPrincipal userPrincipal) {
+        Consumer <Path> consumer = p -> SET_OWNER.accept(p, userPrincipal);
+        lst.forEach(consumer);
     }
 
-    static void m44(){
-        m4(Resources.USER);
-        m4("jane");
+    public static void main(String[] args) {
+//        m();
+        m2();
     }
 
-    static void m3344(){
-        m33();
-        m44();
-    }
-
-    static void m4(String user){
-        try {
-            UserPrincipal userPrincipal = dirPath.getFileSystem().getUserPrincipalLookupService().lookupPrincipalByName(user);
-            System.out.println(userPrincipal);
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    static void m5() throws IOException {
-        Path p = Paths.get(Resources.srcMainResourcesPath(pkg), new Ownerhip().getClass().getSimpleName());
-        p = Files.createFile(p);
-
-        System.out.println(p.getFileName());
-
-        System.out.println(Files.getOwner(p));
-        System.out.println(Files.getOwner(p).getName());
-
-        UserPrincipal up = p.getFileSystem().getUserPrincipalLookupService().lookupPrincipalByName(Resources.USER);
-
-        p = Files.setOwner(p, up);
-
-        System.out.println("After set owner");
-        System.out.println(Files.getOwner(p));
-
-        Resources.recursiveDelete(dirPath, p);
-    }
-
-    public static void main(String[] args) throws IOException {
-        m();
-        Delimitators.equal();
-//        m3344();
-
-        m5();
-    }
 }

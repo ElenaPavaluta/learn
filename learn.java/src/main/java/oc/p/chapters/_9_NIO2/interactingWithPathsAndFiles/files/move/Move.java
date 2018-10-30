@@ -11,6 +11,8 @@ import java.util.stream.IntStream;
 /**
  * static Path	move(Path source, Path target, CopyOption... options)
  * Move or rename a file to a target file.
+ *
+ *  public static long copy(Path source, OutputStream out) throws IOException
  */
 class Move {
 
@@ -66,8 +68,7 @@ class Move {
         move();
 //        read();
 
-//        Resources.IO.File.recursiveDelete(f);
-//        Resources.NIO.File.Path.recursiveDelete(path, path2);
+        Resources.clean();
     }
 }
 
