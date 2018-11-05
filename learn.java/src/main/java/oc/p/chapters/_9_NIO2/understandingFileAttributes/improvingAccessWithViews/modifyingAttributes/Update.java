@@ -4,6 +4,7 @@ import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import utils.resources.files.print.Print;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,9 +22,7 @@ import java.time.temporal.ChronoUnit;
  *
  * Returns a file attribute view of a given type
  *
- * void setTimes(FileTime lastModifiedTime,
- * FileTime lastAccessTime,
- * FileTime createTime) throws IOException;
+ * void setTimes(FileTime lastModifiedTime, FileTime lastAccessTime, FileTime createTime) throws IOException;
  */
 class Update {
     Path path = CreatePopulate.NIO.File.Path.file(this);

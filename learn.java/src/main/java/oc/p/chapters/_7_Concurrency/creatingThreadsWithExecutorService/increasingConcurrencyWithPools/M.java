@@ -12,12 +12,14 @@ class M {
     static {
         executorService = Executors.newSingleThreadExecutor();
         executorService = Executors.newSingleThreadScheduledExecutor();
+
         executorService = Executors.newCachedThreadPool();
+
         executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         executorService = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
     }
 
-    static{
+    static {
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         scheduledExecutorService = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
     }

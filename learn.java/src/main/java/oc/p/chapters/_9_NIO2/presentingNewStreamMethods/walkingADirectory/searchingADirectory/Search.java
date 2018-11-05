@@ -1,6 +1,7 @@
 package oc.p.chapters._9_NIO2.presentingNewStreamMethods.walkingADirectory.searchingADirectory;
 
 import utils.resources.files.Resources;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,12 +17,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * static Stream<Path>	find(Path start,
- * int maxDepth,
- * BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options)
- *
  * Return a Stream that is lazily populated with Path by searching for files in a file tree rooted at a given
  * starting file.
+ *
+ * The file tree is traversed depth-first
+ *
+ * static Stream<Path>	find(Path start, int maxDepth, BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options)
  */
 class Search {
     Path path = Paths.get(Resources.SRC_MAIN_JAVA);
@@ -35,9 +36,9 @@ class Search {
     void m() {
 
         try {
-            Stream<Path> stream = Files.find(path, Byte.MAX_VALUE, (p, bfa) -> bfa.isDirectory());
+            Stream <Path> stream = Files.find(path, Byte.MAX_VALUE, (p, bfa) -> bfa.isDirectory());
             System.out.println(stream.count());
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -55,15 +56,15 @@ class Search {
                     .collect(Collectors.groupingBy(p -> {
                         try {
                             return LocalDateTime.ofInstant(Files.readAttributes(p, BasicFileAttributes.class)
-                                                                .creationTime()
-                                                                .toInstant(),
-                                                           ZoneId.systemDefault()).getMonth();
-                        } catch(IOException e) {
+                                            .creationTime()
+                                            .toInstant(),
+                                    ZoneId.systemDefault()).getMonth();
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                         return null;
                     })).forEach((m, lp) -> System.out.println(m + " -> " + lp.size()));
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
 
         }

@@ -7,8 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * static Stream<Path>	list(Path dir)
- * Return a lazily populated Stream,
+ * static Stream<Path>	list(Path dir) Return a lazily populated Stream,
  * the elements of which are the entries in the directory.
  */
 class List {

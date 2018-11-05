@@ -4,19 +4,20 @@ package oc.p.chapters._9_NIO2.understandingFileAttributes.improvingAccessWithVie
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
 import utils.resources.files.print.Print;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 
 /**
- * static <A extends BasicFileAttributes> A	readAttributes(Path path, Class<A> dbType, LinkOption... options)
+ * static <A extends BasicFileAttributes> A	readAttributes(Path path, Class<A> type, LinkOption... options)
  */
 class Views {
 
-    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(new Views().getClass().getPackage()) ;
+    static java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(new Views().getClass().getPackage());
 
-    static void m(){
+    static void m() {
         try {
             /**
              * Only this for exam
@@ -27,7 +28,7 @@ class Views {
             FileTime ft = bfa.creationTime();
 
             Print.NIO.print(bfa);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -36,6 +37,6 @@ class Views {
     public static void main(String[] args) {
         m();
 
-        Resources.recursiveDelete(path);
+        Resources.clean();
     }
 }

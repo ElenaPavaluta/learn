@@ -26,8 +26,8 @@ class ShutdownVsShutdownNow {
             exec(exec);
         } finally {
             if (exec != null) exec.shutdown();
-            System.out.println(exec.isShutdown());
-            System.out.println(exec.isTerminated());
+            System.out.println(exec.isShutdown());  //true
+            System.out.println(exec.isTerminated());  //false
         }
     }
 
@@ -38,8 +38,8 @@ class ShutdownVsShutdownNow {
             exec(exec);
         } finally {
             if (exec != null) exec.shutdownNow().forEach(r -> System.out.println(r.hashCode()));
-            System.out.println(exec.isShutdown());
-            System.out.println(exec.isTerminated());
+            System.out.println(exec.isShutdown());  //true
+            System.out.println(exec.isTerminated());  //true
         }
     }
 
