@@ -13,7 +13,7 @@ class ExecuteRunnable {
         try {
             exec = Executors.newFixedThreadPool(N_THREADS);
             IntStream.rangeClosed(1, N_THREADS)
-                    .mapToObj(i->new R())
+                    .mapToObj(i -> new R())
                     .forEach(exec::execute);
         } finally {
             if (exec != null) {
