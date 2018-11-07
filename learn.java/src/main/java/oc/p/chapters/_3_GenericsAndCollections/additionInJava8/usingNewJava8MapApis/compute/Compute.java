@@ -1,7 +1,6 @@
 package oc.p.chapters._3_GenericsAndCollections.additionInJava8.usingNewJava8MapApis.compute;
 
 /**
- *
  * default V	compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
  * Attempts to compute a mapping for the specified key and its current mapped value (or null
  * if there is no current mapping).
