@@ -1,17 +1,17 @@
 package oc.p.chapters._7_Concurrency.usingConcurrentCollections.workingWithConcurrentClasses.set;
 
 import java.util.concurrent.ConcurrentSkipListSet;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 class Set_ {
 
     /**
-     *  ->Set
+     * ->Set
      */
-    CopyOnWriteArrayList<Integer> copyOnWriteArrayList;
+    CopyOnWriteArraySet <Integer> copyOnWriteArraySet;
 
     /**
      * -> NavigableSet -> SortedSet ->Set
      */
-    ConcurrentSkipListSet<Integer> concurrentSkipListSet;
+    ConcurrentSkipListSet <Integer> concurrentSkipListSet;
 }

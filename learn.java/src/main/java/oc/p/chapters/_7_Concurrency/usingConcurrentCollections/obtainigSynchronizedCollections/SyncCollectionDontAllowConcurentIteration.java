@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-class SC {
+class SyncCollectionDontAllowConcurentIteration {
 
     static void m() {
         List<Integer> lst = Collections.synchronizedList(new ArrayList<>(Arrays.asList(4, 3, 52)));
