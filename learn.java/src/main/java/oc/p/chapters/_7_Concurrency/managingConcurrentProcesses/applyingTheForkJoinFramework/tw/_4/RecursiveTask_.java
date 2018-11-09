@@ -27,7 +27,8 @@ class RecursiveTask_ extends RecursiveTask <Double> {
             RecursiveTask <Double> rt = new RecursiveTask_(start, middle);
             rt.fork();
             RecursiveTask_ rt2 = new RecursiveTask_(middle, end);
-            return rt2.compute() + rt.join();
+            rt2.fork();
+            return rt2.join() + rt.join();
         }
     }
 
