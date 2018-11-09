@@ -2,27 +2,23 @@ package oc.p.chapters._7_Concurrency.workingWithParallelStreams.processingTasksI
 
 import java.util.Arrays;
 
-/**
- *
- */
 class Parallel {
 
-    static void notInParallel(){
-        Arrays.asList(1, 2, 3, 4, 5 ,6)
+    static void notInParallel() {
+        Arrays.asList(1, 2, 3, 4, 5, 6)
                 .stream()
                 .forEach(System.out::println);
     }
 
 
-    static void parallelStream(){
+    static void parallelStream() {
         Arrays.asList(1, 2, 3, 4, 5, 6)
                 .parallelStream()
                 .forEach(System.out::println);
-
     }
 
-    static void parallelStreamOrdered(){
-        Arrays.asList(1, 2,3, 4, 5, 6)
+    static void parallelStreamOrdered() {
+        Arrays.asList(1, 2, 3, 4, 5, 6)
                 .parallelStream()
                 .forEachOrdered(System.out::println);
     }

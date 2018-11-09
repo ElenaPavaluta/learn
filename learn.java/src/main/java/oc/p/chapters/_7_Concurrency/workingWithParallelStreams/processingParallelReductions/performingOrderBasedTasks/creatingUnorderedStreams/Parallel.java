@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * The streams are considered ordered by default, but one can create an unordered one
  *
- * S unordered()
+ * Stream unordered()
  *
  * This method does not actually reorder the elements;
  * it just tells the JVM that if an order-based stream operation is applied,
