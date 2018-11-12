@@ -1,5 +1,6 @@
 package oc.p.chapters._10_.introducingTheInterfacesOfJdbc;
 
+import org.apache.derby.jdbc.EmbeddedDriver;
 import utils.print.Print;
 import utils.resources.db.Dbs;
 import java.sql.*;
@@ -21,7 +22,7 @@ class Interfaces {
     static ResultSet RESULTSET;
 
     static void m() {
-//        DRIVER = new EmbeddedDriver();
+        DRIVER = new EmbeddedDriver();
         try(Connection connection = DriverManager.getConnection(Dbs.ZOO.url());
             Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM SPECIES");
