@@ -8,10 +8,12 @@ import java.util.stream.IntStream;
 import static java.util.stream.Collectors.toCollection;
 
 /**
- * This method is specific to List interface
+ * This method is specific to List interface and Map
  *
  * default void	replaceAll(UnaryOperator<E> operator)
- */
+ *
+ * default void replaceAll(BiFunction<? super K, ? super V, ? extends V> function)
+        */
 class Lst {
 
     static void m() {

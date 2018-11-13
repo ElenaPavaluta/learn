@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 class Run {
 
-    private static final String BASE_NAME = "oc.test.chapters.c_5_DatesStringsAndLocalization.addingInternationalozationAndLocalization.usingAResourceBundle.creatingAJavaClassResourceBundle.Tax";
+    private static final String BASE_NAME = "Tax";
 
     static void m(Locale locale){
         ResourceBundle rb = ResourceBundle.getBundle(BASE_NAME, locale);

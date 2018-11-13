@@ -17,7 +17,7 @@ class Use {
     static Path path;
 
     static void init() {
-        path = Resources.propertiesFilesPath("q_de_DE");
+        path = Resources.propertiesFileAsPath("q_de_DE");
         System.out.println(path.toString());
         try {
             path = Files.createFile(path);

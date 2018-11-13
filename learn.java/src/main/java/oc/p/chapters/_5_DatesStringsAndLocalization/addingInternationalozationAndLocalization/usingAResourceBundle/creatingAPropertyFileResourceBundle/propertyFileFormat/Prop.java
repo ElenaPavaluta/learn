@@ -52,6 +52,6 @@ class Prop {
 
     public static void main(String[] args) {
         m();
-        Resources.recursiveDelete(de_De, de, prop);
+        Resources.clean();
     }
 }

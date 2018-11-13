@@ -33,6 +33,7 @@ public interface Resources {
         return false;
     };
 
+
     Consumer <java.nio.file.Path> DELETE_IF_EXISTS = p -> {
         try {
             Files.deleteIfExists(p);
@@ -41,12 +42,24 @@ public interface Resources {
         }
     };
 
-    static java.nio.file.Path propertiesFilesPath(String name) {
-        return Paths.get(SRC_MAIN_RESOURCES, name + DOT_PROPERTIES);
+    static java.nio.file.Path propertiesFileAsPath(String name) {
+        java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, name + DOT_PROPERTIES);
+        if (!Files.exists(path)) {
+            try {
+                Files.createFile(path);
+            } catch (IOException e) {
+                System.err.println("Err: Files.createFile(path)");
+            }
+        }
+        return path;
     }
 
     static String path(String path) {
         return path.replace(".", java.io.File.separator);
+    }
+
+    static String path(Object obj) {
+        return path(obj.getClass().getPackage());
     }
 
     static String path(Package pkg) {
@@ -55,6 +68,14 @@ public interface Resources {
 
     static String srcMainResourcesPath(Package pkg) {
         return SRC_MAIN_RESOURCES + java.io.File.separator + path(pkg);
+    }
+
+    static String srcMainJavaPath(Object obj) {
+        return srcMainJavaPath(obj.getClass().getPackage());
+    }
+
+    static String listResourceBundleFileName(Object obj) {
+        return obj.getClass().getPackage().getName() + "." + obj.getClass().getSimpleName().split("_")[0];
     }
 
     static String srcMainJavaPath(Package pkg) {
@@ -150,7 +171,7 @@ public interface Resources {
             return path;
         }
 
-        static java.nio.file.Path file(Object obj, String... dest){
+        static java.nio.file.Path file(Object obj, String... dest) {
             return file(obj.getClass().getPackage(), dest);
         }
 

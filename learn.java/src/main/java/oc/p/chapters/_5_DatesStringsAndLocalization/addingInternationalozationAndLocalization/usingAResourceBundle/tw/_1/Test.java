@@ -43,6 +43,6 @@ class Test {
     public static void main(String[] args) throws IOException {
         init();
         m();
-        Resources.recursiveDelete(path, path2);
+        Resources.clean();
     }
 }
