@@ -38,7 +38,7 @@ class Use {
     }
 
     static void m() {
-        resourceBundle = ResourceBundle.getBundle("q");
+        resourceBundle = ResourceBundle.getBundle("interview");
         properties = new Properties();
         resourceBundle.keySet().stream()
                 .forEach(k -> properties.put(k, resourceBundle.getString(k)));
@@ -49,7 +49,7 @@ class Use {
     }
 
     static void m2() {
-        resourceBundle = ResourceBundle.getBundle("q");
+        resourceBundle = ResourceBundle.getBundle("interview");
         resourceBundle.keySet().forEach(k -> System.out.println(resourceBundle.getString(k)));
     }
 

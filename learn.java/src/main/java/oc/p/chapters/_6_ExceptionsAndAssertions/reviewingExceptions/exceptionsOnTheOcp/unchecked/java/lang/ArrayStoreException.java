@@ -14,7 +14,7 @@ class ArrayStoreException {
 
     static void m2(){
         Object[] ao = new Integer[3];
-        ao[0] = "q";
+        ao[0] = "interview";
         int nr = (Integer) ao[0];
     }
 

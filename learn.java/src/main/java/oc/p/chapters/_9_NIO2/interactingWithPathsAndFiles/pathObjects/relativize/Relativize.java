@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 /**
  * Path	relativize(Path other)
  *
- * Constructs a relative file between this file and a given file.
+ * Constructs a relative path between this path and a given path.
  */
 class Relativize {
 

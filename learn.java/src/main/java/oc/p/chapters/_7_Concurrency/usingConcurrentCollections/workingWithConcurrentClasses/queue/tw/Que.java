@@ -55,10 +55,10 @@ class Que {
     public static void main(String[] args) {
         Que q = new Que();
 
-//        q.offer();
-//        q.element();
-//        q.poll();
-//        q.remove();
+//        interview.offer();
+//        interview.element();
+//        interview.poll();
+//        interview.remove();
         q.peek();
     }
 }

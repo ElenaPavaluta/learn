@@ -9,8 +9,8 @@ class Null {
 
     public static void main(String[] args) {
         Null q = new Null();
-//        q.queue();
-//        q.deque();
+//        interview.queue();
+//        interview.deque();
         q.linkedList();
     }
 

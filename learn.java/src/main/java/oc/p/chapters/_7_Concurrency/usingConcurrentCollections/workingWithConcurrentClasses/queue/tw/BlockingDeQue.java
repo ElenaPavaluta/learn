@@ -94,7 +94,7 @@ class BlockingDeQue {
     public static void main(String[] args) {
         BlockingDeQue q = new BlockingDeQue();
 
-//        q.print();
+//        interview.print();
         q.m();
     }
 }

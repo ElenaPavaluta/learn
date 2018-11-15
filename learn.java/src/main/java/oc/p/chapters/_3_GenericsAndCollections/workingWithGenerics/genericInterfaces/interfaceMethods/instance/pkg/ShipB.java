@@ -79,7 +79,7 @@ class ShipB implements Ship<Robot, Elephant>
 	}
 
 
-//	public abstract <T, Q> T m4(U u, Q q);
+//	public abstract <T, Q> T m4(U u, Q interview);
 	static void m4()
 	{
 		r = inst.m4(e, new StringBuilder());

@@ -45,7 +45,7 @@ class Add {
         System.out.println(q);
 
         System.out.println();
-//        q = new LinkedList<String>(1);  //compiler error:  LinkedList doesn't have an initial size constructor
+//        interview = new LinkedList<String>(1);  //compiler error:  LinkedList doesn't have an initial size constructor
     }
 
     public static void main(String[] args) {

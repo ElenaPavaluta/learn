@@ -2,13 +2,20 @@ package utils.resources.files;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
 import static utils.resources.files.Resources.path;
@@ -24,6 +31,19 @@ public interface Resources {
     String SRC_MAIN_JAVA = SRC_MAIN + java.io.File.separator + JAVA;
     String DOT_PROPERTIES = ".properties";
     Comparator <java.nio.file.Path> COMPARE_BY_DISTANCE_FROM_SOURCE = Comparator.comparingInt(java.nio.file.Path::getNameCount);
+
+    Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR = p->{
+        Instant instant = Instant.now();
+        Instant creationTime = null;
+        try{
+            BasicFileAttributes bfa = Files.readAttributes(p, BasicFileAttributes.class);
+            creationTime = bfa.creationTime().toInstant();
+        } catch (IOException e) {
+            System.out.println("Err:  Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR");
+        }
+        return creationTime.isAfter(instant.minus(1, ChronoUnit.HOURS));
+    };
+
     BiPredicate <java.nio.file.Path, java.nio.file.Path> IS_SAME_FILE = (p, p2) -> {
         try {
             return Files.isSameFile(p, p2);
@@ -94,6 +114,13 @@ public interface Resources {
     static void clean() {
         java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES);
         recursiveDelete(path);
+    }
+
+    static void deletePathCreatedInTheLastHour(java.nio.file.Path path){
+        IntStream.range(0, path.getNameCount())
+                .mapToObj(path::getName)
+                .filter(IS_CREATED_IN_THE_LAST_HOUR)
+                .forEach(System.out::println);
     }
 
     static void recursiveDelete(Object... resources) {

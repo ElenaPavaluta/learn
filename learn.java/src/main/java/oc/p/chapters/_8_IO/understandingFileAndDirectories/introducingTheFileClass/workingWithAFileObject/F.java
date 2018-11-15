@@ -44,7 +44,7 @@ class F {
     }
 
     void m2() throws IOException {
-        java.io.File f = new java.io.File(files.get(0).getPath(), "q.txt");
+        java.io.File f = new java.io.File(files.get(0).getPath(), "interview.txt");
         f.createNewFile();
 
         files.add(f);

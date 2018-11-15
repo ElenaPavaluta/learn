@@ -21,7 +21,7 @@ class Poll {
 
         System.out.println(q.remove()); //1
         System.out.println(q.poll()); //2
-//        System.out.println(q.pop());  //Deque method
+//        System.out.println(interview.pop());  //Deque method
 
         System.out.println(q.poll());  //null
         System.out.println(q.remove());  //RE
@@ -58,7 +58,7 @@ class Poll {
     }
 
     public static void main(String[] args) {
-//        q();
+//        interview();
 //        dq();
         ll();
     }
