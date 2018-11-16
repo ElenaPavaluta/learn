@@ -2,12 +2,9 @@ package utils.resources.files;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
 import java.time.Instant;
-import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collection;
@@ -25,6 +22,7 @@ public interface Resources {
     String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
+    String ROOT = ".";
     String SRC_MAIN = "src" + java.io.File.separator + "main";
     String SRC_MAIN_RESOURCES = SRC_MAIN + java.io.File.separator + RESOURCES;
     String SRC_MAIN_RESOURCES_DB = SRC_MAIN_RESOURCES + java.io.File.separator + "db";
@@ -32,14 +30,15 @@ public interface Resources {
     String DOT_PROPERTIES = ".properties";
     Comparator <java.nio.file.Path> COMPARE_BY_DISTANCE_FROM_SOURCE = Comparator.comparingInt(java.nio.file.Path::getNameCount);
 
-    Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR = p->{
+    Predicate <java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR = p -> {
         Instant instant = Instant.now();
         Instant creationTime = null;
-        try{
+        try {
             BasicFileAttributes bfa = Files.readAttributes(p, BasicFileAttributes.class);
             creationTime = bfa.creationTime().toInstant();
         } catch (IOException e) {
-            System.out.println("Err:  Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR");
+//            System.out.println("Err:  Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR");
+            return false;
         }
         return creationTime.isAfter(instant.minus(1, ChronoUnit.HOURS));
     };
@@ -116,11 +115,12 @@ public interface Resources {
         recursiveDelete(path);
     }
 
-    static void deletePathCreatedInTheLastHour(java.nio.file.Path path){
-        IntStream.range(0, path.getNameCount())
-                .mapToObj(path::getName)
-                .filter(IS_CREATED_IN_THE_LAST_HOUR)
-                .forEach(System.out::println);
+    static void deleteRootBasedPathCreatedInTheLastHour(java.nio.file.Path path) {
+//        IntStream.range(0, path.getNameCount())
+//                .mapToObj(path::getName)
+//                .filter(IS_CREATED_IN_THE_LAST_HOUR)]#=
+//
+//                .forEach(System.out::println);
     }
 
     static void recursiveDelete(Object... resources) {
@@ -150,10 +150,6 @@ public interface Resources {
 
     interface Path {
         String NIO_FILE = "nio.file";
-
-
-        Predicate <java.nio.file.Path> EXISTS = Files::exists;
-        Predicate <java.nio.file.Path> SYMBOLIC_LINK = Files::isSymbolicLink;
 
         static java.nio.file.Path directory(Object obj) {
             return directory(obj.getClass().getPackage());
