@@ -4,9 +4,6 @@ import utils.resources.files.Resources;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -65,6 +62,6 @@ class Ms {
         m();
 
 
-        Resources.recursiveDelete(file, dir);
+        Resources.cleanSrcMainResources();
     }
 }

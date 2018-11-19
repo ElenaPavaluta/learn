@@ -59,6 +59,6 @@ class Run {
     public static void main(String[] args) throws IOException {
         move();
         read();
-        Resources.recursiveDelete(toDel.toArray(new Object[0]));
+        Resources.cleanSrcMainResources();
     }
 }

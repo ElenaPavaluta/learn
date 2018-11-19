@@ -39,7 +39,7 @@ class Create {
 
     void del() {
         for(java.io.File f : files) {
-            Resources.clean();
+            Resources.cleanSrcMainResources();
         }
     }
 }

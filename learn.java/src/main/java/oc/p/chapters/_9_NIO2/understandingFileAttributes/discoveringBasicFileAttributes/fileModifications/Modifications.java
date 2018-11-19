@@ -73,6 +73,6 @@ class Modifications {
         m();
         m2();
         m3();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

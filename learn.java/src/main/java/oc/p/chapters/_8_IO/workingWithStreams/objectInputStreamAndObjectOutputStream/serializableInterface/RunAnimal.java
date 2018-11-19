@@ -17,7 +17,7 @@ class RunAnimal {
         r.write();
         r.read();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
 }
 
     void write() throws IOException {

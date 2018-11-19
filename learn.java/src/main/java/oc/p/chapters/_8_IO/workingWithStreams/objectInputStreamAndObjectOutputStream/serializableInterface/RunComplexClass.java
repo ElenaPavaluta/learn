@@ -46,6 +46,6 @@ class RunComplexClass {
         run.write();
         run.read();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

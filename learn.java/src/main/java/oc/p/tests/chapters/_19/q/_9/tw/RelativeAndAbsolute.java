@@ -1,7 +1,6 @@
 package oc.p.tests.chapters._19.q._9.tw;
 
 import utils.print.Print;
-import utils.resources.files.PathRoot;
 import utils.resources.files.Resources;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ class RelativeAndAbsolute {
     static Path path;
 
     static void m() throws IOException {
-        path = Paths.get("/root/a");
+        path = Paths.get("/root/a", "b", "c", "d", "e", "f");
         path = Files.createDirectories(path);
 
         System.out.println(path);
@@ -29,7 +28,7 @@ class RelativeAndAbsolute {
 //                .forEach(System.out::println);
 //
 //        Delimitators.equal();
-        Resources.delete(PathRoot.C, path);
+        Resources.delete(path);
     }
 
     static void m2() throws IOException {
@@ -38,9 +37,17 @@ class RelativeAndAbsolute {
         System.out.println(path.toRealPath());
     }
 
+    static void m3() throws IOException {
+        Path path = Paths.get( "ro", "a", "b", "c", "d", "e", "f");
+        path = Files.createDirectories(path);
+
+        Resources.delete(path);
+    }
+
     public static void main(String[] args) throws IOException {
         m();
 //        m2();
+        m3();
     }
 
 

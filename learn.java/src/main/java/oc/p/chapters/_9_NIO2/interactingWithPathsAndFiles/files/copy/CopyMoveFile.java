@@ -110,7 +110,7 @@ class CopyMoveFile {
         move();
         moveBack();
         copy2();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 
 

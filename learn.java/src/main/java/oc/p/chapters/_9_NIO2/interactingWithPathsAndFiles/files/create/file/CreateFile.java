@@ -75,6 +75,6 @@ class CreateFile {
 //        path();
         file();
 
-        Resources.recursiveDelete(base);
+        Resources.deleteFromSrcMainResources(base);
     }
 }

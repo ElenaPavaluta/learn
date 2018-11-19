@@ -37,6 +37,6 @@ class CreateDir {
     public static void main(String[] args) {
         m();
         m2();
-        Resources.recursiveDelete(f, p, base);
+        Resources.cleanSrcMainResources();
     }
 }

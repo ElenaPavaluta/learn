@@ -80,6 +80,6 @@ class FrFw {
         m4();
         m5();
 
-        Resources.recursiveDelete(f, f2, dir);
+        Resources.cleanSrcMainResources();
     }
 }

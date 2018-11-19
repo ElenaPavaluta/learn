@@ -53,7 +53,7 @@ class FisFos2 {
     }
 
     static void m2() throws IOException {
-        Resources.recursiveDelete(fileArr);
+        Resources.cleanSrcMainResources();
         fileArr.createNewFile();
 
         try (FileInputStream fis = new FileInputStream(file); FileOutputStream fos = new FileOutputStream(fileArr)) {
@@ -68,7 +68,7 @@ class FisFos2 {
 //        m();
         m2();
 
-        Resources.recursiveDelete(file, fileArr, dir);
+        Resources.cleanSrcMainResources();
     }
 
 }

@@ -66,6 +66,6 @@ class RW {
         read();
         write();
 
-        Resources.recursiveDelete(file, read, write);
+        Resources.cleanSrcMainResources();
     }
 }

@@ -19,6 +19,6 @@ class Sample {
             pw.printf("It may rain 21.2 more inches this year");
         }
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

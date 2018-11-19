@@ -72,6 +72,6 @@ class TWR {
         peek();
         newApproach();
         peek();
-        Resources.recursiveDelete(read, write);
+        Resources.cleanSrcMainResources();
     }
 }

@@ -12,7 +12,7 @@ class A {
 //        a.dir();
         a.file();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
 
     }
 

@@ -32,6 +32,6 @@ class Create {
     public static void main(String[] args) throws IOException {
         System.out.println(path);
         m();
-        Resources.recursiveDelete(f, f2, f3, f4);
+        Resources.cleanSrcMainResources();
     }
 }

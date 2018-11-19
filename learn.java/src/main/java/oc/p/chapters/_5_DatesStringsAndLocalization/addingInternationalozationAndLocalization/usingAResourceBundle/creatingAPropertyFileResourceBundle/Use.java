@@ -57,6 +57,6 @@ class Use {
         init();
         m();
 //        m2();
-        Resources.recursiveDelete(path);
+        Resources.deleteFromSrcMainResources(path);
     }
 }

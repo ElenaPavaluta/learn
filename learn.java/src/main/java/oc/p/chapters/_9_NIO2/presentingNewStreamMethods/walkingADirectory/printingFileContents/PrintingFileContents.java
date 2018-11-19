@@ -30,6 +30,6 @@ class PrintingFileContents {
         PrintingFileContents pfc = new PrintingFileContents();
 
         pfc.m();
-        Resources.recursiveDelete(pfc.path);
+        Resources.deleteFromSrcMainResources(pfc.path);
     }
 }

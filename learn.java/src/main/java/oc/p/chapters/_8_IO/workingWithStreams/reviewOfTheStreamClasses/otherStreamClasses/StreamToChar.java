@@ -11,7 +11,7 @@ class StreamToChar {
         StreamToChar streamToChar = new StreamToChar();
         streamToChar.write();
         streamToChar.read();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 
     void write() throws IOException {

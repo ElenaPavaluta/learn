@@ -31,6 +31,6 @@ class C {
     public static void main(String[] args) throws IOException {
         m();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

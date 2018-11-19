@@ -44,6 +44,6 @@ class C {
         write();
         read();
 
-        Resources.recursiveDelete(f, dir);
+        Resources.cleanSrcMainResources();
     }
 }

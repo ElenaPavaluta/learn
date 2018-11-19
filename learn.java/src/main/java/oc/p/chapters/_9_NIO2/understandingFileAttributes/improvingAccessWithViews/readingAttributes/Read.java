@@ -66,6 +66,6 @@ class Read {
         System.out.println(ft2);
         System.out.println(ft3);
 
-        Resources.recursiveDelete(path);
+        Resources.deleteFromSrcMainResources(path);
     }
 }

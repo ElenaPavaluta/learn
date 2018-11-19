@@ -34,7 +34,7 @@ class Compare {
 //        comp.createDirs();
         comp.list();
 
-        Resources.recursiveDelete(comp.file, comp.path);
+        Resources.cleanSrcMainResources();
     }
 
     void exits() {
@@ -162,7 +162,7 @@ class Compare {
             e.printStackTrace();
         }
 
-        Resources.recursiveDelete(f, p);
+        Resources.cleanSrcMainResources();
     }
 
     void createDir(){
@@ -200,7 +200,7 @@ class Compare {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        Resources.recursiveDelete(f, p);
+        Resources.cleanSrcMainResources();
     }
 
     void list(){

@@ -1,15 +1,15 @@
 package utils.resources.files;
 
+import utils.print.Print;
+
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
-import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
 
@@ -18,7 +18,6 @@ public interface Resources {
     String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
-    String ROOT = "";
     String SRC_MAIN = "src" + java.io.File.separator + "main";
     String SRC_MAIN_RESOURCES = SRC_MAIN + java.io.File.separator + RESOURCES;
     String SRC_MAIN_RESOURCES_DB = SRC_MAIN_RESOURCES + java.io.File.separator + "db";
@@ -90,48 +89,54 @@ public interface Resources {
         return file.getAbsolutePath();
     }
 
-    static void clean() {
+    static void cleanSrcMainResources() {
         java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES);
-        recursiveDelete(path);
+        deleteFromSrcMainResources(path);
     }
 
-    static void recursiveDelete(Object... resources) {
-        Arrays.stream(resources).forEach(resource -> {
-            if (resource instanceof File) {
-                recursiveDelete(((java.io.File) resource).toPath());
-            } else if (resource instanceof Path) {
-                recursiveDelete(resource);
-            }
-        });
-    }
 
-    static void recursiveDelete(java.nio.file.Path base) {
+    static void deleteFromSrcMainResources(java.nio.file.Path base) {
         try {
             Files.walk(base)
                     .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
                     .filter(p -> IS_SAME_FILE.negate().test(p, base))
+                    .peek(System.out::println)
                     .forEach(DELETE_IF_EXISTS);
         } catch (IOException e) {
-            System.err.println("Err: static void recursiveDelete(Path base)");
+            System.err.println("Err: static void deleteFromSrcMainResources(Path base)");
         }
     }
 
-    static void recursiveDelete(Collection <Object> collection) {
-        recursiveDelete(collection.toArray(new Object[0]));
-    }
+    static void delete(java.nio.file.Path path) {
+        Print.Delimitators.equal();
+        System.out.println("delete -> " + path);
+        final java.nio.file.Path toDel = Arrays.stream(PathRoot.values())
+                .map(pth -> {
+                    try {
+                        return Files.find(pth.path(), 1, (p, bfa) -> p.getFileName() != null && p.getFileName().startsWith(path.getName(0)))
+                                .findFirst()
+                                .orElse(null);
+                    } catch (IOException e) {
+                        System.err.println("Err: delete(Path path) -> find ");
+                        return null;
+                    }
+                })
+                .filter(p -> p != null)
+                .findFirst()
+                .orElse(null);
 
-    static void delete(final PathRoot pathRoot, java.nio.file.Path path) {
-        try {
-            Files.walk(pathRoot.path(), 1)
-                    .filter(p->p!=null)
-                    .filter(p->p.getFileName().toString().startsWith(path.getName(0).toString()))
-                    .forEach(System.out::println);
-//                    .forEach(p-> System.out.println(p.getFileName()));
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        if (toDel != null) {
+            try {
+                Files.walk(toDel)
+                        .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
+                        .peek(System.out::println)
+                        .forEach(DELETE_IF_EXISTS);
+            } catch (IOException e) {
+                System.err.println("Err: delete(Path path) -> walk ");
+            }
         }
     }
-
 
 
     interface Path {

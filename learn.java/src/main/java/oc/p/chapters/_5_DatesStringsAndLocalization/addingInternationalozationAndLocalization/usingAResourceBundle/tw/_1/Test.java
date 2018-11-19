@@ -43,6 +43,6 @@ class Test {
     public static void main(String[] args) throws IOException {
         init();
         m();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

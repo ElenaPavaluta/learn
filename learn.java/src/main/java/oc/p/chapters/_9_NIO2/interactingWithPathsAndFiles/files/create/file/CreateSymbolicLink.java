@@ -49,6 +49,6 @@ class CreateSymbolicLink {
 //        m();  //IOE
         m2();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

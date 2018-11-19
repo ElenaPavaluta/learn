@@ -51,7 +51,7 @@ class CreateDirs {
     public static void main(String[] args) {
         createDirectories();
         createExistingDirectories();
-        Resources.recursiveDelete(p, f);
+        Resources.cleanSrcMainResources();
     }
 }
 

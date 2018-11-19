@@ -23,6 +23,6 @@ class Exists {
 
     public static void main(String[] args) {
         m();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

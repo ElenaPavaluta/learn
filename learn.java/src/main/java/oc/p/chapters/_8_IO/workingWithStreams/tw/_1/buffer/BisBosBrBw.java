@@ -64,6 +64,6 @@ class BisBosBrBw {
         write();
 //        read();
         brbw();
-        Resources.recursiveDelete(f, f2, dir);
+        Resources.cleanSrcMainResources();
     }
 }

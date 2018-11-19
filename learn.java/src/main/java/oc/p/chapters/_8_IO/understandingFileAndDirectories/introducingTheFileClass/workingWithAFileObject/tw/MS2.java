@@ -72,6 +72,6 @@ class MS2 {
     public static void main(String[] args) {
         m();
 
-        Resources.recursiveDelete(lst.toArray(new File[0]), dest);
+        Resources.cleanSrcMainResources();
     }
 }

@@ -32,7 +32,7 @@ class PrintWriterClass {
         pwc.write();
         pwc.print();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 
     void write() throws FileNotFoundException {

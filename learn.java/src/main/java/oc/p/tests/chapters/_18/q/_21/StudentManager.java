@@ -40,7 +40,7 @@ class StudentManager {
     public static void main(String[] args) {
         write();
         read();
-        Resources.recursiveDelete(f);
+        Resources.cleanSrcMainResources();
     }
 
 }

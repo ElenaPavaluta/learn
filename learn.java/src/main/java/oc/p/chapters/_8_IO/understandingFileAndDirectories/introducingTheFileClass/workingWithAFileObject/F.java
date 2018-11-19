@@ -79,6 +79,6 @@ class F {
         f.m2();
 //        f.f3();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

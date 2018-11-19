@@ -45,7 +45,7 @@ class CreateLink {
         m();
 //        m2();  //IOE
 //        m();  //IOE: the file already exists
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 
 }

@@ -32,6 +32,6 @@ class Resume {
     public static void main(String[] args) {
         runM();
 
-        Resources.recursiveDelete(f3, f, f2);
+        Resources.cleanSrcMainResources();
     }
 }

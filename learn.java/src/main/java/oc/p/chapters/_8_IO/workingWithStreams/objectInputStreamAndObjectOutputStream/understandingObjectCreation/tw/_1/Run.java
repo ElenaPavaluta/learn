@@ -37,6 +37,6 @@ class Run {
         Run r = new Run();
         r.write();
         r.read();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

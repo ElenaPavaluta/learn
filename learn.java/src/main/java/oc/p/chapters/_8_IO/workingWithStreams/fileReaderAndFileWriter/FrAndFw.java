@@ -44,6 +44,6 @@ class FrAndFw {
 
         ff.m();
 
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }

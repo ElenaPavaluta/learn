@@ -33,7 +33,7 @@ class Update {
 //        u.m2();
         u.m3();
 
-        Resources.recursiveDelete(u.path);
+        Resources.deleteFromSrcMainResources(u.path);
     }
 
     void m() throws IOException {

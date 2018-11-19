@@ -79,6 +79,6 @@ class Delete {
     public static void main(String[] args) {
 //        m();
         m2();
-        Resources.clean();
+        Resources.cleanSrcMainResources();
     }
 }
