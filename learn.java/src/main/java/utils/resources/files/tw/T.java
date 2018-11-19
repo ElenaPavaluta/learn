@@ -1,8 +1,11 @@
 package utils.resources.files.tw;
 
+import utils.resources.files.PathRoot;
 import utils.resources.files.Resources;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.util.Arrays;
 
 class T {
 
@@ -16,7 +19,15 @@ class T {
         System.out.println(f.getAbsolutePath());
     }
 
+    static void m2(){
+        Arrays.stream(PathRoot.values())
+                .map(PathRoot::path)
+                .map(Path::toAbsolutePath)
+                .forEach(System.out::println);
+    }
+
     public static void main(String[] args) {
-        m();
+//        m();
+        m2();
     }
 }

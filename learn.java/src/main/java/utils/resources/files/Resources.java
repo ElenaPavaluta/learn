@@ -2,47 +2,29 @@ package utils.resources.files;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
-import static utils.resources.files.Resources.path;
 
 public interface Resources {
     String IBM_CTANASE = "AzureAD\\CiprianDorinTanase";
     String USER = IBM_CTANASE;
     String RESOURCES = "resources";
     String JAVA = "java";
-    String ROOT = ".";
+    String ROOT = "";
     String SRC_MAIN = "src" + java.io.File.separator + "main";
     String SRC_MAIN_RESOURCES = SRC_MAIN + java.io.File.separator + RESOURCES;
     String SRC_MAIN_RESOURCES_DB = SRC_MAIN_RESOURCES + java.io.File.separator + "db";
     String SRC_MAIN_JAVA = SRC_MAIN + java.io.File.separator + JAVA;
     String DOT_PROPERTIES = ".properties";
     Comparator <java.nio.file.Path> COMPARE_BY_DISTANCE_FROM_SOURCE = Comparator.comparingInt(java.nio.file.Path::getNameCount);
-
-    Predicate <java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR = p -> {
-        Instant instant = Instant.now();
-        Instant creationTime = null;
-        try {
-            BasicFileAttributes bfa = Files.readAttributes(p, BasicFileAttributes.class);
-            creationTime = bfa.creationTime().toInstant();
-        } catch (IOException e) {
-//            System.out.println("Err:  Predicate<java.nio.file.Path> IS_CREATED_IN_THE_LAST_HOUR");
-            return false;
-        }
-        return creationTime.isAfter(instant.minus(1, ChronoUnit.HOURS));
-    };
-
     BiPredicate <java.nio.file.Path, java.nio.file.Path> IS_SAME_FILE = (p, p2) -> {
         try {
             return Files.isSameFile(p, p2);
@@ -51,8 +33,6 @@ public interface Resources {
         }
         return false;
     };
-
-
     Consumer <java.nio.file.Path> DELETE_IF_EXISTS = p -> {
         try {
             Files.deleteIfExists(p);
@@ -78,15 +58,15 @@ public interface Resources {
     }
 
     static String path(Object obj) {
-        return path(obj.getClass().getPackage());
+        return Resources.path(obj.getClass().getPackage());
     }
 
     static String path(Package pkg) {
-        return path(pkg.getName());
+        return Resources.path(pkg.getName());
     }
 
     static String srcMainResourcesPath(Package pkg) {
-        return SRC_MAIN_RESOURCES + java.io.File.separator + path(pkg);
+        return SRC_MAIN_RESOURCES + java.io.File.separator + Resources.path(pkg);
     }
 
     static String srcMainJavaPath(Object obj) {
@@ -98,7 +78,7 @@ public interface Resources {
     }
 
     static String srcMainJavaPath(Package pkg) {
-        return SRC_MAIN_JAVA + java.io.File.separator + path(pkg);
+        return SRC_MAIN_JAVA + java.io.File.separator + Resources.path(pkg);
     }
 
     static String srcMainResourcesPath(Object obj) {
@@ -113,14 +93,6 @@ public interface Resources {
     static void clean() {
         java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES);
         recursiveDelete(path);
-    }
-
-    static void deleteRootBasedPathCreatedInTheLastHour(java.nio.file.Path path) {
-//        IntStream.range(0, path.getNameCount())
-//                .mapToObj(path::getName)
-//                .filter(IS_CREATED_IN_THE_LAST_HOUR)]#=
-//
-//                .forEach(System.out::println);
     }
 
     static void recursiveDelete(Object... resources) {
@@ -148,6 +120,20 @@ public interface Resources {
         recursiveDelete(collection.toArray(new Object[0]));
     }
 
+    static void delete(final PathRoot pathRoot, java.nio.file.Path path) {
+        try {
+            Files.walk(pathRoot.path(), 1)
+                    .filter(p->p!=null)
+                    .filter(p->p.getFileName().toString().startsWith(path.getName(0).toString()))
+                    .forEach(System.out::println);
+//                    .forEach(p-> System.out.println(p.getFileName()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     interface Path {
         String NIO_FILE = "nio.file";
 
@@ -156,7 +142,7 @@ public interface Resources {
         }
 
         static java.nio.file.Path directory(Package pkg) {
-            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, path(pkg));
+            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, Resources.path(pkg));
             try {
                 path = Files.createDirectories(path);
             } catch (IOException e) {
@@ -170,7 +156,7 @@ public interface Resources {
         }
 
         static java.nio.file.Path directory(Package pkg, String... dest) {
-            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, path(pkg), Arrays.stream(dest).collect
+            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES, Resources.path(pkg), Arrays.stream(dest).collect
                     (joining(java.io.File.separator)));
             try {
                 path = Files.createDirectories(path);
@@ -228,7 +214,7 @@ public interface Resources {
         }
 
         static java.io.File directory(String destination) {
-            java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, path(destination));
+            java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, Resources.path(destination));
             file.mkdirs();
             return file;
         }
@@ -236,7 +222,7 @@ public interface Resources {
 
         static java.io.File file(String destination, String name) {
             directory(destination);
-            java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, path(destination) + java.io.File
+            java.io.File file = new java.io.File(SRC_MAIN_RESOURCES, Resources.path(destination) + java.io.File
                     .separator + name);
             try {
                 file.createNewFile();
@@ -253,6 +239,5 @@ public interface Resources {
         static java.io.File file(Package pkg, String fileName) {
             return file(pkg.getName(), fileName);
         }
-
     }
 }
