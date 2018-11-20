@@ -21,13 +21,6 @@ class RelativeAndAbsolute {
         System.out.println(path.getName(0));
 
         Print.Delimitators.equal();
-//
-//        IntStream.rangeClosed(1, path.getNameCount())
-//                .mapToObj(i->path.subpath(0, i))
-//                .peek(p-> System.out.println(Files.exists(p)))
-//                .forEach(System.out::println);
-//
-//        Delimitators.equal();
         Resources.delete(path);
     }
 
@@ -44,10 +37,14 @@ class RelativeAndAbsolute {
         Resources.delete(path);
     }
 
+    static void m4(){
+        Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    }
+
     public static void main(String[] args) throws IOException {
         m();
 //        m2();
-        m3();
+//        m3();
     }
 
 

@@ -1,13 +1,16 @@
 package utils.resources.files;
 
+import oc.p.chapters._4_FunctionalProgramming.workingWithBuiltInFunctionalInterface.BiFunc;
 import utils.print.Print;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
@@ -38,6 +41,16 @@ public interface Resources {
         } catch (IOException e) {
             System.err.println("Err: Consumer <Path> DELETE_IF_EXISTS");
         }
+    };
+    BiFunction<PathRoot, java.nio.file.Path, Optional<java.nio.file.Path>> TO_PATH = (root, path)->{
+        try {
+            return Files.walk(root.path(), 1)
+                    .filter(p->p.getFileName()!=null && path.startsWith(p.getFileName()))
+                    .findFirst();
+        } catch (IOException e) {
+            return Optional.empty();
+        }
+
     };
 
     static java.nio.file.Path propertiesFileAsPath(String name) {
@@ -110,32 +123,24 @@ public interface Resources {
     static void delete(java.nio.file.Path path) {
         Print.Delimitators.equal();
         System.out.println("delete -> " + path);
-        final java.nio.file.Path toDel = Arrays.stream(PathRoot.values())
-                .map(pth -> {
-                    try {
-                        return Files.find(pth.path(), 1, (p, bfa) -> p.getFileName() != null && p.getFileName().startsWith(path.getName(0)))
-                                .findFirst()
-                                .orElse(null);
-                    } catch (IOException e) {
-                        System.err.println("Err: delete(Path path) -> find ");
-                        return null;
-                    }
-                })
-                .filter(p -> p != null)
-                .findFirst()
-                .orElse(null);
+
+        Arrays.stream(PathRoot.values())
+                .map(root ->TO_PATH.apply(root, path))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .findFirst();
 
 
-        if (toDel != null) {
-            try {
-                Files.walk(toDel)
-                        .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
-                        .peek(System.out::println)
-                        .forEach(DELETE_IF_EXISTS);
-            } catch (IOException e) {
-                System.err.println("Err: delete(Path path) -> walk ");
-            }
-        }
+//        toDel.ifPresent( p-> {
+//            try {
+//                Files.walk(p)
+//                        .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
+//                        .peek(System.out::println)
+//                        .forEach(DELETE_IF_EXISTS);
+//            } catch (IOException e) {
+//                System.err.println("Err: delete(Path path) -> walk ");
+//            }
+//        });
     }
 
 
