@@ -4,14 +4,21 @@ import utils.print.Print;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
 
 public interface Resources {
     String IBM_CTANASE = "AzureAD\\CiprianDorinTanase";
@@ -110,34 +117,14 @@ public interface Resources {
     static void delete(java.nio.file.Path path) {
         Print.Delimitators.equal();
         System.out.println("delete -> " + path);
-        final java.nio.file.Path toDel = Arrays.stream(PathRoot.values())
-                .map(pth -> {
-                    try {
-                        return Files.find(pth.path(), 1, (p, bfa) -> p.getFileName() != null && p.getFileName().startsWith(path.getName(0)))
-                                .findFirst()
-                                .orElse(null);
-                    } catch (IOException e) {
-                        System.err.println("Err: delete(Path path) -> find ");
-                        return null;
-                    }
-                })
-                .filter(p -> p != null)
-                .findFirst()
-                .orElse(null);
 
-
-        if (toDel != null) {
-            try {
-                Files.walk(toDel)
-                        .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
-                        .peek(System.out::println)
-                        .forEach(DELETE_IF_EXISTS);
-            } catch (IOException e) {
-                System.err.println("Err: delete(Path path) -> walk ");
-            }
-        }
+        final List <java.nio.file.Path> collect = IntStream.rangeClosed(1, path.getNameCount())
+                .mapToObj(i -> path.subpath(0, i))
+                .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
+                .peek(System.out::println)
+                .peek(p -> System.out.println(Files.exists(p)))
+                .collect(toList());
     }
-
 
     interface Path {
         String NIO_FILE = "nio.file";
@@ -206,7 +193,6 @@ public interface Resources {
                     return path;
             }
         }
-
     }
 
     interface File {
