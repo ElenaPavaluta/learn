@@ -12,12 +12,14 @@ import java.util.ArrayList;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * <R> R  collect(Supplier<R> supplier, BiConsumer<R, T> accumulator, BiConsumer<R,R> combiner)
  * Performs a mutable reduction operation on the elements of this stream.
  */
 class C {
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
     Instant today = Instant.now().minus(LocalTime.now().getHour(), ChronoUnit.HOURS);
     void m() throws IOException {
         Coll coll = Files.find(path, Byte.MAX_VALUE, (p, bfa)->bfa.creationTime().toInstant().isAfter(today))

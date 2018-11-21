@@ -37,6 +37,6 @@ class CreateDir {
     public static void main(String[] args) {
         m();
         m2();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

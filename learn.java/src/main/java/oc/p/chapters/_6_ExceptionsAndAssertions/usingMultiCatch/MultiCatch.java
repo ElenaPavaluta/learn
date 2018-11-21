@@ -43,6 +43,6 @@ class MultiCatch {
     public static void main(String[] args) {
 //        oldWay();
 //        newWay();
-        Resources.deleteFromSrcMainResources(path);
+        Resources.clean();
     }
 }

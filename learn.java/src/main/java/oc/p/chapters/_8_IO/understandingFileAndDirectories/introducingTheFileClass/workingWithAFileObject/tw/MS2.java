@@ -11,13 +11,15 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.ToLongFunction;
 
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+
 class MS2 {
 
     static String path = Resources.srcMainResourcesPath(new MS2().getClass().getPackage());
     static File dir;
     static File file;
     static File ne = new File("nonExistent");
-    static File dest = new File(Resources.SRC_MAIN_RESOURCES);
+    static File dest = new File(SRC_MAIN_RESOURCES.toPath());
     static List <File> lst /*= Arrays.asList(dir, file, ne)*/;  //NPE:
 
     static {
@@ -72,6 +74,6 @@ class MS2 {
     public static void main(String[] args) {
         m();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

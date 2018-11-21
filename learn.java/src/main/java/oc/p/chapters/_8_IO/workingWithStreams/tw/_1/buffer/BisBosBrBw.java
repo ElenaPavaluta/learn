@@ -64,6 +64,6 @@ class BisBosBrBw {
         write();
 //        read();
         brbw();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

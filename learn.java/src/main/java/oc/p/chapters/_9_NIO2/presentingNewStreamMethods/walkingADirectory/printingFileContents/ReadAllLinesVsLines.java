@@ -27,6 +27,6 @@ class ReadAllLinesVsLines {
         r.readAllLines();
         Delimitators.equal();
         r.lines();
-        Resources.deleteFromSrcMainResources(r.path);
+        Resources.clean();
     }
 }

@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.Collectors;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 public class CoffeeDb extends DbInstance {
 
     private static final String CREATE = "create-tables.sql";
@@ -45,7 +47,7 @@ public class CoffeeDb extends DbInstance {
     }
 
     private void execStmt(Statement stmt, Package pkg, String create) throws IOException {
-        Path path = Paths.get(Resources.SRC_MAIN_JAVA, Resources.path(pkg), create);
+        Path path = Paths.get(SRC_MAIN_JAVA.toPath(), Resources.path(pkg), create);
         String content = Files.lines(path)
                               .collect(Collectors.joining());
         Queue<String> queue = Arrays.stream(content.split(";"))

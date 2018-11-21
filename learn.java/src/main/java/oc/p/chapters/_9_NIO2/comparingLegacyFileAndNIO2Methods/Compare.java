@@ -12,6 +12,8 @@ import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 class Compare {
     java.io.File file = CreatePopulate.IO.File.file(this);
     java.nio.file.Path path = CreatePopulate.NIO.File.Path.file(this);
@@ -34,7 +36,7 @@ class Compare {
 //        comp.createDirs();
         comp.list();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     void exits() {
@@ -162,7 +164,7 @@ class Compare {
             e.printStackTrace();
         }
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     void createDir(){
@@ -200,14 +202,14 @@ class Compare {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     void list(){
-        java.io.File f = new java.io.File(Resources.SRC_MAIN_JAVA);
+        java.io.File f = new java.io.File(SRC_MAIN_JAVA.toPath());
         System.out.println(Arrays.toString(f.listFiles()));
 
-        java.nio.file.Path p = Paths.get(Resources.SRC_MAIN_JAVA);
+        java.nio.file.Path p = Paths.get(SRC_MAIN_JAVA.toPath());
         try {
             Files.list(p).forEach(System.out::println);
         } catch(IOException e) {

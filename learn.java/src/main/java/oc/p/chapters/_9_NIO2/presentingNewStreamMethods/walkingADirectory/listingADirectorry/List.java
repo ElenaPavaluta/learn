@@ -6,13 +6,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * static Stream<Path>	list(Path dir) Return a lazily populated Stream,
  * the elements of which are the entries in the directory.
  */
 class List {
 
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
 
     public static void main(String[] args) throws IOException {
         List l = new List();

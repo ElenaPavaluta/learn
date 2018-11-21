@@ -41,7 +41,7 @@ class Anim implements Serializable {
         } catch(EOFException e) {
         }
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
 
     }
 

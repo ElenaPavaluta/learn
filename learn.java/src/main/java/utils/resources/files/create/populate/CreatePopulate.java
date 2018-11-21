@@ -1,10 +1,10 @@
 package utils.resources.files.create.populate;
 
 import utils.resources.files.Resources;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.stream.IntStream;
 
 public interface CreatePopulate {
@@ -13,13 +13,13 @@ public interface CreatePopulate {
 
     static String content() {
         return IntStream.rangeClosed(1, NR_OF_LINES)
-                        .mapToObj(i -> "Line nr " + i + "\n")
-                        .collect(StringBuilder::new,
-                                 StringBuilder::append,
-                                 StringBuilder::append).toString();
+                .mapToObj(i -> "Line nr " + i + "\n")
+                .collect(StringBuilder::new,
+                        StringBuilder::append,
+                        StringBuilder::append).toString();
     }
 
-    interface IO{
+    interface IO {
         interface File {
 
             String IO_FILE = "io.file";
@@ -30,9 +30,9 @@ public interface CreatePopulate {
 
             static java.io.File file(Package destination, String fileName) {
                 java.io.File file = Resources.File.file(destination, fileName);
-                try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
                     bw.write(content());
-                } catch(IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return file;
@@ -54,14 +54,15 @@ public interface CreatePopulate {
                 }
 
                 static java.nio.file.Path file(Package pkg, String... dest) {
-                    java.nio.file.Path path = Resources.Path.file(pkg, dest);
-                    try (BufferedWriter bw = Files.newBufferedWriter(path)){
-                        bw.write(content());
-
-                    } catch(IOException e) {
-                        e.printStackTrace();
-                    }
-                    return path;
+//                    java.nio.file.Path path = Resources.Path.file(pkg, dest);
+////                    try (BufferedWriter bw = Files.newBufferedWriter(path)){
+////                        bw.write(content());
+////
+////                    } catch(IOException e) {
+////                        e.printStackTrace();
+////                    }
+////                    return path;
+                    return null;
                 }
             }
         }

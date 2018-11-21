@@ -1,5 +1,6 @@
 package oc.p.chapters._5_DatesStringsAndLocalization.addingInternationalozationAndLocalization.usingAResourceBundle.tw._1;
 
+import utils.resources.files.Location;
 import utils.resources.files.Resources;
 
 import java.io.BufferedWriter;
@@ -16,8 +17,8 @@ class Test {
     static Path path, path2;
 
     static void init() throws IOException {
-        path = Paths.get(Resources.SRC_MAIN_RESOURCES, "a_fr.properties");
-        path2 = Paths.get(Resources.SRC_MAIN_RESOURCES, "a_fr_FR.properties");
+        path = Paths.get(Location.SRC_MAIN_RESOURCES.toPath(), "a_fr.properties");
+        path2 = Paths.get(Location.SRC_MAIN_RESOURCES.toPath(), "a_fr_FR.properties");
 
         if (!Files.exists(path)) {
             path = Files.createFile(path);
@@ -43,6 +44,6 @@ class Test {
     public static void main(String[] args) throws IOException {
         init();
         m();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

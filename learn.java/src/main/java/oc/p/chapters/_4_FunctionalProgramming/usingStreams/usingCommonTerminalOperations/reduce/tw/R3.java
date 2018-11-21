@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * <U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner)
  *
@@ -18,7 +20,7 @@ import java.util.function.Predicate;
  */
 class R3 {
 
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
     Predicate<Path> JPG_PREDICATE = p -> {
         String s = p.getFileName().toString();
         return s.contains(".jpg") || s.contains(".jpeg");

@@ -32,6 +32,6 @@ class Resume {
     public static void main(String[] args) {
         runM();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

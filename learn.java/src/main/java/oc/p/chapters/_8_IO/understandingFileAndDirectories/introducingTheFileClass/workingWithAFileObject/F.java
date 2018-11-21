@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+
 class F {
 
     List<java.io.File> files = new ArrayList<>();
@@ -13,7 +15,7 @@ class F {
     public static final String NEW_PATH = "a\\b\\c\\d\\e\\f\\g";
 
     {
-        java.io.File f = new java.io.File(Resources.SRC_MAIN_RESOURCES, path + NEW_PATH);
+        java.io.File f = new java.io.File(SRC_MAIN_RESOURCES.toPath(), path + NEW_PATH);
 
         /**
          *Because there are multiple files, doesn't do nothing
@@ -79,6 +81,6 @@ class F {
         f.m2();
 //        f.f3();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

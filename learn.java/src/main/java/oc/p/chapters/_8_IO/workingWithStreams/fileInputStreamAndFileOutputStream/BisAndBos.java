@@ -23,7 +23,7 @@ class BisAndBos {
 
         bb.m();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     void m() throws IOException {

@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * Return a Stream that is lazily populated with Path by walking the
  * file tree rooted at a given starting file.
@@ -27,7 +29,7 @@ class Walk {
     }
 
     void m() {
-        Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
         try {
             long l = Files.walk(path).count();
             System.out.println(l);
@@ -37,7 +39,7 @@ class Walk {
     }
 
     void m2() {
-        Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
         try {
             long l = Files.walk(path, 5).count();
             System.out.println(l);

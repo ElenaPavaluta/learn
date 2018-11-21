@@ -97,6 +97,6 @@ class RCA {
 //        m4();
         m5();
 //        m6();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

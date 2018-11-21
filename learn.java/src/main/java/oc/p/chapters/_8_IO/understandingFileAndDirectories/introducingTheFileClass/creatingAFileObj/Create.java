@@ -3,6 +3,8 @@ package oc.p.chapters._8_IO.understandingFileAndDirectories.introducingTheFileCl
 import utils.resources.files.Resources;
 import java.util.ArrayDeque;
 
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+
 class Create {
 
     final String pkg = this.getClass().getPackage().getName();
@@ -32,14 +34,14 @@ class Create {
     }
 
     void m2() {
-        java.io.File f = new java.io.File(Resources.SRC_MAIN_RESOURCES, "b");
+        java.io.File f = new java.io.File(SRC_MAIN_RESOURCES.toPath(), "b");
         f.mkdir();
         files.push(f);
     }
 
     void del() {
         for(java.io.File f : files) {
-            Resources.cleanSrcMainResources();
+            Resources.clean();
         }
     }
 }

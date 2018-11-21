@@ -57,6 +57,6 @@ class Use {
         init();
         m();
 //        m2();
-        Resources.deleteFromSrcMainResources(path);
+        Resources.clean();
     }
 }

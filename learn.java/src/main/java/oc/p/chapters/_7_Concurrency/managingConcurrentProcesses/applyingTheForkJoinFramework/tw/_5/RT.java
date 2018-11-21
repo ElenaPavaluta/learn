@@ -17,6 +17,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 import static java.util.stream.Collectors.toList;
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
 
 class RT extends RecursiveTask <Integer> {
 
@@ -38,7 +39,7 @@ class RT extends RecursiveTask <Integer> {
     }
 
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
         LocalDateTime localDateTime = LocalDateTime.now();
         localDateTime = localDateTime.minus(localDateTime.getDayOfMonth(), ChronoUnit.DAYS);
         FileTime fileTime = FileTime.from(ZonedDateTime.of(localDateTime, ZoneId.systemDefault()).toInstant());

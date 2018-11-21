@@ -33,7 +33,7 @@ class Update {
 //        u.m2();
         u.m3();
 
-        Resources.deleteFromSrcMainResources(u.path);
+        Resources.clean();
     }
 
     void m() throws IOException {

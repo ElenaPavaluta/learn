@@ -30,6 +30,6 @@ class PrintingFileContents {
         PrintingFileContents pfc = new PrintingFileContents();
 
         pfc.m();
-        Resources.deleteFromSrcMainResources(pfc.path);
+        Resources.clean();
     }
 }

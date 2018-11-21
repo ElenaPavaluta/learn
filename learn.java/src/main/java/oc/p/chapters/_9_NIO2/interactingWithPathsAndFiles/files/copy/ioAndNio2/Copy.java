@@ -69,6 +69,6 @@ class Copy {
         paste();
         outStream();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

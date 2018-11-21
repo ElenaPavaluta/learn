@@ -66,6 +66,6 @@ class RW {
         read();
         write();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

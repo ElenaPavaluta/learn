@@ -36,6 +36,6 @@ class Normalize {
 //        m2();
         m3();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

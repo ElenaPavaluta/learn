@@ -13,6 +13,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
 
 /**
  * T reduce(T identity, BinaryOperator<T> accumulator)
@@ -22,7 +23,7 @@ import static java.util.stream.Collectors.groupingBy;
  * and returns the reduced value.
  */
 class R {
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
 
     public static void main(String[] args) throws IOException {
         R r = new R();

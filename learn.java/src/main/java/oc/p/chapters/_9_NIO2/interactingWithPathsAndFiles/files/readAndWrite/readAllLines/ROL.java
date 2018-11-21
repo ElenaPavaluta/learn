@@ -30,6 +30,6 @@ class ROL {
 
     public static void main(String[] args) {
         m();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

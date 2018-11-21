@@ -72,6 +72,6 @@ class TWR {
         peek();
         newApproach();
         peek();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

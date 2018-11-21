@@ -27,7 +27,7 @@ class Size {
 
     static void m() throws IOException {
         System.out.println(Files.size(path));
-        Resources.deleteFromSrcMainResources(path);
+        Resources.clean();
     }
 
     static void m2() {
@@ -52,7 +52,7 @@ class Size {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        Resources.deleteFromSrcMainResources(path);
+        Resources.clean();
     }
 
     public static void main(String[] args) throws IOException {

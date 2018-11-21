@@ -11,6 +11,8 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * Optional<T> reduce(BinaryOperator<T> accumulator)
  * Performs a reduction on the elements of this stream,
@@ -18,7 +20,7 @@ import java.util.function.BinaryOperator;
  * and returns an Optional describing the reduced value, if any.
  */
 class R2 {
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
 
     Comparator<Path> comparator = Comparator.comparingLong(p -> lines(p));
     BinaryOperator<Path> maxBinaryOperator = BinaryOperator.maxBy(comparator);

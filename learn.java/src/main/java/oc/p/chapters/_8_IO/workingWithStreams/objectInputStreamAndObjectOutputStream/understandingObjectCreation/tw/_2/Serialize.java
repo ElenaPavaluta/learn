@@ -41,7 +41,7 @@ class Serialize {
         System.out.println("===== read =====");
         read();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
 }

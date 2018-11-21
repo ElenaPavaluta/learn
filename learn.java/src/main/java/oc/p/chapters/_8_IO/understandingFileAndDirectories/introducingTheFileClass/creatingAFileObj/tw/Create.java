@@ -5,7 +5,7 @@ import utils.resources.files.Resources;
 import java.io.File;
 import java.io.IOException;
 
-import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
 
 class Create {
 
@@ -21,10 +21,10 @@ class Create {
         f2 = new File(path + File.separator + "f2.txt");
         System.out.println(f2.createNewFile());
 
-        f3 = new File(SRC_MAIN_RESOURCES + File.separator + "f3.txt");
+        f3 = new File(SRC_MAIN_RESOURCES.toPath() + File.separator + "f3.txt");
         System.out.println(f3.createNewFile());
 
-        f4 = new File(SRC_MAIN_RESOURCES + File.separator + "dir");
+        f4 = new File(SRC_MAIN_RESOURCES.toPath() + File.separator + "dir");
         System.out.println(f4.mkdir());
     }
 
@@ -32,6 +32,6 @@ class Create {
     public static void main(String[] args) throws IOException {
         System.out.println(path);
         m();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

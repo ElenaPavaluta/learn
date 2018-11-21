@@ -53,7 +53,7 @@ class FisFos2 {
     }
 
     static void m2() throws IOException {
-        Resources.cleanSrcMainResources();
+        Resources.clean();
         fileArr.createNewFile();
 
         try (FileInputStream fis = new FileInputStream(file); FileOutputStream fos = new FileOutputStream(fileArr)) {
@@ -68,7 +68,7 @@ class FisFos2 {
 //        m();
         m2();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
 }

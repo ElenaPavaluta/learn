@@ -1,6 +1,6 @@
 package oc.p.chapters._9_NIO2.util;
 
-import utils.resources.files.Resources;
+import utils.resources.files.Location;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,12 +23,13 @@ public class TestPath {
      * is treated as linux absolute file
      */
     public static Path Relative_Windows_Path = Paths.get("land\\hippo\\harry.happy");
-    public static Path Absolute_Windows_Path = Paths.get(Resources.absolutePath(new TestPath().getClass().getPackage()));
+    //    public static Path Absolute_Windows_Path = Paths.get(Resources.absolutePath(new TestPath().getClass().getPackage()));
+    public static Path Absolute_Windows_Path = Paths.get("to do");
     public static Path Empty_Path = Paths.get("");
 
     public static List <Path> pathList = Arrays.asList(WORKING_DIR, Absolute_Linux_Path, Relative_Linux_Path, Absolute_Windows_Path, Relative_Windows_Path, Empty_Path);
 
-    static Path SRC_MAIN_JAVA = Paths.get(Resources.SRC_MAIN_JAVA);
+    static Path SRC_MAIN_JAVA = Paths.get(Location.SRC_MAIN_JAVA.toPath());
     static Instant thisYear = Instant.now().minus(LocalDateTime.now().getDayOfYear() - 1, ChronoUnit.DAYS);
     static Instant thisMonth = Instant.now().minus(LocalDateTime.now().getDayOfMonth() - 1, ChronoUnit.DAYS);
 
@@ -42,7 +43,7 @@ public class TestPath {
 
     public static Stream <Path> allPaths() {
         try {
-            return Files.walk(Paths.get(Resources.SRC_MAIN_JAVA));
+            return Files.walk(Paths.get(Location.SRC_MAIN_JAVA.toPath()));
         } catch (IOException e) {
             return null;
         }

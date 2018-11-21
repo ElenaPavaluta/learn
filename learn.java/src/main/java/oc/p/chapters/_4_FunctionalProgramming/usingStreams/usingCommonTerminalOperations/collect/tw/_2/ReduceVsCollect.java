@@ -14,6 +14,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * <U> U reduce(U identity,
  * BiFunction<U, ? super T, U> accumulator,
@@ -33,7 +35,7 @@ class ReduceVsCollect {
         return ld.isBefore(ldt);
     };
 
-    static Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    static Path path = Paths.get(SRC_MAIN_JAVA.toPath());
 
     static void m() throws IOException {
         final Integer java = java()

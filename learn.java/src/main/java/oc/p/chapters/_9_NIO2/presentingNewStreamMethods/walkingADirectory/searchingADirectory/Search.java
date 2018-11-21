@@ -16,6 +16,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static utils.resources.files.Location.SRC_MAIN_JAVA;
+
 /**
  * Return a Stream that is lazily populated with Path by searching for files in a file tree rooted at a given
  * starting file.
@@ -25,7 +27,7 @@ import java.util.stream.Stream;
  * static Stream<Path>	find(Path start, int maxDepth, BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options)
  */
 class Search {
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
 
     public static void main(String[] args) {
         Search s = new Search();

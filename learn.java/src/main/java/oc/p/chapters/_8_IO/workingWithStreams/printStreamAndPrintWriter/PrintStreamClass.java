@@ -44,7 +44,7 @@ class PrintStreamClass {
         pw.printf();
         pw.format();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     void write() throws FileNotFoundException {

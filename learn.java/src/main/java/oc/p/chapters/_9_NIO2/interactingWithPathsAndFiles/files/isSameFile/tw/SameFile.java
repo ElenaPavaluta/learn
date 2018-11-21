@@ -31,7 +31,7 @@ class SameFile {
 
         System.out.println(Files.isSameFile(p, p2));
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     static void m2() throws IOException {

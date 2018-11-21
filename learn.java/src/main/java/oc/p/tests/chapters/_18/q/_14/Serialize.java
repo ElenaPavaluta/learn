@@ -29,6 +29,6 @@ class Serialize {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         write();
         read();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

@@ -1,5 +1,6 @@
 package oc.p.chapters._5_DatesStringsAndLocalization.addingInternationalozationAndLocalization.usingAResourceBundle.creatingAJavaClassResourceBundle.tw;
 
+import utils.resources.files.Location;
 import utils.resources.files.Resources;
 
 import java.io.IOException;
@@ -18,21 +19,21 @@ import static java.util.stream.Collectors.toMap;
 
 class Run {
 
-    static List<Path> toDel;
+    static List <Path> toDel;
 
     static void move() throws IOException {
-        String s = Resources.srcMainJavaPath(new Run().getClass().getPackage());
+        String s = Resources.srcMainJavaPath(new Run());
         Path path = Paths.get(s);
         System.out.println(path);
         System.out.println(path.getFileName());
 
-        Path dest = Paths.get(Resources.SRC_MAIN_RESOURCES);
+        Path dest = Paths.get(Location.SRC_MAIN_RESOURCES.toPath());
         System.out.println(Files.exists(dest));
 
-        Map<Path, Path> map = Files.list(path)
+        Map <Path, Path> map = Files.list(path)
                 .filter(p -> !p.getFileName().toString().contains(new Run().getClass().getSimpleName()))
                 .peek(p -> System.out.println(p.getFileName()))
-                .collect(toMap(Function.identity(), p -> Paths.get(Resources.SRC_MAIN_RESOURCES, p.getFileName().toString())));
+                .collect(toMap(Function.identity(), p -> Paths.get(Location.SRC_MAIN_RESOURCES.toPath(), p.getFileName().toString())));
         toDel = map.values().stream().collect(toList());
         System.out.println(toDel);
         map.forEach((k, v) -> {
@@ -48,7 +49,7 @@ class Run {
         String pkg = new Run().getClass().getPackage().getName();
         System.out.println(pkg);
 //        ResourceBundle rb = ResourceBundle.getBundle("src.main.resources.Rb", l);
-        ResourceBundle rb = ResourceBundle.getBundle(pkg +".Rb", l);
+        ResourceBundle rb = ResourceBundle.getBundle(pkg + ".Rb", l);
 
         System.out.println(rb.getObject("cat").getClass());
         System.out.println(rb.getObject("lion").getClass());
@@ -59,6 +60,6 @@ class Run {
     public static void main(String[] args) throws IOException {
         move();
         read();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

@@ -1,6 +1,7 @@
 package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.collect.tw._1;
 
 import utils.delimitators.Delimitators;
+import utils.resources.files.Location;
 import utils.resources.files.Resources;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +20,7 @@ import java.util.stream.Stream;
  * Performs a mutable reduction operation on the elements of this stream.
  */
 class C3 {
-    Path path = Paths.get(Resources.SRC_MAIN_JAVA);
+    Path path = Paths.get(Location.SRC_MAIN_JAVA.toPath());
     Instant today = Instant.now().minus(LocalTime.now().getHour(), ChronoUnit.HOURS);
 
     public static void main(String[] args) throws IOException {

@@ -10,7 +10,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 class C {
 
-    static Path path = Resources.Path.file(new C());
+    static Path path = Resources.Path.file(new C(), "fn");
 
     static void m() throws IOException {
         BasicFileAttributes bfa = Files.readAttributes(path, BasicFileAttributes.class);
@@ -31,6 +31,6 @@ class C {
     public static void main(String[] args) throws IOException {
         m();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

@@ -62,6 +62,6 @@ class Ms {
         m();
 
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

@@ -9,9 +9,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+
 class PropertyResourceBundle_ {
 
-    static Path path = Paths.get(Resources.SRC_MAIN_RESOURCES, "bla_de_DE.properties");
+    static Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), "bla_de_DE.properties");
     static Properties properties = new Properties();
 
     static {
@@ -79,6 +81,6 @@ class PropertyResourceBundle_ {
         m();
         m2();
         m3();
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }

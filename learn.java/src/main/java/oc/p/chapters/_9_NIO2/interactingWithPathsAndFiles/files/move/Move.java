@@ -68,7 +68,7 @@ class Move {
         move();
 //        read();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }
 

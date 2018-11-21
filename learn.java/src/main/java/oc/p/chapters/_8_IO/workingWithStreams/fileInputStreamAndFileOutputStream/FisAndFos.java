@@ -31,7 +31,7 @@ class FisAndFos {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                Resources.cleanSrcMainResources();
+                Resources.clean();
                 System.exit(0);
             }
         }, 5);

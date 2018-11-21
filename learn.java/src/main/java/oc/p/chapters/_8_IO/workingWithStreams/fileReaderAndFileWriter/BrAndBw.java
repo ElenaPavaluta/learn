@@ -21,7 +21,7 @@ class BrAndBw {
 
         bb.m2(bb.m());
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 
     private void fill(File f) {

@@ -75,6 +75,6 @@ class CreateFile {
 //        path();
         file();
 
-        Resources.deleteFromSrcMainResources(base);
+        Resources.clean();
     }
 }

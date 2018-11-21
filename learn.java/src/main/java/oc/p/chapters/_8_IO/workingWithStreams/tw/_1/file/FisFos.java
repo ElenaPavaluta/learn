@@ -48,6 +48,6 @@ class FisFos {
         write();
         read();
 
-        Resources.cleanSrcMainResources();
+        Resources.clean();
     }
 }
