@@ -1,40 +1,40 @@
 package oc.p.chapters._7_Concurrency.workingWithParallelStreams.creatingParallelStreams;
 
+import utils.delimitators.Delimitators;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
+/**
+ * S parallel()
+ *
+ * default Stream<E> parallelStream() -> only for Collection
+ */
 class Create {
 
-    static {
-        Map<Integer, Integer> map = new HashMap<>();
-
-//        map.parallelStream();
-//        map.stream();
+    static void m(){
+        IntStream.rangeClosed(1, 10)
+                .mapToObj(Integer::new)
+                .parallel()
+                .forEach(System.out::println);
     }
 
-    {
-        Stream<Integer> stream = Stream.empty();
-        System.out.println(stream.isParallel());  //false
-    }
-
-    {
-        Stream<Integer> stream = Arrays.asList(1, 2, 3, 4, 5).stream();
-        Stream<Integer> parallelStream = stream.parallel();
-
-        System.out.println(stream.isParallel());  //true
-        System.out.println(parallelStream.isParallel());  //true
-    }
-
-    /**
-     * only for Collection
-     */ {
-        Stream<Integer> parallelStream = Arrays.asList(1, 2, 3, 4, 5).parallelStream();
-        System.out.println(parallelStream.isParallel());
+    static void m2(){
+        IntStream.rangeClosed(1, 10)
+                .mapToObj(Integer::valueOf)
+                .collect(toList())
+                .parallelStream()
+                .forEach(System.out::println);
     }
 
     public static void main(String[] args) {
-        new Create();
+        m();
+        Delimitators.equal();
+        m2();
     }
 }

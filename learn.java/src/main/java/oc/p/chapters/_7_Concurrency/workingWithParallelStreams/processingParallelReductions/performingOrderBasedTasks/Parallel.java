@@ -1,6 +1,8 @@
 package oc.p.chapters._7_Concurrency.workingWithParallelStreams.processingParallelReductions.performingOrderBasedTasks;
 
-import java.util.Arrays;
+import utils.delimitators.Delimitators;
+
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -20,20 +22,27 @@ import java.util.stream.Stream;
  */
 class Parallel {
 
-    static void mSeria() {
-        System.out.println(stream().findAny().get());
+
+    static Stream <Integer> init() {
+        return IntStream.rangeClosed(1, 20)
+                .mapToObj(Integer::new);
     }
 
-    private static Stream<Integer> stream() {
-        return Arrays.asList(1, 2, 3, 4, 5, 6).stream();
+    static void m(Stream <Integer> s) {
+        s.skip(2)
+                .limit(10)
+                .skip(5)
+                .forEachOrdered(System.out::println);
     }
 
-    static void mParallel() {
-        System.out.println(stream().parallel().findAny().get());
+    static void callM() {
+        m(init());
+        Delimitators.equal();
+        m(init().parallel());
     }
 
     public static void main(String[] args) {
-        mSeria();
-        mParallel();
+        callM();
     }
+
 }

@@ -1,6 +1,5 @@
 package utils.resources.files;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -23,7 +22,7 @@ public interface Resources {
         try {
             return Files.isSameFile(p, p2);
         } catch (IOException e) {
-            System.err.println("Err: BiPredicate <Path, Path> IS_SAME_FILE");
+            System.err.println("Resources.IS_SAME_FILE.apply(" + p + ", " + p2 + ")");
         }
         return false;
     };
@@ -31,7 +30,7 @@ public interface Resources {
         try {
             Files.deleteIfExists(p);
         } catch (IOException e) {
-            System.err.println("Err: Consumer <Path> DELETE_IF_EXISTS");
+            System.err.println("Resources.DELETE_IF_EXISTS.apply(" + p + ")");
         }
     };
 
@@ -63,7 +62,7 @@ public interface Resources {
         return SRC_MAIN_RESOURCES.toPath() + java.io.File.separator + path(obj);
     }
 
-    static String srcMainJavaPath(Object obj){
+    static String srcMainJavaPath(Object obj) {
         return SRC_MAIN_JAVA.toPath() + java.io.File.separator + path(obj);
     }
 
@@ -80,7 +79,7 @@ public interface Resources {
                     .peek(System.out::println)
                     .forEach(DELETE_IF_EXISTS);
         } catch (IOException e) {
-            System.err.println("Err: static void deleteFromSrcMainResources(Path base)");
+            System.err.println("Resources.deleteFrom(" + path + ")");
         }
     }
 
