@@ -90,7 +90,7 @@ class Starvation {
     static void m(){
         List<Rabbit> rabbits = IntStream.range(0, 100).parallel().mapToObj(i -> S.new Rabbit(resource)).collect(toList());
 
-        ExecutorService execR = Executors.newCachedThreadPool(S.new TurleThreadFactory());
+        ExecutorService execR = Executors.newCachedThreadPool(S.new RabbitThreadFactory());
         rabbits.forEach(execR::submit);
 
         ExecutorService execT = Executors.newCachedThreadPool(S.new TurleThreadFactory());
