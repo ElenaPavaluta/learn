@@ -76,7 +76,6 @@ public interface Resources {
             Files.walk(path)
                     .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
                     .filter(p -> IS_SAME_FILE.negate().test(p, path))
-                    .peek(System.out::println)
                     .forEach(DELETE_IF_EXISTS);
         } catch (IOException e) {
             System.err.println("Resources.deleteFrom(" + path + ")");
