@@ -25,6 +25,10 @@ public enum DbDefinition {
         return driver.driver() + ":" + path();
     }
 
+    public String forName(){
+        return driver.forName();
+    }
+
     public String path() {
         return SRC_MAIN_RESOURCES_DB.toPath() + File.separator + type.name().toLowerCase() +
                 File.separator + driver.dbType() + File.separator + name;

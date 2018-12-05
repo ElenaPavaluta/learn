@@ -23,6 +23,10 @@ public enum Dbs {
         return dbInstance.getDbDefinition().url();
     }
 
+    public String forName(){
+        return dbInstance.getDbDefinition().forName();
+    }
+
     public void rollback(){
         dbInstance.rollback();
     }
