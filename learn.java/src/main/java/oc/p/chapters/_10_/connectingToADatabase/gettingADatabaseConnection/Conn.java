@@ -39,7 +39,7 @@ class Conn {
     static void m3() {
         try {
             /**
-             * Throws a ClassCastException
+             * Throws a ClassNotFoundException
              */
             Class.forName("not.a.driver");
         } catch(ClassNotFoundException e) {
@@ -71,8 +71,8 @@ class Conn {
     public static void main(String[] args) {
 //        m();
 //        m2();
-//        m3();
-        m4();
+        m3();
+//        m4();
 //        m5();
     }
 }
