@@ -1,4 +1,4 @@
-package interview.google.delChar;
+package i.google.delChar;
 
 import java.util.ArrayList;
 import java.util.List;

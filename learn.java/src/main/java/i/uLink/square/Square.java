@@ -1,4 +1,4 @@
-package interview.uLink.square;
+package i.uLink.square;
 
 class Square {
 

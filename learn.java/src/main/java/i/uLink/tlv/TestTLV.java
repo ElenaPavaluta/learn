@@ -1,4 +1,4 @@
-package interview.uLink.tlv;
+package i.uLink.tlv;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -27,7 +27,7 @@ class Relativize {
     }
 
     static void m2() {
-        Path p = Paths.get("r", "interview/w/e/././../../t/y");
+        Path p = Paths.get("r", "i/w/e/././../../t/y");
         Path p2 = Paths.get("r", "a/s/../../../../d/f/g");
 
         System.out.println(p.normalize());  // r/interview/t/y
@@ -55,7 +55,7 @@ class Relativize {
     }
 
     static void m4() {
-        Path p = Paths.get("/", "interview/w/e/r/t/.././../y/u");
+        Path p = Paths.get("/", "i/w/e/r/t/.././../y/u");
         Path p2 = Paths.get("/", "./.././../a/s/d/f/./../g");
 
         System.out.println(p.normalize());  // \\interview\interview\e\y\\u

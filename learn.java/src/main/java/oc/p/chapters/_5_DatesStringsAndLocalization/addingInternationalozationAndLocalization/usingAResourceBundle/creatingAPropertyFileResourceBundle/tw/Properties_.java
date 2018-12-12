@@ -38,7 +38,7 @@ class Properties_ {
     }
 
     private static PropertyResourceBundle propertyResourceBundle() {
-        return (PropertyResourceBundle) ResourceBundle.getBundle("interview");
+        return (PropertyResourceBundle) ResourceBundle.getBundle("i");
     }
 
     static void m2() {

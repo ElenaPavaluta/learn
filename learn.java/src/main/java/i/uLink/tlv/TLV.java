@@ -1,4 +1,4 @@
-package interview.uLink.tlv;
+package i.uLink.tlv;
 
 class TLV {
 
