@@ -1,4 +1,4 @@
-package interview.nespresso._2;
+package interview.nespresso.naval.battle;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

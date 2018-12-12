@@ -1,4 +1,4 @@
-package interview.nespresso._2;
+package interview.nespresso.naval.battle;
 
 enum Damages {
     GLOBAL,
