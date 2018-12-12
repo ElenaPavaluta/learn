@@ -1,4 +1,4 @@
-package i.nespresso.tournament;
+package interview.nespresso.tournament;
 
 class Weapon {
 

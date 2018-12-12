@@ -1,4 +1,4 @@
-package i.nespresso.tournament;
+package interview.nespresso.tournament;
 
 import java.util.concurrent.ExecutorService;
 

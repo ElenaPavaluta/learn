@@ -1,4 +1,4 @@
-package i.nespresso.naval.battle;
+package interview.nespresso.naval.battle;
 
 
 import org.junit.Test;
