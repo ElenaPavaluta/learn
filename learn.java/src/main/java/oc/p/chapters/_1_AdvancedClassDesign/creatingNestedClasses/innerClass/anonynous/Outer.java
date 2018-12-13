@@ -6,7 +6,7 @@ class Outer
 	{
 		@Override public void i()
 		{
-			System.out.println("i");
+			System.out.println("iq");
 		}
 	};
 

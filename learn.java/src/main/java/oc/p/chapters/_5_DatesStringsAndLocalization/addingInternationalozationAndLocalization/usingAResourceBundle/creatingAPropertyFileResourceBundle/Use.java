@@ -17,7 +17,7 @@ class Use {
     static Path path;
 
     static void init() {
-        path = Resources.propertiesFileAsPath("q_de_DE");
+        path = Resources.pathOfPropertyResourceBundle("q_de_DE");
         System.out.println(path.toString());
         try {
             path = Files.createFile(path);
@@ -38,7 +38,7 @@ class Use {
     }
 
     static void m() {
-        resourceBundle = ResourceBundle.getBundle("i");
+        resourceBundle = ResourceBundle.getBundle("iq");
         properties = new Properties();
         resourceBundle.keySet().stream()
                 .forEach(k -> properties.put(k, resourceBundle.getString(k)));
@@ -49,7 +49,7 @@ class Use {
     }
 
     static void m2() {
-        resourceBundle = ResourceBundle.getBundle("i");
+        resourceBundle = ResourceBundle.getBundle("iq");
         resourceBundle.keySet().forEach(k -> System.out.println(resourceBundle.getString(k)));
     }
 

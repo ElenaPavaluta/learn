@@ -21,4 +21,11 @@ public enum Location {
     public String toPath(){
         return path(location);
     }
+
+    public static void main(String[] args) {
+        System.out.println(SRC_MAIN_JAVA);
+        System.out.println(SRC_MAIN_JAVA.get());
+        System.out.println(SRC_MAIN_JAVA.toPath());
+        System.out.println(SRC_MAIN_JAVA.getClass().getPackage().getName());
+    }
 }

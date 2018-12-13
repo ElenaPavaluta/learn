@@ -1,4 +1,4 @@
-package i.uLink.tlv;
+package iq.uLink.tlv;
 
 class TLV {
 

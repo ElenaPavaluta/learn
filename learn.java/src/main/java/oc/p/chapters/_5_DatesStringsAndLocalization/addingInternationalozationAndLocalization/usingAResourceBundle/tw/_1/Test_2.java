@@ -11,8 +11,8 @@ import utils.resources.files.Resources;
 
 class Test_2 {
 
-    static Path path = Resources.propertiesFileAsPath("a_de" + Resources.DOT_PROPERTIES);
-    static Path path2 = Resources.propertiesFileAsPath("a_de_DE" + Resources.DOT_PROPERTIES);
+    static Path path = Resources.pathOfPropertyResourceBundle("a_de" + Resources.DOT_PROPERTIES);
+    static Path path2 = Resources.pathOfPropertyResourceBundle("a_de_DE" + Resources.DOT_PROPERTIES);
 
     static {
         try {

@@ -16,7 +16,7 @@ import java.util.function.BiFunction;
 class Properties_ {
 
     public static final BiFunction <Object, Object, Object> BI_FUNCTION = (o, n) -> o + "_" + n;
-    static Path path = Resources.propertiesFileAsPath("q_en_US");
+    static Path path = Resources.pathOfPropertyResourceBundle("q_en_US");
 
     static {
         try (BufferedWriter bw = Files.newBufferedWriter(path)) {
@@ -38,7 +38,7 @@ class Properties_ {
     }
 
     private static PropertyResourceBundle propertyResourceBundle() {
-        return (PropertyResourceBundle) ResourceBundle.getBundle("i");
+        return (PropertyResourceBundle) ResourceBundle.getBundle("iq");
     }
 
     static void m2() {

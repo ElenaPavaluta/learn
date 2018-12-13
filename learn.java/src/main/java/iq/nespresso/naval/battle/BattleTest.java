@@ -1,8 +1,9 @@
-package interview.nespresso.naval.battle;
+package iq.nespresso.naval.battle;
 
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
@@ -42,7 +43,7 @@ public class BattleTest {
         Ship d = new Ship("d", 23000, 1, 24);
 
         Battle battle = new Battle().side(a).against(b, c, d);
-        assertTrue(battle.isInTheWinningSide(b));
+        assertFalse(!battle.isInTheWinningSide(b));
         assertTrue(battle.isInTheWinningSide(c));
         assertTrue(battle.isInTheWinningSide(d));
     }
@@ -52,7 +53,7 @@ public class BattleTest {
     @Test
     public void packfightLightBoat() {
         Ship a = new Ship("a", 65000, 3, 64);
-        Ship b = new Ship("b",15000, 1, 24);
+        Ship b = new Ship("b", 15000, 1, 24);
         Ship c = new Ship("c", 15000, 1, 24);
         Ship d = new Ship("d", 15000, 1, 24);
 

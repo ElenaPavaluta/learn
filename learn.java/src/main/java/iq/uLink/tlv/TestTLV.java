@@ -1,4 +1,4 @@
-package i.uLink.tlv;
+package iq.uLink.tlv;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

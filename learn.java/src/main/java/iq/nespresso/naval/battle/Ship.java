@@ -1,4 +1,4 @@
-package interview.nespresso.naval.battle;
+package iq.nespresso.naval.battle;
 
 import java.util.Comparator;
 
@@ -56,7 +56,7 @@ class Ship {
     }
 
     private synchronized void sufferDamage(final double firePower) {
-        if(isActive()){
+        if (isActive()) {
             life -= firePower;
         }
     }

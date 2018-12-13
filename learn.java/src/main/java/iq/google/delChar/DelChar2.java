@@ -1,4 +1,4 @@
-package i.google.delChar;
+package iq.google.delChar;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

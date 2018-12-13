@@ -1,10 +1,10 @@
-package interview.nespresso.naval.battle;
+package iq.nespresso.naval.battle;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static interview.nespresso.naval.battle.Ship.COMPARE_BY_SPEED;
+import static iq.nespresso.naval.battle.Ship.COMPARE_BY_SPEED;
 import static java.util.stream.Collectors.toList;
 
 class Race {

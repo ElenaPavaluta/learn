@@ -34,13 +34,29 @@ public interface Resources {
         }
     };
 
-    static java.nio.file.Path propertiesFileAsPath(String name) {
+    static java.nio.file.Path pathOfPropertyResourceBundle(String name) {
         java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), name + DOT_PROPERTIES);
         if (!Files.exists(path)) {
             try {
                 Files.createFile(path);
             } catch (IOException e) {
                 System.err.println("Err: Files.createFile(path)");
+            }
+        }
+        return path;
+    }
+
+    static java.nio.file.Path pathOfPropertyResourceBundle(Object obj, String name) {
+        java.nio.file.Path root = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj));
+        java.nio.file.Path path = Paths.get(root.toString(), path(obj), name + DOT_PROPERTIES);
+        if (!Files.exists(path)) {
+            try {
+                root = Files.createDirectories(root);
+                if (!Files.exists(path)) {
+                    path = Files.createFile(path);
+                }
+            } catch (IOException e) {
+                System.err.println(String.format("Error: pathOfPropertyResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
             }
         }
         return path;
@@ -80,6 +96,21 @@ public interface Resources {
         } catch (IOException e) {
             System.err.println("Resources.deleteFrom(" + path + ")");
         }
+    }
+
+    static String pathToPropertyResourceBundle(java.nio.file.Path path) {
+        String loc = path.getParent().toString()
+                .replace(SRC_MAIN_RESOURCES.toPath(), "")
+                .substring(1);
+        String name = path.getFileName().toString()
+                .replace(DOT_PROPERTIES, "");
+
+        for (int i = 0; i < 2; i++) {
+            if (name.charAt(name.length() - 3) == '_') {
+                name = name.substring(0, name.length() - 3);
+            }
+        }
+        return loc + java.io.File.separator + name;
     }
 
     interface Path {
