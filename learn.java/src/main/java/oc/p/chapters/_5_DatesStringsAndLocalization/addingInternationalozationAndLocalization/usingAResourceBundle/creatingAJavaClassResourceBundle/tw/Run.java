@@ -16,6 +16,7 @@ import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
+import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
 
 class Run {
 
@@ -27,13 +28,13 @@ class Run {
         System.out.println(path);
         System.out.println(path.getFileName());
 
-        Path dest = Paths.get(Location.SRC_MAIN_RESOURCES.toPath());
+        Path dest = Paths.get(SRC_MAIN_RESOURCES.toPath());
         System.out.println(Files.exists(dest));
 
         Map <Path, Path> map = Files.list(path)
                 .filter(p -> !p.getFileName().toString().contains(new Run().getClass().getSimpleName()))
                 .peek(p -> System.out.println(p.getFileName()))
-                .collect(toMap(Function.identity(), p -> Paths.get(Location.SRC_MAIN_RESOURCES.toPath(), p.getFileName().toString())));
+                .collect(toMap(Function.identity(), p -> Paths.get(SRC_MAIN_RESOURCES.toPath(), p.getFileName().toString())));
         toDel = map.values().stream().collect(toList());
         System.out.println(toDel);
         map.forEach((k, v) -> {

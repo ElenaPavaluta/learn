@@ -47,17 +47,15 @@ public interface Resources {
     }
 
     static java.nio.file.Path pathOfPropertyResourceBundle(Object obj, String name) {
-        java.nio.file.Path root = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj));
-        java.nio.file.Path path = Paths.get(root.toString(), path(obj), name + DOT_PROPERTIES);
-        if (!Files.exists(path)) {
-            try {
-                root = Files.createDirectories(root);
-                if (!Files.exists(path)) {
-                    path = Files.createFile(path);
-                }
-            } catch (IOException e) {
-                System.err.println(String.format("Error: pathOfPropertyResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
+        java.nio.file.Path dir = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj));
+        java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj), name + DOT_PROPERTIES);
+        try {
+            Files.createDirectories(dir);
+            if (!Files.exists(path)) {
+                path = Files.createFile(path);
             }
+        } catch (IOException e) {
+            System.err.println(String.format("Error: pathOfPropertyResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
         }
         return path;
     }

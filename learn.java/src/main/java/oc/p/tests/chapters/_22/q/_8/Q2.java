@@ -31,10 +31,13 @@ class Q2 {
 
     static void m2() {
 //        ResourceBundle rb = ResourceBundle.getBundle("a\\b\\c");  //this also works
-        ResourceBundle rb = ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(path));
+        final String baseName = Resources.pathToPropertyResourceBundle(path);
+        System.out.println(path);
+        System.out.println(baseName);
+        ResourceBundle rb = ResourceBundle.getBundle(baseName);
 
         System.out.println(rb.getString("a"));
-        System.out.println(rb.getString("b"));  //RE MissingResourceException
+//        System.out.println(rb.getString("b"));  //RE MissingResourceException
     }
 
     public static void main(String[] args) throws IOException {

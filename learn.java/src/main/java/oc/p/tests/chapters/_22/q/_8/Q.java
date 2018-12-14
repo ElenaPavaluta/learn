@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
 import java.util.Locale;
+import java.util.Properties;
+import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 class Q {
@@ -15,7 +17,7 @@ class Q {
     static Path path;
 
     static {
-        path = Resources.pathOfPropertyResourceBundle(new Q(), "q_de_De" );
+        path = Resources.pathOfPropertyResourceBundle(new Q(), "q_de_DE" );
     }
 
     static void write(){
@@ -31,7 +33,17 @@ class Q {
     static void read(){
         System.out.println(path);
         System.out.println(Locale.GERMANY);
+        System.out.println(Resources.pathToPropertyResourceBundle(path));
         final ResourceBundle bundle = ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(path), Locale.GERMANY);
+        System.out.println(bundle.getString("mystery"));
+//        System.out.println(bundle.getString("non Existent"));
+
+        Properties props = new Properties();
+        bundle.keySet().stream()
+                .forEach(k-> props.put(k, bundle.getString(k)));
+
+        System.out.println(props.getProperty("mystery"));
+        System.out.println(props.getProperty("non Existent"));
     }
 
     public static void main(String[] args) {
