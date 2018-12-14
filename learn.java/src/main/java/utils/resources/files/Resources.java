@@ -60,6 +60,20 @@ public interface Resources {
         return path;
     }
 
+    static java.nio.file.Path pathOfListResourceBundle(Object obj, String name) {
+        java.nio.file.Path dir = Paths.get(SRC_MAIN_JAVA.toPath(), path(obj));
+        java.nio.file.Path path = Paths.get(SRC_MAIN_JAVA.toPath(), path(obj), name + DOT_PROPERTIES);
+        try {
+            Files.createDirectories(dir);
+            if (!Files.exists(path)) {
+                path = Files.createFile(path);
+            }
+        } catch (IOException e) {
+            System.err.println(String.format("Error: pathOfListResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
+        }
+        return path;
+    }
+
     static String path(String path) {
         return path.replace(".", java.io.File.separator);
     }
@@ -109,6 +123,17 @@ public interface Resources {
             }
         }
         return loc + java.io.File.separator + name;
+    }
+
+    static String pathToListResourceBundle(Object obj) {
+        String dir = obj.getClass().getPackage().getName();
+        String name = obj.getClass().getSimpleName();
+        for (int i = 0; i < 2; i++) {
+            if (name.charAt(name.length() - 3) == '_') {
+                name = name.substring(0, name.length() - 3);
+            }
+        }
+        return dir + "." + name;
     }
 
     interface Path {
