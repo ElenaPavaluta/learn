@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 class PropertyResourceBundleVsListResourceBundle {
 
     static String name = "name_en_US";
+    static Package pkg = new PropertyResourceBundleVsListResourceBundle().getClass().getPackage();
     static PropertyResourceBundleVsListResourceBundle obj = new PropertyResourceBundleVsListResourceBundle();
     static Path prbPath;
 
@@ -33,7 +34,7 @@ class PropertyResourceBundleVsListResourceBundle {
 
     static void readPRB() {
         writePRB();
-        PropertyResourceBundle prb = (PropertyResourceBundle) ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(prbPath));
+        PropertyResourceBundle prb = (PropertyResourceBundle) ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(pkg, "name"));
         System.out.println(prb.getBaseBundleName());
 
         System.out.println(prb.getString("a"));
@@ -53,7 +54,7 @@ class PropertyResourceBundleVsListResourceBundle {
     }
 
     static void readLRB() {
-        ListResourceBundle lrb = (ListResourceBundle) ResourceBundle.getBundle(Resources.pathToListResourceBundle(new Name_en_US()));
+        ListResourceBundle lrb = (ListResourceBundle) ResourceBundle.getBundle(Resources.pathToListResourceBundle(pkg, "Name"));
         System.out.println(lrb.getBaseBundleName());
 
         System.out.println(lrb.getString("a"));
@@ -69,9 +70,9 @@ class PropertyResourceBundleVsListResourceBundle {
     }
 
 
-    static void m(){
-        PropertyResourceBundle prb = (PropertyResourceBundle)ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(prbPath));
-        ListResourceBundle lrb = (ListResourceBundle)ResourceBundle.getBundle(Resources.pathToListResourceBundle(new Name_en_US()));
+    static void m() {
+        PropertyResourceBundle prb = (PropertyResourceBundle) ResourceBundle.getBundle(Resources.pathToPropertyResourceBundle(pkg, "name"));
+        ListResourceBundle lrb = (ListResourceBundle) ResourceBundle.getBundle(Resources.pathToListResourceBundle(pkg, "Name"));
 
 
         final Map <String, Object> map = prb.keySet().stream()

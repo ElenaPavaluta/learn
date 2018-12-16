@@ -82,10 +82,6 @@ public interface Resources {
         return path(obj.getClass().getPackage().getName());
     }
 
-    static String listResourceBundleFileName(Object obj) {
-        return obj.getClass().getPackage().getName() + "." + obj.getClass().getSimpleName().split("_")[0];
-    }
-
     static String srcMainResourcesPath(Object obj) {
         return SRC_MAIN_RESOURCES.toPath() + java.io.File.separator + path(obj);
     }
@@ -110,30 +106,13 @@ public interface Resources {
         }
     }
 
-    static String pathToPropertyResourceBundle(java.nio.file.Path path) {
-        String loc = path.getParent().toString()
-                .replace(SRC_MAIN_RESOURCES.toPath(), "")
-                .substring(1);
-        String name = path.getFileName().toString()
-                .replace(DOT_PROPERTIES, "");
 
-        for (int i = 0; i < 2; i++) {
-            if (name.charAt(name.length() - 3) == '_') {
-                name = name.substring(0, name.length() - 3);
-            }
-        }
-        return loc + java.io.File.separator + name;
+    static String pathToPropertyResourceBundle(Package pkg, String prop) {
+        return path(pkg.getName()) + java.io.File.separator + prop;
     }
 
-    static String pathToListResourceBundle(Object obj) {
-        String dir = obj.getClass().getPackage().getName();
-        String name = obj.getClass().getSimpleName();
-        for (int i = 0; i < 2; i++) {
-            if (name.charAt(name.length() - 3) == '_') {
-                name = name.substring(0, name.length() - 3);
-            }
-        }
-        return dir + "." + name;
+    static String pathToListResourceBundle(Package pkg, String name) {
+        return pkg.getName() + "." + name;
     }
 
     interface Path {

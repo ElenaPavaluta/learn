@@ -44,7 +44,7 @@ class Value implements Supplier <Integer> {
 
 class Run {
     static void m() {
-        final String baseName = Resources.listResourceBundleFileName(new LRB_en_US());
+        final String baseName = Resources.pathToListResourceBundle(new LRB_en_US().getClass().getPackage(),  "LRB");
         System.out.println(baseName);
         ResourceBundle rb = ResourceBundle.getBundle(baseName, Locale.US);
         ListResourceBundle lrb;
