@@ -1,7 +1,5 @@
 package oc.p.chapters._9_NIO2.presentingNewStreamMethods.walkingADirectory.searchingADirectory;
 
-import utils.resources.files.Resources;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +14,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * Return a Stream that is lazily populated with Path by searching for files in a file tree rooted at a given
@@ -27,7 +26,7 @@ import static utils.resources.files.Location.SRC_MAIN_JAVA;
  * static Stream<Path>	find(Path start, int maxDepth, BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options)
  */
 class Search {
-    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+    Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
 
     public static void main(String[] args) {
         Search s = new Search();

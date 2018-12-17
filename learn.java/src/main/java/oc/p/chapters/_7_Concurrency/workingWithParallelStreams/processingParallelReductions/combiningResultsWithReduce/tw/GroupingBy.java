@@ -2,23 +2,27 @@ package oc.p.chapters._7_Concurrency.workingWithParallelStreams.processingParall
 
 import utils.delimitators.Delimitators;
 import utils.resources.files.ResourcesData;
-import utils.resources.files.ResourcesPath;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.time.*;
-import java.util.List;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.ZoneId;
 import java.util.Map;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 
 class GroupingBy {
 
-    static Path path = ResourcesPath.SRC_MAIN_JAVA.get();
+    static Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
     static Instant thisYear = ResourcesData.THIS_YEAR.instant();
     static Instant thisMonth = ResourcesData.THIS_MONTH.instant();
 

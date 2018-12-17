@@ -13,7 +13,7 @@ class CreateDirsWhenNameIsNotADir {
 
     public static final String PATH = "path";
     public static final String FILE = "file";
-    static String location = Resources.srcMainResourcesPath(new CreateDirsWhenNameIsNotADir());
+    static String location = Resources.srcMainResourcesPackagePath(new CreateDirsWhenNameIsNotADir());
     static Path path = Paths.get(location, PATH);
     static File file = new File(location + File.separator + FILE);
     static File f = new File(file, "f");

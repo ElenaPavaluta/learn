@@ -2,6 +2,7 @@ package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAt
 
 import utils.delimitators.Delimitators;
 import utils.resources.files.Resources;
+import utils.resources.files.util.PathUtil;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -14,7 +15,7 @@ import java.util.function.Function;
 
 class UP {
 
-    static Path path = Resources.Path.directory(new UP());
+    static Path path = PathUtil.directory(new UP());
 
     static Function <String, UserPrincipal> FROM_FILE_SYSTEMS = u -> {
         try {

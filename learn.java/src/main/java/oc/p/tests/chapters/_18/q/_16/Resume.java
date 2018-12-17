@@ -7,7 +7,7 @@ import java.io.IOException;
 
 class Resume {
 
-    static String path = Resources.srcMainResourcesPath(new Resume());
+    static String path = Resources.srcMainResourcesPackagePath(new Resume());
     static File f, f2, f3;
 
     static void m() throws IOException {

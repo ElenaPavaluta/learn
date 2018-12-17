@@ -1,12 +1,13 @@
 package oc.p.tests.chapters._18.q._14;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
 
 class Serialize {
 
-    static File f = Resources.File.file(new Serialize(), "f");
+    static File f = FileUtil.file(new Serialize(), "f");
 
     static void write() throws IOException {
         Cereal c = new Cereal();

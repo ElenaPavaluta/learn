@@ -1,12 +1,13 @@
 package oc.p.chapters._8_IO.workingWithStreams.printStreamAndPrintWriter;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 
 class Sample {
 
     public static void main(String[] args) throws IOException {
-        File f = Resources.File.file(new Sample().getClass().getPackage(), "c");
+        File f = FileUtil.file(new Sample().getClass().getPackage(), "c");
 
         try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f)))){
             pw.print("Today wether is: ");

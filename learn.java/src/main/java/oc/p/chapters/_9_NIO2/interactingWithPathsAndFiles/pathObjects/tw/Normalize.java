@@ -1,6 +1,7 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.pathObjects.tw;
 
 import utils.resources.files.Resources;
+import utils.resources.files.util.PathUtil;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -22,7 +23,7 @@ class Normalize {
     }
 
     static void m3() throws IOException {
-        Path p = Resources.Path.directory(new Normalize());
+        Path p = PathUtil.directory(new Normalize());
 
         System.out.println(p);
         System.out.println(p.toAbsolutePath());

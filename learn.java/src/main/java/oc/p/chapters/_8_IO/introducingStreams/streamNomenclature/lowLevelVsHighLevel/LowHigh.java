@@ -1,13 +1,14 @@
 package oc.p.chapters._8_IO.introducingStreams.streamNomenclature.lowLevelVsHighLevel;
 
-import utils.resources.files.Resources;
+import utils.resources.files.util.FileUtil;
+
 import java.io.*;
 
 class LowHigh {
     File file;
 
     {
-        file = Resources.File.file(this.getClass().getPackage(), "file.txt");
+        file = FileUtil.file(this.getClass().getPackage(), "file.txt");
         System.out.println(file.getPath());
     }
 

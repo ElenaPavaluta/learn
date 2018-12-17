@@ -1,6 +1,5 @@
 package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.collect.tw._1;
 
-import utils.resources.files.Resources;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,14 +10,15 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * <R> R  collect(Supplier<R> supplier, BiConsumer<R, T> accumulator, BiConsumer<R,R> combiner)
  * Performs a mutable reduction operation on the elements of this stream.
  */
 class C4 {
-    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+    Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
     Instant today = Instant.now().minus(LocalTime.now().getHour(), ChronoUnit.HOURS);
 
     public static void main(String[] args) throws IOException {
@@ -27,8 +27,8 @@ class C4 {
     }
 
     void m() throws IOException {
-        List<Path> paths = Files.find(path, Byte.MAX_VALUE, (p, bfa) -> bfa.creationTime().toInstant().isAfter(today))
-                                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        List <Path> paths = Files.find(path, Byte.MAX_VALUE, (p, bfa) -> bfa.creationTime().toInstant().isAfter(today))
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
         paths.forEach(System.out::println);
     }

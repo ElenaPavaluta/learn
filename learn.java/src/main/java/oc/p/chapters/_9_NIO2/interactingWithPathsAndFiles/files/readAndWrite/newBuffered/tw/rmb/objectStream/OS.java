@@ -2,6 +2,7 @@ package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.readAndWrite.ne
 
 import utils.javaClass.implemets.serializable.simple.Tea;
 import utils.javaClass.implemets.serializable.simple.TeaPot;
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ class OS {
 
     static Package pkg = new OS().getClass().getPackage();
     static List<TeaPot> lst = Arrays.stream(Tea.values()).map(TeaPot::new).collect(Collectors.toList());
-    static File f = Resources.File.file(pkg, "f2");
+    static File f = FileUtil.file(pkg, "f2");
     static {
         try(ObjectOutputStream ous = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(f)))){
             lst.forEach(o -> {

@@ -1,12 +1,13 @@
 package oc.p.tests.chapters._18.q._21;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
 
 class StudentManager {
 
-    static File f = Resources.File.file(new StudentManager(), "f");
+    static File f = FileUtil.file(new StudentManager(), "f");
 
     static void write() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {

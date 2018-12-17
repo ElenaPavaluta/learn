@@ -10,8 +10,9 @@ import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
 import static utils.resources.files.Resources.DOT_PROPERTIES;
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 class Prop {
 
@@ -19,9 +20,9 @@ class Prop {
     static Path de, de_De, prop;
 
     static {
-        de_De = Paths.get(SRC_MAIN_RESOURCES.toPath(), P + "_de_De" + DOT_PROPERTIES);
-        de = Paths.get(SRC_MAIN_RESOURCES.toPath(), P + "_de" + DOT_PROPERTIES);
-        prop = Paths.get(SRC_MAIN_RESOURCES.toPath(), P + DOT_PROPERTIES);
+        de_De = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), P + "_de_De" + DOT_PROPERTIES);
+        de = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), P + "_de" + DOT_PROPERTIES);
+        prop = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), P + DOT_PROPERTIES);
 
         init(de_De, "colon:Colon");
         init(de, "equal=Equal");

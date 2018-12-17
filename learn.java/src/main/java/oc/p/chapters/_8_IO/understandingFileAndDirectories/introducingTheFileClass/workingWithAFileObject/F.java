@@ -1,21 +1,22 @@
 package oc.p.chapters._8_IO.understandingFileAndDirectories.introducingTheFileClass.workingWithAFileObject;
 
 import utils.resources.files.Resources;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 class F {
 
-    List<java.io.File> files = new ArrayList<>();
-    String path = Resources.path(this.getClass().getPackage().getName());
-
     public static final String NEW_PATH = "a\\b\\c\\d\\e\\f\\g";
+    List <java.io.File> files = new ArrayList <>();
+    String path = SLASH.separationOf(this.getClass().getPackage().getName());
 
     {
-        java.io.File f = new java.io.File(SRC_MAIN_RESOURCES.toPath(), path + NEW_PATH);
+        java.io.File f = new java.io.File(SLASH.separationOf(SRC_MAIN_RESOURCES), path + NEW_PATH);
 
         /**
          *Because there are multiple files, doesn't do nothing
@@ -25,7 +26,17 @@ class F {
         files.add(f);
     }
 
-    void m(){
+    public static void main(String[] args) throws IOException {
+        F f = new F();
+
+        f.m();
+        f.m2();
+//        f.f3();
+
+        Resources.clean();
+    }
+
+    void m() {
         java.io.File f = files.get(0);
 
 //        _m(f);
@@ -71,16 +82,5 @@ class F {
         files.add(f2);
 
 
-    }
-
-
-    public static void main(String[] args) throws IOException {
-        F f = new F();
-
-        f.m();
-        f.m2();
-//        f.f3();
-
-        Resources.clean();
     }
 }

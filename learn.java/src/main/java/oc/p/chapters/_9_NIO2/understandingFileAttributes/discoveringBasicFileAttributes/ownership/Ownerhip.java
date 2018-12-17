@@ -1,6 +1,7 @@
 package oc.p.chapters._9_NIO2.understandingFileAttributes.discoveringBasicFileAttributes.ownership;
 
 import utils.resources.files.Resources;
+import utils.resources.files.util.PathUtil;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -22,7 +23,7 @@ import java.util.function.Function;
 
 class Ownerhip {
 
-    static Path path = Resources.Path.directory(new Ownerhip());
+    static Path path = PathUtil.directory(new Ownerhip());
     static Path ne = Paths.get("nonExistentPath");
     static List <Path> lst = Arrays.asList(path, ne);
     static Function <Path, UserPrincipal> GET_OWNER = p -> {

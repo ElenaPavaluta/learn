@@ -1,5 +1,6 @@
 package oc.p.chapters._8_IO.workingWithStreams.printStreamAndPrintWriter;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 import java.time.LocalDateTime;
@@ -19,7 +20,7 @@ class PrintStreamClass {
     PrintStream printStream;
 
     {
-        file = Resources.File.file(this.getClass().getPackage(), "a.txt");
+        file = FileUtil.file(this.getClass().getPackage(), "a.txt");
     }
 
     {

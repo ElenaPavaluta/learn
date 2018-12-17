@@ -17,7 +17,7 @@ import java.nio.file.Paths;
  * Creates a directory by creating all nonexistent parent directories first.
  */
 class CreateDirs {
-    static String location = Resources.srcMainResourcesPath(new CreateDirs());
+    static String location = Resources.srcMainResourcesPackagePath(new CreateDirs());
 
     static Path p = Paths.get(location, "p", "p2");
     static File f = new File(location + File.separator + "f/f2");

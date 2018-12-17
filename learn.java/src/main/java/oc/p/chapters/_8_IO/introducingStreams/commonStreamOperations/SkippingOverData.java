@@ -1,10 +1,11 @@
 package oc.p.chapters._8_IO.introducingStreams.commonStreamOperations;
 
-import utils.resources.files.Resources;
+import utils.resources.files.util.FileUtil;
+
 import java.io.*;
 
 class SkippingOverData {
-    File f = Resources.File.file(this.getClass().getPackage(), "common.txt");
+    File f = FileUtil.file(this.getClass().getPackage(), "common.txt");
 
     void m() throws IOException {
         try(FileInputStream fis = new FileInputStream(f)){

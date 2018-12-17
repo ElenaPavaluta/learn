@@ -1,12 +1,13 @@
 package oc.p.tests.chapters._18.q._9;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
 
 class PrimeReader {
 
-    static File f = Resources.File.file(new PrimeReader(), "f");
+    static File f = FileUtil.file(new PrimeReader(), "f");
 
     static void write() {
         byte[] arr = new byte[]{2, 3, 5, 7, 11, 13};

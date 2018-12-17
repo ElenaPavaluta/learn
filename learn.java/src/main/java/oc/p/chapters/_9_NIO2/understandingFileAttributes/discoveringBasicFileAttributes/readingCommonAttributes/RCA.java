@@ -25,7 +25,7 @@ import java.nio.file.Paths;
 class RCA {
 
     static final Package PACKAGE = new RCA().getClass().getPackage();
-    static String loc = Resources.srcMainResourcesPath(PACKAGE);
+    static String loc = Resources.srcMainResourcesPackagePath(PACKAGE);
     static java.nio.file.Path dir = Paths.get(loc);
     static java.nio.file.Path file = Paths.get(loc, "rca");
     static String A_B_C = "a\\b\\c";

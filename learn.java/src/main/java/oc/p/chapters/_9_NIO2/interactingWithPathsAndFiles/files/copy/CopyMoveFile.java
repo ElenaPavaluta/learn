@@ -18,7 +18,7 @@ import java.nio.file.StandardCopyOption;
  * public static Path move(Path source, Path target, CopyOption... options) throws IOException
  */
 class CopyMoveFile {
-    static String loc = Resources.srcMainResourcesPath(new CopyMoveFile().getClass().getPackage());
+    static String loc = Resources.srcMainResourcesPackagePath(new CopyMoveFile().getClass().getPackage());
 
     static String SOURCE = "source";
     static String SOURCE_FILE = "source.txt";

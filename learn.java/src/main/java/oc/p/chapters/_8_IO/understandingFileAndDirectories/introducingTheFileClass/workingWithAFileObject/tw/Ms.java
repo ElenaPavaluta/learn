@@ -13,7 +13,7 @@ import java.util.function.Consumer;
  */
 class Ms {
 
-    static String path = Resources.srcMainResourcesPath(new Ms().getClass().getPackage());
+    static String path = Resources.srcMainResourcesPackagePath(new Ms().getClass().getPackage());
     static File dir;
     static File file;
     static File ne = new File("nonExistent");

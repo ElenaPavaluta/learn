@@ -1,11 +1,12 @@
 package oc.p.chapters._8_IO.workingWithStreams.reviewOfTheStreamClasses.otherStreamClasses;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 
 class StreamToChar {
 
-    File f = Resources.File.file(this.getClass().getPackage(), "f");
+    File f = FileUtil.file(this.getClass().getPackage(), "f");
 
     public static void main(String[] args) throws IOException {
         StreamToChar streamToChar = new StreamToChar();

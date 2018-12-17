@@ -1,6 +1,7 @@
 package oc.p.chapters._8_IO.introducingStreams.commonStreamOperations;
 
-import utils.resources.files.Resources;
+import utils.resources.files.util.FileUtil;
+
 import java.io.*;
 import java.util.stream.IntStream;
 
@@ -14,7 +15,7 @@ import java.util.stream.IntStream;
  */
 class MarkingTheStream {
 
-    File file = Resources.File.file(this.getClass().getPackage(), "common.txt");
+    File file = FileUtil.file(this.getClass().getPackage(), "common.txt");
 
     public static void main(String[] args) throws IOException {
         MarkingTheStream mts = new MarkingTheStream();

@@ -2,6 +2,7 @@ package oc.p.chapters._9_NIO2.comparingLegacyFileAndNIO2Methods;
 
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,7 +13,8 @@ import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 class Compare {
     java.io.File file = CreatePopulate.IO.File.file(this);
@@ -87,7 +89,7 @@ class Compare {
         try {
             boolean b2 = Files.isHidden(path);
             System.out.println(b2);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -99,7 +101,7 @@ class Compare {
         try {
             long l2 = Files.size(path);
             System.out.println(l2);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -111,7 +113,7 @@ class Compare {
         try {
             FileTime ft = Files.getLastModifiedTime(path);
             System.out.println(ft);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -125,20 +127,20 @@ class Compare {
         try {
             path = Files.setLastModifiedTime(path, ft);
             System.out.println(Files.getLastModifiedTime(path));
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    void delete(){
+    void delete() {
         boolean b = file.delete();
         System.out.println(b);  //true
         System.out.println(file.exists());  //false
 
         try {
             Files.delete(path);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -146,13 +148,13 @@ class Compare {
 
         try {
             System.out.println(Files.deleteIfExists(path));  //false
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    void move(){
-        java.io.File f =new java.io.File(file.getParent(), "newFile");
+    void move() {
+        java.io.File f = new java.io.File(file.getParent(), "newFile");
         boolean b = file.renameTo(f);
         System.out.println(b);
 
@@ -160,18 +162,18 @@ class Compare {
         try {
             p = Files.move(path, p);
             System.out.println(p);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         Resources.clean();
     }
 
-    void createDir(){
+    void createDir() {
         java.io.File f = new java.io.File(file.getParent(), "newFDir");
         boolean b = f.mkdir();  //true
         System.out.println(b);
-        if(f.exists()){
+        if (f.exists()) {
             System.out.println(f.getName());
             System.out.println(f.delete());  //true
         }
@@ -180,15 +182,15 @@ class Compare {
         try {
             p = Files.createDirectory(p);
             System.out.println(p.getFileName());
-            if(Files.exists(p)){
+            if (Files.exists(p)) {
                 Files.delete(p);
             }
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    void createDirs(){
+    void createDirs() {
         java.io.File f = new java.io.File(file.getParent(), "\\f\\f2\\f3");
         boolean b = f.mkdirs();
         System.out.println(f);
@@ -199,20 +201,20 @@ class Compare {
         try {
             p = Files.createDirectories(p);
             System.out.println(p);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         Resources.clean();
     }
 
-    void list(){
-        java.io.File f = new java.io.File(SRC_MAIN_JAVA.toPath());
+    void list() {
+        java.io.File f = new java.io.File(SLASH.separationOf(SRC_MAIN_JAVA));
         System.out.println(Arrays.toString(f.listFiles()));
 
-        java.nio.file.Path p = Paths.get(SRC_MAIN_JAVA.toPath());
+        java.nio.file.Path p = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
         try {
             Files.list(p).forEach(System.out::println);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

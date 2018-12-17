@@ -1,7 +1,7 @@
 package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.reduce.tw;
 
 import utils.delimitators.Delimitators;
-import utils.resources.files.Resources;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,7 +11,8 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * Optional<T> reduce(BinaryOperator<T> accumulator)
@@ -20,11 +21,11 @@ import static utils.resources.files.Location.SRC_MAIN_JAVA;
  * and returns an Optional describing the reduced value, if any.
  */
 class R2 {
-    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+    Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
 
-    Comparator<Path> comparator = Comparator.comparingLong(p -> lines(p));
-    BinaryOperator<Path> maxBinaryOperator = BinaryOperator.maxBy(comparator);
-    BinaryOperator<Path> minBinaryOperator = BinaryOperator.minBy(comparator);
+    Comparator <Path> comparator = Comparator.comparingLong(p -> lines(p));
+    BinaryOperator <Path> maxBinaryOperator = BinaryOperator.maxBy(comparator);
+    BinaryOperator <Path> minBinaryOperator = BinaryOperator.minBy(comparator);
 
     public static void main(String[] args) throws IOException {
         R2 r = new R2();
@@ -40,7 +41,7 @@ class R2 {
     private long lines(Path p) {
         try {
             return Files.size(p);
-        } catch(IOException e) {
+        } catch (IOException e) {
             return 0l;
         }
     }
@@ -50,7 +51,7 @@ class R2 {
     }
 
     void m() throws IOException {
-        Optional<Path> optional = Files.walk(path).filter(Files::isRegularFile).reduce((p, p2) -> maxBinaryOperator
+        Optional <Path> optional = Files.walk(path).filter(Files::isRegularFile).reduce((p, p2) -> maxBinaryOperator
                 .apply(p, p2));
 
         optional.ifPresent(System.out::println);
@@ -65,32 +66,32 @@ class R2 {
     }
 
     void m4() throws IOException {
-        Optional<Path> optional = Files.walk(path).filter(p -> p.getFileName().toString().contains(".java")).reduce
+        Optional <Path> optional = Files.walk(path).filter(p -> p.getFileName().toString().contains(".java")).reduce
                 (this::maxBy);
 
         optional.ifPresent(p -> {
             System.out.println(p);
             try {
                 Files.lines(p).forEach(System.out::println);
-            } catch(IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
     void m5() throws IOException {
-        Optional<Path> optional = Files.walk(path).reduce(this::maxBy);
-        optional.ifPresent(p->{
+        Optional <Path> optional = Files.walk(path).reduce(this::maxBy);
+        optional.ifPresent(p -> {
             File f = p.toFile();
-            try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f))){
+            try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f))) {
                 byte[] buff = new byte[256];
                 int len;
-                while((len = bis.read(buff))>0){
+                while ((len = bis.read(buff)) > 0) {
                     System.out.println(Arrays.toString(buff));
                 }
-            } catch(FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            } catch(IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });

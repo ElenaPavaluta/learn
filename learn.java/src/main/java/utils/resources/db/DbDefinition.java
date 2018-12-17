@@ -4,7 +4,8 @@ import java.io.File;
 
 import static utils.resources.db.DbDefinition.LocationType.EMBEDDED;
 import static utils.resources.db.DbDriver.DERBY;
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES_DB;
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES_DB;
+import static utils.resources.files.Separation.SLASH;
 
 public enum DbDefinition {
 
@@ -25,12 +26,12 @@ public enum DbDefinition {
         return driver.driver() + ":" + path();
     }
 
-    public String forName(){
+    public String forName() {
         return driver.forName();
     }
 
     public String path() {
-        return SRC_MAIN_RESOURCES_DB.toPath() + File.separator + type.name().toLowerCase() +
+        return SLASH.separationOf(SRC_MAIN_RESOURCES_DB) + File.separator + type.name().toLowerCase() +
                 File.separator + driver.dbType() + File.separator + name;
     }
 

@@ -1,5 +1,6 @@
 package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputStream.serializableInterface;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ class RunAnimal {
     File file;
 
     {
-        file = Resources.File.file(this.getClass().getPackage(), "cat.txt");
+        file = FileUtil.file(this.getClass().getPackage(), "cat.txt");
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {

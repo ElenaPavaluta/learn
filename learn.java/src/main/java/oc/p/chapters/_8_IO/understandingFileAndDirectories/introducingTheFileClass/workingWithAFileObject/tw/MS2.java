@@ -11,15 +11,16 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.ToLongFunction;
 
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 class MS2 {
 
-    static String path = Resources.srcMainResourcesPath(new MS2().getClass().getPackage());
+    static String path = Resources.srcMainResourcesPackagePath(new MS2().getClass().getPackage());
     static File dir;
     static File file;
     static File ne = new File("nonExistent");
-    static File dest = new File(SRC_MAIN_RESOURCES.toPath());
+    static File dest = new File(SLASH.separationOf(SRC_MAIN_RESOURCES));
     static List <File> lst /*= Arrays.asList(dir, file, ne)*/;  //NPE:
 
     static {

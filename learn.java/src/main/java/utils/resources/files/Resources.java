@@ -1,24 +1,27 @@
 package utils.resources.files;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
 import static java.util.Comparator.comparingInt;
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 public interface Resources {
     String IBM_CTANASE = "AzureAD\\CiprianDorinTanase";
     String USER = IBM_CTANASE;
     String DOT_PROPERTIES = ".properties";
+    String SRC_MAIN_JAVA = "src.main.java";
+    String SRC_MAIN_RESOURCES = "src.main.resources";
+    String SRC_MAIN_RESOURCES_DB = "src.main.resources.db";
 
-    Comparator <java.nio.file.Path> COMPARE_BY_DISTANCE_FROM_SOURCE = comparingInt(java.nio.file.Path::getNameCount);
-
-    BiPredicate <java.nio.file.Path, java.nio.file.Path> IS_SAME_FILE = (p, p2) -> {
+    Comparator <Path> COMPARE_BY_DISTANCE_FROM_SOURCE = comparingInt(Path::getNameCount);
+    BiPredicate <Path, Path> IS_SAME_FILE = (p, p2) -> {
         try {
             return Files.isSameFile(p, p2);
         } catch (IOException e) {
@@ -26,7 +29,8 @@ public interface Resources {
         }
         return false;
     };
-    Consumer <java.nio.file.Path> DELETE_IF_EXISTS = p -> {
+
+    Consumer <Path> DELETE_IF_EXISTS = p -> {
         try {
             Files.deleteIfExists(p);
         } catch (IOException e) {
@@ -34,68 +38,60 @@ public interface Resources {
         }
     };
 
-    static java.nio.file.Path pathOfPropertyResourceBundle(String name) {
-        java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), name + DOT_PROPERTIES);
-        if (!Files.exists(path)) {
-            try {
-                Files.createFile(path);
-            } catch (IOException e) {
-                System.err.println("Err: Files.createFile(path)");
-            }
-        }
-        return path;
+
+    static Path pathOfPropertyResourceBundle(String name) {
+//        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), name + DOT_PROPERTIES);
+//        if (!Files.exists(path)) {
+//            try {
+//                Files.createFile(path);
+//            } catch (IOException e) {
+//                System.err.println("Err: Files.createFile(path)");
+//            }
+//        }
+//        return path;
+        return null;
     }
 
-    static java.nio.file.Path pathOfPropertyResourceBundle(Object obj, String name) {
-        java.nio.file.Path dir = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj));
-        java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj), name + DOT_PROPERTIES);
-        try {
-            Files.createDirectories(dir);
-            if (!Files.exists(path)) {
-                path = Files.createFile(path);
-            }
-        } catch (IOException e) {
-            System.err.println(String.format("Error: pathOfPropertyResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
-        }
-        return path;
+    static Path pathOfPropertyResourceBundle(Object obj, String name) {
+//        Path dir = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), S);
+//        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), path(obj), name + DOT_PROPERTIES);
+//        try {
+//            Files.createDirectories(dir);
+//            if (!Files.exists(path)) {
+//                path = Files.createFile(path);
+//            }
+//        } catch (IOException e) {
+//            System.err.println(String.format("Error: pathOfPropertyResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
+//        }
+//        return path;
+        return null;
     }
 
-    static java.nio.file.Path pathOfListResourceBundle(Object obj, String name) {
-        java.nio.file.Path dir = Paths.get(SRC_MAIN_JAVA.toPath(), path(obj));
-        java.nio.file.Path path = Paths.get(SRC_MAIN_JAVA.toPath(), path(obj), name + DOT_PROPERTIES);
-        try {
-            Files.createDirectories(dir);
-            if (!Files.exists(path)) {
-                path = Files.createFile(path);
-            }
-        } catch (IOException e) {
-            System.err.println(String.format("Error: pathOfListResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
-        }
-        return path;
+    static Path pathOfListResourceBundle(Object obj, String name) {
+//        Path dir = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA), path(obj));
+//        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA), path(obj), name + DOT_PROPERTIES);
+//        try {
+//            Files.createDirectories(dir);
+//            if (!Files.exists(path)) {
+//                path = Files.createFile(path);
+//            }
+//        } catch (IOException e) {
+//            System.err.println(String.format("Error: pathOfListResourceBundle(%s, %s)", obj.getClass().getSimpleName(), name));
+//        }
+//        return path;
+        return null;
     }
 
-    static String path(String path) {
-        return path.replace(".", java.io.File.separator);
-    }
-
-    static String path(Object obj) {
-        return path(obj.getClass().getPackage().getName());
-    }
-
-    static String srcMainResourcesPath(Object obj) {
-        return SRC_MAIN_RESOURCES.toPath() + java.io.File.separator + path(obj);
-    }
-
-    static String srcMainJavaPath(Object obj) {
-        return SRC_MAIN_JAVA.toPath() + java.io.File.separator + path(obj);
+    static String srcMainResourcesPackagePath(Object obj) {
+        return SLASH.separationOf(SRC_MAIN_RESOURCES) + java.io.File.separator + SLASH.separationOf(obj.getClass().getPackage().getName());
     }
 
     static void clean() {
-        java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath());
+        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES));
         deleteFrom(path);
     }
 
-    static void deleteFrom(java.nio.file.Path path) {
+    static void deleteFrom(Path path) {
         try {
             Files.walk(path)
                     .sorted(COMPARE_BY_DISTANCE_FROM_SOURCE.reversed())
@@ -108,55 +104,11 @@ public interface Resources {
 
 
     static String pathToPropertyResourceBundle(Package pkg, String prop) {
-        return path(pkg.getName()) + java.io.File.separator + prop;
+        return SLASH.separationOf(pkg.getName()) + File.separator + prop;
     }
 
     static String pathToListResourceBundle(Package pkg, String name) {
         return pkg.getName() + "." + name;
     }
 
-    interface Path {
-        static java.nio.file.Path directory(Object obj) {
-            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj));
-            try {
-                path = Files.createDirectories(path);
-            } catch (IOException e) {
-                System.err.println("Resources.Path.directory(" + obj.getClass().getSimpleName() + ")");
-            }
-            return path;
-        }
-
-
-        static java.nio.file.Path file(Object obj, String fileName) {
-            directory(obj);
-            java.nio.file.Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), path(obj), fileName);
-            try {
-                path = Files.createFile(path);
-            } catch (IOException e) {
-                System.err.println("Resources.Path.file(" + obj.getClass().getSimpleName() + ", " + fileName + ")");
-            }
-            return path;
-        }
-
-    }
-
-    interface File {
-        static java.io.File directory(Object o) {
-            java.io.File file = new java.io.File(SRC_MAIN_RESOURCES.toPath(), path(o.getClass().getPackage().getName()));
-            file.mkdirs();
-            return file;
-        }
-
-        static java.io.File file(Object o, String fileName) {
-            java.io.File dir = directory(o);
-            java.io.File file = new java.io.File(dir, fileName);
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                System.err.println("Resources.File.file(" + o.getClass().getSimpleName() + ", " + fileName + ")");
-            }
-            return file;
-        }
-
-    }
 }

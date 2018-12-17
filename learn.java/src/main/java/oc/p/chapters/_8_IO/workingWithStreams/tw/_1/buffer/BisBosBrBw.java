@@ -6,7 +6,7 @@ import java.io.*;
 
 class BisBosBrBw {
 
-    static String path = Resources.srcMainResourcesPath(new BisBosBrBw());
+    static String path = Resources.srcMainResourcesPackagePath(new BisBosBrBw());
     static File dir, f, f2;
 
     static {

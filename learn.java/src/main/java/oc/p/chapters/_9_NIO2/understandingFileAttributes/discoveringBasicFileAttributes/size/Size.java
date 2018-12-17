@@ -45,7 +45,7 @@ class Size {
      * you’ll need to walk the directory tree,
      */
     static void m3() {
-        path = Paths.get(Resources.srcMainResourcesPath(PACKAGE));
+        path = Paths.get(Resources.srcMainResourcesPackagePath(PACKAGE));
         try {
             path = Files.createDirectories(path);
             System.out.println(Files.size(path));

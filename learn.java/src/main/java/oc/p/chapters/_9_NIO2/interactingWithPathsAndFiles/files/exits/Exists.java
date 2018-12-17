@@ -1,5 +1,6 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.exits;
 
+import utils.resources.files.util.PathUtil;
 import utils.resources.files.Resources;
 
 import java.nio.file.Files;
@@ -15,7 +16,7 @@ class Exists {
         System.out.println(p);
         System.out.println(Files.exists(p));  //false
 
-        java.nio.file.Path p2 = Resources.Path.directory(new Exists().getClass().getPackage());
+        java.nio.file.Path p2 = PathUtil.directory(new Exists().getClass().getPackage());
         System.out.println(p2);
         System.out.println(Files.exists(p2));  //true
 

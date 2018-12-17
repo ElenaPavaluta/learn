@@ -1,6 +1,6 @@
 package utils.resources.files.create.populate;
 
-import utils.resources.files.Resources;
+import utils.resources.files.util.FileUtil;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -29,7 +29,7 @@ public interface CreatePopulate {
             }
 
             static java.io.File file(Package destination, String fileName) {
-                java.io.File file = Resources.File.file(destination, fileName);
+                java.io.File file = FileUtil.file(destination, fileName);
                 try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
                     bw.write(content());
                 } catch (IOException e) {

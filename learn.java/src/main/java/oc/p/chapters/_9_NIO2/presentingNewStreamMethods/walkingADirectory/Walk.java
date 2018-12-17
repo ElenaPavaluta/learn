@@ -1,13 +1,12 @@
 package oc.p.chapters._9_NIO2.presentingNewStreamMethods.walkingADirectory;
 
-import utils.resources.files.Resources;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * Return a Stream that is lazily populated with Path by walking the
@@ -29,7 +28,7 @@ class Walk {
     }
 
     void m() {
-        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
         try {
             long l = Files.walk(path).count();
             System.out.println(l);
@@ -39,7 +38,7 @@ class Walk {
     }
 
     void m2() {
-        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
         try {
             long l = Files.walk(path, 5).count();
             System.out.println(l);

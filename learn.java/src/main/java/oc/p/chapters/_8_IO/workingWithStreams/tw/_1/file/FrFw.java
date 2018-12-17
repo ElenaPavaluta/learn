@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 class FrFw {
-    static String path = Resources.srcMainResourcesPath(new FrFw());
+    static String path = Resources.srcMainResourcesPackagePath(new FrFw());
     static File dir, f, f2;
 
     static {

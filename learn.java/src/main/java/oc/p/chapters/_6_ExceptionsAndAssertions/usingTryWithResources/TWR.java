@@ -3,6 +3,8 @@ package oc.p.chapters._6_ExceptionsAndAssertions.usingTryWithResources;
 import utils.print.Print;
 import utils.resources.files.Resources;
 import utils.resources.files.create.populate.CreatePopulate;
+import utils.resources.files.util.PathUtil;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,7 +19,7 @@ class TWR {
     static {
         Package pkg = new TWR().getClass().getPackage();
         read = CreatePopulate.NIO.File.Path.file(pkg, "read");
-        write = Resources.Path.file(pkg, "write");
+        write = PathUtil.file(pkg, "write");
     }
 
     static void oldApproach() throws IOException {

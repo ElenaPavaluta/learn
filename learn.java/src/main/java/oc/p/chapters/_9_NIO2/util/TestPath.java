@@ -1,6 +1,6 @@
 package oc.p.chapters._9_NIO2.util;
 
-import utils.resources.files.Location;
+import utils.resources.files.Resources;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,6 +12,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static utils.resources.files.Separation.SLASH;
 
 public class TestPath {
 
@@ -29,7 +31,7 @@ public class TestPath {
 
     public static List <Path> pathList = Arrays.asList(WORKING_DIR, Absolute_Linux_Path, Relative_Linux_Path, Absolute_Windows_Path, Relative_Windows_Path, Empty_Path);
 
-    static Path SRC_MAIN_JAVA = Paths.get(Location.SRC_MAIN_JAVA.toPath());
+    static Path SRC_MAIN_JAVA = Paths.get(SLASH.separationOf(Resources.SRC_MAIN_JAVA));
     static Instant thisYear = Instant.now().minus(LocalDateTime.now().getDayOfYear() - 1, ChronoUnit.DAYS);
     static Instant thisMonth = Instant.now().minus(LocalDateTime.now().getDayOfMonth() - 1, ChronoUnit.DAYS);
 
@@ -43,7 +45,7 @@ public class TestPath {
 
     public static Stream <Path> allPaths() {
         try {
-            return Files.walk(Paths.get(Location.SRC_MAIN_JAVA.toPath()));
+            return Files.walk(Paths.get(SLASH.separationOf(Resources.SRC_MAIN_JAVA)));
         } catch (IOException e) {
             return null;
         }

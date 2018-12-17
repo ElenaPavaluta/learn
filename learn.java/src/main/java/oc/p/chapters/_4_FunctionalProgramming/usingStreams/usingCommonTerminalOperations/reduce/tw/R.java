@@ -1,6 +1,5 @@
 package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.reduce.tw;
 
-import utils.resources.files.Resources;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,7 +12,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * T reduce(T identity, BinaryOperator<T> accumulator)
@@ -23,7 +23,7 @@ import static utils.resources.files.Location.SRC_MAIN_JAVA;
  * and returns the reduced value.
  */
 class R {
-    Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+    Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
 
     public static void main(String[] args) throws IOException {
         R r = new R();
@@ -34,7 +34,7 @@ class R {
 //        r.m4();
     }
 
-    Stream<Path> init() throws IOException {
+    Stream <Path> init() throws IOException {
         return Files.walk(path);
     }
 
@@ -49,7 +49,7 @@ class R {
                 .map(p -> {
                     try {
                         return Files.lines(p).count();
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                     return 0l;
@@ -68,9 +68,9 @@ class R {
     private boolean modifiedThisMonth(Path p) {
         try {
             return Files.getLastModifiedTime(p).toInstant().isAfter(Instant.now().minus(LocalDate.now()
-                                                                                                 .getDayOfMonth() -
-                                                                                                1, ChronoUnit.DAYS));
-        } catch(IOException e) {
+                    .getDayOfMonth() -
+                    1, ChronoUnit.DAYS));
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return false;
@@ -79,8 +79,8 @@ class R {
     private Integer getDayOfMonth(Path p) {
         try {
             return LocalDateTime.ofInstant(Files.getLastModifiedTime(p).toInstant(), ZoneId.systemDefault())
-                                .getDayOfMonth();
-        } catch(IOException e) {
+                    .getDayOfMonth();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -92,12 +92,12 @@ class R {
                 .map(p -> {
                     try {
                         return Files.size(p);
-                    } catch(IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                     return 0l;
                 })
-                .reduce(0l, (p, p2)-> Long.sum(p, p2));
+                .reduce(0l, (p, p2) -> Long.sum(p, p2));
         System.out.println(l);
     }
 

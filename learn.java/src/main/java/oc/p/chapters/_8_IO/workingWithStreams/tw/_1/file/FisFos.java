@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 class FisFos {
-    static String path = Resources.srcMainResourcesPath(new FisFos());
+    static String path = Resources.srcMainResourcesPackagePath(new FisFos());
 
     static File dir, write;
 

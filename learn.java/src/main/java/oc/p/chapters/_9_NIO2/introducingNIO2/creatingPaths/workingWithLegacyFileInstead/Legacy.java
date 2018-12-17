@@ -16,7 +16,7 @@ class Legacy {
     }
 
     void m() {
-        String stringPath = Resources.srcMainResourcesPath(this);
+        String stringPath = Resources.srcMainResourcesPackagePath(this);
 
         File file = new File(stringPath + File.separator + "cuddly.png");
         Path path = file.toPath();

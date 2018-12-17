@@ -7,7 +7,7 @@ import java.io.IOException;
 
 class Ms3 {
 
-    static  String path = Resources.srcMainResourcesPath(new Ms3());
+    static  String path = Resources.srcMainResourcesPackagePath(new Ms3());
     static File f;
 
     static void m() throws IOException {

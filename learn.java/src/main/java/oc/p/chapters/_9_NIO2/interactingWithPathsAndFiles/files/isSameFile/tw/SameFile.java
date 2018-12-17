@@ -1,6 +1,7 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.isSameFile.tw;
 
 import utils.delimitators.Delimitators;
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +22,7 @@ class SameFile {
 
 
     static void m() throws IOException {
-        File file = Resources.File.file(new SameFile().getClass().getPackage(), "s.txt");
+        File file = FileUtil.file(new SameFile().getClass().getPackage(), "s.txt");
         System.out.println(file.getPath());
         System.out.println(file.getAbsolutePath());
         Delimitators.equal();

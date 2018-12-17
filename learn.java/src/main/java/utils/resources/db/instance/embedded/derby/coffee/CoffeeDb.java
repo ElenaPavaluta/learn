@@ -2,7 +2,7 @@ package utils.resources.db.instance.embedded.derby.coffee;
 
 import utils.resources.db.DbDefinition;
 import utils.resources.db.DbInstance;
-import utils.resources.files.Resources;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,7 +14,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.Collectors;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 public class CoffeeDb extends DbInstance {
 
@@ -27,8 +28,8 @@ public class CoffeeDb extends DbInstance {
     }
 
     public static synchronized DbInstance dbInstance(DbDefinition def) {
-        if(instance == null) {
-            synchronized(CoffeeDb.class) {
+        if (instance == null) {
+            synchronized (CoffeeDb.class) {
                 instance = new CoffeeDb(def);
             }
         }
@@ -41,23 +42,23 @@ public class CoffeeDb extends DbInstance {
             Package pkg = this.getClass().getPackage();
             execStmt(stmt, pkg, CREATE);
             execStmt(stmt, pkg, POPULATE);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void execStmt(Statement stmt, Package pkg, String create) throws IOException {
-        Path path = Paths.get(SRC_MAIN_JAVA.toPath(), Resources.path(pkg), create);
+        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA), SLASH.separationOf(pkg.getName()), create);
         String content = Files.lines(path)
-                              .collect(Collectors.joining());
-        Queue<String> queue = Arrays.stream(content.split(";"))
-                                    .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
-        while(queue.size() > 0) {
+                .collect(Collectors.joining());
+        Queue <String> queue = Arrays.stream(content.split(";"))
+                .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+        while (queue.size() > 0) {
             String s = queue.poll();
-            if(s != null) {
+            if (s != null) {
                 try {
                     stmt.executeUpdate(s);
-                } catch(SQLException e) {
+                } catch (SQLException e) {
                     queue.add(s);
                 }
             }

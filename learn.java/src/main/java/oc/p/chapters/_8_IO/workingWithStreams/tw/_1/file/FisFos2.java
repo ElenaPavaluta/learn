@@ -13,7 +13,7 @@ import java.util.Arrays;
  * fos.wite(byte[]) == fos.write(byte[], offset from where to stard reading from arr, max nb of bytes to write from arr)
  */
 class FisFos2 {
-    static String path = Resources.srcMainResourcesPath(new FisFos2());
+    static String path = Resources.srcMainResourcesPackagePath(new FisFos2());
 
     static File dir = new File(path);
     static File file = new File(path + File.separator + "file");

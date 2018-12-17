@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.Arrays;
 
 class C {
-    static String path = Resources.srcMainResourcesPath(new C());
+    static String path = Resources.srcMainResourcesPackagePath(new C());
 
     static File dir, f;
 

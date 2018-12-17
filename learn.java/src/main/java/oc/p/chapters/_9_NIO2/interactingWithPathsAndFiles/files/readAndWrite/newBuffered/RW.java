@@ -25,7 +25,7 @@ import java.nio.file.Paths;
  */
 class RW {
     static Package pkg = new RW().getClass().getPackage();
-    static String loc = Resources.srcMainResourcesPath(pkg);
+    static String loc = Resources.srcMainResourcesPackagePath(pkg);
 
     /**
      * <R> R collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R, R> combiner);

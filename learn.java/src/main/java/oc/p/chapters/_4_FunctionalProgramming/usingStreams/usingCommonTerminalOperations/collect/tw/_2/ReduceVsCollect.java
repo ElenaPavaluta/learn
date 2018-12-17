@@ -1,7 +1,5 @@
 package oc.p.chapters._4_FunctionalProgramming.usingStreams.usingCommonTerminalOperations.collect.tw._2;
 
-import utils.resources.files.Resources;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,7 +12,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 /**
  * <U> U reduce(U identity,
@@ -27,7 +26,7 @@ import static utils.resources.files.Location.SRC_MAIN_JAVA;
  */
 class ReduceVsCollect {
 
-    static Predicate<FileTime> THIS_YEAR = ft -> {
+    static Predicate <FileTime> THIS_YEAR = ft -> {
         LocalDate ld = LocalDate.now();
         ld = ld.minusMonths(ld.getMonthValue());
         ld = ld.minusDays(ld.getDayOfMonth() - 1);
@@ -35,7 +34,7 @@ class ReduceVsCollect {
         return ld.isBefore(ldt);
     };
 
-    static Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+    static Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
 
     static void m() throws IOException {
         final Integer java = java()
@@ -44,7 +43,7 @@ class ReduceVsCollect {
         System.out.println(java);
     }
 
-    private static Stream<Path> java() throws IOException {
+    private static Stream <Path> java() throws IOException {
         return Files.walk(path)
                 .filter(p -> p.endsWith("java"));
     }
@@ -63,7 +62,7 @@ class ReduceVsCollect {
         System.out.println(reduce);
     }
 
-    private static Stream<Path> thisYear() throws IOException {
+    private static Stream <Path> thisYear() throws IOException {
         return Files.find(path, Byte.MAX_VALUE, (p, bfa) -> THIS_YEAR.test(bfa.creationTime()));
     }
 
@@ -81,7 +80,7 @@ class ReduceVsCollect {
         System.out.println(reduce);
     }
 
-    private static Function<Path, Long> getPathLongFunction() {
+    private static Function <Path, Long> getPathLongFunction() {
         return p -> {
             try {
                 return Files.lines(p)
@@ -101,7 +100,7 @@ class ReduceVsCollect {
         System.out.println(collect.getNb());
     }
 
-    private static Predicate<Path> getPathPredicate() {
+    private static Predicate <Path> getPathPredicate() {
         return p -> p.getName(p.getNameCount() - 1).toString().contains(".java");
     }
 

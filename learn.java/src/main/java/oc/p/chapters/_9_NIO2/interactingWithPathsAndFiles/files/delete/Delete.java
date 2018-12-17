@@ -15,7 +15,7 @@ import java.nio.file.Paths;
  */
 class Delete {
 
-    static String loc = Resources.srcMainResourcesPath(new Delete());
+    static String loc = Resources.srcMainResourcesPackagePath(new Delete());
     static Path p = Paths.get(loc);
     static Path pa = Paths.get(loc, "a");
     static Path pa1 = Paths.get(loc, "a", "1");

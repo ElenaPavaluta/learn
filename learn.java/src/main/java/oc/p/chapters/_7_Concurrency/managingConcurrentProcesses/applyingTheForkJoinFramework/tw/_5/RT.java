@@ -1,7 +1,5 @@
 package oc.p.chapters._7_Concurrency.managingConcurrentProcesses.applyingTheForkJoinFramework.tw._5;
 
-import utils.resources.files.Resources;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,7 +15,8 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 import static java.util.stream.Collectors.toList;
-import static utils.resources.files.Location.SRC_MAIN_JAVA;
+import static utils.resources.files.Resources.SRC_MAIN_JAVA;
+import static utils.resources.files.Separation.SLASH;
 
 class RT extends RecursiveTask <Integer> {
 
@@ -28,18 +27,8 @@ class RT extends RecursiveTask <Integer> {
         this.startPath = startPath;
     }
 
-    void m() throws IOException {
-        long count = Files.walk(startPath)
-                .filter(Files::isRegularFile)
-                .mapToInt(p -> 1)
-                .summaryStatistics()
-                .getCount();
-        System.out.println(count);
-
-    }
-
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get(SRC_MAIN_JAVA.toPath());
+        Path path = Paths.get(SLASH.separationOf(SRC_MAIN_JAVA));
         LocalDateTime localDateTime = LocalDateTime.now();
         localDateTime = localDateTime.minus(localDateTime.getDayOfMonth(), ChronoUnit.DAYS);
         FileTime fileTime = FileTime.from(ZonedDateTime.of(localDateTime, ZoneId.systemDefault()).toInstant());
@@ -52,22 +41,32 @@ class RT extends RecursiveTask <Integer> {
         task.m();
     }
 
+    void m() throws IOException {
+        long count = Files.walk(startPath)
+                .filter(Files::isRegularFile)
+                .mapToInt(p -> 1)
+                .summaryStatistics()
+                .getCount();
+        System.out.println(count);
+
+    }
+
     @Override
     protected Integer compute() {
         int count = 0;
         BasicFileAttributes bfa = getBfa();
-            if (bfa.isRegularFile()) {
-                return ++count;
-            } else {
-                if (bfa.isDirectory()) {
-                    List <RT> list = list();
-                    list.forEach(RT::fork);
-                    return count += (int) list.stream()
-                            .mapToInt(RT::join)
-                            .summaryStatistics()
-                            .getSum();
-                }
+        if (bfa.isRegularFile()) {
+            return ++count;
+        } else {
+            if (bfa.isDirectory()) {
+                List <RT> list = list();
+                list.forEach(RT::fork);
+                return count += (int) list.stream()
+                        .mapToInt(RT::join)
+                        .summaryStatistics()
+                        .getSum();
             }
+        }
         return count;
     }
 

@@ -1,5 +1,6 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.copy.ioAndNio2;
 
+import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 import java.io.*;
 import java.nio.file.Files;
@@ -17,9 +18,9 @@ import java.util.stream.IntStream;
  */
 class Copy {
     static Package pkg = new Copy().getClass().getPackage();
-    static File in = Resources.File.file(pkg, "in.txt");
-    static File out = Resources.File.file(pkg, "out.txt");
-    static Path path = Paths.get(Resources.srcMainResourcesPath(pkg), "path");
+    static File in = FileUtil.file(pkg, "in.txt");
+    static File out = FileUtil.file(pkg, "out.txt");
+    static Path path = Paths.get(Resources.srcMainResourcesPackagePath(pkg), "path");
 
     static {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(in))) {

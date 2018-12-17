@@ -9,11 +9,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-import static utils.resources.files.Location.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 class PropertyResourceBundle_ {
 
-    static Path path = Paths.get(SRC_MAIN_RESOURCES.toPath(), "bla_de_DE.properties");
+    static Path path = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), "bla_de_DE.properties");
     static Properties properties = new Properties();
 
     static {

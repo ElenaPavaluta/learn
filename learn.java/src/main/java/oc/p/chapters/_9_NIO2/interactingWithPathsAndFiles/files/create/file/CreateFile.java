@@ -1,6 +1,7 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.create.file;
 
 import utils.resources.files.Resources;
+import utils.resources.files.util.PathUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +21,7 @@ import java.nio.file.Paths;
  */
 class CreateFile {
 
-    static Path base = Resources.Path.directory(new CreateFile());
+    static Path base = PathUtil.directory(new CreateFile());
     static Path path;
     static File file;
 
