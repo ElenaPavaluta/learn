@@ -3,11 +3,11 @@ package gtk.methods.overrideVsOverload;
 /**
  * Order Java uses to choose the right overloaded method
  * 
- * 1. Exact match by dbType
+ * 1. Exact match by type
  *
- * 2. Larger primitive dbType
+ * 2. Larger primitive type
  * 
- * 3. Autoboxed dbType
+ * 3. Autoboxed type
  * 
  * 4. Varargs
  * 
