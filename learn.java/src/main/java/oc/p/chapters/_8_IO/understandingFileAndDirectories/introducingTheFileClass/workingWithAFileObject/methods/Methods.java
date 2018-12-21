@@ -1,14 +1,17 @@
 package oc.p.chapters._8_IO.understandingFileAndDirectories.introducingTheFileClass.workingWithAFileObject.methods;
 
-import com.sun.org.apache.regexp.internal.RE;
+import utils.resources.files.Resources;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalTime;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
+
+import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
+import static utils.resources.files.Separation.SLASH;
 
 
 class Methods {
@@ -35,9 +38,24 @@ class Methods {
 //        m(File::lastModified);
 //        m(File::getParent);
 
-//        m(File::listFiles);
+//        m((Function <File, ?>) File::listFiles);
+//        m((File f) -> f.listFiles());
 
-        m((File f)->f.listFiles());
+        m2();
+
+
+//        m(File::delete);
+        
+        Resources.clean();
+    }
+
+    private static void m2() {
+        File file = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES), SLASH.separationOf(new Methods().getClass().getPackage().getName()), "a", "b", "c").toFile();
+
+//        System.out.println(file.mkdir());  //false
+        System.out.println(file.mkdirs());
+
+        lst.forEach(f -> System.out.println(f.renameTo(file)));
     }
 
 }
