@@ -1,44 +1,68 @@
 package oc.p.chapters._8_IO.understandingFileAndDirectories.introducingTheFileClass.creatingAFileObj;
 
-import utils.resources.files.util.FileUtil;
+import utils.print.Print;
 
-import java.util.ArrayDeque;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import static utils.resources.files.Resources.SRC_MAIN_RESOURCES;
 import static utils.resources.files.Separation.SLASH;
 
 class Create {
 
-    final String pkg = this.getClass().getPackage().getName();
-    final String path = SLASH.separationOf(pkg);
-    ArrayDeque <java.io.File> files = new ArrayDeque <>();
+    String pkg = this.getClass().getPackage().getName();
+    File dir;
+
+    {
+        dir = new File(SLASH.separationOf(SRC_MAIN_RESOURCES) + File.separator, SLASH.separationOf(pkg));
+        System.out.println(dir);
+        System.out.println(dir.mkdir());  //false
+        System.out.println(dir.mkdirs());  //true
+
+        Print.Delimitators.equal();
+
+        File file = new File(dir, this.getClass().getSimpleName());
+
+        m(file);  //true
+
+        write(file);
+        read(file);
+
+        m(file);  //false; the file already exists
+
+
+    }
 
     public static void main(String[] args) {
-        Create c = new Create();
-        c.dir();
-        c.m();
-        c.m2();
-
-//        Resources.clean();
+        new Create();
     }
 
-    void dir() {
-        java.io.File f = FileUtil.directory(path + "test\\p2\\p3\\p4");
-        System.out.println(f.isDirectory());  //true
-        System.out.println(f.isFile());  //false;
-        files.push(f);
+    private void read(final File file) {
+        try (FileReader fr = new FileReader(file)) {
+            int i;
+            while ((i = fr.read()) != -1) {
+                System.out.println((char) i);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    void m() {
-        java.io.File a = new java.io.File("a.txt");
-        a.mkdir();
-        files.push(a);
+    private void write(final File file) {
+        try (FileWriter fw = new FileWriter(file)) {
+            fw.write("this is a String");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    void m2() {
-        java.io.File f = new java.io.File(SLASH.separationOf(SRC_MAIN_RESOURCES), "b");
-        f.mkdir();
-        files.push(f);
+    private void m(final File file) {
+        try {
+            System.out.println(file.createNewFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 }
