@@ -1,7 +1,7 @@
 package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputStream.understandingObjectCreation;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 
 class Anim implements Serializable {
@@ -30,7 +30,7 @@ class Anim implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Anim a = new Anim("Lenovo", 4, 'L');
 
-        File f = FileUtil.file(a.getClass().getPackage(), "a");
+        File f = Resources.pathToFile(a.getClass().getPackage(), "a");
 
         try(ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(f)))) {
             oos.writeObject(a);
@@ -42,7 +42,7 @@ class Anim implements Serializable {
         } catch(EOFException e) {
         }
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
 
     }
 

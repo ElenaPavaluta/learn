@@ -1,13 +1,12 @@
 package oc.p.tests.chapters._18.q._27;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
 
 class Furniture {
 
-    static File f = FileUtil.file(new Furniture(), "f");
+    static File f = Resources.pathToFile(new Furniture(), "f");
 
     static void m() throws IOException {
         Writer w = new FileWriter(f);
@@ -31,7 +30,7 @@ class Furniture {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            Resources.clean();
+            utils.resources.files.Resources.clean();
         }
 
     }

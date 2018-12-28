@@ -1,7 +1,7 @@
 package oc.p.chapters._8_IO.workingWithStreams.fileReaderAndFileWriter;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ class BrAndBw {
 
     {
         Package p = this.getClass().getPackage();
-        f = FileUtil.file(p, "f.txt");
-        f2 = FileUtil.file(p, "f2.txt");
+        f = Resources.pathToFile(p, "f.txt");
+        f2 = Resources.pathToFile(p, "f2.txt");
 
         fill(f);
     }
@@ -22,7 +22,7 @@ class BrAndBw {
 
         bb.m2(bb.m());
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 
     private void fill(File f) {

@@ -1,7 +1,7 @@
 package oc.p.chapters._9_NIO2.interactingWithPathsAndFiles.files.move;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,9 +19,9 @@ class Move {
 
 
     static Package pkg = new Move().getClass().getPackage();
-    static File f = FileUtil.file(pkg, "f");
-    static Path path = Paths.get(Resources.srcMainResourcesPackagePath(pkg), "path");
-    static Path path2 = Paths.get(Resources.srcMainResourcesPackagePath(pkg),  "path2");
+    static File f = Resources.pathToFile(pkg, "f");
+    static Path path = Paths.get(utils.resources.files.Resources.srcMainResourcesPackagePath(pkg), "path");
+    static Path path2 = Paths.get(utils.resources.files.Resources.srcMainResourcesPackagePath(pkg),  "path2");
 
     static {
         try(Writer w = new FileWriter(f)) {
@@ -69,7 +69,7 @@ class Move {
         move();
 //        read();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 }
 

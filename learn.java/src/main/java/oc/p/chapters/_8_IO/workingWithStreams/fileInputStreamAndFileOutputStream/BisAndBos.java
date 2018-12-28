@@ -1,6 +1,5 @@
 package oc.p.chapters._8_IO.workingWithStreams.fileInputStreamAndFileOutputStream;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
@@ -16,7 +15,7 @@ class BisAndBos {
     File file, copy;
 
     {
-        file = FileUtil.file(this.getClass().getPackage(), "info.jpg");
+        file = Resources.pathToFile(this.getClass().getPackage(), "info.jpg");
     }
 
     public static void main(String[] args) throws IOException {
@@ -24,11 +23,11 @@ class BisAndBos {
 
         bb.m();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 
     void m() throws IOException {
-        copy = FileUtil.file(this.getClass().getPackage(), "copy.jpg");
+        copy = Resources.pathToFile(this.getClass().getPackage(), "copy.jpg");
         try (InputStream in = new BufferedInputStream(new FileInputStream(file));
              OutputStream out = new BufferedOutputStream(new FileOutputStream(copy))) {
             byte[] buff = new byte[16];

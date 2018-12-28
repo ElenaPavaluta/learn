@@ -1,14 +1,14 @@
 package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputStream.understandingObjectCreation.tw._1;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.util.stream.IntStream;
 
 class Run {
     File file;
     {
-        file = FileUtil.file(this.getClass().getPackage(), "s.txt");
+        file = Resources.pathToFile(this.getClass().getPackage(), "s.txt");
     }
 
     void write() throws IOException {
@@ -38,6 +38,6 @@ class Run {
         Run r = new Run();
         r.write();
         r.read();
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 }

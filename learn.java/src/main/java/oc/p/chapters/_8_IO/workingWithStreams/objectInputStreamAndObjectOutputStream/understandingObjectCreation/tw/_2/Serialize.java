@@ -2,7 +2,6 @@ package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputS
 
 
 import utils.print.Print;
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
@@ -10,8 +9,8 @@ import java.io.*;
 class Serialize {
     static Package pkg = new Serialize().getClass().getPackage();
 
-    static File b = FileUtil.file(pkg, "b");
-    static File c = FileUtil.file(pkg, "c");
+    static File b = Resources.pathToFile(pkg, "b");
+    static File c = Resources.pathToFile(pkg, "c");
 
 
     static void write() throws IOException {
@@ -42,7 +41,7 @@ class Serialize {
         System.out.println("===== read =====");
         read();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 
 }

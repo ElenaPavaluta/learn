@@ -1,13 +1,12 @@
 package oc.p.tests.chapters._18.q._14;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
 
 import java.io.*;
 
 class Serialize {
 
-    static File f = FileUtil.file(new Serialize(), "f");
+    static File f = Resources.pathToFile(new Serialize(), "f");
 
     static void write() throws IOException {
         Cereal c = new Cereal();
@@ -30,6 +29,6 @@ class Serialize {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         write();
         read();
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 }

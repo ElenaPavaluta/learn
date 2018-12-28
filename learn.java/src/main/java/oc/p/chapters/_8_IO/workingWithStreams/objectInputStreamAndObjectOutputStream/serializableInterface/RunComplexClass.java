@@ -1,14 +1,14 @@
 package oc.p.chapters._8_IO.workingWithStreams.objectInputStreamAndObjectOutputStream.serializableInterface;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.util.stream.IntStream;
 
 class RunComplexClass {
     File file;
     {
-        file = FileUtil.file(this.getClass().getPackage(), "cc.csv");
+        file = Resources.pathToFile(this.getClass().getPackage(), "cc.csv");
     }
 
     void write() throws IOException {
@@ -47,6 +47,6 @@ class RunComplexClass {
         run.write();
         run.read();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 }

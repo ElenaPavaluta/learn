@@ -111,4 +111,37 @@ public interface Resources {
         return pkg.getName() + "." + name;
     }
 
+    static File directory(Object o) {
+        File file = new File(SLASH.separationOf(SRC_MAIN_RESOURCES),
+                SLASH.separationOf(o.getClass().getPackage().getName()));
+        file.mkdirs();
+        return file;
+    }
+
+    static Path pathToFile(Object obj) {
+        final Path dir = Paths.get(SLASH.separationOf(SRC_MAIN_RESOURCES),
+                SLASH.separationOf(obj.getClass().getPackage().getName()));
+        Path file = Paths.get(dir.toString(), obj.getClass().getSimpleName());
+        try {
+            Files.createDirectories(dir);
+            if (!Files.exists(file)) {
+                file = Files.createFile(file);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    static File pathToFile(Object o, String fileName) {
+        File dir = directory(o);
+        File file = new File(dir, fileName);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            System.err.println("Resources.File.file(" + o.getClass().getSimpleName() + ", " + fileName + ")");
+        }
+        return file;
+    }
+
 }

@@ -1,7 +1,7 @@
 package oc.p.chapters._8_IO.workingWithStreams.printStreamAndPrintWriter;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.Locale;
@@ -20,7 +20,7 @@ class PrintStreamClass {
     PrintStream printStream;
 
     {
-        file = FileUtil.file(this.getClass().getPackage(), "a.txt");
+        file = Resources.pathToFile(this.getClass().getPackage(), "a.txt");
     }
 
     {
@@ -45,7 +45,7 @@ class PrintStreamClass {
         pw.printf();
         pw.format();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 
     void write() throws FileNotFoundException {

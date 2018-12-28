@@ -1,7 +1,7 @@
 package oc.p.chapters._8_IO.workingWithStreams.printStreamAndPrintWriter;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 import java.util.Locale;
 
@@ -9,7 +9,7 @@ import java.util.Locale;
  * Can be created using also an OutputStream
  */
 class PrintWriterClass {
-    File f = FileUtil.file(this.getClass().getPackage(), "b");
+    File f = Resources.pathToFile(this.getClass().getPackage(), "b");
 
     {
         try(PrintWriter pw = new PrintWriter(f.getPath());
@@ -33,7 +33,7 @@ class PrintWriterClass {
         pwc.write();
         pwc.print();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 
     void write() throws FileNotFoundException {

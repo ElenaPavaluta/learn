@@ -1,7 +1,7 @@
 package oc.p.chapters._8_IO.workingWithStreams.fileReaderAndFileWriter;
 
-import utils.resources.files.util.FileUtil;
 import utils.resources.files.Resources;
+
 import java.io.*;
 
 class FrAndFw {
@@ -9,8 +9,8 @@ class FrAndFw {
 
     {
         Package p = this.getClass().getPackage();
-        f = FileUtil.file(p, "f.txt");
-        f2 = FileUtil.file(p, "f2.txt");
+        f = Resources.pathToFile(p, "f.txt");
+        f2 = Resources.pathToFile(p, "f2.txt");
 
         fill(f);
     }
@@ -45,6 +45,6 @@ class FrAndFw {
 
         ff.m();
 
-        Resources.clean();
+        utils.resources.files.Resources.clean();
     }
 }
