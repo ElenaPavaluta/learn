@@ -1,7 +1,7 @@
 Cap 11
 1 d
 2 b
-3 c
+3 ctrt
 4 c
 5 d
 6 a
