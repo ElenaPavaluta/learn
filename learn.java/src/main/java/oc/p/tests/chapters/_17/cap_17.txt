@@ -2,43 +2,43 @@ cap 17
 1 c
 2 a
 3 a
-4 a, b
+4 a, b | d
 5 b
-6 b
-7 d
+6 b | c
+7 d | c
 8 c
-9 b
+9 b | c 
 10 b
-11 b
-12 b
-13 b
+11 b | d
+12 b | c
+13 b | d
 14 d
 15 d
 16 c
-17 d
+17 d | a
 18 b
 19 b
 20 a
 21 b
-22 d
-23 c
+22 d | b
+23 c | d
 24 b
 25 c
 26 d
 27 a
-28 c
-29 c
+28 c | d
+29 c | d
 30 d
 31 a
 32 c
-33 a
-34 b
+33 a | b
+34 b | a
 35 b
 36 a
 37 b
 38 c
 39 a
-40 b
+40 b | c
 
 -------
 9
