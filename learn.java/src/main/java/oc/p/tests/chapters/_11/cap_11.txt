@@ -11,34 +11,34 @@ Cap 11
 10 d
 11 a
 12 c
-13 c
+13 c | a
 14 b
 15 c
 16 b
 17 a
-18 p
+18 p | b
 19 d
 20 d
 21 b
 22 c
 23 c
 24 b
-25 a
-26 d
+25 a | b
+26 d | a 
 27 c
 28 d
 29 b
 30 d
 31 c
-32 c
+32 c | a
 33 d
 34 a
 35 d
-36 d
+36 d | b
 37 b
 38 a
-39 p
-40 b
+39 p | a
+40 b | c
 
 ----------
 shadowing
