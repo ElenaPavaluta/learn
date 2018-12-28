@@ -2,61 +2,61 @@ cap 23
 
 1 a, e
 2 d
-3 a, c, e
-4 c
+3 a, c, e | a, b, e
+4 c | d
 5 b
 6 f
 7 a
-8 b
+8 b | c
 9 c, f
-10 f
+10 f | b
 11 c
 12 e
-13 f
+13 f | e
 14 b
-15 b, c, f
-16 c, e 
+15 b, c, f | a, c, f
+16 c, e  | d, f
 17 b
-18 
+18  | d
 19 b
-20 c
+20 c | e
 21 a, c, e
-22 a
-23 b
-24 
-25 d
+22 a | f
+23 b | c
+24  | a
+25 d | b
 26 f
-27 a
-28 d
+27 a | c
+28 d | d, e
 29 b, d
 30 d
 31 e
-32 d
+32 d | f
 33 b
-34 b
-35 c, b, e
+34 b | f
+35 c, b, e | c, b, e
 36 c, d
-37 
+37  | f
 38 b
-39 a
+39 a | c
 40 d
 41 b,d
 42 b
 43 b
-44 c
+44 c | a 
 45 a, b, d
-46 d
+46 d | e
 47 d
 48 b, d
-49 d, e
-50 
-51
+49 d, e | c, d
+50  | c
+51  | b, e
 52 c
-53 f
+53 f | d
 54 a, c, e
-55 f, b
+55 f, b 
 56 c
-57 c
+57 c | e
 58 c
 59 e
 60 d
@@ -64,8 +64,8 @@ cap 23
 62 d
 63 a, c
 64 e, d
-65 a
-66 a
+65 a | f
+66 a | c
 67 e
 68 b, f
 69 a, e
@@ -74,4 +74,4 @@ cap 23
 72 b
 73 f
 74 d
-75 a, b, c
+75 a, b, c | f
