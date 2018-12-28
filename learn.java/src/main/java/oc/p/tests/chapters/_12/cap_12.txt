@@ -4,40 +4,40 @@ cap 12
 2 d
 3 c
 4 c
-5 b, c
+5 b, c | b
 6 b
-7 d
-8 c
+7 d | b
+8 c | d
 9 c
 10 c
 11 d
 12 b
-13 c
+13 c | b
 14 b
-15 c
+15 c |d 
 16 d
 17 b
 18 c
-19 a
+19 a | c
 20 a
-21 a
+21 a | d
 22 a
-23 d
+23 d | c
 24 a
 25 b
 26 a
 27 d
-28 a
+28 a | c
 29 d
 30 c
 31 b
 32 d
 33 c
-34 a
+34 a | c
 35 a
 36 a
-37 b
-38 c
+37 b | c
+38 c | d
 39 b
 40 c
 
